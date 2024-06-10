@@ -1,0 +1,26 @@
+jQuery Plugins
+They say the best programmer is the lazy programmer, so it’s only natural that so many of us subscribe to the DRY principle of software development. DRY is an acronym for "Don’t Repeat Yourself” which states "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system”. Software developers generally apply the DRY principle when working on backends, but for some reason a lot of us tend to abandon all good software engineering principles when it comes to working on the front-end, although this trend is gradually changing with the growing popularity of front-end heavy JavaScript frameworks like Backbone.js, Ember.js and AnglularJS and CSS preprocessors like LESS and SASS.
+
+“jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript” - jquery.com
+
+jQuery is currently the de-facto JavaScript library of choice on most projects so knowing how to build jQuery plugins to encapsulate and distribute oft-repeated functionality is a good skill for a developer to have. I recently gave a short presentation at Solution Street about building jQuery plugins.Check out the video on YouTube!  https://www.youtube.com/watch?v=DFxAuHSYfF0 Here are some useful resources to get you started on creating your own jQuery plugins.
+
+Plugins | jQuery Learning Center - http://learn.jquery.com/plugins/
+
+Writing Your Own jQuery Plugins - http://blog.teamtreehouse.com/writing-your-own-jquery-plugins
+
+Essential jQuery Plugin Patterns - http://www.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/
+
+ 
+
+Enjoy,
+
+ 
+
+Serign Jobe
+
+ 
+
+
+
+

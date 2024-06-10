@@ -1,0 +1,77 @@
+The 5-Minute Overview of Conversational User Interfaces
+
+
+
+
+The year was 1979. I was 8 years old and was excited to go to my Dad's office in Georgetown. He had a little bit of work to do but promised to let me and my brother play Adventure on his work computers for a few hours. At the time, no one I knew owned a computer. This was pre-Commodore, pre-PC, and pretty much only reasonably-sized companies could afford a computer, so I was super excited to not only use a computer but to play a video game on it. The game was actually called “Colossal Cave Adventure.” It was a text-based adventure game where the game told you what you saw and you could enter basic commands like “enter building” or “north” or “south” or “take keys” or “inventory.” It would get really exciting when you encountered a dragon and typed "kill dragon," and the game would answer "What with? Your bare hands?" The game would interpret your commands the best it could, which back then was cool, but by today's standards, most users would consider it awful.  Below is a picture of what it looked like:
+
+
+
+
+
+I didn’t know it at the time but I was playing a game that was one of the first Conversational User Interfaces (CUIs). 
+
+
+According to Wikipedia, conversational user interfaces are an interface for computers that emulates a conversation with a real human. Today, there are two main categories of CUIs - voice assistants like Siri and Alexa and chatbots that most of us deal with when trying to get online support for something.
+
+
+CUIs have been around since the 60s but have had a recent resurgence in popularity in the last ten years or so. I noticed yesterday that my doctor’s office was using a CUI to schedule appointments; here is a screenshot of it:
+
+
+
+
+
+
+In this case, the CUI asks me a question and then pretends to be in a “chat” conversation with me to walk through the steps in setting up an appointment. The traditional way to do this would be with a regular GUI that has fields, select boxes and a submit button.
+
+
+
+
+
+
+
+
+
+For voice assistants, most of us use some of the basic features like “Alexa, turn on the lights” or “Alexa, set timer for 7 minutes.” The traditional way to do this is with something like the iPhone app many of us have used.
+
+
+So why have CUIs become so popular in recent years and how do they work?
+
+
+
+
+
+The main reason for their popularity is really due to the advancement in Artificial Intelligence capabilities. There are several pieces of the “technological pie” that go into the AI behind CUIs. 
+
+
+Let’s break those down one by one:
+
+
+Speech to text (in the case of audio voice assistants) - This piece takes the speech from the end user and turns it into text for the computer to process. There have been major improvements over recent years in this technology and there are services offered by all the cloud providers to help with this. One example is AWS Transcribe.
+
+
+Natural Language Processing & Natural Language Understanding (NLP & NLU) (sentiment) - These pieces take the text and try to understand what it is about, derive meaning, and provide context.
+
+
+Machine Learning/Deep Learning - This piece takes your existing knowledge/literature and provides a learning/training basis for your CUI. This could be as simple as feeding in existing transcripts of live human interactions.
+
+
+Text to speech - Converts the answer back to speech (in the case of audio voice assistants).
+
+
+Some cloud vendors are also bundling all these pieces together in one service. For example, Amazon's Lex service gives you a one-stop for all the services needed to build a chatbot.
+
+
+There are a good number of players in the CUI space. A look below at Gartner's Magic Quadrant for Enterprise Conversational AI Platforms gives you a good overview of who’s who.
+
+
+
+
+
+So now that you know what a CUI is and the pieces of technology that are used to make them work, the big question is “Do you like them?” (Feel free to drop me your ideas.) There are some good articles out there that talk about the advantages and disadvantages of CUIs. As for me, I like them in some cases and strongly dislike them in others. One of the key ideas that comes into my head when discussing CUIs is training humans to use computers vs. training computers to use humans. What I mean by this is humans making small adjustments to how they interact with the user interface can make it easier for the program/computer to interpret their actions. Thinking back to the Adventure game at the start of this article, given that its AI was quite simple, over time humans were trained on how to work with it. We, as users, had to use simple two-word phrases of verbs and nouns. Once we got that down, the game flowed very well. Another example of this was the Apple Newton vs. the Palm Pilot. The Apple Newton attempted to do handwriting recognition but wasn’t all that great at it and the device didn’t do so well in the market, vs. the Palm pilot which taught users how to write letters a certain way so the computer could easily identify it. The converse to this is to train the computer program to handle all human interactions as they occur naturally. Today’s CUIs try really hard to just let the user type or say whatever they want, which is how things can get frustrating when the computer is encountering something unexpected from a user. How many times have we taken our anger out on Siri or Alexa because they didn't understand what we were saying or requesting?
+
+
+My suggestion for developers and designers is the age-old, know your audience, do user testing, but at the same time be open to new ideas. The best of both worlds here is to provide both conversational and traditional user interfaces when possible. Back to my timer example, there are times when I have my hands full holding all my cooking ingredients that I just want to say "Alexa, set the timer for 5 minutes." There are other times when I am holding my phone that I prefer to open the timer app and interact with it in a traditional way. The doctor's office appointment interface seems forced to me, I prefer the old school form, but I am not sure how others would feel about it? What do you think?
+
+
+I hope you enjoyed my 5-minute overview of CUIs. If you happen to need a CUI or even a regular old UI built, drop us a line, we can help!

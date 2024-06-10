@@ -1,0 +1,87 @@
+Socializing a New Software Developer in a Brave Remote World
+
+
+
+
+As we optimistically look forward to more social encounters during 2021 and into 2022, it is highly likely that our software development teams will continue to work remotely most of the time. Meanwhile, the job market in technology fields is hopping, and attracting and retaining new employees is a challenge. Employment predictors are labeling this time “The Great Resignation of 2021.”  “Americans leaving employers for new opportunities is at its highest level in more than two decades,” states Lauren Weber in the Wall Street Journal article “Forget Going Back to the Office—People Are Just Quitting Instead,” June 13, 2021. She continues “One trend some employers are seeing: high turnover among the newest employees, many of whom started remotely and have never met co-workers in person.”
+
+
+Even though I consider myself an introvert (not an unusual characteristic of a software developer), social interaction is a big factor in my job satisfaction. I spent some time thinking about ways that I have been acclimated when starting new positions and listed some ideas that have allowed me to become more comfortable socially. I think these practices encourage good communication and allow for some fun in the workplace. Positive social interactions are just one aspect of job satisfaction, but certainly play a role in employee retention.
+
+
+After discussing the idea of this article with my Solution Street manager, he suggested commenting about how Solution Street’s practices match up with these goals. Good idea.
+
+
+Include new hires in meetings from day one.  It takes time for the new hire to build relationships and to comprehend the technical discussions, but the best time to start is as soon as possible. The team should express their enthusiasm for welcoming a new member right away.  
+
+
+Meeting invites started arriving in my inbox right away. I have a bi-weekly one-on-one with my manager. We also have a weekly meeting with our small group of consultants who work with the same client. Solution Street also has periodic technical brown bag meetings and quarterly corporate meetings.
+
+
+Face time should be mandatory at least one day per week. Visual recognition makes it easier for a new hire to connect names, voices and faces. In addition, facial expressions add to the conversation and make it more personable. 
+
+
+We consistently have our webcams on for Solution Street meetings - and this is consistent across the company.
+
+
+Remember to introduce participants at the beginning of meetings. Do not assume everyone knows each other. This may seem like a formality, but I see it as good manners. Occasionally, introductions are missed, and this can lead to awkward conversations.
+
+
+Introductions were made at our small group meeting, and I was introduced as a new employee at my first quarterly corporate meeting. Presenters introduce themselves at the beginning of brown bag seminars. I am always interested in finding out more about other consultants’ backgrounds. 
+
+
+Make an organizational chart available including team and/or individual responsibilities. Within the team, identify technical strengths of individuals so the new hire knows who to ask for questions.
+
+
+I think there is an opportunity to incorporate this component at Solution Street and I have communicated this idea to management. I think it would be helpful to be able to look up roles when individuals are speaking during larger meetings. 
+
+
+Managers should check in with new hires frequently in the first few weeks to find out what is going well and where the hang ups are occurring. This is a great way to set the tone for open communication and build a relationship between manager and employee.  
+
+
+Absolutely, my manager has been great about this both at our small client meeting and in our one-on-one meetings. This has been ongoing, not just during the first few weeks. At Solution Street, I know these one-on-one meetings occur throughout the company and are quite helpful.
+
+
+Provide feedback to new hires, both positive and negative with encouragement. New hires need to understand the climate of the organization and how they fit into the picture. This is a chance for managers to set expectations.
+
+
+Solution Street solicits feedback from our clients about how things are going and shares the feedback with us. Sometimes, the feedback is limited since it is dependent on the client. As for feedback from Solution Street management, my manager clarifies the role of consultant and injects advice about how Solution Street builds relationships with clients into the conversation.
+
+
+Encourage small talk at the beginning of meetings. This can be during the first few minutes while waiting for others to join. This is the way friendships are formed. New hires will be comfortable asking for help from coworkers with whom they have found something in common.  
+
+
+Yes, we do that.
+
+
+Appoint an onboarding buddy, someone who is a peer rather than a manager. This makes it easy for the new hire to immediately have someone to reach out to. 
+
+
+Solution Street has relationships with clients in two different ways. One relationship is when Solution Street manages an entire project, and the work is divided among Solution Street employees. The other relationship is when Solution Street provides the client with consultants to augment their staff. I am of the latter; I am a consultant for a client. Solution Street quickly introduces consultants to other Solution Street employees on the same contract, who I consider as onboarding buddies.
+
+
+Give tasks to complete within a relaxed time frame right away. Most people learn by doing, not by reading about it. This forces the new hire to seek help early on.
+
+
+This one has not been applicable to me at the Solution Street consulting firm level. I am assigned tasks with my client. However, most of Solution Street’s clients share this vision and assign bug tickets to new developers right away to get them acclimated.
+
+
+Partner up new hires on development tickets, pair with different partners so the new hire gets to know different members of the team.
+
+
+Again, for me, this is not applicable at the Solution Street level. However, many Solution Street projects do encourage pairing for more complex tickets. I think the practice of pairing up with different partners is often overlooked and can have great benefits. Team members have different areas of expertise that can be shared by connecting with different partners.
+
+
+Social best practices should be incorporated into the team’s agile process. For example, everyone reports status and challenges at daily standups. At the end of a sprint, during the retrospective phase, include the new hire in conversations about what could have been done to make the process easier.
+
+
+Most of Solution Street’s projects that follow an agile (or quasi-agile) process – i.e., they have daily standups, defined sprints, retrospectives, etc. - do have all team members included in those ceremonies from the beginning. Oftentimes we will also look to new team members to provide their own perspective on the project’s processes to bring a new perspective to the team.
+
+
+Organize some social activities outside of work. Both in-person and online events encourage staff to set aside time to connect with each other, discover common interests, and develop friendly relationships that carry over into the workday. I think corporate-sponsored or corporate-encouraged social activities are especially important for employees who are just starting their careers.
+
+
+Solution Street recently held an in-person barbecue to welcome interns and a virtual chocolate tasting activity. Social activities are part of the Solution Street culture.
+
+
+Over the course of my career, I have been the new hire at least a half dozen times. In my new role as a consultant, that feeling of being a new hire will most likely occur each time I start with a new client. As I reflect on my experiences, I remember practices that were extremely helpful and others that impeded my progress in building relationships. The list above is generated from my reflections.  For me, personal relationships are one of the biggest factors in job satisfaction. In our new world of remote work, building those personal relationships is more challenging. To retain employees, we need to incorporate practices that build relationships right from the beginning and continue the practices over time. For better or worse, remote work is here to stay; let us make the most of it.

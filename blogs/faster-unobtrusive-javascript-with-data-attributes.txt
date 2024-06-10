@@ -1,0 +1,158 @@
+Faster Unobtrusive JavaScript with Data Attributes
+
+
+Many developers have jumped on the bandwagon of full JavaScript user interfaces and moved all presentation logic from the server side to a client-side framework like React.js or Angular.js. While this may sound like fun, there are millions of applications out there in the world that use server-side rendering of HTML and JavaScript. This article is for these folks and how they can use data attributes to make their code a little cleaner.
+
+ 
+
+For years, developers have used JavaScript to enhance their web pages and make them more usable. In many server-side scripting frameworks such as .jsp, .asp, Ruby on Rails(.erb), Python/Django, and PHP, developers use these scripting frameworks to inject inline dynamic JavaScript into the pages. This JavaScript can be customized for the use case while the page is being built, making it easy to build custom logic on the fly. This can make your pages faster and more interactive without having to make Ajax calls back to the server to gather and format data.
+
+ 
+
+Let's take the use case of a “Watch Registration System”, where we want users who have recently purchased a watch to be able to register their watch. Some watches the company sells have serial numbers and others do not, so we want to make our “serial number” field disappear when we choose a model that does not have a serial number, and make it appear when we choose a model with a serial number. In our use case we have three watch models: “Anthem”; “Agent”; and “Mission”. Only the Mission model has a serial number, so when we choose Mission, we should show the serial number field like in Figure A.
+
+Figure A
+
+
+ 
+
+If we don’t choose any model or we choose one of the other two models, we want to hide the serial number field as in Figure B.
+
+Figure B
+
+
+ 
+
+When using a server-side scripting framework, I could easily generate a JavaScript key/value pair with model IDs and serial number true/false. This way if someone updated the reference data and changed one of the models to have a serial number or not, the JavaScript will be generated correctly.
+
+ 
+
+In Ruby on Rails we could leverage server side .erb to generate an inline JavaScript helper using some code like this:
+
+ 
+
+Example Ruby on Rails code to generated JavaScript:
+File: _form.erb.html
+
+
+<%= form_for(@watch_registration) do |f| %>
+
+<%= f.select(:model_id, @registerable_models.collect {|p| [ p.name, p.id] }, {include_blank: t("generic.model")}) %>
+
+<%= f.text_field :serial_number, :placeholder => t("registration_center.serial_number"), style: 'display:none' %>
+<% end %>
+
+ 
+
+Since this code is in a server-side template, it generates the following HTML code. Notice the JavaScript object key/value pairs populated in a variable.
+
+ 
+
+Example Ruby on Rails generated HTML and JavaScript:
+File: generated new/show.html file
+
+
+ 
+Model
+38-20 Chrono
+Agent
+Mission
+ 
+
+
+
+This works, the code is simple and easy to write and the page is very fast, and no Ajax calls are needed to draw the page or figure out what to do on the drop down select.
+
+ 
+
+The problem is it is no longer considered ideal to have inline JavaScript in the page. This is considered bad form and it is better for many reasons to put the JavaScript into its own file and use unobtrusive JavaScript to make this happen. To do this, we no longer have access to our server-side data, and on first glance this would make our problem above hard to do.
+
+ 
+
+Data attributes can help us solve this problem in an elegant way. HTML5 is designed with extensibility in mind for data that should be associated with a particular element but need not have any defined meaning. data-* attributes allow us to store extra information on standard, semantic HTML elements without other hacks such as adding non-standard extra properties on the DOM.
+
+ 
+
+With data attributes, we can change our Ruby code slightly to generate each element of our select drop down with an extra attribute called “data-serial”; in this case just adding a “true” or “false” value if the model has a serial number or not.
+
+ 
+
+Example Ruby on Rails code with data attributes (note no generated inline JavaScript):
+File: _form.erb.html
+
+<%= form_for(@watch_registration) do |f| %>
+
+<%= f.select(:model_id, @registerable_models.collect {|p| [ p.name, p.id, { 'data-serial' => p.serial_number_available } ] }, {include_blank: t("generic.model")}) %>
+
+<%= f.text_field :serial_number, :placeholder => t("registration_center.serial_number"), style: 'display:none' %>
+<% end %>
+
+
+This generates HTML that looks like:
+
+
+Model
+Anthem
+Agent
+Mission
+
+
+
+
+
+
+Now we can put our JavaScript in a separate file and have it not know about any data. We just grab the element that was selected and check if its data attribute is true or false and show/hide the element accordingly.
+
+ 
+
+Example JavaScript that leverages data attributes:
+ File: watch_registration.js
+
+function showHideSerial(component)
+{
+  	var dataid = $(component).find(':selected').data('serial');
+  	if (dataid == null || dataid == false)
+  	{
+    	    $('#watch_registration_serial_number').hide();
+  	}
+  	else
+  	{
+    	    $('#watch_registration_serial_number').show();
+  	}
+ 
+}
+
+
+  $("#watch_registration_model_id").on('change', function() {
+  	showHideSerial(this)
+  });
+
+ 
+
+Now we have the same working code and it does not rely on generating any JavaScript variables and the JavaScript does not need to be inline in the code nor rendered on the server side because no variables are injected. Previously I mentioned that there were several good reasons not to put your JavaScript inline. Let’s discuss those now.
+
+ 
+
+The Web Standards Project describes four benefits of unobtrusive DOM scripting in their JavaScript Manifesto.
+
+ 
+
+Usability: An unobtrusive DOM script does not draw the attention of the user - visitors use it without thinking about it.
+ 
+ 	Graceful degradation: Unobtrusive DOM scripts never generate error messages, in any browser, even when they fail. If features cannot be presented properly, they silently disappear.
+ 
+ 	Accessibility: If any script fails, the page still delivers its core functions and information via the markup, stylesheets, and/or server-side scripting.
+ 
+ 	Separation: For the benefit of other and future web developers, all JavaScript code is maintained separately, without impacting other files of script, markup, or code.
+
+ 
+
+For me, #4 in the list above is huge. It allows you to more easily manage, package, and minify your JavaScript making your whole site use less bandwidth and perform better.
+
+ 
+
+Lastly, if you are using the Ruby on Rails framework or other framework that supports something like TurboLinks or PJax, you will have to package your JavaScript into one file to make it work. TurboLinks and PJax can make your users’ browser experience considerably faster.
+
+ 
+
+Hope these tips helped. Enjoy your JavaScript coding!

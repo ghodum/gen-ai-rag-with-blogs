@@ -1,0 +1,9 @@
+Spencer Jones will present at NationJS
+Solution Street's very own Spencer Jones will present on GunJS at the upcoming NationJS conference on December 1st.  Please visit http://nationjs.com for more details about this conference.
+
+
+Spencer Jones
+Spencer Jones is a humanities major turned software developer via free tutorials, Stack Overflow, sweat, and occasional tears.
+He believes everyone should have access to high-quality and reliable information. He believes in Open Source, and in creating and distributing high-quality information and code for free.
+By day, he contributes to enterprise systems and by night, contributes to Open Source. One day, he hope that his day job will be building Open Source systems.
+Stuff he cares about: clean, documented code; testable and tested code; teamwork; Greek; coffee; cycling.

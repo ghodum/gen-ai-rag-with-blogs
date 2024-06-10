@@ -1,0 +1,182 @@
+Avoid CodeThinking - The Pitfalls of Trial and Error Coding
+
+
+ 
+
+Do you suffer from this issue? I can’t tell you how many developers I have seen who fall into this trap. I certainly have from time to time. I can’t say that using coding instead of thinking is always bad, but in so many cases it turns good code from simple elegance into a whole lot of mangled spaghetti.
+
+ 
+
+What is CodeThinking and why should you avoid it? CodeThinking is when you use trial and error coding instead of just taking a step back to rethink the problem you are trying to solve. 
+
+ 
+
+Consider this ‘non-technical’ example of CodeThinking. Think back to your school days when your teacher asks you to write about what you did over the summer. For this assignment, the teacher requires each paragraph to (1) thoroughly describe an event or activity and (2) have a minimum of four adjectives. You write several paragraphs and reread your work noticing that for many paragraphs you've missed some things. For example, one of your original paragraphs may have been:
+
+ 
+
+One of the highlights of the summer was a trip I took with my family to the beach. We spent two weeks at a resort and swam in the ocean, played games, and took walks.
+
+
+ 
+
+After reading the paragraph, you see that you don't have enough adjectives, so you decide to quickly 'fit in' a few to the text as is, adding these words (shown in bold):
+
+ 
+
+One of the highlights of the summer was a trip I took with my family to the beautiful beach. We spent two weeks at a seaside resort and swam in the blue ocean, played games, and took long walks.
+
+
+ 
+
+Now when you reread it, you realize that it includes the minimum number of adjectives, but it's questionable as to how 'thoroughly' you've described the event so you retrofit a couple of sentences:
+
+ 
+
+One of the highlights of the summer was a trip I took with my family to the beautiful beach. We drove to the beach which took four hours. It was a yellow car. We spent two weeks at a seaside resort and swam in the blue ocean, played games, and took long walks.
+
+
+ 
+
+Although you have now added some descriptions along with the adjectives, the sentences are rather choppy and uninteresting. Could there be a better way? Yes - instead of going back and adding pieces one by one, a more effective strategy is to take a step back, plan your approach and how you can incorporate all parts of the assignment, and compose the paragraph in a comprehensive way. For instance:
+
+ 
+
+One of the highlights of the summer was a trip I took with my family to the beach. My entire family, and even my dogs, spent two weeks at a seaside resort. The morning we left for the beach, we packed up our yellow car and drove for four hours singing along to the radio. When we reached the resort, we were awed by the clear, blue ocean and immediately went swimming. In the evening, we took a long walk with our dogs. The weather was so beautiful and the water so warm during our entire trip, that we swam each day and walked or played games each night.
+
+
+ 
+
+By taking a moment to consider the assignment as a whole and organize the content before tackling it as in the example above, the end result not only fulfills all the requirements of the assignment, but makes for a cohesive, flowing end product.
+
+
+
+ 
+
+With coding, the example is similar. You are starting with an idea on how to solve a particular problem. You begin coding. You then realize that your solution doesn’t address all scenarios and you start coding around your current code (using ‘if’ conditions and the like) to account for alternate scenarios. You may come to a solution that works, but is it the right solution? Does it make sense? Is it understandable? Could it be written simpler and more elegantly? Is it easy to maintain? 
+
+ 
+
+Let’s take a coding example. 
+
+ 
+
+Let’s say you understand the problem as follows: Given a string of characters you are to alter the string by moving each character from the front to the back of the string a number of times based on a designated number parameter. So, using the word 'CodeThinking' and the number '3' you would get 'eThinkingCod' returned. You may quickly say to yourself, “That’s easy, I’ll just chop off 'n' number of characters from the front and move them to the back using basic substring functionality.”  You then proceed to write the following:
+
+ 
+
+
+function rotate(myStr, numOfCharsToRotate) {
+  // chop off what becomes the first part
+  var lastPart = myStr.substring(0,numOfCharsToRotate); 
+  // get remaining part
+  var firstPart = myStr.substring(numOfCharsToRotate);  
+  // glue them together
+  return firstPart + lastPart;
+}
+
+console.log(rotate('Arthur',2));
+⇒ “thurAr”
+
+
+
+ 
+
+Great. That works! You've even added comments to show that you're simply taking 'n' characters from the front of the word/string and moving them to the end. But wait! You now realize this problem was harder than you thought - as most coding problems are. You haven’t thought through the different scenarios and you realize that the end result is not the same if you use a negative number. Unlike a positive number, this function handles a negative number by rotating the characters in the other direction. (Maybe you didn’t think of this initially or maybe this wasn’t in the original spec/ticket/discussion, but new scenarios emerge). So what do you do? You write an ‘if’ condition to handle that case (highlighted below):
+
+ 
+
+
+function rotate(myStr, numOfCharsToRotate) {
+  var lastPart;
+  var firstPart;
+  if (numOfCharsToRotate < 0) {
+     // when it’s a negative number move the chars in reverse 
+    var myStrLength = myStr.length;
+    // chop off what becomes the first part
+    lastPart = myStr.substring(0,myStrLength - (numOfCharsToRotate * -1)); 
+    // get remaining part
+    firstPart = myStr.substring(myStrLength - (numOfCharsToRotate * -1));      
+  } else {
+    // chop off what becomes the first part
+    lastPart = myStr.substring(0,numOfCharsToRotate); 
+    // get remaining part
+    firstPart = myStr.substring(numOfCharsToRotate);      
+  }
+  // glue them together
+  return firstPart + lastPart;
+}
+
+console.log(rotate('Arthur',2));
+⇒ “thurAr”
+
+console.log(rotate('Arthur',-2));
+⇒ “urArth”
+
+
+
+ 
+
+Great. That works! You don’t feel too bad, because even if you’ve doubled your lines of code by adding some confusing substring calculations, anyone reading this can mostly make out what you are doing. But wait! You now realize that you haven’t thought this problem all the way through. You hadn't considered the possible case of a really large number, a number larger than the number of characters in the word/string; essentially cycling the letters of the string over and over again. Now you say to yourself, "Hmmm. How am I going to handle that? Well, because this is only an issue if my number is greater than the length of the string, I’ll just add an ‘if’ condition for that. This should be easy since I can just use the modulus operator to deal with that scenario." So you write another 'if' condition:
+
+ 
+
+
+function rotate(myStr, numOfCharsToRotate) {
+  var lastPart;
+  var firstPart;
+  
+  if (numOfCharsToRotate > myStr.length) {
+    // for large numbers we need to simplify
+    numOfCharsToRotate = numOfCharsToRotate % myStr.length;
+  } 
+  if (numOfCharsToRotate < 0) {
+    var myStrLength = myStr.length;
+    // chop off what becomes the first part
+    lastPart = myStr.substring(0,myStrLength - (numOfCharsToRotate * -1)); 
+    // get remaining part
+    firstPart = myStr.substring(myStrLength - (numOfCharsToRotate * -1));      
+  } else {
+    // chop off what becomes the first part
+    lastPart = myStr.substring(0,numOfCharsToRotate); 
+    // get remaining part
+    firstPart = myStr.substring(numOfCharsToRotate);      
+  }
+  // glue them together
+  return firstPart + lastPart;
+}
+
+console.log(rotate('Arthur',2));
+⇒ “thurAr”
+
+console.log(rotate('Arthur',-2));
+⇒ “urArth”
+
+console.log(rotate('Arthur',19));
+⇒ “rthurA” 
+
+
+
+ 
+
+Great. That works! Uh, actually it doesn’t. You realize that you're not handling really large negative numbers. What do you do? Well, you think to yourself, "I can add an ‘if’ condition and handle that!" No!!!!! You can continue with this example and although you may end up with a solution that 'works', this is not quality, maintainable code. This is code spaghetti. Something you should avoid.
+
+ 
+
+
+
+ 
+
+Obviously this example may not be real world, but as a developer you have seen problems like this where you try and address the 'happy path' first, but then realize your solution doesn’t work in all cases. We, as developers, use the tools in front of us and often find we'd prefer to code more lines instead of deleting anything we’ve already written. 
+
+ 
+
+If you find out that your solution doesn’t work after you start coding, it's best not to append your code with more and more ‘if’ conditions. Stop, take a step back, and think. Look at your inputs and outputs. Think about all of the different scenarios. Identify an approach that satisfies the requirements fully. And THEN code!
+
+ 
+
+Now that I’ve blasted CodeThinking, I can tell you that there are certainly instances where using Coding to solve a problem is acceptable. For example, I (and many others) use a Ruby console or a Rails console (coding playgrounds) to test out ideas. There are equivalents in other software languages and frameworks. This is a highly useful way to help solve problems using Coding. The main difference here is that this Coding is throwaway. The developer is just using their code to help solve a problem and then throw away the quick and dirty code and actually determine a solution that is efficient and elegant.
+
+ 
+
+Coding Challenge: If you are a developer who can solve my coding exercise the 'right' way, then Solution Street may be a fit for you!  Please feel free to send solutions to jobs@solutionstreet.com with your resume.

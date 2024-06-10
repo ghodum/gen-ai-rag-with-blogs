@@ -1,0 +1,308 @@
+SQL Exploration
+
+
+ 
+
+I’m currently working in a primarily front-end role and I haven’t needed to use much SQL other than an occasional basic SELECT statement. That said, having a baseline level of competency in SQL is important for any developer. To continue my growth, I decided to take a dive back into Structured Query Language. My goal was to get a better grip on the basics and begin to explore some more advanced concepts. This article chronicles my exploration and provides explanations and examples for utilizing some aggregate functions as well as joins and groupings.
+
+ 
+
+Quick note before we begin: All of the SQL written in this article is “standard ANSI” SQL and should work on any ANSI-compliant database. Different database engines (i.e., MySQL, PostgreSQL, Oracle) come with their own custom SQL functions, syntax, etc., that build on the ANSI standard, but it is usually best to stick to the standard unless you need some database-specific feature or function.
+
+ 
+
+Getting Started
+
+ 
+
+First, I needed sample data. Some searching led me to this database of fake employee data. It has several tables filled with information including names, birth dates, hire dates, salaries, departments, and titles - an ideal data set to play around with.
+
+ 
+
+Next, I needed a simple way to write SQL statements and view the results. This is achieved by setting up a simple MySQL or PostgreSQL database, and using one of many free apps available for either Mac or Windows to view the schema and run queries. If you don’t feel like taking the time to set up your own database but would like to follow along, you can view the schema here and skip to the next section.
+
+ 
+
+If you’d like to test out some SQL using this database, I would recommend starting with MySQL simply because it’s easiest to set up. If you don’t already have MySQL installed on your machine, follow these instructions to get started. Once MySQL has been installed, open up a terminal (OS X) or command prompt (Windows) and clone the sample database using the following command:
+
+ > git clone https://github.com/datacharmer/test_db/
+
+ 
+
+Then run:
+ > mysql < employees.sql
+
+ 
+
+If the above command doesn’t work, you may need to run it as the root user:
+ > mysql < employees.sql -u root -p
+
+ 
+
+Then enter your root password. (The default is “password”.)
+
+ 
+
+You can test the installation by running:
+ > mysql -t < test_employees_md5.sql
+
+ 
+
+Once your database is set up, you’ll need a way to run some queries. MySQL Workbench is the official graphical user interface (GUI) tool for MySQL and will be perfect for our purposes. After it’s installed, open it up and you should see a local instance under the MySQL Connections header. Click on the instance. If prompted, enter your password. Now you should be taken to the main screen of the app. On the left sidebar, look for the SCHEMAS section, where you’ll find a list of databases (or just one database). Double click employees, and the text should turn bold. Our sample database is now ready for SQL querying! You can type your queries in the Query window. Click the lightning bolt icon to execute.
+
+ 
+
+Next, I’m going to go ahead and jump into some technical explanations beginning with aggregate functions. If you haven’t gotten the hang of simple SELECT / WHERE statements yet, it might make sense to get a feel for how a basic SQL query is formatted, then come back. (W3Schools is a great place to start!) Otherwise, let’s get into it.
+
+ 
+“[H]aving a baseline level of competency in SQL is important for any developer.”
+ 
+
+Aggregate Functions
+
+ 
+
+An aggregate function performs a calculation on a set of values and returns a single value. In the following section, we’ll walk through some of the most commonly used SQL aggregate functions: COUNT, SUM, MAX/MIN, and AVG. We’ll also make use of ROUND, which, although it’s not an aggregate function, will be particularly useful in conjunction with AVG.
+
+ 
+
+It is generally good practice to add AS [name] to the SELECT line of aggregate queries. AS is used to assign variable names to the result columns.
+
+ 
+
+COUNT() will return a number with the amount of rows that fit the specified criteria. It takes in an argument, but because COUNT simply returns a number of rows, that argument will often be a simple asterisk (*) which, in SQL terms, means “all columns”. If you instead choose to pass in a specific column, any rows that have a NULL value for that column will not be counted. Here is an example from the employee database using asterisk as the argument:
+
+SELECT COUNT(*) AS employee_count
+FROM employees
+WHERE birth_date > '1960-01-01';
+
+employee_count
+117075
+
+ 
+
+The query above shows us that a total of 117,075 employees were born after (but not including) January 1st, 1960.
+
+ 
+
+SUM()  will - as you’d expect  -  return the sum of a numeric column. If we want to see the sum of all salaries, we would write the following query:
+
+SELECT SUM(salary) AS 'salaries_totalled'
+FROM salaries;
+
+salaries_totalled
+181480757419
+
+ 
+
+Once we add joins and grouping to the mix, SUM will become more useful. Let’s come back to this one a bit later.
+
+ 
+
+MAX() / MIN() will return the maximum or minimum value of a numeric column. Let’s query the salaries table once again and use MAX() to find the highest salary:
+
+SELECT MAX(salary) AS 'highest_salary'
+FROM salaries;
+
+highest_salary
+158220
+
+ 
+
+AVG() also takes in a numeric column and returns  -  you guessed it  -  the average of the values for that column.
+
+ 
+
+ROUND() is slightly different in that it takes two arguments  -  a column and the number of desired decimal places. It can be useful in conjunction with AVG like:
+
+SELECT ROUND(AVG(salary), 2) AS 'avg_salary'
+FROM salaries;
+
+avg_salary
+63810.74
+
+ 
+
+which will return the average salary rounded to the nearest cent; $63,810.74 in our case.
+
+ 
+
+Joins and Grouping
+
+ 
+
+The JOIN command allows us to access data from more than one table. The syntax of a JOIN line is as follows:
+
+JOIN 
+ON . = .
+
+ 
+
+The primary key serves as a unique identifier for each row. It is good practice to have a primary key column on every table.
+
+ 
+
+The foreign key is a reference to the primary key of another table. In our case, we have an emp_no column on the titles table. This allows us to join the employees and titles tables together by matching the primary key of employees to the foreign key on titles. This key-matching occurs after the keyword, ON. Once a JOIN is introduced to a query, column names must be prefaced by their respective table names followed by a period.
+
+ 
+
+Generally, aggregate functions can become a lot more useful when GROUP BY is added to the mix. Instead of simply finding an aggregate of all values in a particular column, it allows us to be more specific. For example, using JOIN and GROUP BY we can find the number of employees with each title:
+
+SELECT COUNT(*) AS 'num_of_employees', titles.title AS 'title'
+FROM employees
+JOIN titles ON titles.emp_no = employees.emp_no
+GROUP BY titles.title;
+
+num_of_employees	title
+15128	 		Assistant Engineer
+115003	 	        Engineer
+24	 		Manager
+97750	 		Senior Engineer
+92853	 		Senior Staff
+107391 		        Staff
+15159	 		Technique Leader
+
+ 
+
+Now, instead of counting employees, what if we wanted to find the average salary by title?
+
+SELECT AVG(salaries.salary) AS 'avg_salary', titles.title AS 'title'
+FROM salaries
+JOIN employees ON employees.emp_no = salaries.emp_no
+JOIN titles ON titles.emp_no = employees.emp_no
+GROUP BY titles.title;
+
+avg_salary	title
+59304.9863	Assistant Engineer
+59508.0397	Engineer
+66924.2706	Manager
+60543.2191	Senior Engineer
+70470.8353	Senior Staff
+69309.1023	Staff
+59294.3742	Technique Leader
+
+ 
+
+Looks like the average salaries for each title are pretty similar at this company. (Likely a result of the randomly generated data we are using.)
+
+ 
+
+Because salaries are on their own table, we had to use another JOIN. We took the average FROM salaries, joined employees ON the salaries table, then joined titles by matching up keys with employees. Finally, we grouped by the titles.title column once again. Due to the large number of decimals in those averages, we probably could have benefited from using the ROUND function.
+
+ 
+
+For our next example, we’ll count the number of employees in each department:
+SELECT COUNT(*) AS 'employee_count', departments.dept_name AS 'dept_name'
+FROM employees
+JOIN dept_emp ON dept_emp.emp_no = employees.emp_no
+JOIN departments ON dept_emp.dept_no = departments.dept_no
+GROUP BY departments.dept_name;
+
+employee_count	        dept_name
+23580			Customer Service
+85707			Development
+17346			Finance
+17786			Human Resources
+20211			Marketing
+73485			Production
+20117			Quality Management
+21126			Research
+52245			Sales
+
+ 
+
+This one is a bit more complicated than you might expect because the departments table cannot be joined on employees as they share a many-to-many relationship. An employee can belong to several departments, and each department can have many employees. With a many-to-many relationship, neither table contains a foreign key for the other.
+
+ 
+
+Instead, a join table is used. In our case, that is dept_emp. The dept_emp table does not contain any data other than emp_no, dept_no, and the start and end dates:
+
+
+
+ 
+
+Let’s add one more piece to our previous query. If we want to only return the departments that have more than 125 employees, we would use a HAVING clause:
+
+SELECT COUNT(*) AS 'employee_count', departments.dept_name AS 'dept_name'
+FROM employees
+JOIN dept_emp ON dept_emp.emp_no = employees.emp_no
+JOIN departments ON dept_emp.dept_no = departments.dept_no
+GROUP BY departments.dept_name
+HAVING COUNT(*) > 50000;
+
+employee_count	        dept_name
+85707			Development
+73485			Production
+52245			Sales
+
+ 
+
+The way I think of HAVING is  -  it works just like WHERE, but it can only be used in conjunction with GROUP BY.
+
+ 
+
+Types of Joins
+
+ 
+
+Until this point, every JOIN in the examples we have used has been an INNER JOIN. (Also known as a simple join.) This is the most common type of JOIN. It returns only the rows that have matching values in both tables.
+
+ 
+
+There are three additional types of joins, and they could all be generally characterized as OUTER joins. In each case, the keyword OUTER is optional.
+
+ 
+
+LEFT OUTER JOIN returns all rows from the table mentioned first (the “left” table) along with the rows from the other table whose values match up with the first. The following example would return all employees, even if they don’t have a title. Using an inner join would have omitted those titleless employees. (Unfortunately our sample data doesn’t have any employees who are missing titles.):
+SELECT employees.last_name, titles.title
+FROM employees
+LEFT JOIN titles ON employees.emp_no = titles.emp_no;
+
+ 
+
+RIGHT OUTER JOIN does almost exactly the same thing, but it returns all rows from the second (“right”) table mentioned instead. For the visual learners, let’s take the above example and flip it around using RIGHT JOIN to achieve the same result:
+SELECT employees.first_name, titles.title
+FROM titles
+RIGHT JOIN employees ON employees.emp_no = titles.emp_no;
+
+ 
+
+The third type of outer join is a FULL OUTER JOIN. This can be written like the two above examples and simply returns all rows from both tables mentioned. Matching rows will be represented as a single row, and for rows that do not have a match, the result set will have NULL for all columns of the table without a matching row.
+
+ 
+
+I found these diagrams from W3Schools to be a helpful way to visualize the different types of joins:
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+To dig a bit deeper into joins, check out the Join_SQL Wikipedia page. It contains more thorough explanations, examples, and information on less common types of joins. (This includes the CROSS JOIN which returns the Cartesian product of rows from the tables in the join; in other words, all possible combinations of rows.)
+
+ 
+
+Conclusion
+
+ 
+
+Going through these examples helped me gain a better understanding of SQL principles, and I hope this has been helpful for you as well. If you haven’t already done so, I would encourage you to download the sample data and set it up with a GUI tool so you can practice running queries of your own.
+
+ 
+
+Now that I feel I have a decent grasp on some of the most common SQL functions, I plan to learn about performance tuning. I see that topic come up quite a bit on my current project, and I can imagine it being incredibly useful for future endeavors.
+
+ 
+
+Happy Sequeling!

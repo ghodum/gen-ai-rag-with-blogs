@@ -1,0 +1,71 @@
+Let’s Take a Low-Code Platform for a Test Drive Part 2
+
+
+
+
+In January last year I wrote about trying out a low-code platform called Budibase (pronounced buddy base). As I mentioned in my original article, I was impressed with the low-code platform and could see some benefits, but I also had some lingering questions and concerns about the platform. My concerns included custom application logic and custom email templates among other things. At that time I mentioned those questions in the Budibase GitHub discussion area. Michael Shanks, the cofounder of Budibase, kindly responded to my areas of concern and questions about feature improvements with “So - pretty much a no to everything right now, but you're on the same wavelength as us! These will all get done, it's just a matter of priorities.” Let’s jump forward to this year and it looks like they have made some significant improvements and almost all of my feature concerns have been addressed. 
+
+
+In my original article I was using version 1.0.28. The current version of Budibase is 2.6.6. There have been a number of major improvements to the software. Note that updates to recent versions are automatically performed by Budibase with the user’s permission. Any deprecations in the software are pointed out and the software actually directs the user to make the suggested changes similar to how WordPress operates. For example, in my first article I had created a pickleball reservation system and the custom layout (using grids and sections) that I created for that system has been deprecated. Now Budibase has a very simple drag and drop design feature. Within a few minutes I was able to update all of my code to the 2.6.6 version. 
+
+
+
+
+
+
+
+
+In this article, I will review the concerns I had and how Budibase addressed them and point out new features. The main areas I was concerned about were:
+
+
+
+Custom application logic 
+
+
+HTML templates for sending emails
+
+
+Unit testing JavaScript code
+
+
+Multiple developers working together on a project
+
+
+
+Custom application logic - The lack of ability to use custom logic in Budibase was a significant issue for me. In prior versions of the software you had access to some custom logic, but with the release of Budibase 2.0, the door has swung wide open. Now, you can build custom data sources and components as plugins with JavaScript. These can be built locally using the Budibase CLI and you then have access to the Budibase SDK which provides access to all internal APIs and the internal system context. With this you can pretty much build upon anything you need in Budibase. Budibase provides a set of premade plugins for use. These include data sources such as connections for SOAP and Stripe and components such as calendar widgets, pdf viewers, and tooltips.    
+
+
+As it was with prior versions, you can stay within the context of Budibase and write code, whether it’s simple bindings using Handlebars or custom JavaScript. Here, in an automation step, I send an email to the pickleball players who are part of the reservation. The automation step prior to this one actually does the querying and this step produces the content of the email via a Budibase looping mechanism. I am using some very simple JavaScript for the content based on the variables I have access to within the context of the prior automation step. 
+
+
+
+
+
+The one area not yet addressed by Budibase is the ability to truly debug the JavaScript code when it’s within the context of Budibase like I have above. 
+
+
+HTML templates for sending emails - Previously with my view of Budibase the dynamic capability of sending emails was limited. Now that feature has been implemented. First, you can establish templates for basic interactions like user management (user welcome, user invitation, password recovery) in addition to custom templates for sending emails.
+
+
+
+
+
+Within the automations of Budibase, where you would be sending emails, you can customize the HTML with any text, handlebars code, or write JavaScript code to generate any dynamic HTML content. 
+
+
+
+
+
+Unit testing JavaScript code - JavaScript can be used within the context and development of Budibase automations, and similarly, it can also be used to build a custom component. With the building of custom components, unit testing can be added with ease since you are within your own development environment. As for JavaScript code blocks added within Budibase, unit testing falls back to manual unit testing or as in the case of automation, the very nice manual dialog testing feature included in every automation.
+
+
+Multiple developers working together on a project - Right now Budibase is using the old-school pessimistic style of locking the repository/project for each developer, therefore only one developer can make changes at a time. The enhancement is allegedly being worked on where multiple developers can make changes with revision history and version control. 
+
+
+Clearly Budibase has had some significant improvements and makes a compelling argument for using this low-code software for anything from internal tooling to small customer-based applications. As with many low-code/no-code products, the measurement of using the software needs to take into account the pricing. Budibase pricing, for example, has free versions, both on cloud and self-hosted, but quickly increases based on number of users and additional features typically needed in production environments.
+
+
+As for using low-code/no-code products at Solution Street, there are certainly a host of evaluation criteria to determine whether or not to use a product like Budibase. This includes whether or not the feature set is rich enough. It also includes whether or not the environment is open enough for customizations. It also includes the pricing and how well the platform is maintained, product roadmap, and how responsive software custodians are to questions and suggestions. Of course there is the question of whether we can find or train developers on the platform and even whether or not developers would want to operate on such a platform. With all of these questions we need to evaluate what is best for the client and which platform will truly help create the most appropriate system to meet the client’s needs. 
+
+
+There are large players in the field like Appian and OutSystems as well as others, and then there are smaller players like Retool and Budibase. With each of these platforms, you need to make the choice (or decision) on just how committed you are to these platforms. As I mentioned in Part 1 of this article, I had used the Forté 4GL back in the 90s. At the time, Forté was very advanced and many companies took the plunge and built applications within the Forté platform. Once you go down that path, it’s very difficult to pivot to something else or move to pure custom development. The same is true for these low-code/no-code platforms. With the addition of allowing for custom components, data sources, and application logic, is it comfortable enough that the tool helps in many areas of development but gives you an “out” if necessary?

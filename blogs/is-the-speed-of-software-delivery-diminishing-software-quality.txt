@@ -1,0 +1,69 @@
+Is the Speed of Software Delivery Diminishing Software Quality?
+
+
+
+
+In the past, the process of releasing software was a big deal with a high cost for mistakes. Before the dawn of the golden age of the internet, most, if not all, software was distributed via physical media. So, what happened if a bug made it through the quality assurance process and into the hands of the customer? Well, it meant the same thing as if one was releasing the software for the first time. The bug would have to be fixed, verified, loaded onto physical media, sent to the customer, and installed. The process was neither quick nor painless for everyone involved. It often took days, if not weeks, and caused a lot of upheaval. Therefore, when something was cut for release, the team put considerable effort into ensuring its quality.
+
+
+These days, software companies have it relatively easy in regards to deploying their products. While physical distribution and on-site installations still have their places, a great deal of software is distributed digitally, and usually online. While this tends to make things far cheaper, faster and easier, as time has passed, an uglier side-effect of this technological revolution has started to show its head. 
+
+
+Tempting shortcuts
+
+
+Many of you have likely been in this situation before: A bug is discovered perilously close to release time. The team then triages the bug to some extent and determines that the bug in question isn’t disruptive enough to stop the scheduled release. And, just like that, the team knowingly deploys the defect to production, to be fixed at some point in the future. There’s nothing inherently wrong with this at the individual level. After all, we can’t let the perfect be the enemy of the good and slow down the process of delivering and improving the product for the paying customers. And software companies usually get away with this unchecked. But it does mean that the quality of the software slips a little, and over time, the lack of pushback has created complacency.
+
+
+Why have developers adopted such a fast release cycle seemingly at the expense of quality? Because it’s just as easy to fix problems after the fact as it is to deploy in the first place. The power of this simple truth has produced a profound effect on the software development culture as a whole. It’s all too easy to deprioritize non-critical problems that don’t affect the defined “happy path” through the user experience. Lesser-used features and secondary paths through the functionality tend to end up more neglected, buggy, and, in egregious cases, outright unfinished.
+
+
+Over time, some software companies have seemingly lost their ability to manage the quality of their software. After all, if you stop pushing the timelines in order to ensure optimal quality, you tend to not miss deadlines quite so much. From a business perspective, this looks like a clear win. But what happens when the consumers start getting tired of being on the receiving end of it? Something far more damaging than a few bugs starts happening: The company's reputation takes a hit.
+
+
+The appeal of cashing in on unpolished software
+
+
+This phenomenon is easily witnessed in the gaming industry. This phenomenon has slowly crept into their practices as well, and finally, after the better part of a decade, some gamers are starting to run out of patience. And the consumer base in this industry has been relatively patient. There have been numerous instances in the past where a game gets released in a state that clearly isn’t 100% ready. The consumers get mad, and some of them even follow through with their threats to request a refund for the game. But, more often than not, the developers make a public apology, vow to do better, and slowly fix everything over a couple of patches. Most gamers don’t return their purchase, and the developer gets away with it with a small financial penalty, and the cycle continues. A perfect example of this is the Halo: Master Chief Collection, which was a buggy mess on release day, but has since been repeatedly apologized for and relentlessly patched. Now, almost 7 years after its release, it has more features than when it was released, and is one of Microsoft's best-selling games.
+
+
+The act of releasing unfinished software even became an industry “feature” of sorts that still exists today. In 2013, popular game distribution platform Steam started a section called “Early Access” in which consumers would pay full price for what was essentially a game that was in alpha, beta, or in some sort of unfinished state. Some of these games never leave early access, or are shut down prematurely for various reasons, sometimes leaving the customer having paid full price for a never-to-be-finished game. While this behavior is somewhat exploitative, most of these examples tend to be from smaller studios with relatively limited resources. However, when it comes to AAA titles from large established game developers, consumers rightfully have very high expectations. After all, the perception is that companies have a lot of money and resources, and as such, a certain baseline of quality is expected from their products. But sometimes, they fall well short of these expectations.
+
+
+When the leverage is pushed too far
+
+
+When they do fall short, it is often in spectacular fashion. While there have been a few high-profile incidents of this nature in recent years, it’s difficult to top the absolute fiasco that was Cyberpunk 2077. This game had all of the ingredients for success. Developed by CD Projekt Red, a Polish company known for its wildly successful game The Witcher 3, it’s been called the most hyped video game of all time, or at least it was. Promising stunning next-generation graphics, expansive open-world gameplay, and the digital likeness of Keanu Reeves, this game was destined for success.
+
+
+However, on release day, it quickly became clear that all was not well with the title. Reports began surfacing within minutes describing game-breaking bugs, horrendous performance problems, painfully poor AI, and a myriad of other phenomena that made the game difficult to play, if playable at all. And all of that was just on the latest hardware. Cyberpunk 2077 released simultaneously on PC and both generations of consoles. The game had major problems on PC and the latest generation of consoles. But the version released for older generation consoles like the PS4 and Xbox One X was an entirely different story; the game performed so poorly that players felt they really couldn’t play the game. The performance was so egregiously bad that most gaming services offered full refunds with no conditions and no questions asked. Playstation went so far as to remove the game from sale on their PS4 digital store for over 6 months until the game was patched into a better state. Interestingly, multiple shareholders have sued the developer claiming they were fed false and misleading information about the state of the game’s development and quality.  
+
+
+CD Projekt Red suffered a tremendous hit to its reputation. It hasn’t yet released a major title since then. The company did announce that it recouped its development costs, but the fiasco likely cost them enough profits and reputation to get their attention. While this may be the highest-profile instance of recent years, it certainly isn’t the only one. Large developers like Activision-Blizzard, UbiSoft, Bethesda, and others have had poor quality releases cost them money and good-will among their courted consumers.
+
+
+Tipping the scales back toward quality
+
+
+But will these catastrophic failures actually compel software firms to make changes to the paradigm of prioritizing speed over quality in their release cycles? That still remains to be seen. The consumers, ultimately, will be the driving force that will prompt action. If enough of them refuse to accept the sub-par products and either refuse to purchase, or demand refunds, then eventually companies will take notice, since their tarnished reputations will have started costing them money.
+
+
+Alternatively, one could watch the cautionary tales that are unfolding before them and preemptively set a course to avoid falling victim to the same mistakes. After all, reputation is something that money cannot buy, at least directly. And savvy leadership knows that a good reputation can get you far. So, it stands to reason that, conversely, dings to your organizational reputation can actually end up costing you. Poor reputation can, and does, easily translate into lost business. So, if your organization is known for buggy software and rocky releases, sooner or later, word is going to get out about that. That, in turn, might cause a potential customer to think twice about choosing your product or services.
+
+
+A fair example of this phenomenon that is unfolding in real time is with DICE, which is best known for the Battlefield franchise of games. While they have had some commercial successes in recent years with the Star Wars Battlefront series, they don’t have an excellent track record with their own flagship IP. Battlefield 4 had a terrible quality launch, as did Battlefield 5. Both games are considered failures. Now, they’ve just done it again with Battlefield 2042. The launch quality is currently so substandard that the company is being hit with a flurry of terrible user reviews and requests for refunds. At this point, consumers are noticing that it’s becoming a pattern with them.
+
+
+Quality over speed is almost always correct
+
+
+Companies do not set out to deliver poor quality products, though through short-sightedness some tend to sleepwalk right into doing so anyway. But it doesn’t have to be that way! All it takes is the simple internalization of the value of reputation. Do everything you can, within the confines of your present situation, to avoid tarnishing it. If that means delaying a deployment until the quality reaches an acceptable standard, so be it. Your customers won’t like it in the short term, but their reaction will pale in comparison to the ire they will have for you if you deliver them a poor quality product in exchange for their patronage.
+
+
+In the software business, there is always a delicate balance between business considerations and the specifics of development. Things such as cost, scheduling, and other obligations can place pressure on teams to release deliverables on timetables that make them uncomfortable. Sometimes these moments involve tough discussions about cutting things from the initial feature set, or delaying to allow more time to ensure quality. Decisions made in these types of scenarios need to reflect the reality of both the business and technical needs.
+
+
+The mantle of responsibility for making these types of good choices doesn’t rest with the decision makers alone. Everyone has a part to play in these efforts. From time to time in my career as a developer, situations have arisen in which it’s been important to clearly communicate to senior staff my opinion that something just isn’t quite polished enough for delivery. In my experience, if you are able to tangibly demonstrate your concerns, your point of view will be understood and considered. After all, most people are reasonably risk-averse if they fully understand the risks.
+
+
+Don’t take it from me, just look at Red Dead Redemption 2, a prime example of how things should be done. The game was delayed twice, causing it to be released over a year later than expected because Rockstar games thought the game needed more polish. Fans were initially disappointed, but when the game was released, nobody questioned the delays because the game was a masterpiece. It went on to be one of the best-selling games of recent years, with over 38 million units sold. I’d be willing to wager that it wouldn’t have been so wildly successful if they rushed it to market in an incomplete state.

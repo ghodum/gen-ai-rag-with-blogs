@@ -1,0 +1,352 @@
+MySQL to PostgreSQL Migration
+ 
+
+By: Mike B.
+
+ 
+
+ 
+
+ 
+
+In a recent customer engagement we were tasked with migrating an application from MySQL to PostgreSQL. At first glance, this would appear to be a relatively simple and straightforward process. However, there are significant differences in how PostgreSQL and MySQL implement the ANSI-SQL standard which necessitated a review and refactoring of the data access objects, some interesting differences in the support of various data types, and a couple of production configuration issues we had not expected.
+
+ 
+
+What follows is a brief outline of our approach, a few techniques and tools that proved useful in transitioning the application to a PostgreSQL backend, and a list of common sql query features we addressed. The project used python so several of the utilities mentioned in the outline are python-related.
+
+ 
+
+ 
+Installing & Using PostgreSQL
+As with all modern db systems, there are on-line instructions and tools that make working with Postgres and MySQL easy. There are many GUI tools available for working with PostgreSQL. Our team works primarily with Linux systems and we opted to use pgAdmin3. In our work, the pgAdmin3 GUI did have a number of limitations and most of us chose to work primarily with the command line utility, psql.
+
+ 
+
+PSQL is a terminal-based front-end to PostgreSQL that provides an interactive session as well as support for using sql/data files. It provides a number of meta-commands (very linux like) and features that support a variety of tasks. For example in MySQL you use 'show databases' or 'show tables' to see lists of database objects. The corresponding commands in psql are '\l' and '\d'.  PostgreSQL provides good in-line documentation for the commands and there are many helpful on-line resources, e.g., PSQL Cheat Sheet.
+
+ 
+
+ 
+PostgreSQL Roles
+PostgreSQL manages data access using roles and it is critical that they are properly defined in order to protect the data and data access. Roles that have log-in rights are called users.
+
+Roles can also be a group of users, or a group of roles, depending on how they are constructed.
+
+ 
+
+By default, all roles have create and usage rights on the public schema. That is, all roles that can connect to a PostgreSQL database have the ability to create objects in the ‘public’ schema. And moreover, these privileges are also extended to any roles that might be created later.  To reiterate, any particular role will have the sum of privileges granted directly to it, privileges granted to any role (i.e., group) it is presently a member of, and those privileges explicitly granted to public.
+
+ 
+
+In order to properly limit access to data objects in the database schema, the following script was used to create the appropriate access rights for developer use on local systems and on integration servers.
+
+ 
+Create your userCREATE USER <user> WITH PASSWORD '<user_passwd>’;
+Create a new databaseCREATE DATABASE my_pg_database
+
+WITH OWNER = testdba
+
+ENCODING = 'UTF8'
+
+TABLESPACE = pg_default
+
+LC_COLLATE = 'en_US.UTF-8'
+
+LC_CTYPE = 'en_US.UTF-8'
+
+CONNECTION LIMIT = -1;
+Limit access
+REVOKE ALL ON SCHEMA PUBLIC FROM PUBLIC;
+
+REVOKE ALL ON ALL TABLES IN SCHEMA PUBLIC FROM PUBLIC;
+
+REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA PUBLIC FROM PUBLIC;
+
+REVOKE ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA PUBLIC FROM PUBLIC;
+
+REVOKE CREATE ON SCHEMA PUBLIC FROM PUBLIC;
+
+REVOKE CREATE ON SCHEMA PUBLIC FROM <user>;
+GRANT USAGE ON SCHEMA PUBLIC TO <user>;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA PUBLIC TO  <user>;
+
+GRANT USAGE,  SELECT ON ALL SEQUENCES IN SCHEMA PUBLIC TO  <user>;
+
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA PUBLIC TO  <user>;
+ALTER DEFAULT PRIVILEGES IN SCHEMA PUBLIC GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO  <user>;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA PUBLIC GRANT USAGE, SELECT ON SEQUENCES TO  <user>;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA PUBLIC GRANT EXECUTE ON FUNCTIONS TO  <user>;
+REVOKE CONNECT ON DATABASE <database> FROM PUBLIC;
+
+GRANT CONNECT ON DATABASE <database> TO  <user>;
+
+ 
+Migration Process
+While the basic plan for migration is simple:
+
+ 
+
+Define a new PostgreSQL schema based on the existing production MySQL schema.
+Create an empty database with this schema on a PostgreSQL instance.
+Migrate data from the MySQL database into the new PostgreSQL schema.
+Verify the data migration via tests, sql reports, and QA regression testing.
+
+ 
+
+the implementation of these steps was the challenge.
+
+ 
+
+ 
+Schema Conversion
+The most important migration issue to be addressed in our work revolved around data types.  MySQL and PostgreSQL differ in their support of data types which requires re-mapping or translating the MySQL data and potentially, default values, into data types that PostgreSQL supports. To make this process fast, efficient, and as error-free as possible, we needed a migration-data-conversion tool.
+
+ 
+
+After some research and testing we opted to use, py-mysql2pgsql instead of building a custom tool. This module is easily installed via pip (python package installer), has great documentation, and is easy to configure. Executing the script is simple, requiring a small YAML file that defines the two database instances to be used and settings that support schema migration, or data migration, or both. The ability to quickly switch between these migration options proved exceedingly valuable, allowing us to differentiate various schema/data loading errors throughout the project’s lifetime.
+
+ 
+The production MySQL database schema was being actively modified while the migration effort was underway. Having a tool that allowed us to simply and quickly identify and compare schemas vs data issue was truly invaluable.
+ 
+
+As with most of our python projects, py-mysql2pgsql was installed into a virtualenv to make it simpler to upgrade and manage. We used python2.7 for the virtualenv. Installation was simple and all the dependencies were correctly downloaded and installed. In the version we downloaded (v.0.1.5), and for our purposes, it was necessary to create a simple patch file to provide a PostgreSQL supportable default for mysql timestamps set as '0000-00-00’ and null. There are notes about this issue on the py-mysql2pgsql site in the Conversion caveats section of the site.
+
+Commands to instantiate the migration tool.
+virtualenv --no-site-packages ~/envs/py-mysql2pgsql
+source ~/envs/py-mysql2pgsql/bin/activate
+pip install py-mysql2pgsql
+
+Command to run the migration tool
+py-mysql2pgsql -v -f mysql2pgsql.yml
+ 
+
+In the early stages of the migration process, the py-mysql2pgsql script was used to convert and migrate the database structures and a small subset of data. In our testing we immediately noted that not all of the MySQL data structures (e.g., triggers, stored-procs, etc.) were migrated by comparing the ddls for each database. In our case, there were a minimal number of triggers and functions, and these were re-crafted and added as a separate set of installation scripts into our comprehensive migration script. We were exceptionally happy to see that the conversion of MySQL auto-increment attributes into PostgreSQL sequences was properly handled.
+
+ 
+
+At this juncture, our team started running the full suite of unit tests (JUnit) and integration tests (Selenium) against the new schema and application code. It was very important to have a comprehensive and high coverage test-set in order to quickly uncover sql statement flaws and data conditions. The application of interest had a significant set of highly optimized manual sql queries and these tests were invaluable in helping to re-cast the application sql code into proper PostgreSQL syntax. We also used the results of these tests to update and enhance our unit tests going forward.
+
+ 
+
+We cycled through this update, reconvert, retest pattern many times, incorporating changes to our scripts as needed. In the end, this process allowed for a repeatable process, proper documentation of schema changes, and a reliable set of data-consistency checks.
+
+ 
+
+ 
+Migrating Data
+ 
+
+Only after fully validating the database structures and having the application code pass the necessary testing is it reasonable to consider migrating the production data. One of the key issues many migration scenarios miss is to disable any and all constraints in the target database. That is, make sure to start with a target database that has tables and no indices, unique constraints, or triggers. In general, migrators can not rely on the tables being populated in the proper order to comply with all foreign key constraints which will cause the migration to fail.  If update or insert triggers are not disabled, the migration process can quickly slow or fail as the triggers fire. It makes a huge difference when you turn these constraints off!
+
+ 
+
+But, be sure to add these back, AFTER your data has been migrated to help validate the new data. It also helps to migrate using a few big transactions vice many small transactions. In our migration effort, the data-set was fairly small and so this was not a particular concern.
+
+ 
+There is also a setting in the postgresql.conf file you can use to log slow queries. It is suggested that this be disabled (set to 0) for migration purposes, as some big tables could flood the log as the data loads. Again, this was not the case for our effort.
+ 
+Testing
+Once the schema and data had been migrated and validated, a series of custom Perl and shell scripts were used to compare and contrast the corresponding MySQL and PostgreSQL tables (row by col). This worked well for all data types except some varchar columns holding json data. In these cases, manual review was required.
+
+ 
+
+A secondary set of tests comprised a series of business reporting scripts that had been originally written for use with the MySQL instance along with a newly written set of scripts for use with the PostgreSQL instance. These scripts were executed in parallel on a MySQL production snapshot and the migrated PostgreSQL schema instance, respectively. Demonstrating that the reports were identical was critical to getting approval from the corporate business team. These types of tests also helped verify that all the ancillary scripts and tools used within the business processes had been properly converted into valid PostgreSQL.
+
+ 
+
+The QA and Internal testing groups ran automated and manual tests against both application versions (MySQL and PostgreSQL) to verify proper operation.
+
+ 
+
+And finally, we automated the entire process (bash and sql scripts) so that we could run and rerun the migration as needed to insure proper server configuration, properly plan for outages, and to have a reproducible process.
+
+ 
+
+ 
+Production Migration
+As expected, based on our process and testing, the migration from MySQL to PostgreSQL went smoothly.  However, the PostgreSQL system is significantly slower that the earlier MySQL one. To gain insight into the potential issues involved, work is underway with regards to these two issues:
+
+ 
+
+The development team is working with the admin team reviewing the results of a series of ANALYZE queries to see what insight can be gained into how to alter the database configuration or the server configuration.
+
+ 
+
+Investigation/Researching the use of standalone database poolers for Postgres, e.g., PG Bouncer.
+
+ 
+‘PostgreSQL-isms’
+During the course of our work on the project, our team encountered expected and unexpected issues regarding SQL syntax and implementations. What follows below is a list of some of the more interesting scenarios/solutions, as potential helpful reminders for me, and perhaps other developers.
+
+ 
+CASE SENSITIVITY
+PostgreSQL is case-sensitive. This applies to objects (table names, column names, etc) as well as the data in the tables. To demonstrate, the queries below will all return as expected from MySQL, but only #3 will return in PostgreSQL.
+
+ 
+insert into people (firstname) value ('Mike');
+
+select * from people where firstname='mike';
+select * from people where firstname='MiKe';
+
+select * from people where firstname='Mike';
+
+select * from 'PEOPLE' where firstname='Mike';
+
+select * from `PEOPLE` where firstname='Mike';
+
+ 
+
+Case-sensitivity with respect to table and column names was also problematic as a number of migrated tables and columns which were defined in all caps. Rather than attempting to properly double-quote (with escaping) every sql statement, we created a set of sql queries (as a script) to generate the appropriate sql to lowercase all table names, column names and any constraints. The table data was not modified and, yes, this did require a number of unit and api tests to be rewritten to properly test for case-specific data.
+
+ 
+
+ 
+ENUMS vs VARCHAR ARRAYS
+In translating the enum MySQL data type, the py-mysql2pgsql  migration script re-created the MySQL enum values as part of a varchar array constraint for the column. PostgreSQL allows columns of a table to be defined as variable-length multidimensional arrays. However, unlike MySQL, PostgreSQL does not provide the first array element as the default entry for a non-null column. This was resolved, for our project,  by an explicit assignment within PostgreSQL using a series of update sql scripts.
+
+ 
+BOOLEAN
+MySQL uses 1 and 0 as representations of boolean True and False. PostgreSQL uses literal values for the true and false states (see below). This issue required a number of modifications to the application code and business reporting scripts to properly boolean data types.
+
+ 
+Valid literal values for the "true" PostgreSQL state are:
+TRUE, 't', 'true', 'y', 'yes', 'on', '1'
+Valid literal values for the "false" PostgreSQL state are:
+FALSE, 'f', 'false', 'n', 'no', 'off', '0'
+
+ 
+SEQUENCES
+In MySQL it is a pretty simple to have the database auto-generate ID's for new records. You simply set the AUTO_INCREMENT attribute on your column. PostgreSQL uses sequences to support this feature. Sequences are commonly implemented through the 'serial' pseudo-type that provides for the following:
+
+ 
+
+The values for the column will be generated by consulting the sequence
+Sets the default value for the column to be the next value produced by the sequence, e.g., calls nextval(sequence_name)
+Adds a NOT NULL constraint to the column
+Since the sequence that is auto-produced, PostgreSQL assumes that the sequence is only used to generate values for the table containing the serial column. Therefore, if this column is dropped, the sequence will be automatically removed.
+
+ 
+
+Note that the pseudo-type does not implicitly create an index or mark the column as primary key!
+
+ 
+Here is an example of how to script the complete, correct definition for a table with a sequence  - note that this command will create a ‘books_id_seq’ for the id column and adds a unique constraint and an index on the column
+CREATE TABLE books (
+     id SERIAL PRIMARY KEY,
+     color TEXT,
+     size INT4 );
+
+ 
+MySQL if() vs PostgreSQL case()
+The syntax of the MySQL IF function is IF(condition, return_if_true, return_if_false). In Postgres, these are rewritten as CASE statements
+
+ 
+
+MySQL
+SELECT IF(score > 100, 100, score) AS test_score FROM  tests;
+
+PostgreSQL
+SELECT CASE
+     WHEN score >100 THEN 100
+     ELSE score
+END AS test_score 
+FROM tests;
+
+ 
+GROUP BY
+In PostgreSQL, we must explicitly add each table column (but not aggregates) to the group by and order by lists, as depicted below. This is not required when using MySQL.
+
+ 
+
+Generic PostgreSQL Group By
+SELECT column1, column2...columnN, sum(column1,column2)
+FROM table_nameWHERE conditions
+GROUP BY column1,....columnNORDER BY column1,....columnN;
+
+ 
+CONCAT  vs STRING_AGG
+In PostgreSQL, the array_agg function returns an array of elements in the group. The function array_to_string is used (at least in our work) to concatenate the array into a string using the indicated character.
+
+ 
+
+MySQL Example
+--Query
+select owner, group_concat(dog_name SEPARATOR ‘ | ’) from dogs group by owner;
+
+--Results
+--OWNER       GROUP_CONCAT(NAME SEPARATOR '|')
+--mike        koda | xingu
+--tia         fiona | grady
+
+PostgreSQL Examples
+--Query 1
+select owner array_to_string(array_agg(dog_name),’ | ‘) from dogs group by owner;
+
+--Results 1
+--OWNER       ARRAY_TO_STRING
+--mike        koda | xingu
+--tia         fiona | grady
+
+--Query 2
+SELECT breed_id, string_agg(dog, ', ') FROM breeds GROUP BY breed_id;
+
+--Results 2
+--breed_id     dog
+--1            Koda, Xingu
+--2            Grady, Fiona
+
+ 
+ISNULL vs COALESCE
+We used the PostgreSQL coalesce function to replace the standard MySQL IFNULL and ISNULL() functions. Coalesce is in the SQL standard, and it  is supported by MySQL. So it seemed a more flexible for supporting any future migrations as well.
+
+ 
+
+MySQL Example
+SELECT ISNULL(Field,'Empty') from Table;
+
+PostgreSQL Examples
+SELECT CASE WHEN field IS NULL THEN 'Empty' ELSE field END AS field_alias
+SELECT coalesce(field, 'Empty') AS field_alias
+
+ 
+SQL_CALC_FOUND_ROWS and FOUND_ROWS()
+All of our attempts to re-implement the ubiquitous MySQL SQL_CALC_FOUND_ROWS and FOUND_ROWS()  in a PostgreSQL system failed. Searching the literature, we did find one post that might be useful, to others, but did not adequately address our needs. So, in the end, we implemented the following, which ensures consistent results as it is done in a single transaction, but is slow in comparison.
+
+ 
+BEGIN;
+     SELECT * FROM mytable OFFSET X LIMIT Y;
+     SELECT COUNT(*) AS total FROM mytable;
+END;
+
+ 
+
+ 
+Handy Database Import & Export Commands
+Like MySQL, PostgreSQL provides a special command for exporting a full database instance, or any variation of that into a script file. The command is pg_dump and the two most common usages are:
+
+ 
+
+Backup data and schema
+
+pg_dump -U <username> < db_name> > backup.sql
+
+
+Backup schema only
+
+pg_dump -U <username> < db_name> -s > schema.sql
+
+
+
+ 
+
+To reload these dumps back into an existing postgres database
+
+psql -d <existing_db_name>  -f  <pg_dumped_file>
+
+ 
+
+ 

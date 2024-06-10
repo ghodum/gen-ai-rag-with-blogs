@@ -1,0 +1,133 @@
+Where's Your Roadmap?
+
+Introduction
+
+ 
+
+About 15 years ago, I was working as a Software Engineering Director at a prominent Internet Infrastructure company and I inherited a new Vice President, Tom Bright. One of the first requests Tom made to me was to see the technical and product roadmap for the products I was supporting. I looked at him like a deer in the headlights and said, “Um, no I don’t think we have those.” I mean I had tons of ideas of what I wanted to do technically with my products, but I had not plotted them out in a nice way for the team to understand and work towards. I also had not worked with my Product Manager to align my technical dreams for the product with their product roadmap. Turns out they didn't have a roadmap either.
+
+ 
+
+We all have leaders/bosses that make a big impact on us in different ways. For me, one of the most crucial lessons I learned from Tom was the importance of a technical and product roadmap and the alignment of the two for any software system that I was working on. 
+
+ 
+
+So, what is a roadmap? In the realm of software construction, a roadmap is usually a high-level view of the plans for the software for approximately the next 12-18 months, updated quarterly, and often showing quarterly goals. There are two types of roadmaps generally used: the product roadmap and the technical roadmap. 
+
+ 
+
+Product Roadmap
+
+ 
+
+The product roadmap typically lays out key feature objectives on a quarterly basis. Ordinarily the Product Manager/Owner sets the roadmap. The roadmap is considered a living document and is usually updated/adjusted quarterly. Let’s imagine we were building/enhancing/maintaining an Enterprise resource planning (ERP) system. ERP systems are normally made up of many modules including Human Resource (timesheet, expense, employee management), Inventory, Finance and Accounting. See below for a roadmap example for a small ERP system (a large one might have many teams working on it).
+
+ 
+
+
+
+ 
+
+This roadmap lays out four key objectives for the year: 
+
+Q1 - build a timesheet module
+ 	Q2 - reimagine/update/improve the expense module
+ 	Q3 - build and roll out a data warehouse/analytics module
+ 	Q4 - clear the bug backlog of all high and medium severity bugs across all modules
+
+
+ 
+
+By setting a product roadmap, the Product Manager shares his/her vision with the entire team responsible for working on the system.
+
+ 
+
+Technical Roadmap
+
+ 
+
+The technical roadmap is used to lay out the technical goals for the system for the year. These usually relate to the health and technical debt of the underlying code base, libraries and components that make up the system. Typically the Technical Lead/Architect for the system owns the technical roadmap. Below is a sample technical roadmap for the same ERP system.
+
+ 
+
+
+
+ 
+
+
+Q1 - upgrade Ruby on Rails (version 4.1 to 5.1, major version update)
+ 	Q2 - refactor controllers; several are duplicating logic and have too much business logic in them
+ 	Q3 - upgrade all 3rd party gem libraries to latest revisions (to keep secure and up-to-date on patches)
+ 	Q4 - upgrade Linux operating system to the latest major version (EL 6.1 to 7.6)
+ 	Q1-Q4 - continue to gain unit test coverage
+ 	Monthly - ensure all security vulnerabilities at the OS, DB, Ruby, Rails, gem and application levels are evaluated and patched
+
+
+ 
+
+As you can see, ongoing items in the roadmap include increasing unit test coverage and regular patching/evaluating of security vulnerabilities. Other regular items to consider in your technical roadmap are regular evaluation of technical costs including licensing, cloud usage (or hardware utilization if hosted). By setting the technical roadmap, the lead is sharing the vision of the plans to maintain the technical health of the system. 
+
+ 
+
+“Product and technical roadmaps are two tools that can help keep your software projects on track and focused on what is important to your business.”
+
+ 
+
+Harmonizing/Aligning Roadmaps
+
+ 
+
+As you can see above, both the Product Owner and the Tech Lead have big plans for the system. Given these roadmaps, the ability to achieve all goals from each roadmap may not be realistic. Typically the team discusses objectives from both plans and figures out what can be done and where compromise can be made. In a healthy team, both roadmaps are given a thorough review with considerations such as:
+
+ 
+ 
+
+What is the impact if we don’t do one of these items?
+ 	On the product side, will revenue be reduced? 
+ 	Will it impact the competitive landscape (will we fall behind our competitors)? 
+ 	On the technical side, will not doing something slow down future development? 
+ 	Will it make it harder for us to move quickly and build new features? 
+ 	Will it make us more vulnerable to hacking? 
+ 	Maybe (in this example) the Q1 product and technical roadmap items are too big and would require too much merging of code to be done in parallel. 
+ 	Maybe it's better if the Ruby on Rails upgrade is done in Q3 and Q4 (in concert with the gem upgrades) to save time and have a lesser impact on product features.
+
+
+ 
+
+Now that we know what product and technical roadmaps are and how to harmonize them, let’s take a step back and discuss methodologies with a more short-term focus commonly used by organizations these days.
+
+ 
+
+Short-Term Focus Issue
+
+ 
+
+Most projects follow some sort of Agile process, either Scrum Methodology or Kanban. All Agile methodologies focus on short-term deliveries, ability to make changes quickly and deliver in increments. Because of this, the focus of the team tends to be daily/weekly or, at most, monthly deliverables. These short times provide a great constant feedback loop between engineering and product management and marketing. The downside of this is with all the short-term focus, teams tend to not think about the big picture (aka the roadmaps) and get caught up into what are we doing today, tomorrow or next week at the most. This can lead to too much time spent on something that is less strategic to the organization or too little time spent on “achieving” the roadmap objectives. 
+
+ 
+
+So what do you do? At Solution Street we tend to use two strategies to combat “short-term focus” and “lack of planning” described below.
+
+ 
+
+Our Process
+
+ 
+
+We at Solution Street utilize a couple of strategies that allow us to reach our customers' product and technical roadmap objectives. 
+
+ 
+
+The first strategy is planning out several iterations that “achieve” a roadmap objective. This may be one sprint, or may be as many as five or six sprints. The idea here is to scope out items at a “good enough” level of detail and estimate the time to construct them, place these items in tickets/stories and lay out a set of sprints (lay out the backlog for several sprints at once). Some margin of error is built into the plan for the unexpected (see my previous article on estimation). Then after each sprint is complete, we measure how much of our margin of error we used up and why, and whether our roadmap objective is still doable in the timeframe we desired.
+
+ 
+
+The second strategy we use is monthly technical roadmap meetings where we look back at the previous month, see how much of our roadmaps we achieved and decide if we are behind or ahead of plan. Sometimes too much time is being spent on one of the two roadmaps; this review can help balance the effort. If the technical roadmap is being neglected we can use this information to push harder on the product team (if warranted based on progress) to allow more time in future sprints for technical roadmap items.
+
+ 
+
+Conclusion
+
+ 
+
+Product and technical roadmaps are two tools that can help keep your software projects on track and focused on what is important to your business. Many projects today focus too much on the short term and lose sight of the big picture. Using these roadmaps as macro-level sprint planning tools and regularly revisiting them for progress can help keep projects on track!

@@ -1,0 +1,59 @@
+Rapid Development of Mobile Apps Using React Native and Expo
+
+
+I’ve been interested in mobile development for a while, but only recently have I taken a few steps into the mobile development world to gauge how hard or easy it is to put together a mobile app. Ultimately, I discovered that it was easier and faster to do than I first thought. Download the Expo mobile app (for iOS or Android) and use this QR code to see the quick project I built. (The Expo app lets you ‘tunnel’ your code through their app.) Meanwhile, I’ll explain how I got here.
+
+
+
+After researching some of the mobile development frameworks and reading Joel’s article on the subject, I decided that React Native made the most sense to start with. I highly recommend this udemy course for learning React Native with Redux. I had started to write some code and used my iOS simulator to see it running on my Mac but I realized that trying to share that with others was not going to be easy. To share with a few others or even have the application running on my own mobile device I would have to either deal with an App Store developer account or set up my Mac using Xcode to run something locally. Neither is that difficult, but these additional steps would be a time waste.
+
+I then came across Expo. Expo has its XDE (Expo [formerly Exponent] Development Environment) which allows you to create or import a project and quickly view your app on any mobile device. It also comes with an SDK containing useful tools to communicate and connect with mobile native functions. It’s not an IDE - you can use whatever text editor you are familiar with (Atom, Sublime Text, etc.). With Expo running and tunneling my code to the application via their XDE tool I can simply write my code in my regular text editor, save it, and see immediate changes on my mobile phone.
+
+Now granted, there may be many times that viewing in a simulator on my Mac is better, but there’s certainly something tactile in interacting right on my phone rather than a simulator. Not only that, but I can share my code, in development, with others via a QR code - either running on my machine or pushed to the cloud. This is abundantly useful in getting quick feedback from others while still in development. This process of developing mobile code and updating based on user feedback is much quicker and simpler than needing developer accounts with the App Store or Google Play.
+
+Here’s the quick path to get up and running with an app in Expo:
+
+
+
+Download Expo XDE.
+
+
+
+
+
+
+Within the XDE create a new project or import an existing React Native project. Use your favorite text editor separately. Expo creates a nice starting point of a mobile app with some navigation.
+
+
+
+
+
+
+Once your project is running in the XDE you can see the project working on your phone via the Share button (displaying the QR code). You can share this QR code with others. Every time you save your code a new version is shown.
+
+
+
+
+
+
+You then can publish your code via the Publish button in the XDE to avoid having it run locally and share that QR code with others. Projects can be public or unlisted; set via an attribute in app.json which is in the root folder of your project.
+
+
+
+
+
+
+You can also start the iOS or Android simulator via the Device button.
+
+
+
+
+Anytime you need to switch out apps within Expo on your phone, just shake your phone to get back to the main menu.
+
+
+
+Now back to my app that I created and you have loaded with the QR code I mentioned earlier. With my tester app I wanted just to see how fast I could get things working. I created a new project in Expo and figured I’d try to make a RESTful API call and return some JSON and then also play around with form processing. For the RESTful API call, I simply called out to a service we already have here at Solution Street which returns a list of our current job openings. For the form, I decided it made sense to create an 'Apply for a job' form which could also exercise logic to choose a document from your phone (iCloud, Google Drive, etc.) and then save the data into Firebase. Of course, it doesn’t really make sense to create a mobile app like this since most users wouldn’t download an app in order to apply for a job, but nonetheless I wanted to test out some basic features (e.g., RESTful requests, form processing, validation, Firebase) with something quick and easy.
+
+For each of these features, I used npm to bring in external libraries and then wrote my React Native code. I spent no more than a few hours putting this app together and was surprised how quickly I created it - granted, I didn’t focus on look and feel much and thorough testing. Not everything was smooth and quick. I did notice slowness when using Expo via my phone and this world of using React Native with Expo is relatively new so there wasn’t as much support for issues I was running into. However, I was more than satisfied with the full experience and would definitely use the tool for a production app. After playing with an app locally you can publish the app (made publicly available for all Expo users, or unlisted, where a direct link is needed) so that others can see, use, and test. Publishing is great since it doesn’t require your development environment to be running. You are publishing to another server. Once ready for production you can take the additional steps to deploy to the App Store or Play Store.
+
+One additional, and fun, aspect of Expo was its snack feature. For those of you familiar with jsFiddle, this is the equivalent for React Native mobile apps. What makes this so powerful is that you can quickly view previously built components on your own device. This creates a great community for sharing mobile components. This whole process of sharing mobile snippets or actual apps is addictive. Here’s a game from the docs. Just scan the QR code in the Expo app and you are set! If you are already within an app inside of the Expo app, just shake your phone and then you will be given the option to load another app. Enjoy! If you are looking to do mobile development, I highly recommend React Native with Expo for rapid prototyping and development of mobile applications.

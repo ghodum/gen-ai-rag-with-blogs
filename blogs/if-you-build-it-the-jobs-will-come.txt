@@ -1,0 +1,54 @@
+If You Build It...The Jobs Will Come
+
+
+
+
+How do you know you’ve learned a new programming language or web framework? Build something!
+
+
+After over thirty years in the software development industry, as a coder and a business owner, I am often asked by those new to the industry for guidance about landing that first coveted development job. Those seeking my advice include students who are studying computer science in college, recent graduates with computer science and related degrees, or those who have recently taken a bootcamp course looking to break into the software development industry. I have always liked giving advice and there’s much that I like to share with those who are asking for it, but the number one piece of advice I give when asked about the best thing to do to stand out as a candidate and get that first developer job is to build something.
+
+
+As most of you know, there are countless tutorials out there to teach us how to code in a new programming language or understand a new framework. These tutorials are incredibly useful and effective. Many are free and many cost very little. In addition, there are Codecademy and Udemy courses that give step-by-step instructions and examples of how to use a language or framework. Both experienced and novice developers use these platforms to learn something new. I use them myself. But learning how to use a programming language or framework to build something is one thing; building something from scratch is the next level and the true test of showing that you know what to do with your newfound knowledge. It’s the “proof in the pudding” and I would argue the most important part of the learning process.
+
+
+“Conceptualizing an idea and translating that into working code shows that you have successfully learned the whole process of software development - this includes all of the pitfalls, errors, and hurdles you must overcome.”
+
+
+Even if you have built something from an online class or bootcamp course, the software built in those environments is typically defined for you and it can sometimes be a group project. You are provided with a project and certain parameters. What I’m talking about is building something from scratch; your idea and your choice of programming language and framework. Conceptualizing an idea and translating that into working code shows that you have successfully learned the whole process of software development - this includes all of the pitfalls, errors, and hurdles you must overcome.
+
+
+Now you might ask, “What should I build?” My simple answer is: anything. It should simply be something you’re interested in. The topic or subject area isn’t important. It doesn’t have to focus on the latest newsworthy topic or use the latest “hot” technology. It only needs to be a project that means something to you, which can be anything (e.g., library of cat photos where the user has the option to specify favorites) built by you, and only you, from scratch. It should be developed using version control (e.g., Git with GitHub or Bitbucket) to show the history of your work and get you comfortable with commenting on changes and using team versioning software. The important part here in building a project from scratch is that you can explain every aspect of the project and its code to a potential employer. You can discuss the pitfalls, the successes, and everything you learned. Remember, it’s the failures along the path that teach you the most and show that you are a problem solver, a very important part of software development.
+
+
+
+
+
+Once you’ve come up with a concept and you are ready to build, I would also suggest tailoring the project to the type of job you’re hoping to get. For example, if your target job is to be a full-stack developer using web frameworks, you should build the database models, the logic, the front-end, the authentication, the authorization...everything.
+
+
+
+
+
+Now that I’ve explained the advice I give about how to show that you’ve mastered a concept and can put it into practical use, I’ll give a case of my own recent experience learning Python and Django and how I ensured that I “got it” after taking the steps to learn it.
+
+
+As a longtime developer with experience in Java, Ruby, C#, C++, and a host of a dozen languages or so that aren’t much in use anymore, I decided to learn Python. Along with Python I wanted to learn Django. Similarly, with experience in Rails, JEE, and .NET, I figured it was about time to pick up Django. I did what probably most of you do. I took the official tutorials and also took a Udemy course. After these online courses I felt pretty confident, but not fully comfortable. As we all know, it takes a lot of hands-on experience building something through the trials and tribulations of bugs and head-scratching to really get comfortable. 
+
+
+When I’m trying to feel comfortable with a new web framework for example, what works best for me is to build a basic full-stack CRUD application that contains models, logic, and a web front-end. I build it with regular users and admin users in mind, as well as other needed components for a production-ready environment.
+
+
+First I identify what I am building and ensure it has enough “goodies” that it covers much of the following:
+
+
+A place where I can log into my application using a basic username and password and also 3rd party authentication (e.g., Google, Facebook).Viewing (and the rest of CRUD) data using various types of models (1-to-1, 1-to-many, many-to-many). This would include some sort of datatable interaction and detail pages. It would also include validation for the data.I might implement my system using APIs or a templating system and then work through headers and footers and layouts.I would also write code to give certain users the ability to see some pages and/or data to prove I was comfortable with authorization.Of course with all of this I would ensure I understood how to debug and use a console to write code in a playground before using it. I would also ensure my editor is tightly integrated with my environment to do things like auto reload of changes. Finally, I would deploy my code to the cloud (e.g., AWS, Azure, Heroku) to feel comfortable with the DevOps process and allow others to view my finished work.
+
+
+If I did this correctly I would come out with a working system and, with that, I would have gone through the learning experience of creating something on my own.
+
+
+Of course, my list above has to do with a web framework but you can easily put together a functional list for any language and/or framework. Maybe you want to focus on mobile development or maybe AI or maybe SQL development. Whatever the focus you can easily find a list of required components for understanding the language and/or framework and use them in an application you are building to feel more comfortable with your knowledge. Then, assuming you are looking for a job, you can talk through the process of building your application and discuss all aspects including the pitfalls, errors you ran into, and surprise knowledge you learned while building it.
+
+
+When an applicant comes to a Solution Street interview with an actual application they wrote from scratch, we take notice. An applicant who has taken the time to write an application on their own and who can describe the process during an interview tells us many things: this person has initiative, this person has the ability to write an application from start to finish, this person has learned x, y, and z as a result of the process, this person enjoys coding. Getting this information during the interview greatly helps us determine the applicant’s abilities and motivation. So, if you want to stand out on an interview and improve your chances of getting the job, build it!

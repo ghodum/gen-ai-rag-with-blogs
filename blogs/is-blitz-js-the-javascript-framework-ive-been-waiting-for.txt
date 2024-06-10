@@ -1,0 +1,81 @@
+Is Blitz.js the JavaScript Framework I've Been Waiting For?
+
+
+
+
+The year was 2007. I was about to leave corporate America and try my first startup. I had been a Java architect for the past 10+ years and was ready to try something new. A friend of mine introduced me to a framework called “Ruby on Rails.” She said it was amazing how fast you could build stuff. Here is a link to the original “How to build a blog engine in 15 minutes with Ruby on Rails” video where David Heinemeier Hansson (DHH) shows us how to build a blog using Rails. After watching the video, I was sold that it was worth a try. I spent most of the next year building my startup primarily programming in Ruby on Rails. It took me a while to climb the fairly steep learning curve of Rails, and also to really learn the Ruby programming language, but once I did, I could build stuff faster than at any point in my 20+ year career. Rails has a doctrine of what makes it great; you can look at the nine items here. Looking back, what made Rails great for me personally was a handful of key things:
+
+
+Convention over Configuration - Now most frameworks follow this paradigm, but Rails was the first to bring it to the masses. No more struggling with configuration files to get your environment set up properly, everything works right out of the box, and if you follow the rules, it’s painless.DRY Coding - (Do NOT repeat yourself) - The idea here is that you only need to code something in one place to get it done. You don’t need to copy and paste code into five different places to get something to work. Developer Happiness & Productivity - Rails came with generators to get you started. They would create all the code you need to CRUD (Create, Read, Update, Delete) your resources. Rails also came with a handy console where you could test and debug your code in a full working environment. You could also code everything in one language, Rails provided helpers to generate most of the JavaScript you would need. Rails eliminated the multiple layers upon layers of coding you used to have to do to get something done.True Reuse - We have been looking for the ability to reuse code for 20+ years. We have tried many different approaches, but Rails, because it is a complete ecosystem, has done the best job at it. When you are building an app, you can find a “gem” (which is a library) to do just about anything you want. For example, authentication, authorization, uploading files, paginating results - all these things come for free by using “gems” that are open source.Majestic Monolith - For most of the applications we build, having a fully integrated, simple, coherent platform, and structure is the easiest way to build things. Sure, microservices and serverless have their place, but for 80% of the applications out there, having everything set up in one platform is the easiest way to construct software. Rails comes with all you need to build your User Interface, API, business logic and database.
+
+
+Also worth noting is that Enterprise Java was the “state of the art” application architecture before Rails. The architecture of Enterprise Java looked something like this:
+
+
+
+
+
+Source: http://www.corej2eepatterns.com/
+
+
+As you can see there was considerable complexity here. The new Rails architecture looked like this:
+
+
+
+
+
+Source: https://medium.com/the-renaissance-developer/ruby-on-rails-http-mvc-and-routes-f02215a46a84
+
+
+Simpler, easy to build and easy to deploy. Since 2007, Solution Street has built many, many applications using Ruby on Rails. In the past 10+ years, front-end JavaScript frameworks have become pervasive, and for complex user interfaces (like Facebook) they can help keep your front-end code maintainable and fast. 
+
+
+The downside of this is, now, we need to have an API for all systems, and the front end developers code to this API. What languages and frameworks the API is built in varies by project - sometimes it’s still Ruby on Rails, other times it is Python/Django, .NET, or Java/Spring. The complexity here is now I need two teams of engineers to build something, or someone who is an expert in the front-end framework as well as the back-end framework and language. 
+
+
+With this added complexity, our systems have returned close to an Enterprise Java level of complexity. Here is a sample architecture of a React/Redux architecture with a Rails back end:
+
+
+
+
+
+Source: https://medium.com/mofed/react-redux-architecture-overview-7b3e52004b6e
+
+
+
+
+
+Given this, we (Solution Street) have been looking for a “JavaScript”-based architecture that could provide similar simplicity and productivity to Ruby on Rails, but could also allow us to use modern front-end JavaScript frameworks. To date, we have had some frameworks that really looked promising. About five years ago, my business partner, Arthur Frankel, researched LoopBack. He wrote a nice article on all the cool stuff it did. LoopBack only focuses on server-side JavaScript, the back-end portion of the architecture. Another Rails-like framework is called Sails.js, which again focuses on the backend only.
+
+
+In early June, Brandon Bayer talked to our local JavaScript group about Blitz.js. The first sentence of the abstract was - “Blitz.js is the Fullstack React Framework. It's heavily inspired by Ruby on Rails.” So this immediately caught my attention. Since then, I have watched several videos on Blitz.js and have downloaded the framework and started to play around with it. Here is what I have learned so far.
+
+
+The Blitz.js framework attempts to provide a full-stack monolithic environment on which to build React.js-based applications. It leverages two well-known frameworks: Next.js and Prisma.js to provide some of its key features. On its website, (like Rails) Blitz.js points out its goals very clearly: Fullstack & monolithic, Convention over Configuration, Stability, Easy to start, Easy to scale, API not required, and Loose Opinions. I think all of these, except for the last, line up very well with the Ruby on Rails framework. 
+
+
+“The Blitz.js framework attempts to provide a full-stack monolithic environment on which to build React.js-based applications.”
+
+
+On installing Blitz.js, right out of the box I noticed a few things right away:
+
+
+You can use the generator to create a new application, which creates your folder structure, all your build scripts and packaging for you.It comes with a scaffold generator similar to Rails. I don’t think it is quite as robust as the Rails generator (yet), but it is good enough to get you a good idea of how to get started.It comes with Rails-style migrations (woot!).It includes an ORM (prisma2) that allows you to connect models to your relational database (it includes SQL lite out of the box, but can connect to Postgres as well).It includes a developer console that gives you access to everything, just like a Rails console!It includes basic authentication (login, password reset, signup) and authorization.
+
+
+Outside of the obvious Rails similarities, the other key thing that Blitz.js includes is the concept of not requiring an API. It basically allows your front end to make calls directly to the server-side functions, and then at compile time, it replaces them with an auto-generated JSON API. This simplifies development back to the “old” Rails-world style, where you have a virtual monolith. 
+
+
+Here is a picture showing how this works with Blitz.js:
+
+
+
+
+
+Source: https://blitzjs.com/
+
+
+The gist here is that you code like you are all on one server/platform/code base, but when it compiles it creates the API and the transport of data for you magically! Adding this key feature simplified (at least theoretically) how developers can do their job. You no longer have to build your React code, and then your server API, and then connect the two; you can skip the last two steps and just talk directly to your server code during development. I have questions about how you debug this, which we will visit in more detail in Part 2 of this article.
+
+
+I have spent a few hours with Blitz.js and it seems promising so far! In Part 2 of this article, I will take a deeper dive and show some code examples, answer my debugging questions, and attempt to build a 15-minute blog using Blitz.js. 

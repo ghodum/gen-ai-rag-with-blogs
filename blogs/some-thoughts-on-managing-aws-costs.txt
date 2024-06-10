@@ -1,0 +1,57 @@
+Some Thoughts on Managing AWS Costs
+
+
+
+
+There are many reasons today that companies are considering migrating to the public cloud. Cost is only one of these many reasons. It may be tempting to see how your organization might quickly reap the benefits of a pay-as-you-go model the public cloud offers and avoid over-provisioning resources in anticipation of growth via traditional infrastructure procurement avenues, but you also need to consider the cost of doing the initial migration to the cloud to get a complete picture of the cost versus benefits. This is an important decision to make that would be applicable to a migration to any cloud provider and not just AWS. However, for the sake of brevity we will only seek to consider the aspects of cost once the decision to go to the cloud (in this case specifically with AWS as the provider) has been already made.
+
+
+We will briefly address three overarching categories that we can consider to help keep costs manageable. We will begin by going over some guardrails that AWS provides in order to keep costs from getting out of hand. Then we will touch on some operational decisions organizations can make to be more cost effective when using AWS. Lastly, we will address how the design of system or application architecture can affect cost outcomes.
+
+
+Guardrails
+
+
+There are a few guardrails for cost that you can set up for your organization when it comes to using AWS services. By making use of AWS Organizations consolidated billing feature you can get full roll-ups of all the accounts in your organization and set up billing alerts accordingly. Billing alerts give you peace of mind especially if you are operating on a strict budget. The alerts give you visibility into which areas of your organization are either mismanaging or abusing resources, or communicate to you of perhaps areas where rapid growth is occurring. This allows you to stop things from getting out of control if things are being misused or misconfigured and also clue you in to potential areas where optimization is required within your system.
+
+
+Cost Explorer is a useful tool to give you insight into how your costs have looked over time. Another useful tool, if your organization is subscribed to it, is Trusted Advisor. While there are some Trusted Advisor features available to everyone, the cost optimization checks are only available to Business tier of support and above. The cost optimization checks can give you visibility into which resources are idle (i.e., a load balancer that isn't connected up to a target group or unassociated elastic IPs) and also if it would make sense to purchase reserved instances based on historical use.
+
+
+Operations
+
+
+Then there are cost considerations around operational choices related to your infrastructure. Both the previously mentioned reserved instances as well as spot instances can provide significant cost savings if used correctly. Trusted Advisor can give you insight into whether or when it makes sense to purchase reserved instances, but there is also an AWS-provided pricing calculator to help you determine whether the conversion makes sense when Trusted Advisor is not an option. When EC2 usage is relatively stable or predictable there can be upwards of 75% cost savings when compared to on-demand instances. Furthermore, the longer the reservation term for a reserved instance, the greater the cost savings.
+
+
+For even larger (>75%) cost savings when compared to traditional on-demand instances, consider that spot instances can provide a discount of up to 90%. The availability of these instances are transient and therefore are ideal for specific use cases where applications are fault-tolerant. But most applications can be made to be more stateless and fault-tolerant by separating concerns using something like AWS SQS queues to break up parcels of work. That way any work can be put back on the queue for processing and completion later if that work is interrupted when spot instances are terminated. See this  AWS whitepaper for more on spot instances.
+
+
+Another example of cost savings via operational decision making is in how S3 objects are classified. AWS has recently made this extremely easy by introducing what they call Intelligent-Tiering. If opting in for Intelligent-Tiering, AWS will automatically optimize on cost based on data retrieval patterns. What this means is that S3 objects that are not accessed for 30 days get reclassified as infrequently accessed and are charged accordingly. Once one of those objects is retrieved in the future it will get moved to the frequently accessed tier again and charged accordingly. The traditional way of doing things, however, if you have predictable S3 access patterns, is to apply lifecycle rules. This method also allows for the moving of objects to Glacier which provides even more cost savings (over 80% discount when compared to S3 Standard) when the objects can be archived into long-term storage.
+
+
+The last operationally-related consideration that can contribute to major cost savings is the use of VPC endpoints. For those that are not familiar, VPC endpoints are virtual devices that allow you to privately connect your VPC to a variety of AWS services when you would have to otherwise send that traffic over the Internet. There are major cost considerations here in addition to security benefits. By keeping traffic within AWS you eliminate traffic potentially passing through a NAT gateway which, depending on the region, can be up to four to six times the cost of a VPC interface endpoint. Funneling traffic through a NAT gateway is also infinitely more expensive for services like S3 and DynamoDB because gateway VPC endpoints are free!
+
+
+Architecture
+
+
+Now I would like to quickly go over some cost implications related to architecture in AWS. We can break the considerations down into a few categories in no particular order: redundancy, scale, and throughput.
+
+
+Often when considering redundancy the main drivers for how redundant your application needs to be are the service level agreements (SLAs) you have with your customers or users. Is your application required to be available at all times? If the application goes down how long can the application be down for before it’s expected to be back in service? This thinking around redundancy especially applies to the varying deployment environments you might have established for your organization when thinking about cost. Production environments are where you might need the highest redundancy (multi-AZ or even multi-region). But other environments such as test and development may not require the same resiliency. There is usually room in this space for cost savings.
+
+
+Next we can consider scale. In terms of traditional always-live applications that have less than predictable loads, EC2 auto-scaling groups can be extremely useful to both help manage variances in load and also costs. But let’s say you have a small application that serves only a small group of users a few hours a day. In this use case you could consider building your application using API Gateway and Lambda instead to serve your users and only pay for the requests your application served instead of having EC2 servers running all day waiting on requests.
+
+
+The last category to consider is throughput in your application. The operation of right sizing instances is a large contributor to controlling costs while also needing to find the happy place that properly handles the load an instance(s) will sustain. One useful tool to address this concern is the AWS Cost Optimization service that will perform analysis on historical instance usage and help you identify whether your instances are properly sized. Right sizing applies beyond just EC2 instances and is often required at the database layer as well. And if your database serves many of the same repeated queries, fronting the database layer with an Elasticache cluster to cache frequently-queried data can help with throughput. These Elasticache instances also need to be right sized. For more on right sizing instances see this AWS whitepaper.
+
+
+“The cloud provides a ton of flexibility when it comes to building out your application quickly.”
+
+
+Conclusion
+
+
+The cloud provides a ton of flexibility when it comes to building out your application quickly. With AWS services you can easily provision infrastructure required to support and deploy an application with a few simple clicks or lines of code. The vast number of AWS services available and the flexibility that comes with that though can lead to surprises when it comes to cost. There are, however, many tools within AWS to help you control and monitor these costs so that your organization takes advantage of the cloud in a cost effective manner while providing your end users with a good product.

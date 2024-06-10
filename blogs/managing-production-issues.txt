@@ -1,0 +1,162 @@
+Managing Production Issues
+
+Introduction
+Recently I was trying to explain to a family member the complexity of managing and maintaining software systems in production. The analogy I came up with was imagine someone asked you to build a car for them, a special car. This car could do things no other car could do. Maybe this car, in addition to going forward or backward and traditional steering, could go sideways. Now imagine keeping that car for ten years. You would need to do preventive maintenance such as oil changes, brake pads, air filters, transmission fluid, tires, etc. In addition to preventive maintenance, you would need to monitor the health of the car including engine oil, temperature and tire pressure. The list of things that are needed to keep your car running well is very long and requires constant attention. Now imagine you needed to turn your car into a camper, and you needed to be able to build this new “feature” while driving down the road. Occasional stops would be permitted, but only for a short period of time.
+
+This analogy gives you a glimpse into what it takes to manage a software system in production. Software systems are complex, they have problems, they require management, maintenance and monitoring.
+
+Many times I have come onto a project where the customer is “frustrated” that there are production issues that are taking too long to solve or there are too many of them. On the flip side, many times I have come onto a project where the engineers are “frustrated” with how many production issues they have to deal with and how it is impacting their productivity of new development.
+
+In this article we will discuss several ways projects can manage production systems and establish an effective communication strategy between the product owner and the engineering team.
+Managing Production Systems
+When it comes to managing the health of a production system there are two main approaches that are used. One approach is to have two teams. One team is the “development” team; this team builds new features and enhancements to the system. The second team is the “maintenance” team; this team is responsible for troubleshooting, triaging and fixing bugs in the system. The second approach is the “combined” team. In the combined team, each developer is assigned a mix of maintenance and development-type tasks each sprint. In most cases, we at Solution Street prefer the “combined” team approach. The combined team has the advantage that everyone shares the “fun” work and the “less fun” work and gives everyone a chance to become a better developer by seeing how their code works in production and learning from their mistakes. The downside of the combined team is that it needs careful planning and management to ensure that an appropriate amount of time is assigned to each bucket and neither is neglected. Prioritization by management, and developers' understanding of their priorities, are also important with a combined team.
+“Having great process and communication are key factors to having effective production issue management.”
+So now that we have a background on the complexity of systems and the makeup of the team, we can discuss the flow of production issues and how they come up. In typical systems there are four ways that issues are raised:
+
+Raising Issues:
+
+
+
+From the Customer - This can be via email, phone or instant message and fed into a ticketing system.
+
+
+
+
+
+
+From the Product Owner - This is usually done with a ticketing system and verbally.
+
+
+
+
+
+
+From Security Vulnerability reports - This is usually done by monitoring the appropriate mail lists or groups for the software stack that is being used.
+
+
+
+
+From the System itself - Monitoring and management tools like Honey Badger can let you know of issues the system sees.
+
+Triage is typically done before an issue is assigned to a developer. Triage may include looking to figure out if the issue is:
+
+Triaging Issues:
+
+
+
+User errors (level 1) - This is not really a problem with the system, but more of a “misunderstanding” of how things are supposed to work. If many of these happen, this could lead to a level 3 issue. Maybe a change to the system is needed to make it more intuitive, resilient or better documented.
+
+
+
+
+
+
+System problems (level 2) - These are typically handled by an operations person. They could be problems with the hardware or software stack that is supporting the system (operating system, networking, database, etc.).
+
+
+
+
+Code or data problems (level 3) - These are typically handled by the software developers and require either a code or data fix or both.
+
+The idea of the triage process is to “filter” out issues that don't require a developer to fix. Having an effective triage process is critical to preventing wasted time and frustration across the team. It also helps in being more responsive to customers as (non)issues do not linger with developers. A critical part of the triage process a is to “train” both “customers” and “product owners” on how to properly report issues. A standard template we use to assist in this training looks like this:
+
+
+
+Steps to reproduce - Describe the exact steps needed to reproduce the issue: who was logged into the system? what clicks were made to get to the place where the issue is?
+
+
+
+
+
+
+What actually happens - Describe exactly what went wrong: did the page lock up? show the wrong content?
+
+
+
+
+What you expected to happen - Describe in detail what you expected the system to do.
+
+Effectively managing issues for us means having a “consistent” definition of “priority” and a policy for each priority as well as a system for managing the workflow.
+
+At Solution Street, we generally categorize issues into three priorities (some projects have more priorities):
+
+Priorities:
+
+
+
+Sev (Severity) 1 - The production system is down, or customers are unable to use key features.
+
+
+
+
+
+
+Sev 2 - This is a serious problem that affects many customers, and potentially involves money. Usually there is a workaround.
+
+
+
+
+Sev 3 - This is a bug that only affects a small number of customers and there is an easy workaround.
+
+
+
+Another example of priorities are the ones they use at VMware. You can review these here.
+
+Typical policies for the above priorities are:
+
+Policies:
+
+
+
+Sev 1- Stop what you are doing and fix this. No one goes home until it's addressed or at least a workaround is created. In the rare case that it goes on for more than a day, shifts are scheduled to work around the clock on it. Patch it into production.
+
+
+
+
+
+
+Sev 2 - Prioritize this within scheduled fix budget. Work on this right away within typical business schedule. Get it into the next available production push.
+
+
+
+
+Sev 3 - Plan this into the next sprint or backlog. Prioritize with other features and bug fixes.
+
+Workflow:
+Having priorities and policies is great, but we need a way to organize the issues from soup to nuts. Usually we use a ticketing system like ones in JIRA or Unfuddle to manage these issues. These ticketing systems allow us to assign both a priority and developer to them. In addition, they provide statuses as the ticket progresses through the workflow.
+
+A “typical” ticket workflow for Solution Street is:
+
+
+
+New - Just created.
+
+
+
+
+
+
+Accepted - The developer has reviewed it and there is enough information to work on it.
+
+
+
+
+
+
+Resolved - The developer has finished fixing the ticket and pushed it to a test environment.
+
+
+
+
+
+
+Verified - The customer or opener of the ticket has reviewed and tested and confirmed it is resolved.
+
+
+
+
+Closed - The change has made it to production and has been reverified.
+
+Every workflow is a little different, but this gives you an idea of the typical workflow we use for many of our systems.
+Summary
+In this article, I have reviewed how software systems are complex and require constant managing, monitoring and maintenance. I reviewed how teams can be organized to support their systems, how issues are identified, triaged, prioritized, and managed via a workflow. I also reviewed how you can have policies to decide how to manage issues based on priority. Having great process and communication are key factors to having effective production issue management. When you don’t do these things, Fear, Uncertainty and Doubt (FUD) creeps in and things start to go bad in a hurry.

@@ -1,0 +1,81 @@
+The Most Important Lessons I Learned from my Father...and how it shaped me as a consultant and business owner
+
+
+
+We lost my father in January of this year. Although he had been sick for some time, it was devastating to me and my family and we are all still reeling from his loss.  Part of the healing process is talking and writing about him so I want to share some things he taught me that have been instrumental in my life.  First a bit about my father.  My father spent much of his life helping other people.  He joined the Army Airborne division following high school, then proceeded to work for the New York City Police Department for an unbelievable 39 years as a police detective. In those decades he had been part of many interesting situations and encounters - both good and bad, but almost all of them required him to be a peacemaker, problem solver, and most importantly, a great communicator. All of these traits are ironically required as a software consultant.
+
+ 
+
+Growing up in Brooklyn, New York in a relatively tough neighborhood called Canarsie was not easy for a shy, introspective, and naive child, but nevertheless that was me. Canarsie, Brooklyn was a gritty place and as Howard Schultz (CEO of Starbucks who also grew up there) put it, “You learned to get along with people, and you also learned to defend yourself at a young age.” It was the sort of place that you needed to keep on your toes and talk your way into and out of some situations. You had to be streetwise and deal with people from many different walks of life and with many different personalities in a densely populated area.
+
+ 
+
+From a young age, growing up in this area, I watched in amazement and pride as my father talked to others. He had this way about him that put everyone at ease and made them feel like he was their friend for a lifetime even if it was their first interaction. He also had a strength about him that was unique. Maybe because I was his child and much shorter at the time, he seemed taller and bigger than he was. He spoke with confidence and directness. Being who I was, it was comfortable to be with him, since I could easily let my father do all of the talking in any situation. What I didn’t realize until years later, was that he was teaching me through these daily experiences how to talk with others in any situation. 
+
+ 
+
+Although I took a very different path than my father, as a math/computer kid, then evolving into a software engineer, our paths somewhat merged once I became a consultant. Although I learned many lessons on my own working as a software consultant, my time spent listening to my father and observing him in conversation has had the biggest impact on me and my career moving forward. 
+
+ 
+
+In software consulting there are many interactions with clients at all stages throughout a project lifecycle; from setting goals and expectations to setting up system requirements to bug fixing to adjusting requirements and/or schedules to proving that you have met requirements to testing and planning further iterations. These are just a few of the areas where consultants and clients interact. In addition, there’s potentially even more communication with other developers. Given these ample areas for interaction, there are many opportunities for successful or, conversely, problematic communication. I noted the importance of communication skills in a past article where I described the top 10 skills every software consultant should have. Obviously, communication skills are consistently among the top 10 (items 1,8, 9, and 10 relate to the importance of good communication skills).
+
+ 
+
+“Too often in my experience, one person is focused on how they want to reply and is not listening to the person speaking in order to comprehend what is being said.”
+
+ 
+
+Communication is paramount to building a solid, efficient system that actually meets the needs of a client. Here are a few examples that illustrate some of the countless ways that consultants and others might interact on a project:
+
+ 
+
+
+Interaction with clients for requirements, defect resolution, project checkup and financial matters.
+Interaction with other software engineers or engineers in test for code review, defect evaluation and peer programming.
+Interaction with management or subordinates for goal settings, feedback and assistance.
+
+
+ 
+
+Each of these interactions can make or break a project. In fact, the most significant reason for starting Solution Street 16 years ago was the hole I saw in the software development industry. While most companies were looking to offshore or commoditize software engineering to a “throw it over the wall” model, I recognized the fact that (continual) communication on a software development project was key to its success. Certainly the agile methodology shares in that goal. I believed and still believe that coding is somewhat secondary to understanding the business problem correctly and keeping all parties (product owners, developers, testers) on the same page. 
+
+ 
+
+Getting back to the lessons I learned from my father, I have incorporated several core communication skills which he used regularly into my everyday interactions as a consultant. Four of the most important I describe below:
+
+ 
+
+1. Make the other person feel comfortable
+
+ 
+
+Firstly, make the other person feel comfortable. When you are talking with someone about their business problem or a defect they found, or providing them feedback as a colleague, make them understand that you are their ally, or friend, and talk to them with respect and openness. So many people start a conversation as an agitator or speaking from a defensive perspective. As examples: “The requirements make no sense” or “Your code doesn’t work.” On a project (or on the police force) you are all in it together. If one fails, the rest fail. Being able to work together and communicate comfortably is a necessary success factor.
+
+ 
+
+2. Listen well
+
+ 
+
+Secondly, listen.  Listen to what the person is saying. This may sound overly simplistic, but simply listening and really hearing what the other person is saying is an important skill and one that not enough people practice. Too often in my experience, one person is focused on how they want to reply and is not listening to the person speaking in order to comprehend what is being said. In software consulting, there is nothing more important than listening. If you do poorly here, you wind up building something no one asked for.  How many times have you heard on a software project, “This is not what I asked for.”  Building something that isn’t what was requested or needed is a waste of time and money. My father was always able to read between the lines when talking with someone. Often the hardest part of software engineering is translating a business problem into a technological solution when you are talking with someone who is not technical.
+
+ 
+
+3. Discuss details in person or by phone
+
+ 
+
+Thirdly, avoid email when dealing with important details/concerns.  My father always liked to talk in person or on the phone and never used email as a replacement for personal interaction. You can’t easily read a person’s emotions from an email. I have seen email used too often to resolve a major discrepancy in business requirements. Pick up the phone or meet the person to review and hash out details. There is no substitute.
+
+ 
+
+4. Speak simply and clearly
+
+ 
+
+Lastly, be direct and speak simply. My father illustrated to me in his interactions the value and effectiveness of speaking clearly and, most importantly, getting to the point with directness and clarity. He didn’t beat around the bush. He got to the question or his point immediately. I have learned by observing him and in my own communication with clients and peers that being direct, transparent and confident when providing explanations, direction and feedback provides for a useful and robust discussion. Being direct and open in your conversations allows for a productive exchange of ideas and information. In fact, transparency in communication with clients is one of our core values at Solution Street.
+
+ 
+
+As with my experience, the communication skills I discussed above are learned skills and getting better in these areas takes time and practice. To be a successful communicator, remember to make others feel comfortable, listen to what they are saying and actually talk with them. Technology, with all of its assets, has also created environments in which in-person communication happens less and less. With the creation of more tools and services to allow for electronic communication, it is often too easy to avoid in-person, direct contact. However, the lessons I learned from my dad taught me that there’s no substitute for solid, personal interaction with others.

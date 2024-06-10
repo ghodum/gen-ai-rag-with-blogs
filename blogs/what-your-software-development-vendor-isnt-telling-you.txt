@@ -1,0 +1,211 @@
+What Your Software Development Vendor Isn't Telling You
+
+
+When it comes to implementing a critical business application, many businesses seek to hire a software engineering firm to build their application. After building and implementing countless applications, we at Solution Street have found that there are key questions that businesses should ask potential vendors that are critical to the project’s success. Indeed, these questions will have a significant impact on cost and time not only for the initial phase, but for future phases and the overall success of the application and potentially their business.
+
+ 
+
+What often transpires once a business decides to hire an external IT vendor is a discussion of offshoring vs. local and "who do you know that could do this?". However, rather than beginning with the question of “who”, the more important question should be “how” a potential vendor will determine the best options for your business and application such as: technology choice; resources; and code reviews; among others.
+
+ 
+
+In this article, I will discuss a number of important areas to review with vendors when evaluating them for a project and specific questions to ask within each category. Knowing the answers to these questions before deciding who to hire can make the difference between a project’s success or failure.
+
+ 
+“We have run into so many clients who have had unsuccessful projects because their prior vendor went with some 'interesting framework' that their developers thought 'would be cool to use'.”
+ 
+
+Let’s begin with an example of a financial company that has decided to transform their internal process of manipulating large amounts of data in spreadsheets for their clients to a web-based application. This new web application would enable their clients to have direct access to important data and it would also transform the usage of this data by providing visualizations and more interactive insight. Although this financial company has an internal IT group, they have decided to seek out an external software engineering firm to build this complex web-based application. In this scenario, what might typically happen at this point after some basic considerations such as cost and time is the company chooses a software engineering firm to complete a “soup to nuts” implementation including design (working with a product owner), implementation, and production support. The software engineering firm then agrees to a live date and they are off to the races. But, has the financial company considered the most important items, asked the right questions, and covered the details with the vendor that can have the greatest impact on timeline and cost, and has the vendor been fully transparent about its choices and plans for proceeding?
+
+ 
+
+We have found that these are the main areas in which many businesses neglect to ask important and specific questions of their software development vendor and where transparency is key:
+
+ 
+
+Technology Choice 
+
+This includes software languages and frameworks the product or implementation will be built upon; certainly there may be some discussion beforehand, but often not enough drilling down into the details. Frankly, today’s technology environment can be terrifying. There are so many software languages and exponentially more frameworks to choose from. How a vendor chooses the software languages and frameworks is key to the philosophy of the vendor and whether they are truly trying to solve the business problem with the right technologies or they are just looking for the next shiny object. We have run into so many clients who have had unsuccessful projects because their prior vendor went with some “interesting framework” that their developers thought “would be cool to use”.
+
+ 
+
+Now choosing a language (and its associated frameworks) is a complicated task and is a decision not to be taken lightly.  Many factors come into play including: popularity of the language in the general population; usage of the language/framework at the company; ability to hire or find developers who are proficient in the language/framework; a language/framework in which developers can be exponentially more productive accelerating the time-to-market. Furthermore, even with the right technology choices, a well-constructed system is key to maintainability. Ensuring the vendor is building the software using standards and coding consistency is important to the inevitable upgrades and potential swapping-out of components in the future.
+
+ 
+
+What most vendors aren’t telling you is:
+“We are picking the software languages and frameworks because our developers think these particular ones are cool. Although they may be very new, have only a few users of the frameworks, and some of our choices are in beta, we are excited to test them out on YOUR project. We are not even sure who is maintaining them, but we know these choices may help on our resumes, and we really don’t want to use the tried and true solutions because we are bored of them and we are interested in learning something new and putting a new sticker on our laptops.”
+“Our developers only know PHP so that’s what we are going to use.”
+
+ 
+
+What you should be asking:
+“Why are you choosing this language and these frameworks to solve my particular business problem?”
+“Why aren’t you choosing some of the mainstays in software languages now or languages we are currently using at our company, such as Java, C#, Ruby, Python, and JavaScript?”
+
+“How big is the community using that framework?”
+
+“Can we buy support for that open source framework if need be?”
+
+“What have you built (successfully/in production) using that software language/framework?”
+
+ 
+
+There may be good solid answers for these - for example, choosing C++ may be appropriate at times - but you need to understand why and the answer shouldn’t be, “It seems like this is becoming more popular.” You want your software to last decades and you need your employees or at least a community of developers to maintain and enhance the code.
+ 
+ 	Version Control and Ticketing/Project Tracking Software 
+
+This includes the repository (e.g., Git) where your code database structures/migrations are stored. This also includes a ticketing/project tracking software (e.g., Jira) to maintain requirements and documentation for all of the work being performed whether they are enhancements or defect fixes.
+
+ 
+
+What most vendors aren’t telling you is:
+“We don’t use version control. We store the code on our machines and we’re able to handle it.”  - Now granted, this doesn’t happen often anymore, but it has happened to many of our clients with previous vendors.
+
+“We use Git and Jira but most of the developer comments are so poorly written you can’t understand what’s going on.”
+
+“We use some internal system for ticketing and version control and if you are thinking about leaving us, we’re going to hold your code hostage.” - Sounds crazy, but, yes, this has happened to a client with a former vendor!
+
+ 
+
+What you should be asking:
+“Where is the code stored?” - Hopefully in Git (or SVN).
+
+“Can you give me access to the code so that I can have someone review it from time to time?” - Believe me that this is important if you switch vendors.
+
+“Can I receive emails when someone commits code?” - This is a good way to see the quality of the commit messages.
+
+“Can I have access to the project tracking software to run reports?” - Of course you should have access because you or someone in your organization is already heavily part of the process of defining the requirements for the application, establishing a prioritized order of a feature list, and reviewing status.
+ 
+ 	Caliber of Resources 
+
+Who is actually working on this system implementation or product from design to development to testing? Getting the right set of resources including business analysts, scrum leaders, developers, architects, and testers is certainly one of the most important aspects of a successful project if not the most important.
+
+ 
+
+What most vendors aren’t telling you is:
+“We don’t know who we are going to put on this project.  We have one development resource who wants to use that new whiz-bang framework. Then we have five other developers who are working 100% on another project and we’ll have to have them work another 100% on this project.”  
+
+“We have one good developer and then 10 others that don’t know what they are doing so if we have the one good developer watch over the other 10 we can get the work done faster and get paid for 11 developers - a win-win.”
+
+ 
+
+What you should be asking:
+“Who is working on this project and can I see their resumes?”
+	“What systems have they built (successfully and in production)?”
+
+“Have they worked together before?”
+
+	“Are they working on anything else besides my project?”
+ 
+ 	Code Reviews 
+
+Although obvious, businesses often forget that the actual code written for a product or system IS the most important asset. Code should be written well, documented well, and follow standards - both industry and the coding standards of either the client or the vendor to maintain a consistency when multiple developers are touching the same codebase.
+
+ 
+
+What most vendors aren’t telling you is:
+“We don’t have time to do code reviews. Also our developers take things personally and don’t really want another developer reviewing their code. We know that this is worth it, but as long as the code works it should be fine.”
+
+ 
+
+What you should be asking:
+“Is all code reviewed by another developer before it is pushed into a testing environment? What is the exact process?”
+“What coding standards is your team following?”
+
+“How do you ensure consistency in the codebase given that there are multiple developers working on the project?”
+ 
+ 	Automated Process and Deployment 
+
+Today it is very common practice to have software built in a Continuous Integration/Continuous Delivery (CI/CD) fashion where code is moving through a life cycle quickly with checkpoints for code reviews, testing, and successful deployments. Many deployments today are going to the cloud (e.g., Amazon, Microsoft) and structuring the servers (or sometimes serverless) correctly along with establishing the correct number of environments for development, integration, testing, production, and hotfix are critical to a successful project. Failover and load balancing enable better customer interaction.
+
+ 
+
+What most vendors aren’t telling you is:
+“When we are ready to deploy to production, we’ll manually push the code and hope it works. We’ll do some basic manual testing and wait for a customer to find a problem.”
+“We are not exactly sure what will happen if the servers come down.”
+
+“Since we are in the cloud I think we just bring up more servers if there’s more load.”
+
+ 
+
+What you should be asking:
+“What is your process for deploying code?”
+“What is your process for fixing an issue found in production?”
+
+“How did you estimate the number of servers (CPU, disk space, etc.)?”
+
+“What if the number of users grows by x? How do you scale?”
+
+“What if Amazon comes down? Do you have failover at other locations?”
+ 
+ 	Testing 
+
+Testing includes both manual and automated testing, establishment of dedicated QA teams or just using client functional resources, and whether or not to use TDD. Testing is one sure thing that works. It’s a measure of the quality of the project, but it also maintains the quality of the project when correctly implemented. Certainly having the right people on the project and defining standards is paramount in terms of success.  Projects that have a thorough testing strategy have greater success and cost less over the long haul.
+
+ 
+
+What most vendors aren’t telling you is:
+“We think the developers can just manually test their own code.”
+
+“We’re assuming that the client will test the code and if they don’t we’ll blame them for not testing enough.”
+
+ 
+
+What you should be asking:
+“Define exactly all of the testing you plan on doing. Unit? Automated UI? Regression? Smoke testing? White-box? Black-box? Performance? Scalability?”
+
+“Will you have a separate QA team to perform testing?”
+ 
+ 	Agile and Live Dates 
+
+In today’s software development environment, Agile is a very common and useful methodology, but software development vendors struggle with explaining when a system can go live. The reality is that it is extremely hard to predict a live date given more than one month of well-defined implementation work. A good software development vendor will do a combination of analysis based on experience and data from previously completed features to determine a realistic go-live date. This includes a solid level of testing. A good vendor will discuss the possibility of a minimum viable product (MVP) to determine first if it makes sense to have a release of an MVP and then how to establish the path to an MVP along with next stages to get to a fully functional release. Additionally, having feedback loops in software development is critical to its success. The vendor should be showing progress often and allowing the customer to “touch” the system in order to provide feedback which may alter existing code, add features, and/or re-prioritize features.
+
+ 
+
+What most vendors aren’t telling you is:
+“Although we agreed to a September 30th go-live date, we have no idea if that’s possible.”
+
+“We are really operating in WAgile. We are designing in Waterfall, but we say it’s Agile because we have scrum meetings daily for two hours and every other week we call it the end of an iteration or sprint.”
+
+ 
+
+What you should be asking:
+“Do you actually know if you can meet our required live date?” - This is a tough question and honest vendors will tell you that they don’t exactly know but they can give you an estimate right now and while working with you, prioritizing features, and doing the right amount of testing, they can give you a more accurate position. You DO NOT want a vendor to have their developers write terrible code quickly just to meet a deadline.
+
+“What is the actual process you are using to develop this system? Walk me through the entire process. How am I (or my staff) involved in this process?”
+“How can I get my product (or service) released quickly with a minimal set of features?”
+
+“Can I see the product (or service) as you are developing it? Can I have access to an environment where I can see releases of features every two or three weeks and provide feedback and potential changes as you are developing the system?”
+ 
+ 	Actual Cost 
+
+You may have heard a price from the vendor, but do you know what’s included and do you truly understand all of the costs of development, maintenance, and security patches?
+
+ 
+
+As the saying goes, you get what you pay for. Fixed cost works well to tell the management the cost, but there are many negatives about fixed cost. For one, no software vendor can truly estimate a 6 to 9 month project exactly. As a customer you may think, “Oh well, they will just have to work more on their dime.” Unfortunately this turns into the vendor slinging horrible code just to get it working - not efficiently and certainly with lots of defects. Hourly pricing, although not as great for up-front estimation, is better for the success of the project; both sides are making sure that every iteration is filled with the correct prioritized set of features.
+
+ 
+
+In addition, rarely does the vendor mention all of the additional costs required in moving beyond the initial launch including the cost of ongoing maintenance and support, upgrading versions, and security patching.
+
+ 
+
+What most vendors aren’t telling you is:
+“We are going to low-ball the price just so we can get hired. Once we are in, we’ll create a bunch of change orders approved for much more cost and since the code will be a mess, they will have to keep us on as a vendor.”
+
+ 
+
+What you should be asking:
+
+[If a fixed price bid] - “How did you come up with this cost? What if we change our minds about functionality? If you underbid, how are you going to deal with that?”
+“What are the costs for maintenance and support, upgrading software and framework versions, and security patching?”
+
+ 
+
+Obviously I’m making light of some of these issues with providing samples of what vendors might be hiding from you, but clearly we at Solution Street care a lot about software development and are passionate about solving the business problem with the RIGHT technology, the RIGHT people, and the RIGHT process. Many of the examples in this article came from actual clients who previously used the wrong vendor. Since we often take over projects (onshore or offshore rescue) from other vendors after clients are unhappy with their performance, we realize that many of the problematic issues could have been avoided through the client asking the right questions and transparent communication from the vendor.
+
+ 
+
+We hope that when you are looking at a new software development vendor, you ask the questions found in this article. If you happen to choose us, ask us these questions as well!

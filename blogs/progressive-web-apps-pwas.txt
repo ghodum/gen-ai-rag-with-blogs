@@ -1,0 +1,133 @@
+Progressive Web Apps (PWAs)
+
+
+ 
+
+As referenced in Wikipedia, in 2015 designer Frances Berriman and Google Chrome engineer Alex Russell coined the term "Progressive Web Apps" to describe applications that take advantage of new features supported by modern browsers.  This includes service workers and web app manifests, which let users upgrade web applications to progressive web applications in their native operating system.
+
+ 
+
+One way to figure out if you are using a Progressive Web App (PWA) is to test its behavior at 30,000 feet (not connected to a network). I am typing the early draft of this on a plane using Google Docs (which has some progressive app capabilities, but is not all the way there yet). If Google Docs was a full PWA, I should be able to use all of its features including spell correct, formatting, grammar, embedded images, etc., while disconnected and even save my document seamlessly. Before we get into the details of what a PWA is, let’s look back on the history of user interfaces. 
+
+ 
+
+During the 1960s, the very first monitor-based (CRT) interfaces were called green screens. They were 80 characters wide and 24 rows tall; they had no windows, no mouse, and had very slow “repaint” times. They were called green screens because they had green text on a black background. These interfaces were very popular through the 1970s and are still widely in-use today.
+
+  
+
+Starting in the 1970s, Graphical User Interfaces (GUIs) were put into wide use and are the basis for windows-based systems most of us use today. GUIs were natively compiled, had a native look and feel of the operating system they ran on, were relatively fast and could do things in the background without the interface locking up. They could also take advantage of any native constructs the operating system had like web cameras, sound, devices connected to the computer via serial or usb port, etc. GUIs were great, but they were expensive to construct and the vast array of operating systems and hardware that could be targeted made them both difficult and expensive to maintain. 
+
+ 
+
+In the early 1990s, the web browser and HTML became ubiquitous. Product developers could build one application and deliver it via the web browser on all operating systems. This reduced costs, but at the same time dumbed down the interfaces nearly back to the point of the green screens. Users had to deal with slow “page reloads”, no access to native devices, and no native look and feel. With the growth and popularity of browser-based applications there was considerable frustration from the user community. 
+
+ 
+
+The initial response to these issues (1995) was to deliver applications via a technology that would be delivered by the web browser. The first technology to have success in this area was Java; Java applets were full GUI applications that could be delivered and run in a web browser. Soon after, Microsoft (which was in a rift with Sun over Java technology) offered a technology called ActiveX. It allowed native Microsoft applications to run in an Internet Explorer web browser. Other technologies like Adobe Flash entered the scene and the term Rich Internet Applications (RIA) was coined.
+
+ 
+
+There was a bit of a backlash on the lack of compatibility and consistent user experience of the RIAs, so many apps went back to web browser-based apps and plain old HTML to achieve a consistent user experience and lower costs.
+
+ 
+
+In 2005, the term “AJAX” (Asynchronous JavaScript And XML) was coined and interest in using JavaScript in the browser to do cool things like dynamic content update and caching to provide a better user experience gained momentum and became more widespread. 
+
+ 
+
+In 2007, Apple came out with the first version of its iPhone and encouraged users to build web-based applications. It provided a “user guide template” for doing this, and even provided styling that would make these web-based applications look like native iPhone applications and provide a shortcut to launch them from the home screen. Later that same year, the iPhone came out with a native SDK that allowed users to build native apps, and the original web-based applications were forgotten (until 2018).
+
+ 
+
+
+
+ 
+
+With the explosion of phones and tablets, and diminishing dominance of the Microsoft Windows platform, writing robust, complex applications that run everywhere has become very difficult. The trend for many developers has been to continue to use web-based applications, but to use toolkits like Bootstrap to provide “responsive” behavior. These apps behave differently on different devices and screen sizes, but work from a single code base. At the same time, JavaScript has become more standardized, faster and more robust across all browser platforms.
+
+ 
+
+Now that you have some history of how we have built applications and user interfaces over the last 50+ years, let’s describe a Progressive Web App (PWA). One of the very nice things Google has done is provide a checklist that describes the baseline and the exemplary requirements for a PWA.
+
+ 
+
+The basic requirements are:
+
+ 
+
+
+Served over HTTPS (secure)
+Responsive on tablets and mobile devices
+All App URLs load when offline (airplane mode), may be reduced content, but doesn't error out
+Add to Home Screen - metadata added via web app manifest file
+First load fast even on slow network (3G)
+Works on all browsers
+Page transitions feel like they don’t block on the network (page loading or cached)
+Each page has a URL (that can be bookmarked and is in history)
+
+
+ 
+
+The exemplary requirements are:
+
+ 
+
+
+Indexability and Social - site content is indexed by search engines
+Schema.org metadata is provided where appropriate
+Social metadata is provided where appropriate
+Canonical URLs are provided when necessary (linkable for search engines)
+Pages use the history API (for single page apps)
+Content doesn't jump as the page loads
+Pressing back from a detail page retains scroll position on the previous list page
+When tapped, inputs aren't obscured by the on-screen keyboard
+Content is sharable from standalone or fullscreen mode
+Site is responsive across phone, tablet and desktop screen sizes
+Any app install prompts are not used excessively
+The add to home screen prompt is intercepted
+First load very fast on slow network (3G)
+Site uses cache first networking
+Site appropriately informs the user when they’re offline
+Follows push notifications best practices
+Follows authentication best practices
+Native payments
+
+
+ 
+
+In addition to providing these checklists, Google provides tools and tool suggestions/corrections to ensure you are adhering to each of these items. All the popular JavaScript frameworks including Angular, React, and Vue claim to make building PWAs easier. In my opinion, you can leverage any responsive CSS framework like Bootstrap and use any HTML-generating technology following the rules Google has outlined to make a PWA today. 
+
+ 
+
+“As a developer, you can save time and cost by using a PWA rather than trying to implement a native application on each device.”
+
+ 
+
+In March of 2018, Apple reluctantly joined the PWA bandwagon that Google started. This is interesting given that Apple was really the original company championing many of these ideas when the first iPhone came out, but had neglected them in favor of encouraging native apps over the years. As of iOS 11.3, Apple supports many of the PWA standards including the ability to install apps without store approval, and access to many native features within the Safari browser. See this article for the details of what works and what does not at this time.
+
+ 
+
+One good example of a Progressive Web App comes from Starbucks.  You can see their PWA by going to app.starbucks.com. Attached are some screenshots of the app on a web browser, on an iPad and on an iPhone. Note they support similar functionality, but make use of the real estate provided. 
+
+ 
+
+
+
+ 
+
+If you play around with the Starbucks PWA, you will notice it meets all the basic requirements as well as many of the exemplary requirements. It even mostly works when you disconnect the network. I was able to still add a latte to my cart with no network connectivity. It’s not flawless. I noticed some of the drinks had no images when I removed network connectivity, but it did mostly work. I was also able to add the app to my home screen and launch it from there. I noticed that when I launched it without a network present, it wasn’t able to do much. If we contrast this with the www.starbucks.com page (which is not a PWA), I end up on a screen like this if I turn off the network while using it:
+
+ 
+
+
+
+ 
+
+As a developer, you can save time and cost by using a PWA rather than trying to implement a native application on each device. Think about Starbucks; they would need to build an Objective C app to run on Apple devices, a Java app to run on Android devices, a Windows desktop app likely written in C# to run on Windows, another Objective C app to run on OS X and finally an HTML/CSS app to run on desktop browsers. This would be expensive and require various development teams with different skills. With a PWA, we would just write one HTML/CSS-based app that takes advantage of best practices for responsive design and a little bit of device-specific code (to handle nuances between operating systems).
+
+ 
+
+In summary, Progressive Web Apps (PWAs) are apps that are delivered via a web browser and are fast, reliable and engaging. Google has championed a checklist of what makes an app progressive and Apple recently seems to have come on board. In my opinion, this is just a small iteration on the ever-present goal of providing ubiquitous, great user interfaces at a reasonable cost.
+
+
+

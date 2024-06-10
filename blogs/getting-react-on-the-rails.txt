@@ -1,0 +1,189 @@
+Getting React on the Rails
+
+
+
+
+Five years into its life, ReactJS remains one of the most popular front-end frameworks of 2019. It was created by the Facebook team and is the client framework of choice for many other large companies including Netflix, New York Times, Dropbox, PayPal, Pinterest, and Uber. React is continuing to evolve (most notably with the addition of Hooks) and is showing no signs of slowing down. Its popularity is due in part to its speedy virtual DOM and reusable, stateful components.
+
+
+Ruby on Rails has been around much longer. Despite steep competition from frameworks such as Django, Express, and Spring, it remains one of the top choices for a back end. Airbnb, Bloomberg, GitHub, and Fiverr are among the companies currently using Rails. Rails makes it easy to build a RESTful back end quickly thanks to its emphasis on convention over configuration. In addition, the large Ruby on Rails community has created many gems with ready-made solutions for different tasks.
+
+
+In combination with each other, React and Rails form a powerful and practical stack. Given the popularity of both frameworks, this is not a new idea. There are several different ways that a developer can set up a project with a React client side and a Ruby on Rails server side.
+
+
+In an effort to explore the merits of each approach, I spent some time playing around with them in my local environment. I also read through documentation and blog posts from developers who have spent more time using each method. If you are interested in starting a new project with the React/Rails stack, this article will help you decide which of four setups works best for you (react-rails gem, react_on_rails gem, Hyperstack, separate React front end with Rails API). 
+
+
+Other bloggers have written in-depth instructions and tutorials for each of these methods, so I will avoid getting too technical. Instead, I’ve included relevant links for each setup.
+
+
+Also, I am making the assumption that readers have some familiarity with both React and Rails on their own.
+
+
+“In combination with each other, React and Rails form a powerful and practical stack.”
+
+
+react-rails Gem
+
+
+One of the simplest and quickest ways to get started using React with Rails is the react-rails gem. Once you have created a Rails project, you simply add the gem to your Rails gemfile, run bundle install, then rails g react:install, and you’re off to the races. This will set you up to use JSX, ES6, and even TypeScript within your Rails project. That last command adds the React library to your asset pipeline and generates some basic scaffolding.
+
+
+You can take advantage of other Rails generators to create React components (e.g., rails g react:component HelloWorld greeting:string). This command will automatically create the basic shell of a component in the app/javascript/components folder.
+
+
+Components are created using JavaScript and JSX, but they can be rendered straight from Rails “.erb” template files using code that looks like:
+
+
+<%= react_component 'TodoList' %>
+
+
+
+They can also be rendered directly from a controller:
+
+
+class TodoController < ApplicationController
+  def index
+    @todos = Todo.all
+    render component: 'TodoList', props: { todos: @todos }, tag: 'span', class: 'todo'
+  end
+end
+
+
+
+You can optionally install the webpacker gem to integrate Webpack and allow the installation of additional JavaScript packages without relying on the Rails asset pipeline. This is highly recommended, as it means you can take advantage of “npm install” or “yarn add.”
+
+
+The react-rails gem also supports server-side rendering. This means that the HTML from the React components is rendered on the server before being sent to the client, which can be helpful for performance and SEO crawler indexing.
+
+
+If this sounds like something you’d be interested in, you can follow setup instructions in the react-rails readme here. Or if you’d rather be taken through a step-by-step tutorial of an example app, try this article. That said, I would suggest reading a little further before diving into this approach.
+
+
+react_on_rails Gem
+
+
+On the surface, the concept of the react_on_rails gem is the same as react-rails. It allows you to create and render React components within your Rails project. Originally it was created because of the limitations of react-rails. At the time, react-rails did not support ES6, and the webpacker gem had not yet been created.
+
+
+Since the react-rails gem has gotten up to speed, the differences between the two gems are less obvious. However, there are subtle differences that will likely become apparent as your project becomes larger and more involved.
+
+
+For starters, the react_on_rails readme boasts several features. Here are the ones that are not included in react-rails:
+
+
+Redux and React Router integration with server-side renderingInternationalization (i18n) and localizationRSpec Test Helpers Configuration to ensure that Webpack bundles are ready for tests (and for Minitest)Reason ML Support (Reason ML is a syntax extension and toolchain for OCaml)
+
+
+The readme also mentions that react_on_rails has a supportive community, and provides this link to show off how many live public sites are using the gem. (Spoiler: it’s a very long list.) To this point, my own research did seem to suggest that the community for react_on_rails is stronger than that for react-rails. For this reason alone, it may be the better option between the two. 
+
+
+If that’s not enough of a reason, here is a comment made by Justin Gordon, the creator of react_on_rails, about why you should pick his gem over react-rails:
+
+
+Use react_on_rails. [...] Why use it?
+Full on support for the JS tooling eco-system with Babel, Webpack, etc.Supports all features of react-railsSupports many features not provided by react-rails.
+
+
+Check out the readme to get up and running. Here is a history of React_on_Rails complete with video tutorials from Justin. Or take a read through Justin’s React on Rails Doctrine. 
+
+
+Hyperstack
+
+
+This one is cutting edge. Hyperstack is a Ruby DSL (Domain Specific Language) that uses Opal (a Ruby to JavaScript source-to-source compiler) to compile Ruby code into React components. It boasts less boilerplate and less lines of code than “traditional” React. It is isomorphic, allowing you to write the same business logic, domain models, and tests for both the client and server.
+
+
+In a nutshell, it lets you take full advantage of React without writing JavaScript.
+
+
+Here is an example of a simple React component written with JavaScript and JSX:
+
+
+import React, {Component} from 'react';
+import './ToDoItem.css';
+
+class ToDoItem extends Component {
+
+    render() {
+        return (
+            
+                {this.props.item}
+                -
+                
+            
+        );
+    }
+}
+
+export default ToDoItem;
+
+
+
+In Hyperstack, you would write that as:
+
+
+class TodoItem < HyperComponent
+  param :item
+  fires :delete_item
+  render(DIV, class: 'ToDoItem') do
+    P(class: 'ToDoItem-Text') { @Item }
+    BUTTON(class: 'ToDoItem-Delete').on(:click) { delete_item! }
+  end
+end
+
+
+
+Pretty cool, right?
+
+
+The above example came from this article, which offers an in-depth look at Hyperstack.
+
+
+At a glance, it looks like the Hyperstack framework has potential to be a serious game changer for developers and companies who are committed to using Ruby. It eliminates the need to write any JavaScript at all, while still taking advantage of React’s power. In theory it could speed up development, and the code is arguably more readable than JavaScript and JSX.
+
+
+Unfortunately there are a few downsides, starting with the steep learning curve. Although it is based in Ruby, using Hyperstack would require learning an entire new framework. Developers who already know JavaScript (like myself) will probably be more inclined to write “traditional” React code.
+
+
+It looks like everything that is available out of the box in React will be available while using Hyperstack, but I can’t seem to find any information on adding additional JavaScript widgets or libraries. I assume there is a way, but it’s tough to say whether or not there will be extra hurdles involved.
+
+
+Another more glaring downside is that because it is so new, there is a very small community of developers using Hyperstack. It hasn’t been “battle tested,” and there are not a lot of Stack Overflow answers to learn from, discussions to read, job postings, etc. It would be hard to recommend taking a large leap of faith into learning this framework and using it for a new project…although, on the other hand, every framework has to start somewhere. Maybe you want to be a pioneer.
+
+
+Whether you plan to use it or not, it’s worth taking a look around the Hyperstack website.
+
+
+Separate React Front End with Rails API
+
+
+Another option would be to create a standalone Rails API with a separate React app to handle the front end. This is the method in which I personally have the most experience. Like any of the options mentioned above, there are pros and cons.
+
+
+First, the negatives. Building, running, and maintaining two apps is definitely more work than just one. For starters, you’ll need to be running both a rails server and a node development server to see your app in action. You’ll also have to manage two completely separate folder structures, and perhaps separate Git repositories (although you could combine them into one repo if you’d like).
+
+
+To handle API requests made by the client, you’ll have to either implement CORS (Cross Origin Resource Sharing) or proxy requests through a server like NGINX. Fortunately, since this is such a tried-and-true method, there are plenty of helpful resources to consult.
+
+
+Now the positives:
+
+
+Having a separate front and back end makes it easier to run tests, and the code is likely to be more maintainable in general. Bugs will probably be easier to find and fix.On the front end, you’ll have full use of all JavaScript libraries without the need to adjust to any Rails constraints.The project will be more scalable because there will be no need to share state among numerous servers.This approach enables easy development of other clients that could use the existing standalone API (e.g., a mobile app).Finding resources to work on the app will be easier. You can hire great Rails developers for the server and great React developers for the client.This is the most widely used approach for a Rails/React project. There are plenty of tutorials and lessons to help you each step of the way.
+
+
+Here are a couple tutorials to check out if you decide to go this route. If these bloggers aren’t your cup of tea, a Google search for “React on Rails tutorial” will turn up many more results.
+
+
+Article 1
+
+
+Article 2
+
+
+Extra credit: If you take this standalone API approach, the easiest way to get started with a React app is by using the create-react-app command. (Not to worry - this is mentioned in all the tutorials!) Out of the box, it will install a plethora of different packages to get you up and running as quickly as possible. The tools it comes with are among the most popular for React development, and they are configured for the most common use cases. However, what the tutorials usually don’t mention is what all of those tools are actually doing behind the scenes. For curious developers, here is an informative article to clear up the mystery of create-react-app.
+
+
+Thanks for sticking with me. Happy coding!

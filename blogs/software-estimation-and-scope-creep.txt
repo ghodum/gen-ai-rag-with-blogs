@@ -1,0 +1,60 @@
+Software Estimation and Scope Creep
+
+
+
+
+
+Those of us who have been in the software construction business for a while know that estimating the time of software construction is a bit of an art as well as a bit of a science. One of the easy traps for managers and other former developers to do is to trivialize how long it takes to build something. I have been in numerous meetings over the years where upper management chastised the engineering department for a report that took five days when it should have taken five minutes to build. This is not because management is evil, but because we tend to remember the easy path of what “coding” tasks were required in order to get something done, and not all the ancillary things that go into writing solid software.
+
+Back in the 90’s, there was lots of focus on the science side of “Software Estimation”; techniques like Function Point Analysis and Object Point Analysis, Use Case Point Analysis, and even some Cyclomatic Complexity. Each of these techniques had great benefits when it came to getting closer to a good, accurate estimate, but adoption was pretty low as learning and applying the techniques were time consuming and expensive. Also, the world was shifting to an “Agile/Scrum” approach to building software where there was less focus on upfront measurement, and more focus on iterative delivery.
+
+Most folks follow a Scrum process these days and often use a “Points” or “Hours” system for estimating “Stories” that will go into a “Sprint” which is usually a 2-3 week time period. Because stories are fairly granular and developers are working in an active environment, they can generally do a good job of estimating their stories. We ask developers to be careful about the 90/90 rule, which is the old joke that it takes 90% of the effort to get 90% of the code done and then another 90% of effort to get the last 10% done. This is typically because developers don't think of all the time it takes to get their story into production. To address this, we often suggest an estimation checklist that looks something like this:
+
+Estimate development time based on experience with similar tasks if possible, make sure the story is fully fleshed out before estimating
+Include time for validation, error handling and logging
+Include time for unit testing
+Include time to review feature with business and make changes
+Include time to review with design team and make changes
+Include time to review with QA and suggest test cases
+Include time for browser compatibility testing and regressions
+Include i18n time if needed, localization and translation
+Include time for documentation
+Include time for bug fixing
+Include time for performance tuning and scaling
+Include time for deployment to multiple environments
+Include time for security and code reviews
+
+
+
+We generally don't like developers to include time for "Murphy’s Law" in their estimates as it is usually easier and more effective to do this at the project management level. Developers will tend to fill the time they are given or have estimated and always end up using it all, so keeping “Murphy” time at the project level allows some reserve for true unexpected issues that come up during all projects.
+
+Recently, I had the experience to eat some humble pie on one of our projects. The project was to build a Support & Repair system for a client in the retail space. It was going well, but the scope had increased tremendously from the original concept and, in turn, the budget had increased accordingly. After a budget conversation with the client, he asked me if I could build him a “Registration” page for a new product they were launching. It would be a simple page that allowed customers to register their products. In order to keep the budget on track, I offered to do the coding myself for free, as I thought it would just be a handful of hours. I violated my own checklist rule and didn't think through all the work that would go into building a finished product when I had agreed to do this for “free”. For starters, in my head I thought, ok, simple registration page, maybe 10 fields to collect, relating to some product “Sku’s” in our database, very simple. I would use Ruby on Rails and create the table and generate the basic pages and tweak them from there. In the end, it took me about 40 hours total and 31 commits and 18 comments on my work ticket to get the work done.
+
+Looking back at my commit log, here is a list of things I encountered (most of which would have been caught by my checklist) followed by the number that corresponds to the estimation checklist of 13 items shown above:
+
+Add an “Admin” feature to list registrations, filter & sort them, and download at a csv (#1)
+Make validation look pretty and inline on the form, get validation language from business team (#2)
+Document what and how to test pages (#3)
+Adjust menu items and add a new menu item for admins (#1)
+Add JavaScript to show and hide fields based on Sku chosen (#1)
+Add an icon for download (#5)
+Fix the look and feel of the page three times (#4 & #5)
+Create a “Confirmation” page (#1)
+Internationalize the main page & the confirmation page, add five language files (#8)
+Allow admins to edit registrations after the fact (#1)
+Only allow user who created the registration to see the confirmation page or admins (#13)
+Bug fix to not allow future dates (you can’t register a product you have not bought) (#6 & #10)
+Setup production URL, certificate and environment (#12)
+Run some basic load at the page and make sure it can handle concurrency (#11)
+Scope Creep - Add email confirmation to send after registration as a template
+Scope Creep - Enhance email confirmation to work in five languages
+Scope Creep - Make email look good and follow brand guidelines for HTML email
+Scope Creep - Add redirect based on url to go to registration page
+Scope Creep - Since my page was the first page to go live, we needed to internationalize the footer and sidebar.
+
+These last five items that I labeled “Scope Creep” are things that were not discussed up front at all and came up during the construction process. Scope Creep is defined as changes or growth to a project’s scope. Typically, these changes are either a result of not properly documenting requirements, or not having well thought out requirements.
+
+If you analyze my commits, you can come to the conclusion that I was roughly 10x off on my initial estimate and the bulk of the time missed was due to Scope Creep and poor estimation on my part.
+
+The lesson learned here is to push hard up front to get the best possible requirements in order to prevent Scope Creep, and to follow your estimation checklist so that you can do a good job at estimating!
+

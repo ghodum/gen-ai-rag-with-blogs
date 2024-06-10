@@ -1,0 +1,32 @@
+What I Learned from 30 Years of Professional Software Engineering
+
+
+
+
+Last week marked the 30th anniversary of my first week as a professional software engineer. In June of 1993 I was hired by American Management Systems (AMS), fresh out of George Mason University! I was very fortunate to learn and grow at AMS from some really great engineers over my seven years there. I started as an integration tester on a giant telecom project and then moved to a development team writing COBOL! Over the course of my time at AMS I was able to code in Smalltalk, C++ and finally Java. I was lucky enough to write my first article on memory leaks in Java programs which was actually published in a real print magazine! After AMS I worked at FolioFN as an architect helping to build a brokerage from the ground up. This team was amazing, brilliant and driven (most of us worked many 60-hour weeks), this is also where I grew my skills as both an application and system architect, and really became an expert problem solver. After a couple years, the startup bubble burst and we had to lay off folks, I decided to let myself go and join Verisign. At Verisign I learned a ton about building very large-scale systems and keeping them secure and running around the clock. I also learned a ton about working with product managers in the best way to build great software. Lastly, I learned a ton about building a technical and product roadmap. Five years later I decided to go into business for myself and started a couple of companies one after the other - KeepUp and DemandMart. I gave entrepreneurship a good shot and learned a lot about running a start-up business. After those companies ran their course, I started consulting (Joel Nylund Consulting). I enjoyed consulting enough to then join forces with my awesome business partner Arthur Frankel, a friend and colleague from the trenches of my AMS/FolioFN days, and become a partner at Solution Street. Nearly 15 years later we have built custom software for dozens of customers and it has been a blast. 
+
+
+Enough about me, in this article I will talk about what I have learned over this time as a software engineer. I tried to summarize these, but links to the articles I have written do a deeper dive into these topics.
+
+
+
+Don't be a coder, be an engineer - An engineer is a person who designs, builds, or maintains things. Too often in our industry we worship coding cowboys; these folks are great at cranking out code, but they miss the parts about design and maintenance. Engineers build great software they are proud to maintain in production and do it in an effective way. Being a great software engineer takes lots of practice. You will not get there overnight, but if you work at it, you can be great! Managing scope creep and software estimation is critical to your job. Furthermore, great engineers practice KISS (Keep It Simple, Smarty pants) with their designs and code.
+
+
+Be Nice - Early on in my career I occasionally had to work with folks who were total jerks. They were smart and knew a lot, but, man, were they hard to deal with. People want to work with folks who are great, and are nice. Be the winning combination of both of these. Compliment people when they do well, and support them when they struggle. Go out of your way to help your teammates! You still need to hold people accountable, but you can do it in a nice way!
+
+
+Learn to be a great listener and communicator - Most of us are not born great listeners, but I can attest that you can practice at it and get better all the time. We often say that 50% of how we perform as software engineers is based on how well we communicate. Carefully follow directions when working with customers and ask questions! When working on teams I have found it useful to create a team communication contract to overcome any friction in styles of communication. Lastly, one of my first managers had great advice for me the first time I made a bad assumption. He said never ASSUME because when you do you make an ASS out of U and ME. 
+
+
+Know your tools - Having the right tools available and knowing how to effectively use them is key to being productive!
+
+
+Don’t chase shiny objects - Over my career there have been oodles of shiny objects coming and going in our industry. When I was early on in my career I would get really excited about some new technology and really want to try it out. I think my first really exciting one was CORBA! What I realized over time is our industry is overrun with “wannabes,” folks who are constantly chasing the coolest tech. Remember when Agile was going to solve all your problems? Or take recent examples with folks using microservices when they didn't really need them. Which in some cases created a huge amount of unnecessary complexity. Another example is blockchain. Every marketing deck had blockchain listed as their silver bullet, but now folks have realized blockchain is really great for a small set of problems. The most recent shiny objects are Artificial Intelligence (AI) and ChatGPT. Is AI going to save the world (or destroy it)? So my suggestion is not to chase these things but to apply pragmatic logic to the system you are building. Can this help me do something faster, better, more securely than I am doing now? If so, try it out, if not, don't worry, the next thing will come along soon.
+
+
+
+I hope you have enjoyed reading about the key things I have learned in my career and many of the supporting articles I have written over this time. If you have additional items to add to the list based on your experience, feel free to drop a comment to share them.
+
+
+We at Solution Street build custom software for our customers. If you have the need to build something to solve your business problems, drop us a line!

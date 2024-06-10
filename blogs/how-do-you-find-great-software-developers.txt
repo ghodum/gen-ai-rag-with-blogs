@@ -1,0 +1,42 @@
+How Do You Find Great Software Developers?
+
+
+
+
+One of our clients whose team we supplement recently said to me, “Your team is the best team I’ve ever worked with in my 20 years of experience. I don’t understand how everyone on the team is so good. How do you find them?” I simply replied that we find thoughtful problem solvers who have outstanding technology skills coupled with outstanding communication skills, especially listening skills. I went on to say that it’s not easy - we spend a great deal of effort looking for this combination of skills and often we speak with over 100 people to find the “one.” Obviously I’m patting ourselves on the back at this point for doing a great job and although we are not perfect, we do focus on the attributes that make a great developer rather than a mediocre one. How do we do that? I will explain, but first let’s take a brief look at some issues we run into involving resumes, recruiting, and developer problem-solving practices that are increasingly commonplace in the industry and which make finding high quality candidates that much more challenging.
+
+
+Let’s start with the hiring portion of the industry which I would contend is in disarray. You can see this in a matter of seconds by looking at a resume from any recruiting company out there. I happen to get dozens of emails a week from recruiting companies with resumes attached. These are famously titled “HOT LIST” and always seem to begin with, “I hope you are well. Here are my bench developers.” From the majority of recruiting companies I get the same nightmare of resumes. First, under the software skills section, 20-30 items are bolded which is often meaningless because the candidate knows less than 10 percent about most of those skills. Second, these resumes are excessively and needlessly long. I have seen 10-page resumes for a candidate with only five years of experience. My personal belief is that resumes should be one or two pages at the most. Additionally, some resumes are brimming with red flags which will automatically take a potential candidate out of the running such as: massive spelling errors; only having worked in many short-term positions; and/or a cookie-cutter description of their responsibilities. 
+
+
+
+
+
+In addition to subpar resumes, the “technology checkbox mentality” is an obstacle we and other companies face when hiring developers. The vast majority of recruiters in our industry do not have a software development background so the best that can be done is a simple word matching exercise. This is not to say that this approach is bad for an initial step, but many companies often don’t go further than that checkbox and do not conduct a useful vetting process. Many times, what results from this practice is a candidate who doesn’t have enough substantial experience with a technology to effectively serve in the role for which he or she is interviewing, such as the role of senior developer. For instance, just because you have Java and Spring on your resume and you mention inversion of control doesn’t mean you actually know how to code and solve complex problems with Spring. Similarly, just because you can recite different design patterns doesn’t mean you understand when and how to use them.
+
+
+“My personal belief is that resumes should be one or two pages at the most.”
+
+
+Another issue we deal with more and more in seeking high quality developers is the “coding by Google” practice which has negatively transformed our industry in many ways. With so many online Q&A communities and information-sharing resources out there today, developers will often go to Google or Stack Overflow before thinking about how to solve a problem on their own. As I’ve written before, problem solving is one of the most significant attributes of a great developer. The ability to identify a problem, attempt to solve the problem, and iterate, is key to a successful solution and project. This iteration and thought process helps to identify gaps in the requirements and results in more and better communication between the developer and the product owner. The copy and paste mentality of many developers as a consequence in part from online communities and resources is detrimental because coders new to the profession can “succeed” as researchers (or “Google-rs”) rather than as software engineers and problem solvers. It also stifles the back and forth between developer and product owner. This is not to say that any searching on Google or Stack Overflow is a bad thing, but using it as a primary way of thinking before any actual thought process occurs does not create a good piece of code or, more importantly, solve a business problem.
+
+
+Now that I’ve bashed these parts of the system, I’ll address how we at Solution Street actually find great developers. Much of what we do at Solution Street is solve problems. Some big, some small. Some business focused, some technology focused. At the end of the day, a project is successful if we have created a sustainable system that has solved the client’s business problem using the right technology solutions that offer a maintainable, flexible system for years to come. When we speak with candidates we always have this in mind. 
+
+
+So, going back to what I told our client, we are looking for thoughtful problem solvers with a combination of outstanding communication skills and outstanding technology skills. In order to find candidates of this caliber, during the hiring process, we do the following - we problem solve with them, we code with them and we speak with them on both a functional and technological level.
+
+
+When evaluating a candidate we thoughtfully and diligently consider the following: 
+
+
+Is this a candidate who can process a business problem and effectively ask appropriate questions and drill down into the details?Can the candidate then abstract out their business solution into actual code?Can they effectively discuss various technological difficulties with their solution and address them? 
+
+
+In order to determine the candidate’s ability to do these things we ask them to solve a problem in front of us and then code in front of us. I know to some in the industry this is strange or perhaps not appropriate for software engineers with 20 years of experience, but I can tell you with no uncertainty that there is a large number of 20-year experienced developers who cannot actually code. 
+
+
+Whether a developer comes to an interview with one or 20 years of experience, having a candidate solve a business problem and code the solution in front of us is the only way we can determine his or her true capabilities. After my 30 plus years of experience, I can watch people solve a problem and code and, from that, I can extrapolate how they would do on a Solution Street project. What we do at Solution Street is not a “throw over the wall” endeavor. No client documents the entire system and then gives us the “spec” (specification). We have to design and grow with them. We need to listen, listen, listen and then ask the right questions. When we interview candidates we are looking for this skill set by role playing and evaluating these skills. After 17 years in business, our method, originating many years ago, has proven consistently successful with hiring the right people and we will continue doing this. 
+
+
+One of the key challenges in finding great talent is the essential combination of technology and communication. With the onslaught of copy and paste coders and developers who were groomed via other developers telling them exactly what to do, it’s becoming increasingly difficult to find developers who are significantly in the plus column and become the essential team members on a successful project. By actually asking candidates to solve business problems and then code solutions during an interview is, in my mind, the only way to decipher not only their technical and problem-solving skills, but their listening and questioning skills as well. There is no question that there are many great software developers out there with outstanding communication skills who are problem solvers and have a knack for learning and understanding a client's business and we are determined to find them!

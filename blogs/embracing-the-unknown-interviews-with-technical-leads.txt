@@ -1,0 +1,129 @@
+Embracing the Unknown: Interviews with Technical Leads
+
+
+
+
+Late last year, I was asked to step up to take a technical lead role after being on a software construction project for roughly six months. At that time, there were two developers on the project including myself and three new developers joining the team. 
+
+
+At first, I was thrilled but also felt intimidated by the role. My reason for feeling intimidated was mostly because the person I was taking over from had more years of experience in this field. It seemed impossible for me to be able to catch up and follow in her footsteps. Also, talking to people and leading a team of senior and very smart developers was something I didn’t do every day, so I was new to the role. 
+
+
+However, as I continue to work on this project, I have learned that it’s not about one’s technical expertise in being an effective technical lead. It is thinking about the bigger picture by providing support that empowers team members to do their best work and succeed.
+
+
+As the saying goes, “No man is an island.” No one can be fully self-sufficient. We need people around us to rely on to thrive and prosper. Therefore, soon after I got the technical lead role, I reached out to my colleagues at Solution Street who have knowledge and experience to get their advice and feedback. 
+
+
+Daniel Maloney, Senior and Lead Software Engineer at Solution Street, reminded me that, “Being a technical lead means looking at the big picture. We need to think more about the project and the team, wonder and ask ourselves from time to time how we can do better.”
+
+
+I know I have a lot to learn. Luckily, Solution Street provides the tools and resources that I need to take on this role. Having my managers to guide and mentor me and talking to my colleagues who have experience and passion about being a technical lead, gives me different perspectives.
+
+
+Positive and constructive feedback builds someone’s morale. It emphasizes the importance of their role by guiding and wanting them to improve for the better. “Without continuous feedback, athletes would have a tough time knowing exactly what they need to do to improve.” - Prashant Punjabi, Director at Solution Street.
+
+
+Best to not know all the answers
+
+
+Accepting the fact that I don’t know everything benefits my team more than anything else. We are only human, no one could possibly know everything. This is not an excuse to retreat but a humble way of acknowledging one’s limitations. 
+
+
+At times, we doubt our abilities and the validity of our decisions -  that feeling of pretending to be someone we are not - Imposter Syndrome. Olga Lorenz, Senior Software Consultant at Solution Street, took this situation positively, “Trust yourself and be confident. Work as a team and acknowledge your team members’ capabilities to help you when you're in doubt.”
+
+
+Acknowledging that knowledge gap gives me the opportunity to work with my team members who are capable and experts in an area. Sending an email to ask questions or a few minutes of one-on-one sessions helps speed up the process of learning and at the same time encourages and boosts team members' important role to the team.
+
+
+“Listen to what people are saying. Talk to your team members to assess their capabilities and strength. Use that knowledge to the team's advantage and to make technical and effective decisions.” - Olga Lorenz
+
+
+Encouraging the strength and expertise of the team members and having them take ownership of their work promotes collaboration and sharing of knowledge among the team members. By setting an example of acknowledging one’s limitations, of not knowing everything, it encourages each team member's curiosity and continuous learning. 
+
+
+“Trust your instinct when dealing with people. You are responsible to bring consensus among the team. Communication builds camaraderie. Work on your trust balance.” - Prashant Punjabi
+
+
+Daniel Maloney also added, “Know that sometimes you are not always right. Don’t be too against other people’s suggestions.” 
+
+
+Lead with empathy. Be open to verbal and non-verbal feedback and suggestions. Ask questions, any questions, even what you think might be stupid questions. And let go of the idea that you have to be the person that needs to know everything.
+
+
+Help clear the roadblocks
+
+
+Rather than pretending that you know all the answers, focus on how you can better assist the team. Yes, a technical lead doesn’t need to know everything, but they should be able to guide team members to find the better solution to the problem they are facing.
+
+
+“Serve your team to overcome big challenges. Aid in solving problems.” - Daniel Maloney
+
+
+Check with team members for any blockers or any technical questions related to their current tasks. At times, it’s an opportunity to know their technical approach and technique on each task and increase your knowledge of the codebase. 
+
+
+For example, there was a time when a team member of mine was stuck on a task that had gone way out of scope. I did not have all the answers but I was able to guide my team member to the right person to discuss the task and get the answers that he needed to help clear the path and continue. 
+
+
+Some ways to unblock your team might be to: spend an hour or two each morning reviewing code on open PRs (pull requests), answer team members' questions, and backlog new tickets as tech debt, bugs and/or future code enhancements.
+
+
+“On giving code review, focus on the action and not on the person. Consider giving suggestions rather than adding comments that make a person feel stupid. Say ‘could’ instead of ‘should.’ Be respectful.” - Prashant Punjabi
+
+
+In some cases, a few minutes of technical discussion and a deep dive into the code with the team members helps to understand the root cause, and as a team, come up with a solution to the problem. In this scenario, a technical lead can serve as a mediator or a contributor to the discussions. 
+
+
+"Doing that extra bit of research together gives you a sense of accomplishment knowing that now you know a lot more than before and can take charge with the direction of the project." - Olga Lorenz
+
+
+Positive and constructive feedback by giving praise, advice, guidance and suggestions boost team members’ morale, motivates and encourages them to do better. It also helps identify team members’ weaknesses and strengths and provides new perspectives.
+
+
+“As a technical lead, we should be our team members' support system, to keep their morale high. Do not let them down and help them grow.” - Daniel Maloney
+
+
+Words from Technical Leads
+
+
+To be an effective technical lead: Listen well. This is the common advice I got from talking to my colleagues and managers. Here is more advice and motivations from them on taking a technical lead role.
+
+
+Prashant Punjabi
+
+
+“Build trust. Work on your trust balance. Show that you trust your team members before you can expect them to trust you back to lead. Give effective feedback that shows respect, that strengthens the relationship between you and your team members.”
+
+
+Olga Lorenz
+
+
+“Being a technical lead means you are accountable to more people, including your team members. Assess your team, know their strengths and weaknesses to better delegate the task. You also have a responsibility of taking charge with the directions of the project.“
+
+
+Daniel Maloney
+
+
+“It took me a little while to get comfortable with the technical lead role. I was self taught. I wish I had a mentor at that time. With years of experience, it teaches me not to rush things. Think of the big picture by making things better and asking ourselves, “Can we do better?”
+
+
+Final thoughts
+
+
+Taking a technical lead role means taking a step back, looking at the big picture and constantly asking ourselves how we can do better. That includes honing our communication and coaching skills that encourage our team members to do their best. A good technical lead also helps unblock team members and takes responsibility for the decisions affecting the direction of the project. 
+
+
+It is okay to not know everything, especially in the beginning. By embracing the unknown, we are empowering not only ourselves, but the team. And this greatly contributes to the success of the project. 
+
+
+Interviewees:
+
+
+Prashant Punjabi, Director at Solution Street 
+
+
+Daniel Maloney, Senior and Lead Software Engineer at Solution Street
+
+
+Olga Lorenz, Senior Software Consultant at Solution Street

@@ -1,0 +1,54 @@
+The Basics of Git
+ 
+
+ 
+    Written By:  Josh Gong
+ 
+
+ 
+
+Git is a distributed version control system. It was initially designed and developed by Linus Torvalds for Linux kernel development in 2005. The design goal is to build a fast, highly parallel, and robust version management system that can handle large projects like the Linux kernel development efficiently.  I recently gave a presentation on The Basics of Git for our tech session at Solution Street.
+
+ 
+
+Git visualizes a version of data as a snapshot of state instead of a patch of differences. Thus, each client is able to mirror the full repository, including meta data, to the local environment, and unleashes the power of offline operation in version control, history management and data integrity.
+
+ 
+
+The first part of the presentation gives an overview of the underlying concept, comparing the traditional central repository with distributed repository. It then covers the installation and configuration as well as the initialization of our first repository. Next, it will go over the file status life cycle: untracked, unmodified, modified and staged. After that, the rest of the presentation demonstrates hands-on coding through an example of making an "angry penguin"(Cheers angry bird fans!) which demonstrates the most common commands such as $git status, $git add, $git diff and others.
+
+ 
+
+Though the focus of this presentation is more on the local repository operations, it does briefly introduce several commands that are used to interact with remote repository, i.e. $git fetch, $git pull, $git push, etc. It also highlights the new concept of "rebase" and the differences between $git merge and $git rebase. After getting familiar with the basic operations, you may want to roll up your sleeves and download (or build if you are only gonna test out) a real repository from Github (a website hosting tons of Git repositories for various projects), and start to make your unique contributions!
+
+ 
+
+If you are interested in learning more, such as the silent majority of lower level plumbing code, you may find these links helpful:
+
+ 
+
+Git tutorial: http://git-scm.com/book/en/Getting-Started
+
+Git in lower details: http://www.youtube.com/watch?v=MYP56QJpDr4
+
+Github bootcamp: https://help.github.com/categories/54/articles
+
+ 
+
+Check out my presentation -  The Basics of Git on YouTube!
+
+ 
+
+Cheers,
+
+ 
+
+Josh
+
+ 
+
+ 
+
+
+
+ 

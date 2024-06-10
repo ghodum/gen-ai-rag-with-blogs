@@ -1,0 +1,51 @@
+Looking at Your Bugs With a Different Perspective
+
+
+
+
+I’ve been writing code for 40 years now. As all developers know there is almost a certainty that your code will not work from the very start without some issue that you need to debug. With respect to finding and fixing bugs in your code there are many phases: when you are in active development; after completion of development and testers are finding issues; or (if I dare say) in production. This article is not about the benefits of TDD or explaining the benefits of finding defects early on, but rather the process of analyzing the defect and how to gain different perspectives of identifying the underlying issues causing the defect regardless of which phase of development you find a defect.
+
+
+In my career as a software engineer, I often figure out the issues myself, but there are other times when I might solicit a colleague or they solicit me as an extra pair of eyes to determine the underlying cause of a defect. Pairing with another engineer generally occurs because the defect is not in the typical set of issues developers run into when writing code (let’s call this first level “Usual Suspects”). However, second-level defects are more head-scratching issues where you must think out of the box to identify the root cause. Let’s call this level “Head Scratching.” Since these wind up being unique in many cases, no article has a list of what to look for or a Google search that returns the correct StackOverflow answer. These defects require a different perspective and an open mindedness to think out of the box.
+
+
+First, let’s review the “Usual Suspects.” Obviously, I can’t list them all since there are many that fall into this category, but let me touch on several that have plagued me in my career (note that with different software languages there is different syntax, but you should get a general idea):
+
+
+Dreaded double equal (==). No matter how long I’ve written code I still run into this issue. Of course, a good editor can sometimes find these, but it’s pretty much the first thing to search for in your code. Obviously there are similar issues with different software languages (e.g., Java has the .equals).Decimal, floats, and friends. We’ve all run into issues of using the incorrect type for precision, or trying to store larger values than the type allows. For loop mis-start or mis-end. So many beginner and experienced errors occur because of a miss by one issue where you start the loop incorrectly at 0 or 1 or you use a less than with or without an equal sign. Easy fix, but often, more time is spent debugging than you would think.Function parameters are not what you thought. Obviously validating parameters are a must, but how often do we see issues because a value or object is coming across that is invalid or null and causes an issue further down the link?Function names are slightly different. With object-oriented programming we are often caught with the simple issue of one character difference in function/method names. Sometimes it’s a character off or just a case issue. Those are the worst.Data is not available yet? Typically, with multi-threaded programming or just plain async JavaScript calls, we often run into situations where we would like the data to be there, but it’s not because the order of the processing isn’t what you think it should be. More complex to figure out but usually you realize this soon after you start putting some debug statements in the code to see who’s on first!
+
+
+Clearly, there are many more and you can probably name a few, but these are the Usual Suspects for these reasons: the sum of these occur 80%+ of the time; you’ve had the same issue before with other code; and, generally, you don’t need help diagnosing the issue.
+
+
+Now, let’s discuss the “Head Scratching” issues and how to best approach these defects to identify the cause. First, a few philosophical thoughts. When we, as developers, look at a piece of code, we translate that set of code into our own understanding of process. So, when we see a for loop (e.g., from 1 to 10) and within that loop, it’s adding some value to the variable (e.g., x = x + 5) we then translate that into our heads as “run this loop from 10 times and keep adding 5.” We may even try to come out with the final value of x, but there are many things we think of secondarily. This includes looking carefully at the loop to see if we are using less than or greater than correctly and using those with equal signs. We also may not initially pay attention to some details, such as if x is defined already, but typically, with a second look, we do. Most Head Scratchers require much deeper thought into possibilities. 
+
+
+Although, by definition, there cannot be a standard list of what to look for in “Head Scratchers,” there are examples of items that may facilitate opening your mind to the possibilities, such as:
+
+
+Deployment issues/differences. Often your code works locally and then it doesn’t work in production or staging. This leads to a developer's favorite saying, “Well it works on my machine!” Of course these issues are very hard to debug given the differing environments. These problems usually require a step-by-step walkthrough of the environment, its variables, and differences between the environments. At Solution Street, we have had many deployment differences; sometimes they are due to some variable pointing to a static environment and other times they have to do with a small discrepancy in the environment related to language version, library version, or security. Database locking/timeouts. These are the dreaded defects that rear their ugly head after you are in production with more users than you thought would be hitting the system. These often require some good sets of tools, but more importantly, a good overall look at what’s going on with respect to database queries and updates. Sometimes the best solutions for these are trying to reproduce the issue in isolation in a performance environment where test code is emulating users. Variable scoping. Somehow your variable value is overridden or is not what you thought and you wind up debugging all the rest of the code. Simple checks for how and where your variable is initialized often can resolve these, but the effects of these incorrect scopes usually send you on a wild goose chase.  
+
+
+“Often when looking at code that is broken and it’s not one of the typical solutions, I need to take a step back from the code and just come up with a list of things to look at - no matter how obscure, minute, or unlikely.”
+
+
+How can you open your mind to more possibilities? Often when looking at code that is broken and it’s not one of the typical solutions, I need to take a step back from the code and just come up with a list of things to look at - no matter how obscure, minute, or unlikely. I tend to ask myself questions about the code:
+
+
+Are there multiple environments and am I using the environment I think I’m using?Could I have a library named the same as another, or one library that uses the same named object?Do I really know that I’m using the current code base?Am I connecting to the database I believe I should be?Am I using the version of Python (or Java or …) that I believe I’m using?
+
+
+Even asking myself these questions, I tend to confirm things that I’m 100% sure of already. Of course, there are often times where my “100% sure of” turns out to be an incorrect assumption. Maybe I will:
+
+
+Verify in a different browser.Verify on another machine/VM.Verify by deleting all of my code or my database and pulling the latest.Verify by asking a team member to validate my assumption.Change code to see that new code is actually taking effect.
+
+
+Even when hashing through all of these questions and any other question that comes to mind you sometimes discard a simple solution over the course of your analysis because you weren’t methodical enough to keep track of what you thought of vs. what you tried. Keeping track is important not only for your own sake but also to explain what you’ve tried to others. 
+
+
+When all else fails I will usually ask a colleague to add a new set of eyes to the problem. No matter whether the problem is complex or simple, spending too much time trying to identify the issue can be circumvented with a little help from others.
+
+
+If you like problem solving and you have fun identifying really, really “good” defects, maybe Solution Street is the place for you!

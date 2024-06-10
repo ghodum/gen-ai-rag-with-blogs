@@ -1,0 +1,183 @@
+Introduction to Modern AI 2024 Edition - Part 1
+
+
+
+
+It is hard to believe it has been almost six years since I wrote my last article on Artificial Intelligence (AI), titled Practical Artificial Intelligence. In that article I gave an overview of the state of AI and Machine Learning (ML) and some popular usage and tools at the time. Since then, things have gotten crazy in the AI world and everyone is talking about tools like ChatGPT, but most people really don’t understand all the terminology, tools and what they are best suited for. In this article (Part 1 of 2), I will attempt to give you an updated look at this ecosystem and try to explain things in “Joel” terms.
+
+
+So let’s start off by defining all the key terms and look at some examples of each.
+
+
+Key Terms
+
+
+Artificial Intelligence (AI) is human intelligence exhibited by machines. Examples of AI include: facial recognition, help desk chat bots, smart thermostats and speech to text. 
+
+
+Facial RecognitionHelpdesk ChatbotSmart ThermostatSpeech to text
+
+
+As developers, we have been writing AI into our code since the beginning. Below is an early example of playing a game of tic tac toe – the code is simulating another human's intelligence to play against you. Note, there is nothing fancy or magic about this code, in fact it's just a series of IF statements; and, yes, this does qualify as AI!
+
+
+
+
+
+
+
+
+Machine Learning (ML) is a subset of AI where we use algorithms to parse data, learn from it and then decide to do something. All machine learning counts as AI, but not all AI counts as machine learning. For example, symbolic logic – rules engines, expert systems and knowledge graphs – could all be described as AI, and none of them are machine learning.
+
+
+Product RecommendationsImage ClassificationSpam Classification
+
+
+If you go to Amazon to shop for some shoes maybe it'll suggest a shirt to match your shoes.  Amazon also uses tools like image classification to decide what an image is to prevent false advertising. Lastly, the big email providers such as Google and Yahoo use spam classification to decide whether an email is spam. How well they do this impacts us every day! 
+
+
+
+As developers when we put machine learning into our code, we historically implemented it with algorithms as models. Have you ever built a decision tree in your code?  This was you implementing a machine learning model, and probably not even realizing it.
+
+
+
+Large Language Models (LLM) is a type of artificial intelligence (AI) algorithm that uses deep learning techniques and massively large data sets to understand, summarize, generate and predict new content. The term generative AI also is closely connected with LLMs, and are a type of generative AI that has been specifically architected to help generate text-based content.
+
+
+Current examples of LLMs are GPT-4 (behind OpenAI’s ChatGPT), Llama (Meta), LaMDA (Google)
+
+
+Examples of historical developer-built LLMs include: 
+
+
+
+Coding up a chatbot to understand basic commands and process them (think about the early text-based “Adventure Game”). 
+
+
+A technique Word2vec, where you obtain vector representations of words to determine semantic meaning. 
+
+
+
+
+
+
+Generative AI is artificial intelligence capable of generating text, images, or other media, using predictive models. Probably the most well-known generative AI today is Dall-E. Many people are using it to generate images. Also, ChatGPT is being used to generate articles/content.
+
+
+Most of us never coded generative AI in the early days, but there was plenty of work going on even back to 1970; some of the early examples included speech synthesis.
+
+
+
+
+
+GPT - Generative Pre-trained Transformer - ChatGPT being the most popular (Chat Generative Pre-trained Transformer) is a large language model-based chatbot developed by OpenAI (multiple competitors here like Bard, Claude).
+
+
+
+
+
+Retrieval Augmented Generation (RAG) is a powerful technique that combines the strengths of pre-trained language models with the benefits of information retrieval systems. The primary purpose of RAG is to enhance the capabilities of large language models (LLMs), particularly in tasks that require a deep understanding and generation of contextually relevant responses.
+
+
+Since most developers didn’t code LLMs back in the day, most also didn’t implement RAG.
+
+
+An example of RAG is taking some information not already contained in a standard model and augmenting it to make the model more powerful for that specific usage. An example includes  taking my company handbook and augmenting it with an existing GPT/LLM by using a technique called embeddings. Once I have done this I can ask the GPT questions about my company policies and it should be able to make deductions about it, even though the original LLM knows nothing about my company.
+
+
+Business Use
+
+
+Now that we have the basic vocabulary down and have some good examples of how all this stuff works, let's talk about 2024, how we should do things and how we can leverage all the great tools folks have built to do awesome AI and ML!
+
+
+My company, Solution Street, uses software to solve business problems for our customers. This is what we have always done, so I like to approach AI and ML not from a technology approach, but more from “what business problems can we solve?”
+
+
+Traditionally we have used AI and ML to solve the following problems:
+
+
+
+Taking documents and turning them into something searchable and usable – traditionally we have used  Natural Language Processing (NLP) to understand the meaning and sentiment of text, to make it searchable and also automating document processing to turn images into text and classify and segment them. Most of this work revolved around taking legacy PDF documents and making better use of them.
+
+
+
+
+Predicting sales results – taking data our customers have and building models to  produce sales predictions for our customers.
+
+
+
+
+Building faster, less error prone software – for the last few years, we have been leveraging code-assist tools like GitHub Copilot and Amazon CodeWhisperer to help developers write code faster at a higher quality.
+
+
+
+Today, we can solve these same problems with higher accuracy and less work using the latest and greatest tools (we will talk about a few of these shortly). We can also more easily solve other typical business problems more easily with new tools. 
+
+
+Some problems that are easier to solve now are:
+
+
+
+Automating simple customer service interactions – building a custom chatbot to solve your customers’ most common problems is now fairly easy to do.
+
+
+Automating tasks that were historically done manually, like combining files, filtering files, summarizing files, etc. by using ChatGPT-type tools to assist you.
+
+
+Incorporating features like facial recognition and speech to text/text to speech into our systems.
+
+
+
+Tools & Frameworks
+
+
+Until recently, if you wanted to build a machine learning model, the only option you had was to  write some code. Most developers choose from one of a few options: 
+
+
+
+Scikit-learn - easy to learn, where most people start 
+
+
+TensorFlow - from Google, more powerful, but complex (some folks use Keras on top) 
+
+
+Pytorch - from Meta, more powerful and easier to use than TensorFlow
+
+
+
+Now the major cloud providers each have their own set of tools targeted at each area:
+
+
+
+Microsoft: Azure OpenAI (GPT), Vision/Speech/Translation, ML Studio, Automated ML, Pretrained Models
+
+
+AWS: Sagemaker (traditional), Bedrock - multiple model options,  Sagemaker has Canvas and Autopilot for Automated ML, AmazonQ (GPT)
+
+
+Google: VertexAI (Gemini model), Bard (GPT), TensorFlow
+
+
+
+Higher level tools have also come upon the scene recently that allow you to build models quickly without writing any code:
+
+
+
+Nyckel - lets you upload a CSV and go!
+
+
+SimpleML for Google sheets - see my business partner Arthur’s blog article
+
+
+AutoML (AWS, Azure, GCP), from cloud providers (on previous page)
+
+
+Using ChatGPT to do your ML for you! (used to be called Advanced Data Analysis)
+
+
+
+Summary
+
+
+In this article (Part 1), we summarized all the latest terminology around artificial intelligence and machine learning along with many examples of them. We also showed typical business problems that can be solved with the latest tools. Lastly, we talked about the popular tools in this space today. Stay tuned for Part 2 of this article where we will walk you through a real life example using one of these tools to solve a business problem!

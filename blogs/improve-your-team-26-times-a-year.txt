@@ -1,0 +1,261 @@
+Improve Your Team 26 Times a Year!
+
+
+
+
+Do you believe in the power of teams? Well, I believe in the power of the team, and what happens when teams embrace the retrospective - and what happens when teams don’t. Though its foundation is in Agile, the retrospective can be used by Agile and non-Agile teams alike to improve team morale, team collaboration and work towards becoming a high-performing team.  
+
+
+What Is A Retrospective
+
+
+The Scrum Guide describes the purpose of the Sprint Retrospective, or retro, as a means to plan ways to increase quality and effectiveness:
+
+
+“The Scrum Team identifies the most helpful changes to improve its effectiveness. The most impactful improvements are addressed as soon as possible. They may even be added to the Sprint Backlog for the next Sprint.”
+
+
+Retrospectives provide opportunities for teams to reflect, inspect and adapt their ways of working. Meant to drive the process of Continuous Improvement, one of the 12 Principles enumerated in the Agile Manifesto, the retrospective directly supports the idea that “at regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.”
+
+
+While it may appear that the Retrospective is simply an evolution of the traditional post-mortem, it is different and more effective in at least three ways (refer to figure 1). 
+
+
+Frequency
+
+
+I believe the most impactful difference between a retrospective and a post-mortem is that a retrospective is done repeatedly throughout an extended delivery lifecycle (think project in waterfall). The ability for team members to frequently reflect on how they work and adapt early and often is powerful and directly leads to the ability for a team to improve during an effort and not after. A singular end-of-project post-mortem at the conclusion of a lengthy project provides no ability to affect change for the project team and little ability to influence future efforts.
+
+
+Participants
+
+
+Another way retrospectives differ from post-mortems is that the former are attended by the active team only – management need not apply. This helps to reinforce that the sessions are 100% focused on supporting individual autonomy, team improvement, and not about management recognition, throwing someone under the bus, etc. Those who have full knowledge of what needs to be fine-tuned are in control of the fine-tuning.
+
+
+Outcomes
+
+
+Post-mortems are usually held just before a project team disbands to go their separate ways. The insights of the meeting are compiled too late to affect anything meaningful for the team and are difficult to share with other teams in a consumable way that is helpful. All too often, the post-mortem is executed to check a box and satisfy an arcane requirement of the PMO rather than inculcate a desire to learn and improve into the DNA of the individuals and the organization. 
+
+
+A proper retrospective has the explicit goal of generating actionable items that the team can execute to improve some aspect of their work. These could include a process improvement, or something as simple as seeking more time from a key external resource. Regardless, this frequent introspection and shared goal of actively working to improve, support the engagement of individual team members and sets the tone for a cycle of continuous improvement.   
+
+
+Figure 1: Agile Retrospective vs. Traditional Post-Mortem
+
+
+AttributesRetrospectivePost-MortemFrequencyOnce per Sprint (typically every two weeks)Once at the end of a project before the staff disperses to new effortsParticipants   Actively working team (AKA core Scrum Team)Entire team plus managementOutcomesActionable set of items to help improve ongoing workA document that typically is archived and rarely, if ever used again.
+
+
+Benefits
+
+
+When teams are allowed to embrace the retrospective the following benefits can be realized: 
+
+
+Teams and individuals feel empowered and are able to identify and self-correct issues leading to better solutionsAllows teams to “test” new ways of working and get fast feedbackDevelops a safe space where members can discuss what’s on team member’s minds and possibly avoid pent up dysfunction laterResults in decisions and action items to make tactical improvements as soon as the next SprintIndividuals who are part of these teams begin to feel high amounts of satisfaction and ownership based on their feeling of autonomy, mastery, purpose that author Daniel Pink (Pink, 2009) describes as key motivators. 
+
+
+The retrospective and its outcomes reflect several of Solution Street’s values.  Specifically, retrospectives are most effective when there exists a culture of Honesty and Respect. Virtues that Solution Street highly prizes. Transparency within the team is vital to an effective retrospective and the development of a healthy organizational culture. Dependability is reflected in team members following through on commitments to drive action items to their conclusion to reap the benefits from prior retrospectives. Lastly, when done right, retrospectives should be Fun!
+
+
+“A proper retrospective has the explicit goal of generating actionable items that the team can execute to improve some aspect of their work.”
+
+
+5 Key Steps to Making Retrospectives Successful
+
+
+
+
+
+Preparation and facilitation by a Scrum Master or neutral party is key to making any retrospective go well. Don’t discount the amount of time necessary to reflect in advance on the team dynamics, what activity might be the most effective and fun, as well as anticipate possible questions and conversations. According to the Scrum Alliance, a retrospective should not exceed 3 hours and should target 45 minutes for each week of sprint length. If you are running with 2-week sprints your retrospective should be planned to run 90 minutes, but some adjustments can be made based on factors such as the agile maturity of the team, how long the team has been working together, etc. The team should be prepared to discuss all aspects of their collective work including People, Process and Technology.
+
+
+Esther Derby and Diana Larsen, in their seminal book on the subject, Agile Retrospectives: Making Good Teams Great, described the five steps of Retrospective as follows:
+
+
+Set the Stage: 
+
+
+Answer the question about “why are we here.” Set the tone and direction for the retrospective encouraging participation. Do not skip this step!
+
+
+I find it useful to kick-off each retrospective with some basic ground rules and assumptions. A reminder that regardless of what we discover, we understand and believe that everyone did their best job, given what they knew at the time, their skills and abilities, the resources available and our particular context.
+
+
+Setting the stage will help encourage participation and allow team members time to mentally task switch from the work they were previously doing.
+
+
+Gather Data: 
+
+
+Allows team members to discuss their perspectives and create a shared memory.
+
+
+I like to ask the Scrum Master for a brief review of what happened using objective information (burndown/burnup charts, Sprint Goals, etc.). Then the facilitator can begin to elicit more subjective emotional information. The facilitator is interested in hearing how team members "felt" and what may have inhibited them from having a more positive experience.
+
+
+This is the step where the primary retrospective activity or "game" is executed (refer to Facilitation Techniques section for examples).   
+
+
+Generate Insights: 
+
+
+Encourages the team to think deeply about the data they just gathered - to think creatively and look for patterns, themes and connections to address and improve upon.
+
+
+I work to ensure that the team avoids jumping to conclusions too quickly. The group should use scientific methods of hypotheses and experimentation to flush out their work. One easy to use technique to try to get to the root cause is 5 Whys.
+
+
+At the conclusion of this step, the team should have a rough set of actionable improvement items to consider focusing on in upcoming sprints.
+
+
+Decide What to Do:   
+
+
+During this penultimate step, the team focuses on the prioritization of the previously identified improvement items, and seeks to establish clear actions and ownership.
+
+
+If there are too many items to easily discuss, teams should consider affinity grouping like items. This essentially puts similar items into buckets to reduce the number of moving parts and to make this effort more manageable after which dot voting can be done to allow the team to identify the top 3 or 4 items to focus on. Dot voting is often used to ensure the team, not management, decides what is important. 
+
+
+The team should consider putting the improvement items into two buckets: 1) Improvements we can manage ourselves and 2) Improvements we need help with. This often helps give perspective to the team in terms of what can be easily accomplished and what may necessitate outside support. Lastly, the team members should volunteer to own, champion, and report out on specific improvement items.
+
+
+Close the Retrospective: 
+
+
+During this final step, the meeting is summarized, a pulse check is taken, and the session is ended.
+
+
+The final step is often skipped or abbreviated for the sake of time, but provides valuable closure to the team. Formally recognizing the closing of the retrospective provides the team with one last period of reflection before returning to their daily chaos. The final pause should be leveraged to create a space for celebration and recognition of all that's been accomplished. Lastly, this step allows the team to publicly commit to the work that remains. Often the team will show a Fist of Five to evaluate how happy everyone is about the meeting and its outcomes.  
+
+
+Softening the Ground
+
+
+One of the most elementary, but necessary preconditions to effective retrospectives has to do more with the organization's leadership than the team executing the retrospective. Leadership - and whether supportive or not, helps to drive whether retrospectives become part of an organization’s DNA. The best leaders make it known that they support continuous improvement and retrospection. Ideally, compensation plans support the team concept and continuous improvement as well.  
+
+
+The next factor that should be in place to foster retrospectives is a safe and open environment. Retrospectives are all about each teammate talking openly about what’s on their mind. If only a few are speaking you are likely missing the best ideas. An effective retrospective requires that each team member feels comfortable speaking up.
+
+
+The last factor I would suggest should be a focal point for anyone planning to start up retrospectives is ensuring action items are generated, tracked, completed and reported out. If lists are generated and nothing is done to improve, getting future commitment from team members will be increasingly difficult.  
+
+
+“Not again. These retrospectives don’t actually accomplish anything and I have a lot of real work I need to get done.”   -  Anonymous Engineer
+
+
+Assigning “accountability partners” may be a novel way to ensure tactical follow-ups between retrospectives, where you have someone agreeing to hold you accountable for a specific commitment. 
+
+
+Retrospectives are often one of the first events dropped or last things added.  Frequently teams feel that they are already “high performing.” All too often management discourages the use of retrospectives. This may be because the retrospective is seen as a “whining session” where management may be the favorite target, or simply management doesn’t perceive the connection between the time spent in retrospectives and valuable improvement. If the latter is the situation this can be addressed through the use of metrics to help illuminate lesser obvious or more intangible benefits.
+
+
+Mike Cohn, agile thought leader and trainer, addressed the frequent pushback to holding retrospectives in each sprint in his blog (Cohn, M. "Does a Scrum Team Need a Retrospective Every Sprint? " The Mountain Goat Software Blog, January 19, 2016) several years ago. His conclusion was that it is acceptable to skip a sprint under certain conditions of the specific team. I paraphrase them below:
+
+
+ When held, the retrospectives are engaging and productive. In other words, the retrospectives are being done correctly. When the reason to skip the retrospective is because the team has found a more effective cadence and skipping isn't just a way to avoid unpleasant work.Lastly, the team is already working in short sprints of 1 week or 2. Teams working in 4 weeks or longer sprints should resist the temptation to skip a retrospective or risk losing significant opportunities for course correction.
+
+
+Holding consistent retrospectives alone is no panacea for a struggling team. There are common symptoms that teams should be on the lookout for to help make the time well spent in a retrospective. They include:
+
+
+Rushing to solve problemsLack of engagement/attentionSqueaky wheel (only a few speak and consume all the oxygen)Lack of alignment (lack of agreement on issues necessary before they can be resolved or mitigated)
+
+
+Facilitation Techniques
+
+
+
+
+
+There are many sound and simple-to-execute techniques for teams to get going. There are many websites focused on sharing various facilitation techniques that help support retrospectives and you can find a few of these in the reference section at the end of this article. Which technique you use is less important than how the team responds to it.
+
+
+A few of my favorite retrospective “themes” or techniques are  "Continue, Stop, Start," 4Ls, Sailboat and Anchors & Engine. While these are great ways to dip your toe into the retrospective pool of team engagement, overuse of the same old retrospective technique can turn a happy, energized effective team into a bored pack of individuals looking for any reason to kill the retrospective. The “gamification” of retrospectives is a direct reaction to this common problem. A bored team becomes an apathetic, disengaged and less productive team.  
+
+
+In his book, Innovation Games: Creating Breakthrough Products Through Collaborative Play, author Luke Hohmann introduced the very popular Speed Boat Game. In this metaphorical game, teams identify what are the issues that the team doesn't like or are causing pain (anchors) with the goal of identifying ways to cut the anchors.
+
+
+4Ls is a widely used data collecting technique where team members express their opinions independently on Post-It notes in four buckets. The 4Ls stand for Liked (things you like), Learned (things you learned), Lacked (things that could be improved) and Longed for (things you wish for).
+
+
+Other popular retrospective games include:
+
+
+Sailboat - similar to Speed Boat but with sails to fill to increase speedRose, Bud, Thorn - where teams identify small wins (rose), challenges experienced (thorn) and new ideas (bud)Anchors and Engine - where the team identifies things that make them move faster (engine) and things that slow them down (anchors). 
+
+
+I’m sure you are seeing a theme emerge – all slightly different ways to elicit information into various categories to help teams explore where to improve.  Whatever technique works for your team is the correct one to use.
+
+
+Tools to Help Facilitate a Retrospective
+
+
+As discussed earlier, the keys to successful retrospectives include full and engaged participation by the team, an environment with psychological safety, and the tracking and follow-up of action items. To this end, there are many tools that can help teams in support of their retrospectives. 
+
+
+RetriumRetrospectives with custom features, choose from classic formatsReetro100% configurable retrospective boards and pre-loaded templatesEasyRetro   Fun retrospective toolTrello(Not retro tool per se). Provides boards, lists, and cards that enable you to organize and prioritize your projectsMURAL(Not retro tool per se). A collaborative whiteboard toolMiro (Not retro tool per se). A collaborative whiteboard tool
+
+
+Call to Action
+
+
+In closing, there are as many ways to run a retrospective as there are teams, but the fundamental ingredient to your retrospection is engagement.   
+
+
+Reflect on your team’s dynamics, your team and enterprise impediments, as well as smaller things like the work environment and culture (would better snacks help?). 
+
+
+Don’t wait for others to make change happen. In the spirit of agile, go ahead and run an experiment. Try a retrospective or three. Vary the facilitation approach each time and see how your team responds. If it doesn’t feel natural the first time, try something different. If your team continues to struggle with retrospectives consider a neutral facilitator to help run the next one. Don’t give up. Continuous learning is too important!
+
+
+If you’re interested in trying retrospectives or just learning more about them, then I suggest the following next steps:
+
+
+Read Esther Derby and Diana Larsen’s book (I don’t receive any form of compensation for this endorsement)Visit TastyCupcakes to find fun facilitation activities to tryCheck out Spotify’s Retro KitCheck out FunRetrospectives for retrospective toolsPick an activity, find a safe place and run your experiment
+
+
+In summary, keep your retrospectives simple, results-oriented and fun, and improve your team 26 times a year! 
+
+
+Good Luck on your retrospective journey!
+
+
+Additional Resources
+
+
+Books:
+
+
+Derby, E., & Larsen, D. Agile Retrospectives Agile Retrospectives: Making Good Teams Great. Pragmatic Bookshelf, 2006.
+
+
+Hohmann, L. Innovation Games: Creating Breakthrough Products Through Collaborative Play. Addison-Wesley, 2007.
+
+
+Pink, D.H. Drive: The Surprising Truth About What Motivates Us, Riverhead Books, 2009.
+
+
+Blog:
+
+
+Cohn, M. The Mountain Goat Software Blog. 
+
+
+Websites:
+
+
+TastyCupcakes.org
+
+
+FunRetrospectives.com
+
+
+Miro's Game Ideas
+
+
+Retro Kit (Spotify Engineering)

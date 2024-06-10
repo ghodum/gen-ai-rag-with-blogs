@@ -1,0 +1,148 @@
+Personal Data Backup Strategy
+
+ 
+
+
+Unlike our traditional software engineering blog articles I’m going to go diverge from the norm here and talk about my personal data backup strategy for my home. I can’t tell you how many times a friend or family member has asked me about how I backup all of my photos and videos and maintain easy access to them. This is definitely an issue for everyone. Honestly for years I’ve had a just-getting-by strategy, but recently I decided to spend some time to organize my digital memories. Now, I will tell you that my strategy works for me and I’m 100% sure there are readers of this article who have very different strategies that may be easier at some level or provide greater flexibility, but I decided to go down this path and so far so good.
+
+Here’s what I was looking for:
+
+Backing up everything to the cloud from multiple computers
+Ability to easily get to all documents and photos/videos from anywhere in my house (wifi)
+Easier way to use Time Machine on the mac (for additional backup) without a wire hookup to a backup drive
+Ability to view photos/videos from anywhere in the world
+
+Backing Up Everything
+
+When it comes to backing up your files today, there seems to be two commonly used solutions. Personal external drive and cloud based backup. Like most, I started with an external drive connected to my computer, but over time this made less sense. For one, I started using a laptop exclusively and would always have to remember to plug in my external hard drive to backup my files. Also, my family has many computers and it just didn’t seem appropriate to buy external drives for every computer. Sure, I could use a centrally located server and just back up that server, but I like to keep things simple and that requires some work and maintenance. With a cloud based backup I went with CrashPlan. I use the family plan so that I can back up 10 computers. There are many competitors but I like the unlimited storage and I’ve had cases where I’ve had to restore several files and the process is easy. Plus, since my daughter is away at college, I can be assured that her laptop is getting backed up as well. I typically have CrashPlan backup my personal files (e.g., not the entire computer). If my computer crashes, I would typically have to reinstall software, then just restore my personal files (see section on Time Machine for Macs).
+
+Easily Get to All Files Within My House
+
+There seems to be many solutions in this area including using Dropbox or Google Drive or other cloud based storage. For me I felt that the best solution was to have a NAS Drive in my house (Network Attached Storage). This is essentially an external drive with an operating system so that you can connect to it over wifi and actually run software on the device. I went with a Synology NAS DiskStation (DS216j) with a 3TB drive (note: these are two different items you must buy together). With a NAS storage device you can have several drives. There are reasons to get multiple drives including the option for mirrored (duplicate) backups in case one drive fails and to keep files separated. Once you set up your NAS Drive you have access to it from anywhere in your house (wifi). The idea here is that I can offload to the NAS Drive all files I want to share or don’t use often, then have access to them from any computer in the house. Of course, now that files are on the NAS Server I need to make sure those files are backed up to CrashPlan. There are two ways to do this: 1) Have the NAS Drive backup to CrashPlan directly; and 2) Have the NAS Drive as a permanent drive to one of the computers in the house and just back it up along with the laptop’s local data. I initially went down the path of having the NAS Drive backup directly since that seemed to be the most obvious and best in terms of performance and hassle, but since CrashPlan is unsupported running on a NAS Drive and after several hassles of trying to get it working after upgrades, I reverted back to plan B - using a permanent mount off of an existing laptop.
+
+Easier Way to Use Time Machine
+
+Since we have mostly macs in our house, I wanted an easier way to use Time Machine with those macs. Since Time Machine provides the ability for a full computer restore, it can come in handy. Since every computer has a CrashPlan cloud backup, the Time Machine is somewhat extraneous, but I like multiple layers of protection. Using the NAS Drive as the Time Machine storage works nicely. Here are the directions when using a Synology Drive.
+
+Ability to View Photos and Videos from Anywhere
+
+The most obvious choice here once you have a NAS Drive is to open the doors of the NAS Drive to the world and allow anyone with a username and password to have access to the photos and videos (called QuickConnect). I didn’t feel comfortable doing that, since in addition to my photos and videos, I have more private files (e.g., taxes) on the NAS Drive and I didn’t want to risk unauthorized access, although from a security standpoint the NAS Drive seems secure. Instead of this solution I chose to go with Google Photos. I set up Google Photos on my laptop and then pointed to my photos and video directory on my NAS Drive. Now everyone in my family has access to all of our photos and videos from any computer or smart phone.
+
+I struggled for a while trying to figure out to deal with my photos within the Photos App on my mac. For those of you who have macs, you understand that the Photos app is awesome but it’s also different. Your photos are not in traditional folders and for that reason they are hard to deal with from a sharing perspective. You have two choices.
+
+
+
+Keep the photos in the Photos app and just create different libraries for your photos and share the libraries on your NAS Drive; or
+Remove all of your photos from the Photos app and place them in folders - typically organized by date - e.g., 2016 (folder)->Jan (folder).
+
+
+
+I opted to remove everything from the Photos app (option B) to make it easier from a sharing and viewing perspective (i.e., viewing from any computer, mac or windows).
+
+Most people use the Photos app for:
+
+Easy auto sync with icloud/iphone
+Faces - identify photos via a name (once you tag a face)
+Places
+Albums
+Videos
+Slideshow creation
+
+With Google Photos you get pretty much all of the above (some items work better/worse than the Photos app).
+
+The Nerdy Details
+
+Of course with all I said, there are lots of details. I’ll try to provide the important ones here.
+
+Setting up the NAS Drive
+
+My Synology Drive was pretty easy to get it up and running. Use the 4 silver screws to physically mount the drive and 2 black screws to close up the cover.
+
+
+
+
+Plug the ethernet cord into the router from the Synology Drive and plug in the power. Once you power it on, go to find.synology.com and install the defaults [install diskstation manager, make sure the NAS Drive is sharable on your network (I skipped the QuickConnect as mentioned above), and install the app if you’d like].
+
+After the install, login to the NAS Drive via the browser and open the control panel on the NAS Drive - check for updates and install any latest updates (in the future it will remind you via email).
+
+Note the IP address of your NAS Drive because it’s best (at least I found this to be true) to have a static IP address set so that when you permanently mount your NAS Drive you won’t have to worry about the IP changing upon restart of your router. [The IP Address should be shown in the browser after finding the NAS Drive via find.synology.com]. Once you have the IP address, go to the Control Panel on the NAS Drive, select Network Icon, Network Interface Tab; Select your connected LAN, radio button next to “Use Manual Configuration”. The IP address should default to the current one and select Ok.
+
+To receive email notices when there are notifications from the NAS Drive, go to the Control Panel, Notification, Email tab and enable email notifications (you will need to provide an email sender provider such as gmail).
+
+The default folders for a Synology Drive include a shared photo, video and music folder, but also includes a home directory for each user of the Synology drive. Since I want there to be a shared data folder, I just created one. In my case, this is for all other non-media files.
+
+From file station, create new shared folder under root (I call mine ‘data’) and set the ‘read/write’ attribute for the user we created during the install.
+
+There’s one annoying process on the Synology Drive. Once you install the media apps (Video, Photo apps) the Synology software creates a thumbnail for every photo you have. This is unnecessary. I would suggest not installing any media apps or just turn off the thumbnail creation process [note: this requires a bit of technology ability]. From the Control panel on the NAS Drive, select advanced mode link (top right), Terminal and SNMP icon, then Enable SSH - Apply (note: we will turn this off shortly).
+
+Bring up a terminal on the mac (on Windows you will need to download an SSH client like putty)
+ssh username@192.168.1.x (the IP address of your NAS Drive)
+type “yes” at prompt
+put in password
+
+sudo synoservicecfg --stop synomkthumbd
+password again
+This turns off creating of thumbnails
+
+**Then turn off SSH via the steps above.
+
+As mentioned, I opted to backup all of my files on my NAS Drive via a permanently mounted drive connected (over wifi) to my home computer. To permanently connect a NAS Drive on a mac:
+
+On your local computer (you can use VI or any text editor on the computer) -
+
+Edit your auto_master file located in /etc
+sudo nano /etc/auto_master
+Add this line below
+/NAS_Shares NAS_mounts
+ctrl o
+hit "enter" key
+ctrl x
+
+
+Create the NAS_mounts file in /etc
+sudo nano /etc/NAS_mounts
+Add these lines below (replace with the correct username, password and NAS Drive IP Address)
+photo -fstype=smb smb://USERNAME:PASSWORD@NASIPADDRESS/photo
+video -fstype=smb smb://USERNAME:PASSWORD@NASIPADDRESS/video
+music -fstype=smb smb://USERNAME:PASSWORD@NASIPADDRESS/music
+ctrl o
+hit "enter" key
+ctrl x
+
+
+Activate changes to the system
+sudo automount -vc
+
+
+From the mac - finder
+select NAS
+Connect As…
+User and password and select Remember this password in my keychain.
+
+You should now see all of the sharable drives permanently there upon restart.
+home
+homes
+music
+photo
+video
+
+To backup your NAS Drive from a computer:
+
+Install CrashPlan (if you haven’t yet) and select the mounted directories along with the typical user directory for the computer.
+
+Also, to avoid CrashPlan backing up thumbnails, exclude those files via:
+
+In CrashPlan settings->backup
+add exclude files and folders
+add this statement exactly as is below:
+.*/@eaDir/.*
+
+If you have external drives and you need to get the data over to the NAS Drive you should be able to plug them in directly via a USB connection.
+
+Summary
+
+In summary I don’t feel like I have the perfect solution here, but it’s a whole lot better than what I had before.
+
+Here’s a diagram to help visualize where I ended up:
+
+

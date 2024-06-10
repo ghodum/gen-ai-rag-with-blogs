@@ -1,0 +1,51 @@
+5 Reasons Your Offshore Software Construction Project Is Failing
+
+
+
+
+One of the fundamental misconceptions of software construction is that it is an “assembly line” or “mass production” problem. Management in many companies looks at software construction like building cars. Where can I go to find the lowest-cost workers and get them to assemble my software? This assumption is fundamentally flawed; constructing software is more like coming up with a new car design. There are thousands of considerations that come into play when coming up with that new design, and the designers need to work very closely with all the people marketing and selling the software (or car). Building great software is hard...over one-third of all software projects fail to meet their objectives. 
+
+
+Because of the misconception above, many companies think they can just find an offshore consulting company in a country where the standard of living is very low compared to the country in which that company is operating. Hiring developers at rates like $20, $30 and $40 per hour is very attractive to those managing costs.
+
+
+In this article we will examine why many projects using an offshore model fail to meet their objectives and how we can fix them.
+
+
+Bad match for offshore project
+
+
+The first and top reason for an offshore project failure is picking a project that is not conducive to offshore development. In order for an offshore project to succeed you must have both the right talent in-house as well as the right size project that makes sense to offshore. In terms of talent, you need to either co-locate your product manager with the team, or you must have a product manager capable of producing very high-quality detailed requirements. In most struggling projects, neither of these is present. The other issue is trying to offshore a small project. There is considerable overhead in offshoring a project; you not only need to have the product manager, you also need a local project manager, and a remote project manager. This overhead doesn’t make sense for small projects where you only need a team of two to four high-quality developers. Here is a quote from one of our customers who was in this situation:
+
+
+Several years ago, my organization hired an off-shore outfit for a fairly complex project where we had a local project manager, a remote project manager and all the development was remote, as well. The rates were low and it started ok. We got plenty of attention and they were eager to please. Then, the wheels started to come off. We had language issues ... and the quality of the work was not what we felt they promised. We engaged with Solution Street and while the rates/hour were higher, the overall cost of the project was lower. And, that does not even begin to factor in that we were faster to market with functionality that made our customers happier. 
+
+
+Communication
+
+
+We have all jumped on a scrum meeting with an offshore team and experienced the terrible quality of the audio or videos, or had the call fail several times during a short meeting. This can be very frustrating and time consuming for folks on both sides of these calls. Additionally, there can be language barriers to contend with or phrasing, formatting and spelling issues (i.e., American English vs. British English). Other times, there may be offshore teams that might agree to unrealistic timelines that can’t be met so as not to disappoint the client when setting goals or being asked to complete a task. In order to help this situation, we recommend that the entire team works together for a period of months. This can be costly and hard (travel for one part of the team to a foreign country for months), but this team building and in-person communication is critical and helps team members understand any unique communication style differences.
+
+
+Lack of talent
+
+
+At Solution Street we often say we need to look at 1,000 resumes and trim those down to 100 tech screens and then 10 face-to-face interviews to find one great engineer we feel is good enough to represent our brand. Many companies are not this choosy (no matter where they are located) when ensuring the quality of their team. When I was working as an engineering director at a large company in the U.S., we worked with two of the largest outsourcing companies in India. I was shocked at the performance level of the engineers they provided; I had to remove 50% of them from my projects due to poor performance. One time I found out they were putting the folks I had removed onto other projects within our company. We all know that one bad engineer on any team can ruin a project. Having insight and understanding of your talent can be hard when you are in the same room; it is even harder when they are in a country far, far away.
+
+
+Management and lack of transparency
+
+
+Many times when we are called in to help save a failing project, we ask who is in charge of the project and we get deer in the headlights responses. In order to have a successful project, you need a strong manager and leader in-house to ensure everyone is doing their part across the team - product manager, project manager, engineering leads, QA, operations, DevOps - you need someone that has an understanding of all these roles and how they are performing. As part of this, you need to have a team that is providing transparent feedback about the project as it is operating. Using tools like JIRA and Git can help, but only if someone is reviewing what is going on and providing feedback.
+
+
+Time zone fatigue
+
+
+We were recently called in to help a project that had a product team on the U.S. East Coast, a development team in India, an operations team in South America (not East Coast time zone), and a DevOps team in another area of South America (a fourth time zone). Getting answers to simple questions took days, there was always finger pointing across teams, and often you had to wait a day just to get a single answer. When working in time zones that are very far apart (e.g., U.S. and India), one part of the team is working when they would rather be sleeping or spending time with their family; attending meetings every day at odd hours gets old really fast.
+
+
+Here at Solution Street we have rescued numerous failing offshore projects over the years. I hope identifying typical failure problems and my suggestions have helped!
+
+
+Great Engineers + Great Communication = Successful Projects

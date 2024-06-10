@@ -1,0 +1,260 @@
+The ETL Decision...
+
+
+ 
+
+Introduction
+
+ 
+
+Most mid- to large-sized organizations have large amounts of data and, typically, they have disparate sets of data. Sometimes the data is coming from outside of the organization; other times it is collected by the organization itself. Regardless of its origin, frequently organizations must deal with multiple systems containing data. In any organization, commercial or otherwise, harnessing the power of that data in a single place (i.e., data warehouse) is most advantageous. With all the data in one place, businesses can analyze it as a whole, in one unified set for data mining and machine learning. But first, the data from different sources must be cleaned, or standardized, into a central location. An ETL (Extract, Transform, and Load) tool or process is how you get the data in a clean and unified, single area. With so many to choose from, how do you know which tool to pick?
+
+ 
+
+Reviewing all tools in this space would be difficult to do, but identifying use cases, breaking down the tools into categories, and focusing on a few tools can give you an idea of where to focus your direction.
+
+ 
+
+Before we discuss use cases, categories, and specific tools, let’s first define what an ETL tool does. Quite simply, it extracts data, transforms that data, and then loads that data into a specified location.
+
+ 
+
+Extract - An ETL tool can typically interface with a data source in different formats including a database, file storage, a data warehouse, and an API. An ETL tool needs to understand how the data is stored, what are its security controls, and then use appropriate queries to read the data and identify the data that has changed since the last extract. Some tools “crawl” the data source to understand the schema and others require manual designation.
+
+ 
+
+Transform - Often in most enterprise environments, the data coming from the extracted data source needs to be changed or enhanced to better serve the needs of the downstream systems or data stores. Two examples are: concatenating fields from a single data source into a single field (e.g., name) or denormalizing referencing data (e.g., using the country name instead of a country code). Other transformations can include deduplication or classification. Transformation can also include more complex examples of using multi-step processing to interact with multiple data sources. One additional major benefit from many ETL tools is their ability to automatically transform data types between two heterogeneous data stores (e.g., from Oracle to Postgres or MySQL to Salesforce).
+
+ 
+
+Load - After the data is transformed, it is ready to be loaded into a destination system or database. Typically this is a data warehouse or a data lake. Tools may use bulk loading or parallelization of the loading to be efficient and reduce the load time. Destination systems or databases are then used for data analytics and visualizations by business types and data scientists alike.
+
+ 
+Use Cases and Considerations
+ 
+
+Let’s talk about the typical use cases for an ETL tool:
+
+ 
+
+
+Data from outside the organization - sometimes organizations are dealing with “unclean” data from elsewhere. This may be in the form of an API, an FTP process, or retrieving data from any variety of file system or remote database access.
+
+ 
+
+ 	Data from inside the organization - frequently the data is already within the organization but perhaps in either different systems (e.g., legacy) or just a variety of data sources. Here ETL tools are often used to take data from many different systems and place them in a singular location for data warehouse or data lake type usages.
+
+
+ 
+
+
+
+ 
+
+With these use cases, organizations tend to have large amounts of data (anywhere from gigabytes to terabytes to petabytes). The tools and processes that handle these use cases must be fast, robust, well-defined, maintainable, and fault tolerant.
+
+ 
+
+In order to see the range of possibilities of where an ETL tool or process may be needed, here are three hypothetical business scenarios:
+
+ 
+
+
+Suppose an organization has an internal legacy system maintaining some aspect of customer data (using an Oracle database) along with an SAP Customer Resource Management (CRM) system and another internal invoicing system (which has its own set of data). Now let’s say the sales team would like to run various reports and graphics from the combined data from these three systems. We potentially need to centralize the data into a data warehouse. If moving to the cloud is required then issues include how to “forklift” much of the data into the cloud and then process quickly through transformations which can range from basic to somewhat complex.
+
+ 
+
+ 	Suppose an organization requires only needing a small portion of data from a local ERP system that is updated by hundreds of users frequently (let’s say stored in a Microsoft SQL Server database) and combining that with some customer related data in Salesforce - assuming the two systems have very different forms of data but somewhat related. We potentially can have several complex transformations and data updates occurring often. 
+
+ 
+
+ 	Suppose an organization has several data feeds from external organizations and several APIs to call for additional data - that coupled with data created internally (let’s say in a Postgres database and Elasticsearch on Amazon AWS). This combined data is required to be processed daily and provided as a service to external customers.
+
+
+ 
+
+As you can see, the business scenarios can range in complexity, systems, and data needs and, therefore, the solution will be potentially different. There is no one-size-fits-all solution.
+
+ 
+
+What should organizations look for in an ETL tool? Here is a set of items that are applicable to most organizations’ ETL needs:
+
+ 
+
+
+Performance and Scalability - Whether referring to data extraction or loading or to the transformation process we can see how large amounts of data or complex transformations can cause performance and scaling issues. If data is coming from outside of the organization (as mentioned earlier) do we have a throttling issue to deal with? If we are getting updates to our data often, do we have a performance issue? How can we scale?
+
+ 
+
+ 	Error Handling - As with any batch process how are errors handled? Are operations handed transactionally? How does the organization want to handle errors?
+
+ 
+
+ 	Changes to Transformations - How often do these occur and how easy is it to make changes? How can we test changes and do we have a testing environment? How do we store any code or configuration related to the ETL process? Does the tool handle versioning?
+
+ 
+
+ 	Consistency with current environment - Does the tool share in the same language/stack? Is it cloud based or on-premise? Windows or Unix?
+
+ 
+
+ 	Cost - In terms of tool cost, development time, server processing, etc.
+
+
+ 
+
+There are probably many others but these five appear to be significant in choosing the right tool.
+
+ 
+
+“At Solution Street, we always believe in solving the business problem and, additionally, ensuring that the solution can scale and is maintainable.”
+
+ 
+
+Categories
+
+ 
+
+Let’s discuss the overall categories of ETL tools:
+
+ 
+
+
+Enterprise Commercial tools such as Oracle Data Integrator or Microsoft SQL Server Integration Services (SSIS).
+
+ 
+
+ 	Open Source tools such as Talend Open Studio for Data Integration and Pentaho Data Integration. Note that although initial entry is free, commercial versions of these products may also be available to deal with appropriate scaling.
+
+ 
+
+ 	Cloud-based tools such as Amazon AWS Glue and Microsoft Data Factory.
+
+ 
+
+ 	Custom tools (rolling your own) - writing code (e.g., Java, Python) that uses SQL and other tools to extract and load the data.
+
+
+ 
+
+Some of the tools in these categories above use Spark or Hadoop or similar technology to scale the ETL process or when writing custom code you can do the same. This is important because often these tools are used to handle large amounts of data and a parallel-like process can achieve significantly better performance. In addition, an understanding of ETL vs. ELT (traditional vs. extract and load first then transform as needed) is important in choosing the right tool for the organization.
+
+ 
+
+Next we’ll discuss these categories and a few tools within some of the categories in a bit more detail. First let’s review the Enterprise tools category.
+
+ 
+
+Enterprise tools
+
+ 
+
+For this category there is an obvious association with tool costs. When speaking of costs, organizations should recognize the fact that it may be more cost beneficial to purchase a commercial product if that product satisfies (let’s say) 90% of the need (vs. using open source or building a custom solution and spending developer time for development and maintenance).
+
+ 
+
+Several commercial tools have been around for a while, and depending upon the organization’s appetite for purchase costs and licensing and the consistency of the tool with their current environment, a commercial product may be the right choice.
+
+ 
+
+Additionally, if (let’s say) the Microsoft stack is already pervasive in the environment, using SSIS may be appropriate.
+
+ 
+
+In general, these tools may often handle the performance and scale, but come with a cost and maybe an all encompassing toolset.
+
+ 
+ 	Open Source tools
+
+ 
+
+With respect to the Open Source tools category let’s take a deeper dive into what appears to be the most popular tool, Talend.
+
+ 
+
+Talend Open Studio is the name of the ETL tool from Talend. Talend Open Studio is an Eclipse-based Java tool (see Image 1 below) that allows the user to drag-and-drop components to create jobs. Jobs can be tested in the IDE (Eclipse) and compiled in Java code (other tools similar to Talend use XML). The Java-generated code can be modified by the user.
+
+ 
+
+Image 1:
+
+ 
+
+
+
+ 
+
+Talend offers the ability to connect with a host of databases and messaging systems (on-premise and cloud based). In the open source space, tools like Talend Open Studio work very well. As with any ETL tool that combines graphical drag-and-drop with generated code that can be modified, it’s all about the governance of the process that matters most. Maintaining controls of drag-and-drop capability and code changes within an organized configuration management process is very important.
+
+ 
+
+The open source version does not support job scheduling or parallelism, but the commercial version of the product does.
+
+ 
+ 	Cloud-based tools
+
+ 
+
+For the Cloud-based tools category let’s take somewhat of a deeper dive into a top contender in the space, AWS Glue.
+
+ 
+
+Similar to any ETL tool there are three parts: the extract, the transformation, and the data load. Management of these three parts is via the AWS Management Console. As you would expect with AWS, you have choices for your data sources for the extract including S3, Redshift, RDS, and databases running on EC2 (Image 2).
+
+ 
+
+Image 2:
+
+ 
+
+
+
+ 
+
+Unlike other tools, you first establish a data catalog (think metadata of your datasource). AWS Glue establishes a “crawler” which crawls your data sources and sets up the data catalog and creates it in JSON, CSV and other formats. After the data source is cataloged, data is immediately searchable and available for transformation.
+
+ 
+
+The transformation environment in AWS Glue contains several components. As you would imagine, you can create a job that transforms your data. AWS Glue provides a user interface to either select fields and their transformations or actually generate code in Python or Scala that can be changed/customized. These jobs become a scaled-out Apache Spark environment. The benefit, of course, is to process in parallel. You can also chain jobs and invoke serverless code in AWS Lambda.
+
+ 
+
+The jobs can load the resulting transformations into an S3 bucket or AWS Redshift. With AWS Athena you can query those resulting S3 buckets using SQL.
+
+ 
+
+For cloud-based tools, an organization may be diving deeper into a cloud-providers world by choosing an ETL tool. Tools that use something like Spark (or Hadoop) under the covers to achieve scale and use a cost-based model of paying only when in-use may be very useful to many organizations. As with other tools mentioned, maintaining governance over code that is changing is important for success.
+
+
+ 
+
+
+Custom tools
+
+ 
+
+In the custom space, writing code for an ETL process typically comes in the form of continuing with the current technology stack at an organization. For example, if Python is used significantly then writing Python with SQL is usually the first step. As with any implementation, the extract and the load process is simple to initiate, and complexity is introduced with the transformation component. If the transformations are frequently simple and unchanged and the amount of data is “reasonable”, then this component is easily written.
+
+ 
+
+In any custom implementation, the points made earlier in the document come into play more acutely since it’s now up to the developer to handle these points. These include performance and scaling (e.g., do you use Hadoop or Spark to achieve the throughput you need?) and error handling. Other considerations include the organization's ability to put together maintainable code using a framework-based approach instead of hardcoded spaghetti. The code should have an architecture to easily facilitate mapping, custom transformations, and the ability to easily change and test those. 
+
+ 
+
+In general, a custom tool will feel very familiar in the organization and can be executed as part of typical configuration management. As with any custom implementation in this space, besides maintainability, the key is eventually performance and scaling. This is where some of the commercial and open source tools have a significant benefit over a custom-built tool. Whereas commercial and open sources tools may have already-proven performance and scaling capabilities, custom tools typically require building them from scratch or using open source technologies such as Spark but then taking time and cost to prove out the solution.
+
+
+ 
+
+Summary
+ 
+
+Choosing the right tool is not a simple decision. Often organizations try several potential tools from different categories to find the best one for their use cases. Companies may start with an open source product or a custom build to get their feet wet. Others go with their current stack or deployment location (Microsoft/Java, Cloud). Overall, there are a ton of products in this space which can make selecting the best or most appropriate one confusing (e.g., Amazon AWS has several products that are related to moving data and several can be used as part of a solution for ETL).
+
+ 
+
+At Solution Street, we always believe in solving the business problem and, additionally, ensuring that the solution can scale and is maintainable. Maintainability (and governance over changes) is probably the toughest part here. Most of the ETL tools offer a visual component which gives the illusion that you can easily change transformations; but often changes in transformations require code changes and, most importantly, thorough testing. There’s no slam-dunk here in terms of tools, but understanding the factors that matter most before selecting one is key. Trying out different potentials will give the organization a better feel for what works best in their environment.
+
+ 
+
+*Thanks to both Solution Street clients and colleagues who use ETL tools for providing feedback on various tools mentioned in this article.

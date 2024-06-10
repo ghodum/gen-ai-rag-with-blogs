@@ -1,0 +1,36 @@
+10k Practice
+
+
+
+
+
+ 
+
+Want to be a great Developer…..Practice Practice Practice….
+
+ 
+
+In Malcolm Gladwell’s book Outliers he talks about the 10k principle. The principle holds that 10,000 hours of "deliberate practice" are needed to become world-class in any field. In Malcolm’s book he even talks about how microsoft founders Bill Gates and Paul Allen had thousands of hours of practice developing software from their time in high school.
+
+ 
+
+In my opinion there is a difference between working and practicing. Often times when we are working we have deadlines and we may just be focusing on getting things done and not really understanding how they work. Practicing is when you repeat an activity regularly with the goal to improve one's proficiency.
+
+ 
+
+I started practicing writing computer programs when I was in high school. I was lucky enough to own a computer back then (a Commodore Vic20 and 64) which gave me a way to practice writing programs. I also took 2.5 years of computer programming classes in high school (this is equivalent to 5 college semesters). When I was in college I took every possible programming course in college they offered. At the same time for my part time job and at home I would write small programs to accomplish things that were repetitive. When I finally graduated college I was already well on my way to my 10k hours of practice. Now 23 years later as a professional Software Developer, I try to practice a little bit each week, especially when learning new languages. Right now I am practicing JavaScript!
+
+ 
+
+A colleague at Solution Street Jeff Schuman recently found a fun site where you can practice your development skills - CodingBat (codingbat.com). The CodingBat site is run by Nick Parlante a computer science professor at Stanford. The site offers practice problems that focus on fundamentals at varying degrees of complexity. If you want to code in Java or Python, you can do it right on the site and test your code out there. You can also practice other programming languages with the same problems, but you will need your own place to run and test them.
+
+ 
+
+Another way of practicing is by teaching others. I find many times I understand my code better when I explain it to someone else a few times or have to prepare a presentation on how something works. Practicing your coding with others is fun!
+
+ 
+
+At Solution Street we think all developers should understand fundamentals like conditionals, looping, variable scoping, and data structures like Arrays, Hashes and Strings. If you aren’t world class at these, it's time to practice!
+
+ 
+

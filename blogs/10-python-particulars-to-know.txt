@@ -1,0 +1,305 @@
+10 Python Particulars to Know
+
+
+
+
+Like many software developers, I have learned my share of software languages over the years. Two years ago, I wrote a post on LinkedIn where I identified 29 software languages I had learned in the 37 years prior; everything from Basic to Ruby to JavaScript and obscure languages like APL and Clipper. As all developers know, in the software engineering field it’s important to keep up with emerging programming languages, so even to this day, I’m learning new ones. Similarly, like many other developers, in my eagerness to quickly learn a new  language, I start with similar and familiar code syntax based on programming languages I already know. Using familiar syntax from programming languages you've already worked with is initially easier and can jump-start your use of a new language, but there's a price to pay for that. When doing so, you often avoid learning some of the subtleties and specific features unique to the new language you're learning, and you may miss some of the differences between the new one and the current languages you know. 
+
+
+At Solution Street, we ask candidates interviewing for developer positions to write some code during the interview. Sometimes we will describe a candidate’s code after an interview as, “He writes Ruby like a Java developer.” This is just another way of saying that, if the candidate was writing in Ruby, he didn’t really make use of some of Ruby’s advantages. I am no different and I often will lazily rely on familiar syntax and control structures when I use a newly-learned language.
+
+
+“Using familiar syntax from programming languages you've already worked with is initially easier and can jump-start your use of a new language, but there's a price to pay for that.”
+
+
+Having learned Python a few years ago, I have discovered some new tidbits and tricks that sometimes come in the form of different syntax that could be advantageous to a developer. I want to share some of them with you.
+
+
+List slicing - List processing is very powerful in Python and although there are many Python packages that enhance list processing, this core capability is very powerful to extract portions of a list. Typically, in other languages you might simply use an iterator to extract what you need, but this concise way is much easier:
+
+
+# list slicing
+my_list = "Solution Street" # either a string as in this case or a list of elements
+print(my_list[1:4]) # 1 - 3
+print(my_list[1:]) # 1 to end
+print(my_list[:4]) # 0 to 3
+print(my_list[1:-4]) # 1 to length-4
+
+
+
+Output (or run it)
+
+
+
+olu
+olution Street
+Solu
+olution St
+
+
+Operator chaining - Often, when writing code, you come across a conditional saying something like:
+
+
+# evaluate the variable between two numbers
+x = 42
+print( x >= 0 and x <= 100 ) # returns True
+
+
+
+Specifying the condition slightly differently still works:
+
+
+# restated condition
+x = 42
+print( 0 <= x and x <= 100 ) # returns True
+
+
+
+Python further allows you to take the above statement and simplify it. Some may say this is too terse, but after looking at this more, you may realize the original way is too verbose:
+
+
+# operator chaining
+x = 42
+print( 0 <= x <= 100 ) # nice simplified way
+
+
+
+Output (or run it)
+
+
+
+True
+
+
+Value swapping - Similar to above, there are more verbose ways of swapping values between variables, but Python’s terse way can be seen as either elegant or difficult to read:
+
+
+# value swapping
+# common way
+x = 1
+y = 2
+temp = y
+y = x
+x = temp
+print(x, y)
+
+# python simplified way
+a = 1
+b = 2
+b, a = a, b
+print(a, b)
+
+
+Output (or run it)
+
+
+
+(2, 1)
+(2, 1)
+
+
+For else loops - In most languages, we are very familiar with for loops, but Python has this extra added benefit of an else conditional. Often within a loop, you are evaluating a condition and if that condition is true you typically perform some operation and leave the loop. However, you sometimes need to know that the condition was never met and perform some other operation. In most languages, you would do this manually via some additional boolean:
+
+
+# standard way
+found_item = False # init
+pizza_ingredients = ["cheese","sauce","pineapple","olives","basil"]
+for i in pizza_ingredients:
+ if i == "pineapple":
+   print('This is not a valid pizza.')
+   found_item = True # set
+ 
+if(not found_item):
+ print('This is a real pizza!')
+
+
+With for else loops, it’s more elegant with less code:
+
+
+# for else loops
+pizza_ingredients = ["cheese","sauce","pineapple","olives","basil"]
+for i in pizza_ingredients:
+  if i == "pineapple": 
+    # the else block will not run after using break
+    print('This is not a valid pizza.')
+    break
+else:
+  print('This is a real pizza!')
+
+
+Output (or run it)
+
+
+
+This is not a valid pizza.
+
+
+Function argument unpacking - Sometimes in functions/methods of other languages, you need to pass in a set of arguments, but your values are currently stored in an array or key/value pair object (dictionary). Python gives you the ability to pass in a structure and have it unpacked to satisfy the arguments:
+
+
+# function argument unpacking
+def do_something(x, y):
+  print(f'x = {x}')
+  print(f'y = {y}') 
+  # then find larger number
+
+tuple_parms = (100, 42)
+dictionary_parms = {'y': 42, 'x': 100}
+
+do_something(*tuple_parms) # unpack tuple
+do_something(**dictionary_parms) # unpack dictionary
+
+
+Output (or run it)
+
+
+
+x = 100
+y = 42
+x = 100
+y = 42
+
+
+
+Special override called “missing” in dictionaries - How many times have you worked with a dictionary (object/key-value pair) and you needed the key to be initialized? Typically, in the course of your code, you check for null and then initialize it. While this is standard practice, Python has a way to override a special method __missing__ to deal with missing keys when you subclass the built-in dict:
+
+
+# using the missing override
+class MyDict(dict):
+ def __missing__(self, key):
+   return_value = []
+   self[key] = return_value # initialize key
+   return return_value
+ 
+m = MyDict()
+m["foo"].append(1) # no problem with uninitialized key
+m["foo"].append(2)
+print(dict(m))
+
+
+Output (or run it)
+
+
+
+{'foo': [1, 2]}
+
+
+
+Step argument in slice operators - Just a nifty way to walk through a list and skip elements:
+
+
+# The step argument in slice operators.
+skip_me = "Saorltuhtuirofnf  Satnrkeeelt" # a string is a list too
+print(skip_me[::2]) # start with 0 position and then skip by 2
+print(skip_me[::-1]) # go in reverse but don't skip
+
+
+Output (or run it) 
+
+
+
+Solution Street
+tleeekrntaS  fnforiuthutlroaS
+
+
+
+Enumerate a list with access to an index - Often, we need to iterate over a list of items but we also need the index. Some languages easily offer this option and some don’t. The simple, additional code method, is to maintain a separate counter while looping but that is extraneous with Python. Python’s enumerate function gives us an iterable where each element is a tuple that contains the index of the item and the original item value:
+
+
+# enumerate with index
+# wrap an iterable with enumerate and it will yield the item along with its index.
+a = ['Python', 'Ruby', 'JavaScript', 'Java', 'C#']
+for index, item in enumerate(a):
+ # have access to both index and the item
+ print(index, item)
+ 
+# full dump of enumerator
+print(list(enumerate(a)))
+
+
+Output (or run it) 
+
+
+
+0 Python
+1 Ruby
+2 JavaScript
+3 Java
+4 C#
+[(0, 'Python'), (1, 'Ruby'), (2, 'JavaScript'), (3, 'Java'), (4, 'C#')]
+
+
+
+List comprehensions - Although it may initially look different, Python allows for a concise and powerful way to create lists. The syntax is brackets containing an expression followed by a 'for' clause, then zero or more 'for' or 'if' clauses. These lists can be conditional or even include operations:
+
+
+# List Comprehensions
+x = []
+for i in range(5):
+  x.append(i) # standard way
+print (x)
+
+x = [i for i in range(5)] # more concise way than above
+print (x)
+
+# conditional list comprehension
+# pick vowels from a phrase
+phrase = "Hello this is a test"
+vowels = [v for v in phrase if v in 'aeiou']
+print (vowels)
+
+# operations on list elements
+prices = [20, 30, 40, 100]
+
+def get_discounted_price(v):
+  """
+  5% discount if prices is less or equal to 20,
+  10% discount for prices > 20
+  """
+  if v <= 30:
+    return v*0.95
+  else:
+    return v*0.90
+
+discounted_prices = [get_discounted_price(p) for p in prices]
+
+print(discounted_prices)
+
+
+
+Output (or run it) 
+
+
+
+[0, 1, 2, 3, 4]
+[0, 1, 2, 3, 4]
+['e', 'o', 'i', 'i', 'a', 'e']
+[19.0, 28.5, 36.0, 90.0]
+
+
+
+Conditions in ternary operator - Frequently, in coding, you find yourself with the need to do a basic if/else condition and in most cases you write the simplistic but multi-line code block like this:
+
+
+x = 42
+if (x > 100):
+ print("qualifies")
+else:
+ print("not does qualify")
+
+
+
+You can be more terse in your statement with Python:
+
+
+# Conditions in Ternary Operator
+x = 42
+print("qualifies") if x>100 else print("does not qualify")
+
+
+
+Output (or run it)
+
+
+
+does not qualify

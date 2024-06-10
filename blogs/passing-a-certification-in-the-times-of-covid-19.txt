@@ -1,0 +1,54 @@
+Passing a Certification in the Times of COVID-19
+
+
+
+
+Java was my first programming language and I wanted to prove to myself that I could achieve fluency in it. So I decided that in 2020 I would take the Oracle Java 8 Programmer certification. Early in the year, I bought an exam book, mock exam programs, and scheduled my exam for August. I was operating effectively, hitting the right objectives and feeling confident about the exam. But then, the pandemic hit. While it did not deter me from passing my exam, it created some hurdles along the way. My exam date became uncertain, my productivity went down gradually, and I found myself not being interested in doing anything at all. In this article, I’ll list 6 things that helped me succeed in passing my Certification in the midst of the 2020 pandemic.
+
+
+Create a schedule
+
+
+While the pandemic hit all of us differently, there’s one thing we can all agree on - everything became a  blur. The year started out great, until March and then it felt like I was in a big slumber party. Before I knew it, I woke up and it was fall. For most of us, who are fortunate to work from home, the idea of weekday and weekend seems to be mixed up. Sometimes I would wake up Monday morning thinking it was Sunday. 
+
+
+What I found helpful was setting up my daily schedule, blocking off different time slots for work and studying. Since my Google calendar is synchronized to my phone and my Amazon Alexa, it wasn’t difficult to keep track of my schedule. That way, I added some structure back into my day-to-day life. The schedule could be broken down into months, weeks, or, in my case, hours. Setting aside an hour to two a day to study helped me the most. 
+
+
+Resist procrastination
+
+
+When the exam is 8 or 9 months away, it’s very tempting to procrastinate and tell yourself that you still have time. You don’t! Time flies and in the new normal that we live in, it seems that time flies 10 times faster than it did before. While cramming works for some people, it is better that you have ample time to learn, and potentially memorize things early on. After all, it’s better to be safe than sorry. The way I combatted my procrastination was by working on bite-size pieces and small incentives. Rather than reading the book in one go, I would read 100 pages or take 1-2 mock exams and I would then reward myself with an hour of playing video games.
+
+
+Make mistakes, make lots of them early on
+
+
+This is a lesson that I learned when I started learning French years ago. I was timid at speaking the language because I wanted to perfect everything from conjugation to the correct pronunciation. I was so frightened to make mistakes that I ended up not learning anything.
+
+
+Fast forward to 2020, I bought books and mock exam programs but I ended up making the same mistake at the beginning. I would get sad whenever I didn’t pass my mock exams. However, I realized that I could use that to my advantage by learning from the mistakes that I made. Someone told me that it’s better to make mistakes now than make them in the actual exam; if I know what my weak areas are, I can still fine-tune what I need to focus on.
+
+
+In software development, this is known as the fast-fail principle. For example, in Test-Driven Development we write tests for failing requirements and then we fix/solve those failing test cases by implementing the requirements in our code.
+
+
+Break down the objectives, and understand the exam format
+
+
+The classic divide and conquer strategy wins again. No, seriously, it works! Reading a book with at least 100-200 pages per chapter is quite daunting. With the Oracle Java Certification Exam, there are 11 objectives. Those 11 objectives are divided into 6 chapters of the books. What worked for me was reading a chapter in a span of 3-5 days, followed by a mock exam. The exam format is multiple choice, with only 150 minutes to finish. You need to get at least 65% of the 70 questions correct to pass. Luckily, the mock exam program that I used has the same format as the real exam and it generates random questions. By breaking them down into these bite-size pieces, I was able to pinpoint my weak spots and dedicate more time to brushing up on them. Understanding the exam format and doing practice tests was a crucial step to buffing up my overall knowledge of the language. 
+
+
+Code with your brain, not your IDE
+
+
+Mark Manson, author of The Subtle Art of Not Giving a F***, said that “Happiness comes from solving problems” (ch. 2). He also stated that “The solution to one problem is merely the creation of another” (ch. 2). I agree with both statements and that’s why instead of coding in an IDE for my Java Certification, I started my coding practices and exercises using Notepad and the command line compiler (i.e., javac, Java). While this may sound archaic and troublesome, the satisfaction of learning how the compiler works was worth it. It helped me with some questions on the exam. In addition, we all have those days when the last thing we want to do after 8 hours of work is to stare at the computer screen some more, especially during a lockdown.
+
+
+Use multiple resources
+
+
+There are many mock exam websites out there (e.g., Enthuware, Whizlabs, Udemy) and instead of choosing which one you might think is the best, why not purchase all or most of them? One of the good things that this lockdown gave us was mock exam programs and courses that were offered with great discounts (around 70-90%). Most of the time these discounts show up every month. Make sure to get notifications about these discounts by subscribing to their mailing lists. This gave me multiple ways to test my knowledge and learn different flavors of the questions. Relying on a single source might give you bias, false confidence and you might even skip some small but crucial information that other sources offer.
+
+
+Being in a lockdown inside our homes and apartments for a long period is mentally taxing and the same goes for studying nonstop. Remember that taking breaks is equally important as studying. These tips helped me pass my Certification and I am hoping that it helps you as well, especially during these trying times.

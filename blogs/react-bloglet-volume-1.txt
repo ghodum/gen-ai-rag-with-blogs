@@ -1,0 +1,162 @@
+React Bloglet Series: volume 1
+
+
+
+
+At Solution Street we love helping our clients solve their business problems through technology. When it comes to building responsive, dynamic web applications we are big fans of the React ecosystem. React is a popular JavaScript framework that was developed by Facebook and has gained a massive following among developers due to its simplicity, modularity, and reusability. 
+
+
+In this series of short “bloglets” our team will cover a wide array of React topics, including developer tips, issues, and experiences. We are hopeful that everyone from the beginner to the seasoned professional will find something useful in each post. And if you’re looking to build an amazing web application, we at Solution Street would enjoy talking with you and seeing how we can help!
+
+
+_________________________________________________________________________________________
+
+
+React Candidates: Beware these Common Mistakes!
+
+
+By Jeff Schuman
+
+
+At Solution Street we hire great candidates with all manner of skills around the Software Development Life Cycle. In the process we interview front-end developers, and quite often, React developers. Our process involves the candidate doing a (gentle) live-coding exercise. We do our best to make the candidate comfortable and set them up for success, presenting a well thought-out, descriptive exercise, enabling them to use their own development machine/IDE and providing encouragement and positive feedback.
+
+
+Having conducted these interviews for years, I thought it would be good to share some common mistakes candidates make during this coding exercise:
+
+
+Not understanding .map() and how to use it when generating React components
+
+
+Understanding the JavaScript .map() function is key. In its simplest form the .map() function iterates over a JavaScript array and returns a new array one for each item in the original array:
+
+
+
+
+
+In the context of React components, .map() is commonly used to iterate over a list of objects and render a component for each of the items in the list. Take a look at its sample use in the Catalog component below, when rendering each CatalogItem:
+
+
+
+
+
+Not breaking the problem down into components
+
+
+This one is (admittedly) a bit subjective. An interview is a candidate’s chance to demonstrate their expertise and experience with React, including an understanding of its component-based approach to User Interfaces. When presented with our exercise we make clear that we are interested in seeing how the candidate “breaks down” the problem into appropriate components. However, some candidates solve our exercise by adding ALL of their code to our top-level App.js component. While this is certainly a viable solution, it doesn’t demonstrate the candidate’s ability to separate concerns, manipulate state, pass props, etc. It’s a missed opportunity for the candidate.
+
+
+Misunderstanding state manipulation
+
+
+Regardless of whether you use class-based components or functional components there is a key tenet with regard to state management in a component: You should not change objects that you hold in the React state directly. 
+
+
+This is where knowledge of the .map() function - see above - or spread syntax is helpful. See the example(s) below.
+
+
+Not good:
+
+
+
+
+
+Better:
+
+
+
+
+
+In conclusion, we’re big fans of React at Solution Street. When we interview candidates we enjoy discussing their experience and joy in using the React framework to build sophisticated web applications. As a candidate, it is important to know both the fundamental concepts of React AND the common idioms when designing a React application.
+
+
+_________________________________________________________________________________________
+
+
+Reduce Redundant React Re-Renders, Really!
+
+
+By Jared Mohney
+
+
+As developers, despite our most wonderful efforts, sometimes our components re-render more often than they need to. This leads to unnecessary work for our user’s browser, negatively affecting their experience! Today we'll quickly look at two hooks that React provides – useMemo and useCallback – that can help ease these woes.
+
+
+useMemo
+
+
+The useMemo hook memoizes a value: re-computing it only when its dependencies change. This can be useful when calculating a value that takes a long time to compute (async, computationally expensive, etc.) or is used in multiple places within a component.
+
+
+Here with useMemo we will not recompute expensiveToComputeValue unless a or b has changed, protecting our user from a poor experience.
+
+
+useCallback
+
+
+The useCallback hook memoizes a function, re-creating it only when its dependencies change. This can be useful when passing a function down to a child component that relies on referential equality to prevent unnecessary re-renders.
+
+
+
+
+
+Here when MyComponent re-renders, handleClick is not re-created, thereby not affecting any components downstream of it (button).
+
+
+TIP: As with all things, moderation! Profile your page performance and ensure you’re seeing gains worth the added complexity.
+
+
+Conclusion
+
+
+Unnecessary re-rendering is a solved problem. With a close eye and purposeful application, useMemo and useCallback stand to make our applications more performant and enjoyable to use.
+
+
+_________________________________________________________________________________________
+
+
+React Portals: When You Need a React Component to Render Somewhere Else
+
+
+By Adam Boudion
+
+
+Every once in a while in front-end development, we find ourselves needing something to be on top of everything else. Toast messages, modals, and tooltips are the most common examples of this. Sounds conceptually pretty simple, right? We just find a way to make sure it has the biggest z-index. But sometimes, weird stuff happens. Consider the following code:
+
+
+
+
+
+Seems simple enough. We press a button, and we get a toaster message. Easy Peasy. Let’s run it and see the result.
+
+
+
+
+
+Wait a second…What’s it doing under there? … Ah, looks like the header has an enormous z-index and it’s interfering with the appearance of our toaster. 
+
+
+
+
+
+Now, in this simplistic example, we could just refactor a little bit to squash this bug, but in more complex codebases, this type of refactoring can carry risks of causing regressions, or introducing new issues. So what’s a developer to do? 
+
+
+Enter the React Portal. React Portals allow you to render child components outside of its parent's DOM hierarchy while preserving all of its standard react behaviors and relationships such as props and context. This is because a Portal can “move” a child component to be a descendant of any viable node in the DOM tree, while having it be unchanged in the React tree. Let’s make a little change to our toasters render method.
+
+
+
+
+
+The createPortal method takes in two arguments. The first argument is any valid renderable React child, and the second argument is any valid DOM element that you wish to become the new parent of the first argument in the DOM.
+
+
+
+
+
+Perfect! Now it visually “pops out” as we intended. As we can see, the toaster is also rendered as a child of the body in the DOM.
+
+
+
+
+
+Though not appropriate in all situations, portals were added to React for use-cases just like this to add a powerful tool in the battle against rogue styling issues.

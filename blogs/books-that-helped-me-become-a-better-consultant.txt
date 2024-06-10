@@ -1,0 +1,60 @@
+Books That Helped Me Become a Better Consultant
+
+
+
+
+The COVID-19 pandemic lockdown had a profound impact on my mental health, which was compounded by the controversy regarding my status as an Asian immigrant, a person of color, and a member of the LGBTQ community during a tumultuous year. I had a bunch of internal struggles ranging from immigration cases to Asians being discriminated against, to LGBTQ folks fighting for equality. Fortunately in my case, Solution Street is a very welcoming and accepting workplace; truth be told, after I came out to my parents, I came out to my coworkers and I was welcomed with open arms. However, with all of the issues mentioned earlier on top of being a software consultant - where mental prowess is necessary - I got burned out.
+
+
+To combat my own mental health struggles, I began seeing a therapist. The two of us bonded over books after finding we had a common interest in similar genres of self-help and philosophy. Several of these books have helped me work through my own issues, and in this article, I will share some of the golden pieces of advice that helped me during the pandemic lockdown.
+
+
+ Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones, James Clear
+
+
+“Improving by 1 percent isn’t particularly notable - sometimes it isn’t even noticeable - but it can be far more meaningful, especially in the long run” (Clear 18)
+
+
+Atomic Habits is a book that states four laws that the author conveys to the readers, describing the automatic nature of the behavior, and detailing how habits ultimately solve problems with as little energy as possible. The author states that there are four ways to create good habits and that even a 1% change every day is better than nothing. The first law states that to create a good habit we must make it obvious and straightforward. It is the opposite of “out of sight, out of mind” or in other words, the more we see something the more we are inclined to do it. The second law is to make the habit attractive. The author talks about temptation building, similar to a reward system, where we pair an action we want to do, with an action we need to do. The third law is making the habit easy, by reducing the steps between you and the habit and thus, reducing the friction of doing it. Lastly, to make the habit satisfying, the author suggests that we build a good habit by never missing it twice which he calls “never breaking the chain.”
+
+
+For me to stay relevant in an ever-evolving industry, I feel like I need to learn new technologies. However, my biggest hurdle during the lockdown was that I did not have the motivation to study. I felt like I was blocked and did not want to do anything at all. So after reading this book, I applied the four laws to my way of learning and kept my skills current. I made it obvious by having my laptop next to my bed so, at night instead of mindlessly scrolling on my phone, I have been learning new things through Udemy. I made it attractive by watching a section or two on Udemy about ReactJS and followed that with an episode of a show that I want to watch. I reduced the friction by having a bite-size portion of the sections. And lastly, I made it satisfying by making sure that I allot an hour every night to build my app on ReactJS.
+
+
+The Obstacle is the Way: The Timeless Art of Turning Trials into Triumph, Ryan Holiday
+
+
+“Never forget, within every obstacle is an opportunity to improve our condition” (Holiday 7)
+
+
+This book by Ryan Holiday is a compilation of different inspiring stories that have stoic principles embedded in each of them. In one story, the author recalls the story of Pericles, an Athenian general, who sailed to war. The Athenians encountered a solar eclipse while at sea, yet despite the natural phenomenon, persevered. The lesson the author teaches through the story is that when we look at obstacles in a different light, they lose power over us. Before I had altered my perspective in my work, I had seen my time wasted working on repetitive bugs, and am bored by their unchallenging nature. Once shifting my perspective, I now think about how the client has confidence in me, and that they entrust me to fix these bugs because I am the most knowledgeable person for the job.
+
+
+Another story that resonated with me was the one about “Amor Fati” or “love of fate.” The author related this to what happened to Thomas Edison when his laboratory burned down along with all of his research. Most people would have panicked in this situation, but Edison remained unphased. The story emphasizes how we should love everything that happens to us, be it good or bad. Certainly, 2020 was not the greatest of years for most of us, but as hard as it sounds, I tried loving my fate through it. In doing so, I came to realize that my mind was calling out for help from being burned out from work, and I had to do something about it.
+
+
+12 Rules for Life: An Antidote to Chaos, Jordan B. Peterson
+
+
+“Make friends with people who want the best for you” (Peterson 63)
+
+
+Rule #3 is probably the best rule that I have read in this 12-rule book. That rule states that you should surround yourself with folks who want the best for you. This is similar to the common phrase that you are the average of five people. I moved to Virginia a couple of years ago and I do not have many friends, but I am lucky enough to surround myself with intellectual yet caring people at my work. Since these are the people I surround myself with, I ended up getting curious about the things that they are interested in and vice versa. Before moving to Solution Street, I didn’t know much about the stock market and how to make my money work for me. But after spending so much time with these people I began to “become one of them” and that’s just one part of it. Some people challenge me so much that sometimes I feel like they’re picking on me but I realized that they challenged me because they believe in my potential. That said, I think this is the best rule I’ve gotten from this book because I can guarantee that I became a better consultant and a better person because of my peers.
+
+
+The Subtle Art of Not Giving A F***: A Counterintuitive Approach to Living a Good Life, Mark Manson
+
+
+“The problem to giving too many f*** is bad for your mental health” (Manson)
+
+
+In this book, the author writes about how people get easily bothered by minuscule things, even unimportant things. I would get stuck for hours if I felt like my CSS modifications were just a little off or even if I got it to where I thought it was perfect. I would get stuck because I would give a lot of attention to the small things that don’t matter. I realized that I got burned out because of my own doing, and through this book, I learned how I should focus my energy and effort on the things that matter the most.
+
+
+Whether or not these books help with your mental health, I hope you find this informative. It is necessary to prioritize our mental health the same way we prioritize our physical health. How we approach our mental health will affect how we think, feel, and act as we cope with life. Becoming a better software consultant doesn’t just mean becoming a rockstar in technologies and tasks. I think that before one can become better at work, one should focus on becoming a better person first, and to become a better person, one should take the time to take care of themselves holistically.If you or anyone you know is having a hard time with mental health, here are some resources that you could go to for help:
+
+
+https://www.nimh.nih.gov/
+
+
+https://www.mentalhealth.gov/

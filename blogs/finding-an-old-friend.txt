@@ -1,0 +1,105 @@
+Finding an Old Friend
+
+
+
+
+Like many during this pandemic I am cherishing the time I’m spending with my immediate family, refocusing on my hobbies of exercising, guitar playing, and pizza making, and trying to organize areas of my house I was putting off for years. Recently, while rummaging through storage crates in my basement, I came across a very old cassette tape. The label on the tape intrigued me and I decided to take a closer look and try to resurrect what was on it. When I discovered the content, I felt like I had found an old, lost friend.
+
+
+Before sharing the content of the tape, let me bring you back in time to the early 1980s for context especially since many readers may not be familiar with the state of personal computers back then. In 1981, I was 13 years old and a 7th grader in junior high school in Brooklyn, New York. One day in math class, my teacher, Mr. Korb, rolled in a personal computer. Yes, rolled in, as in the computer was on an old-school utility push cart. This was the first personal computer I and all of the students in the class had seen. It was a TRS-80 Model I computer: 
+
+
+
+
+
+As shown in the picture above, it had a black and white monitor, a keyboard (which contained the “computer”) and a cassette player for storing and loading software programs. The TRS-80 was made by Radio Shack, a techie store where you could buy all sorts of electronics and, of course, these personal computers. Seeing this machine for the first time was a life-changing experience. Only a few students were allowed to participate in a pilot learning program at the school and, initially, I wasn’t one of them. After begging and pleading and proving myself in my math class, Mr. Korb allowed me into the group. The computer language we learned was BASIC (Level II BASIC Level Language). I engrossed myself in programming from that point on and was lucky enough to have parents that bought me my own personal computer about a year later. And trust me, the $300 price tag of a Commodore VIC-20 was a lot of money back then.
+
+
+
+
+
+Certainly, with Captain Kirk promoting the product in the ad above, it was obviously even more desirable. My Commodore VIC-20 came with 4K RAM (Check out the other specifications above!). The computer was the keyboard, similar to the setup of the TRS-80, but with this, you could use your own monitor - which at the time was just your TV, and could even be a color TV if you were lucky enough to have one! I also had a cassette player with the computer to store and load my programs. I later purchased an expansion RAM module for, wait for it….16K of RAM along with an assembly language module to code in assembly language (referred to as Machine Language in the ad above). My time with the TRS-80 and the Commodore VIC-20 was really the starting point of my career and lifelong love of programming.
+
+
+Now back to the cassette I found in my basement. This cassette was stored amongst hundreds of other cassette tapes. This one caught my attention because it was labeled differently from all the rest of my tapes which only had music on them (back then, before digital music and before CDs, we listened to tapes typically on a Sony Walkman).
+
+
+
+
+
+When I read the label on the cassette, I was amazed to see what appeared to be a listing of programs:
+
+
+
+
+
+As you can see above, there are entries like “1-11 Flag; 11-21 Tennis…” For those of you who have never used a cassette player (sometimes referred to as a tape deck), the numbers 1-11  indicate the counter (think of index) on the cassette player so you could easily find the program. I knew immediately that this was a cassette tape from either my days using a TRS-80 or my Commodore VIC-20. And, thus, the challenge began on how to revive these programs. 
+
+
+
+
+
+
+
+
+Initially thinking that I wrote these programs for my Commodore VIC-20, I went down the path of trying a Commodore VIC-20 emulator. Surprisingly someone had written an emulator in JavaScript which runs in the browser. I knew that initially I had to get my data in digital format, so I found my old cassette player (!!!) and plugged one side of an RCA cable into the cassette player and the other side into my Mac. For those really interested in how the headphone jack on your MacBook can be dually used as input see here. 
+
+
+Once in digital form (.m4a on my Mac), I knew I needed to convert it to something the emulator would recognize which was a .tap (tape) format. These links show how I converted it to a standard .wav format first and then from .wav to .tap. For those of you who have never heard a recording of a program on a cassette tape, here is the actual digital version of the cassette tape I found. If you take a listen, you may find it pretty annoying! For those who hang in there and listen a little longer, you can actually hear some kids talking at some intervals in the tape; that was probably me with classmates. Often we would accidentally record ourselves instead of connecting the tape player to the computer.
+
+
+Once in .tap format, I tried my emulator which, unfortunately, didn’t recognize the digital file making me realize, “Wow, this must be even older and probably my first tape back in the days when I was using a TRS-80.” Switching my focus to the TRS-80, I came across this very informative site with over one million visits (I love the old school counter on the page)! Using the TRS-80 emulator listed on the site that could be used on my Mac I was back on track. Now I needed to convert my file from .wav to .cas (cassette format) recognized by the emulator. On the TRS-80 site I found a listing of utilities including one to convert from .wav to .cas. Once I loaded my WAV file I was shocked to see what I saw…
+
+
+
+
+
+I was taken aback at first, seeing my code that I had written on a TRS-80 so many years ago. It brought me back to that time; the time when I began writing programs and the start of my lifelong fascination with software development. I could only describe this discovery as a feeling of finding and reconnecting with a long-lost friend.
+
+
+“Although the equipment, languages, and procedures for generating programs are different today, the overall elements of programming are the same as they were when I started: defining a problem or issue, determining a course of action to address it, writing some code, testing and iterating through multiple revisions of your code until you’ve met your original goal.”
+
+
+I proceeded to get whatever programs I had running in the TRS-80 emulator. Unfortunately some of the transfer didn’t work due to poor quality in the original recording or more likely the issue of having some accidental voices in between the programs so I actually had to fix some old code!
+
+
+As you will see in my programs shown in the animated GIFs below, I started by creating graphical programs (numbers 1 and 2 below) and then I moved to more interactive programs (numbers 3-5). These GIFs run in a continuous loop and take a few seconds to begin. You’ll first see that, using the emulator, I point to the cassette file and then run CLOAD to load it. Then for each program, you’ll see my lines of code beginning with the LIST command and ending with the RUN command, followed by the program executing. If you look carefully, you may notice that my spelling was atrocious; it appears that I learned how to code before I learned how to spell!
+
+
+Enjoy!
+
+
+Here is my 4th of July program (titled Flag on the original cassette):
+
+
+
+
+
+The program below reflects my passion at the time, tennis! I still play today, but back then I used a wooden Donnay Bjorn Borg tennis racquet.
+
+
+
+
+
+The next program shows a bowling alley with pins which I believe was the start of an interactive game.
+
+
+
+
+
+Here I get into some interactive aspects with math.
+
+
+
+
+
+Finally, below is my “mastermind” game. Wow, look at all of those spelling mistakes (I think now I finally know the difference between WRITE and RIGHT).
+
+
+
+
+
+
+
+
+These programs were the impetus for my ensuing captivation with software development and all of its uses. Much has changed in the programming world since the early 1980s with the continuing evolution of programming languages, frameworks, and hardware. Although the equipment, languages, and procedures for generating programs are different today, the overall elements of programming are the same as they were when I started: defining a problem or issue, determining a course of action to address it, writing some code, testing and iterating through multiple revisions of your code until you’ve met your original goal. This process gave me great gratification when I wrote code on the TRS-80 as it has throughout my career. I hope you’ve enjoyed this step back in time to the world of programming in the early days as much as I’ve enjoyed restoring my first programs and rediscovering an “old friend,” -- and that, during these tough times, you also discover something that brings you great joy.

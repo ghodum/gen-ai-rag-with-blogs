@@ -1,0 +1,156 @@
+Primacy Bias
+
+
+
+
+Imagine for a second that you are attending a very important lecture at school. As the teacher starts to speak, your attention is at its peak, you feel like you can absorb all the information and follow the topic. After a short while, your mind starts to wander and only when the lecture is drawing to an end you tune in again. Later that day, as you try to explain to a friend what the lecture was about, you realize that you can vividly recall the first part of the lecture but not the middle.
+
+
+Unless you’re a superhuman with an infinite attention span, we’ve all been there. But why?
+
+
+Shortcuts, Shortcuts Everywhere
+
+
+Remember that time you sat down to find out why your grandma’s computer “ran out of space,” just to find the desktop full of shortcuts? 😱
+
+
+
+
+
+Turns out our brains are just like that. To save time and energy our brains take shortcuts; mental shortcuts. These shortcuts, or heuristics, help us process information quickly. However, processing speed comes with a cost: results may not always be correct, and more often than not shortcuts lead to cognitive biases.
+
+
+Cognitive biases influence the way an individual perceives reality, recalls information, and makes decisions. Factors like personal experiences, cultural background, education, or preconceived notions influence or exacerbate some of these shortcuts.
+
+
+There are many types of biases, but today we’re focusing on primacy bias (or primacy effect). In short: the primacy bias allows us to get a better grasp on what comes first in a sequence of things or events.
+
+
+What causes Primacy Bias?
+
+
+Several factors can help explain primacy bias. Impact, attention, and memory are among the top:
+
+
+
+Impact – The first items in a sequence can set the tone, create expectations, or establish a baseline against which subsequent information is evaluated. This psychological impact contributes to the increased significance of the initial information.
+
+
+Attention – We have limited attention spans. We are more likely to pay closer attention to the items encountered first; this increased attention contributes to the better retention of those items.
+
+
+Memory – We have limited memory. To save energy and effort, our brains choose what to keep and what to forget. Consequently, the first and last items in a sequence are more likely to be encoded into long-term memory.
+
+
+
+Make It Work In Your Favor
+
+
+The primacy effect applies to many scenarios. And though the concept is the same, the way it can positively or negatively impact a user interface (UI) differs. Here are a couple of guidelines to leverage the primacy effect.
+
+
+First Impressions
+
+
+The first few seconds of exposure to a UI are crucial. Users often form an initial (and sometimes strong) opinion about a website or application within the first few seconds of interaction. This can make or break a business, and the road to recovery from a bad perception is not impossible, but a long one.
+
+
+
+Information has to be carefully organized and presented in a way that benefits our users. Always expose them to the most critical information first.
+
+
+Key elements such as a logo, brand identity, and main navigation should be strategically placed at the top or left side of the application. Western cultures track information from left to right, top to bottom, sometimes called an F shape. It makes the top left corner of a UI the most ideal spot for branding.
+
+
+The first 3 spots of a navigation bar should contain links to the most important sections.
+
+
+Organize information into meaningful chunks and establish a clear hierarchical structure.
+
+
+
+Some interesting reads about how users read and scan content, and how to gather actionable data:
+
+
+
+4 Types of Eye Tracking Patterns: How People (Don’t) Read on Web 
+
+
+3 Types of Heatmaps for User Behavior Analytics 
+
+
+
+Prioritize Information
+
+
+The order in which information is presented within the different segments of an application will play a big role in how the end user remembers and interprets it.
+
+
+
+Any written content should state the most relevant information first. Optimally in the first sentence.
+
+
+Devise a way to prioritize elements in a list or table, effectively showing them at the top.
+
+
+
+As end users ourselves, we experience relevance sorting when we use:
+
+
+
+Google – They crawl the web indexing sites while its proprietary ranking algorithm organizes and categorizes content. Their results page provides the most relevant matches right at the top of the search results. They also use the primacy bias to their advantage by presenting sponsored results first.
+
+
+Kayak – Even though they provide various sorting capabilities, their default sorting criteria is “Best.” As their lookup algorithm searches for plane tickets, the UI is updated in real-time by placing what it deems the “best” results at the top.
+
+
+Social Media Sites – Social media feeds are especially curated based on the end user’s preferences and interaction history. It serves fresh and relevant content at the top to promote continuous engagement.
+
+
+
+Form Design and Data Entry
+
+
+Primacy bias plays a crucial role in form design. It is a fact people don’t like to fill out online forms. Creating a concise and compelling experience is crucial to incentivize form completion and mitigate abandonment.
+
+
+
+Placing the most critical fields at the beginning of the form can increase the likelihood of users completing essential steps, such as registration or checkout.
+
+
+If it's optional, it will (most likely) be left blank. Put all optional fields on a secondary step, allowing users to finish without ever having to reach it. It makes for a shorter and more manageable experience.
+
+
+Avoid cluttering the interface with long instructions. If additional context is imperative, provide it using tooltips or text elements that can be dynamically toggled.
+
+
+
+Call to Actions
+
+
+Call to action or primary actions buttons should be located at the top level of any given section. Visual styling should be enough for the user to easily notice and understand the intent without giving it too much thought.
+
+
+After their first round of interactions, users will learn that those “big yellow buttons” besides the section title mean primary actions.
+
+
+Using a different shape and color for the same purpose on a different page will collide with what was already learned and remembered. It forces the user to focus and learn a different pattern for a different section.
+
+
+Maintain a Balance
+
+
+While primacy bias can be a powerful tool in UX design, it is essential to maintain a balance. Relying too much on it may lead to neglecting the importance of the entire end-user journey. Most importantly, know your users and their goals.
+
+
+Furthermore, along with primacy bias we must also consider other biases, like: Anchoring Bias and Recency Bias. Striking a balance between those (and other) biases paves the way to a holistic and effective user experience.
+
+
+Final Thoughts
+
+
+The primacy effect is a bias that plays a big role in our everyday lives, including how we use websites and applications. As software developers, having a good understanding of this concept can lead to more effective and user-centric designs.
+
+
+You could even get to add “brain hacker” to your title!

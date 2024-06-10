@@ -1,0 +1,135 @@
+Let's Take a Low-Code Platform for a Test Drive
+
+
+
+
+As a developer who has coded for over 40 years, I tend to be very dismissive of silver bullets in the software development space. 4GL platforms and languages come and go, and I and other colleagues have typically avoided using those platforms for reasons such as:
+
+
+“Sure the first 80% is easy, but then you are stuck since you can’t open the black box to do what you need to do;” or“The vendor may go out of business tomorrow and then you are locked into a set of code or assets that isn’t supported.” 
+
+
+For these and other reasons I tended to shy away from using these platforms or tools. Back in the day, we had tools anywhere from Clipper to Forté. Ironically, I actually was certified in PowerBuilder development in the 90s which was a 4GL language. Even more ironic is that I and many colleagues are always looking for some holy grail of development where we can build applications easier, quicker, more elegantly, with fewer defects caused by an overabundance of code.  
+
+
+With the new wave of 4GL tools and platforms now commonly referred to as no-code and low-code platforms, I wanted to challenge my thinking a bit. Joel Nylund, from Solution Street,  wrote about potentially choosing low-code and no-code platforms and discussed the two major potential pitfalls including, first, a vendor’s proprietary approach and language, and second, costs of the platform itself. These pitfalls seemed similar to concerns from years ago with 4GL products, but I really wanted to do a deep dive into at least one low-code platform to see how these new sets of tools may be different from older derivations.
+
+
+I came across Budibase, a popular open-source platform. Budibase is somewhere on the border of no-code and low-code. You can quickly build something without any code, but there is certainly a decent level of technical understanding needed to even implement the no-code option. There are lots of customization options within Budibase with actual code so I would say generally some coding is required, but again, more importantly, a prior understanding of database design and application development is really needed. Budibase is not intended to be used for mission-critical apps, but more likely internal CRUD or slightly more complicated than CRUD apps. As stated in their docs, “Budibase is an open-source low-code platform for building internal applications, such as admin panels, internal tools, client portals, and more.” 
+
+
+This blog article isn’t meant to be a complete walkthrough of the Budibase platform with an in-depth step-by-step guide. Their own docs provide a decent overview of getting started pretty quickly with some in-depth portions on building various CRUD apps from scratch. What I propose to do is discuss various aspects of the platform, how I created a very basic app trying to incorporate several of the typical items developers think about when building a simple business system, and conclude with a brief comparison of this type of a platform with a more standard set of development languages/tools/frameworks, and when a platform such as Budibase makes sense to use. 
+
+
+First, after quickly going through the Budibase documentation, I decided to build a very basic CRUD app and see if I could both extend it a bit with some complexity and also discover features by thinking through technical needs as if I was building the app with a standard development platform (e.g., Ruby on Rails or Python/Django).
+
+
+I decided to create an extremely simplified pickleball reservation system. For those who have never heard of pickleball, it’s sort of a combination of tennis, badminton, and ping pong. As an aside, as a long-time tennis player, several years ago I was introduced to pickleball and it’s quite addicting, easy to pick up, and I highly recommend playing the game with friends and family. I kept my pickleball reservation system very simple with two tables: Players and Reservations. The purpose was simply to maintain a list of players and allow a table to record the reservation which contains up to 4 players and a date and time. The idea here is to see how Budibase does with basic database tables with a many-to-many relationship between them.  
+
+
+From the start of app creation, you have a choice of using a quick-start template for your app which is very useful to accelerate development even more. Here are a few examples:
+
+
+
+
+
+I chose to create my app from scratch. In short, Budibase has three main areas: Data, Design (which is the view), and Automation (logic). For the data side, you can connect to various datasources including standard databases such as MySQL and Postgres, REST services, S3 buckets and others. There’s a convenient “load from CSV” to assist with data loading. The platform can also use its internal database with no configuration which is what I used to start. Here’s the list to choose from:
+
+
+
+
+
+As you would expect, the database table creation using standard datatypes was simple; creating one-to-one, one-to-many, and many-to-many relationships were all easy. Again, knowledge of database design (e.g., relationships) is important here as Budibase is more geared towards developers with software construction experience.  
+
+
+For the Design aspect, Budibase has a screen and layout generator which generates standard pages including a list page, new item page, and edit page for each table. Literally, within several minutes, I was up and running with my app and then made various changes in the IDE to make things look a bit better such as label name changes, layout changes to the home screen, and adding a logo for fun. 
+
+
+You can see here what my home screen looks like which defaults to include a list of players:
+
+
+
+
+
+Again, pretty much by default, the layout with pagination, the “Create New” button/functionality, and the Player relationship to the Reservation table is displayed.
+
+
+There are tons of ways to customize the page/data. Below is a screenshot of their IDE to give a sense of the interaction. Here is an area where I can update various aspects of my Players list with dragging and dropping of elements, field groups, and a host of other items along with page customizations of labels and CSS. Budibase makes use of Handlebars extensively to allow for things like data binding, calculations, and comparisons to name a few. Since the IDE lets you set app state (application state variables) you can access them via handlebars as well. You also have access to JavaScript for data transformations and logic. While editing the page, the live data is updated in the Design to show you examples while designing.
+
+
+
+
+
+Let me just mention a few updates I implemented - and I use the term “implemented” here loosely since these are using different settings in the IDE or writing small bits of code within the IDE (e.g., handlebars, JavaScript, regex):
+
+
+I formatted (actually validated) the email address and phone number via the tool and was able to do this with simple regex expressions within the IDE - i.e., using the IDE widget that deals with validations.I experimented with the display columns in the list and also with filtering the list based on criteria. Both were very easy to do.
+
+
+Just to share the generated New Player screen and the Reservations list:
+
+
+
+
+
+
+
+
+As you can see, the screens are very basic. I could have customized the display quite a bit with custom CSS. Again, all I have done here is created two tables with some basic data entry for database columns and a simple relationship, and then generated the screens with a click and changed some minor UI features. All of this took no more than 15 minutes. 
+
+
+From here I wanted to see how I could incorporate REST API calls using a second datasource within Budibase. This too was quite simple. I used a weather REST API and, within the Budibase tool, I set up the connection and it verified the test results and populated a schema for me. 
+
+
+I did a simple integration by adding the weather on the Reservations page after you chose the date for your reservation. Below you can see that the temperature will be a very chilly 23 degrees on the date selected. You can also see the default multi-selection drop-down for the players in the reservation.
+
+
+
+
+
+Thinking about my design, I realized that I needed User Management - authentication and authorization for users. Luckily this is built into Budibase. I can implement 3rd-party auth and, also by using their established levels of roles, I can set roles on the Data level or the Design (page) level. Again, “implement” is loosely stated since it’s already implemented, I just need to provide the 3rd-party keys.
+
+
+Now that I had the basics of Data and Design, I moved on to Automation. Automation here is based on an event-driven model - for example when some trigger/event occurs (e.g., database row created), then perform some action (e.g., send email). 
+
+
+Here you can see the event and action selection screens to get a better understanding:
+
+
+
+
+
+
+
+
+I initially simply created a database trigger event to send an email. Specifically, when a Reservation record is created, send an email. Here’s a screenshot:
+
+
+
+
+
+There are some nice events/triggers such as webhooks and actions including custom JavaScript. You can also trigger automations from button clicks. All of these automations can be chained such that the result of one automation feeds into another. The ability to test the automations locally with test data is a good feature.
+
+
+Besides automations, there are some valuable features such as simple chart inclusion and integration with Slack and other external tools. With all of this, Budibase lets you publish apps within their own cloud for free with some usage limits although commercial pricing is available. You can also deploy locally for free with no data or functional limits with DigitalOcean, Docker, or Kubernetes options. The details for deployment are provided once you create an account.
+
+
+Now before I get to summarizing my thoughts there were several areas I didn’t get to or didn’t fully research including:
+
+
+Can I unit test and code? Obviously I could use an automation UI tool to test the UI, but if I wrote some significant JavaScript code, I don’t think I could test that easily in a batch sort of way.Development team - Can multiple developers write code? How would that work? I can see that there is an export option which exports the entire project in a text-based file but that seems fairly prone to errors if multiple people are developing the same application together.Performance and security - Does the generated code and platform perform well? Is it secure? I didn’t have a chance to evaluate these important questions.
+
+
+In terms of comparing this low-code tool to a standard set of development languages/tools/frameworks like Ruby on Rails or Python Django, it’s certainly like comparing apples to oranges. Clearly, Budibase itself as a tool is very powerful for the quick “coding” and generation of applications. Both Rails and Django have some of this basic ability but I would say Budibase is a more complete tool in that regard. Beyond the initial code generation of Budibase, I can see how I can make some simple alterations to the data and view portions and automate/include logic and connections to external systems. All of this is good to a point, but then I would be fighting the tool at some point. With Budibase as an open-source piece of software, there is clearly a nice benefit of using that to my advantage to alter or branch the code as needed or, even better, to join with helping the tool evolve. 
+
+
+So when would you use this tool/Budibase?...
+
+
+I can certainly see us at Solution Street using this tool in the following circumstances:
+
+
+Proof of concept tool - the incredible speed that you can put together a database implementation with generated screens is pretty impressive. I can even see using this platform in a business development forum whereas instead of just doing plain mockups I would use this tool to have a basic implementation.Throw away system - it’s not often we have situations like this, but there are instances where a client is going through a transition phase with either migration or some temporary system whereas they need data entry on various screens to go through validation and conditional logic to be entered into a database. These sorts of systems wouldn’t need to be pretty or heavily functional.Low- to medium-use internal systems for clients - often we build large custom complex business systems for clients and there is an associated much smaller internal isolated system that needs to be built for a very small set of users.
+
+
+I hope you enjoyed walking through the process with me of test driving a low-code open source mostly CRUD-based tool. 

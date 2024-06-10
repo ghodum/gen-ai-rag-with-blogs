@@ -1,0 +1,93 @@
+Fitting UX Into the Development Puzzle
+
+
+
+
+As a developer, I’m ashamed to say that for years I really didn’t know what UX (User Experience) was. Sure, I simply defined UX as gathering information from users prior to web page implementation of HTML/CSS and other front end development tasks. I believe this very simplistic view is shared amongst many developers who tend to ignore the importance of resources who perform critical functions in the software development life cycle. I’m going to attempt to provide a concise view of various UX roles used in the process of creating software and show the breadth of skills used and vital input acquired during this important phase of software development.
+
+
+First, let’s take a look at jobs in the broad UX field to see the vast array of titles (in no particular order):
+
+
+UX DesignerUX ResearcherProduct DesignerVisual DesignerUI (User Interface) DesignerUI DeveloperInteraction DesignerExperience Designer
+
+
+Then there are even concatenations of roles such as User Experience Designer and UI/UX Design Engineer. 
+
+
+Next, let’s walk through the individual processes that should occur first in the development process. In the design and early implementation phase these are the typical process-level tasks that occur:
+
+
+
+Obtain information from users Observing usersInterviewing usersSurveying users
+
+
+
+
+Determine problems that need to be solvedBrainstorm on solutions
+
+
+
+
+Prototype solutionsMockups or wireframes (from simple paper-based mockups to interactive digital mockups)User flowsCreate user personas Usability testingBased on feedback iterate through brainstorming or prototyping processes
+
+
+
+
+Page designTypography, sizing, images, and positioning of widgets
+
+
+
+
+
+
+
+
+
+
+
+
+
+Convert mockups to pagesCreate CCS/HTML 
+
+
+
+
+
+
+
+
+
+
+Implement UI functionality
+
+
+
+Clearly, there is a lot that goes on with skillsets that span user interaction, problem solving, broad scale design and layout, webpage design, and user interface implementation, often with crossover between UX and UI. At a basic level, UX refers to the user's experience; the overall experience and logic flow of the application, whereas UI refers to the aesthetic view of a web or mobile application.
+
+
+Going back to the list of job titles, let’s cross-reference them back:
+
+
+Product Designer - designer that focuses on prototypes, but takes the product view and works more closely with client product leadersVisual Designer - designer with the central focus on the prototypes and digital mockupsUI Designer - page designerUI Developer - converts mockups to pages and/or implements UI functionalityUX Designer - much or all of the process prior to page designingUX Researcher - working with users and identifying problems and potential solutionsInteraction Designer - same as UX designerExperience Designer - same as UX designer
+
+
+There are so many aspects to a successful product design and that’s why there are probably so many roles defined in the UX research/design stage. However, the determining success factor is dictated by the UX resource or resources focused on multiple facets including those impacting the users and the overall product solution. Many software consulting companies begin with assuming they know the solution to the problem and start with UI design. However, this is a mistake and misses the entire user experience portion to obtain feedback from actual users before defining a solution. 
+
+
+We, at Solution Street, try to obtain as much information from the users. Many of our customers’ requests stem from their need for technology to replace a manual process. When we are tasked with this, we like to begin at the foundation - defining what problems need to be solved and areas that need to be addressed. The first stage begins with UX design, followed by UI design.
+
+
+When we drill this down, we typically simplify to two resource roles:
+
+
+UX Designer - works with users to identify problems, iterates on solution prototypes, designs mockups for overall flow and user experienceUI Designer - designs and implements the details at a page level and may continue in a developer role implementing actual page-level functionality
+
+
+I would admit that at Solution Street we often start simply with a Business Analyst who performs some of the UX Designer roles, specifically creating mockups in the form of wireframes. That Business Analyst works with the users to obtain a general list of what they want. This is typical in the case of a client where they are taking the active role of defining much of what’s needed and arguably bypassing some important user research roles and iterative problem solving. Following the wireframes, we tend to bring in a UI Designer to flush out the design. 
+
+
+The preferred process generally goes as follows: a UX Designer (with user research, problem solving, and design skills) works with the client’s customers (whether internal or external) to solicit information and determine what problems need to be solved. This is followed by that same resource prototyping solutions including digital designs, layouts, and user flows iteratively while obtaining feedback from the customer (users). Once approved, a UI Designer designs individual pages based on the overall UX design and implements individual pages with appropriately placed widgets, images, and typography. The UI Designer converts the page design to implementation with CSS and HTML and may implement page-level functionality. 
+
+
+As you can see, a successful and complete development cycle begins with defining the issue/problem, gathering user feedback and needs, followed by thoughtful and responsive website/software design. The step of UX design is not to be skipped because it ensures that clients’ needs are met. We, at Solution Street, recognize the importance of this piece of the development puzzle and incorporate it into our process for successful outcomes. 

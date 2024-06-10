@@ -1,0 +1,33 @@
+5 Key Capabilities the Best Problem Solvers Have
+
+
+
+
+Throughout my career, I have heard people say things like “He has a knack for fixing difficult bugs,” or “She has a knack for getting Ruby to work with OpenSSH.” The definition of “knack” according to the Oxford English Dictionary is “an acquired or natural skill at performing a task.” What we are really talking about here is the skill of “problem solving.” I tend to believe that in our industry it’s almost always an “acquired” skill. If you agree with this, then how and when was it acquired? Why are some of us exponentially better than others at problem solving? How can we become better problem solvers?
+
+
+I believe what makes a great problem solver boils down to five key capabilities or skills.
+
+
+
+
+
+Unrelenting willpower: How hard are you willing to work to solve this problem; will you give up after five minutes, five hours, five days, five weeks, or five years? When will you stop trying? How strong is your “will” to solve this problem? I always think about Star Trek and the Kobayashi Maru, a training exercise in the fictional Star Trek universe designed to test the character of Starfleet Academy cadets in a no-win scenario. Captain Kirk took the test three times while at Starfleet Academy. Before his third attempt, Kirk surreptitiously reprogrammed the simulator so that it was possible to rescue the freighter. Despite having cheated, Kirk was awarded a commendation for "original thinking." In this case, Captain Kirk’s willpower was unrelenting, and he refused to give up, knowing that there must be a way to solve this problem. In my career, I can think of a handful of technical issues that took weeks to solve. I feel that my willpower to never give up got me through the frustrations of not being able to find the problem and fix it.
+
+
+Breaking big problems into chunks: Sometimes problems are way too big to solve all at once. Great problem solvers take a big problem and break it down into small chunks that are solvable. In software, most complex problems traverse multiple levels of the stack. It could be a hardware problem, or a network problem, or an operating system level issue, or a framework issue, or an issue with your code. Being able to isolate an issue, by breaking it down, is key. One time in the early 2000s I was working on a WebLogic cluster problem, where the session replication was not working in some cases. When we would fire up the servers, it would work fine, but then after a few minutes, replication would stop working. This was a very tough problem that we spent weeks trying to solve. We finally solved it by creating a cluster of two servers on a simple switch (networking device); there the clustering worked fine, so we just started adding pieces until it stopped. By this elimination/addition approach we figured out that our load balancer had a security setting that was blocking the multicast protocol (which the cluster session replication was using) after an initial period of time. Once we disabled this, the problem went away and all was well. See my Networking 101 for Developers video for some good tips on network troubleshooting.
+
+
+“Being able to isolate an issue, by breaking it down, is key.”
+
+
+Big picture: Being a great problem-solving software engineer requires being a great software engineer, but also requires the skills of a passable system administrator (in Linux, Windows or Mac depending on your target), network administrator, security administrator, requirements analyst, data scientist and tester. Often in software, many of the toughest problems are caused by leaky abstractions, and having some basic experience in other parts of the stack can help you troubleshoot the problems and make you better at your core role. Being able to see the big picture helps you view your problem with perspective and come up with a good long-term solution.
+
+
+Methodical: Often in interviews when someone is coding for us, and they encounter a problem, we see them flounder with some trial and error fixes. They keep trying new things at random hoping one of them will work. This approach is one many people take to fixing a problem. A better way is to take a step back and look at the big picture, figure out what things you should try that might fix the problem, and then order them by which is most likely to work. Once you have the list, you need to track each solution and combination of solutions you try and review the result. Additionally, part of being methodical is knowing when to bring in another “expert” to help; usually after you have broken down the problem and pinpointed a specific area where the problem is occurring. Once you've done the heavy lifting, and have perhaps spent some time investigating the issue, bringing in someone else who has domain knowledge can really be helpful and often speeds up the problem-solving process even if it's just to have a second pair of eyes. If I only had a nickel for every time a developer asked for help and when I suggested the “obvious solution,” they said, “I already tried that,” then I responded with “Humor me,” and when they tried it and it worked they were shocked! The reason for this is they didn't keep careful track of what they had tried.
+
+
+Expert Googler: Any search engine will do, but the difference between being an average Googler and a great one, can help your problem solving tremendously. My business partner, Arthur, is an expert Googler, really the best I have ever seen. I can’t tell you how many times I have proposed a Stack Overflow question and asked him to bump it, and have him say “Did you try this link?” ...Of course a link I didn't find in my Googling. What makes a great Googler? Here are my top five suggestions:Finding keywords that really match your problem and exclude other problemsUsing double quotes to link keywords together: "Java developer" vs. Java developer yield very different resultsExcluding sites using the “-”: Ruby help - stackoverflow.comSearching within a specific site using “:”: Ruby help site:stackoverflow.comUsing OR to link two or more words together: ruby OR programming
+
+
+Becoming a great problem solver is a life's work for me - I am always looking for ways to improve my problem-solving skills! I hope my ideas here have helped you on your journey to becoming a better problem solver. If you have other ideas of ways to improve, please drop me a comment!

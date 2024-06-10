@@ -1,0 +1,117 @@
+Following Directions
+
+
+ 
+
+I remember back in 5th grade one of our first assignments in Mrs. Signet’s class was on following directions. The worksheet she gave us looked something like this:
+
+ 
+
+
+
+ 
+
+When I received this, I read the directions and I started to read through the list of items. I got to about number 7 when I noticed many of my classmates clapping, standing, waving, etc., and I thought I must be missing something, so I stopped reading and started doing number 1. After about ten minutes, only about two out of the 30 kids had turned in the sheet by just doing number 10 and nothing else; the rest of us failed this assignment. Mrs. Signet was also the teacher that in 1981 told me to learn how to type and learn how to use a computer; she was a very smart person.
+
+ 
+
+In software development, and in particular, software consulting, following directions is a critical skill that can mean the difference between an extremely happy and satisfied customer and an extremely angry and unhappy customer. People frequently joke about how often software developers ‘misinterpret’ requirements thereby causing problems. In fact, there is a cartoon about this that I have had on the wall of my cube for many years.
+
+ 
+
+
+
+ 
+
+This is funny when you are talking with friends, but not so much when you are living it on a project.
+
+ 
+
+At Solution Street, we think one of the things that sets us apart from other consulting companies is our ‘Great Communication’. In fact, it is the main tagline on our website: Great Engineers + Great Communication = Successful Projects. Part of ‘Great Communication’ is being careful listeners and following directions.
+
+ 
+
+In software construction there are tons of ways to build software, from rapid prototyping to agile to robust waterfall. We think there is a ‘right’ approach for every project, but no ‘one’ right approach, so we approach each project with a tremendous amount of flexibility. However, we have some ‘Guiding Principles’ that we require all Solution Street consultants to follow. Most of these are to ensure we are following the customers’ directions and being good listeners. Here are some of them:
+
+ 
+
+Document what you are building before you build it and get sign off.
+
+
+ 
+
+If you can’t write it down, you can’t code it. This ensures our developer listened carefully to the requirements and the customer reviewed them and said ‘yes’ that is it. In the cartoon case, the customer wants a tire swing consisting of one tire and one piece of rope that will be tied to a tree branch. We should be asking questions like:
+
+ 
+
+
+How much weight should the swing support?
+Should the tire be cleaned first?
+What kind of rope can be used?
+How long do you expect it to last?
+What kind of weather should it be subjected to?
+
+ 
+
+I could probably come up with twenty more, but you get the idea; not only documenting the requirement, but all the assumptions as well.
+
+ 
+
+Unit test your work and document (ideally by building automated tests, if this is not possible for your project, then written tests associated with a ticket is okay). Part of this testing should include cross checking the implementation with the documented requirements.
+
+
+ 
+
+By testing your work and documenting it, it's more proof you were following directions and ensuring the customer got what they asked for and the item was developed properly. Back to our tire swing, are we testing it with:
+
+ 
+
+
+A small child.
+A large adult.
+During the rain.
+On a windy day.
+On a calm day.
+Does it swing properly?
+
+ 
+
+Again, I could probably come up with twenty more test cases, but you get the idea.
+
+ 
+
+
+
+ 
+
+
+Test your work once it is deployed to be sure it still works.
+
+
+ 
+
+This would be going out on the tire swing after it is tied to the tree and making sure it works properly.
+
+ 
+
+
+Update your tickets following best practices for the project (at a minimum this should include linking commits to tickets, documenting designs, implementations, and tests, and updating the status of the ticket).
+
+
+ 
+
+Some developers think they are so good they can build a tire swing and not tell anyone that it was built, or to what specification it was built, if and when it was tested, and how it was built. However, we feel that doing the documentation closes the loop on the original directions we were following which can be useful for the client to see.
+
+ 
+
+
+Communicate complications in your work to the client as soon as you discover them, and in projects where estimation is used, any variance to the estimation should be communicated when discovered.
+
+
+ 
+
+Sometimes Murphy's Law gets you, and sometimes things are just way easier or harder than you thought. The key thing here is to ensure you let the customer know and get their advice on how to proceed. An example here would be, we found out that normal rope will not hold the tire swing for the weight we thought, and we have to use nylon rope which costs twice as much. Do you still want the swing?
+
+ 
+
+In summary, following directions and being a great listener are key things needed to build quality software and have happy customers. Are you a great developer and a great listener? If so, we want to hire you, drop us a line. If you are a potential customer looking for a consulting firm that follows directions, drop us a line.

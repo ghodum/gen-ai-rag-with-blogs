@@ -1,0 +1,35 @@
+Working with Offshore Teams
+
+
+
+
+At Solution Street, we believe that our software consultants are some of the best in the industry and have the right skills for your software development needs. However, the reality is that some of our clients have global teams that are crucial to their business needs. Despite our preference, see 5 Reasons Your Offshore Software Construction Project Is Failing, we still find ourselves helping our clients become successful by working together with their offshore teams. 
+
+
+I’ve managed offshore teams in varying formats even before the pandemic. Sometimes, as the Dev Lead, I’m the only onshore member of the development team. Sometimes my team is a mix of onshore and offshore members (hybrid). It wasn’t always rainbows and butterflies (I don’t miss those 9 pm calls), but working with these teams is one of the most fulfilling experiences in my career. Challenges are inevitable but I’ve learned a thing or two to make it work and I’d like to share some of them with you.  
+
+
+1. Define a clear vision. This is important whether you’re running an onshore or offshore team, but even more so with the latter. Getting the team to understand why we do the things we do is a critical motivation tool. It is crucial to share the whole picture and not simply assign tickets. Providing the what (the overall goal) allows for creativity and better brainstorming when determining the how. Also, unexpected things happen all the time, and when you’re ~12 hours apart, sometimes decisions must be made. If your team clearly understands the vision, actions will most likely be aligned with your goal. Define a product or technical roadmap so your team doesn’t lose sight of the big picture.
+
+
+2. Over-communicate effectively. I certainly don’t mean oversharing, or bombarding people with irrelevant information. Rather, over-communicate to emphasize, to reiterate and to achieve consistency. In his Forbes article, Ken Makovsky recommends over-communicating through different channels such as oral delivery, written memos, email memos, and even PowerPoints. He’s right in that sometimes people are shy to admit that they don’t understand for fear of being seen as incompetent. A language barrier is one of the top issues with working with offshore teams. Repeating your message, via multiple media, will help overcome this, and even better, ask them to repeat it to you. This ensures what you said, is what was heard.
+
+
+3. Simplify collaboration. The easier it is to communicate, the faster it is to deliver. 
+
+
+
+Develop a communication plan. Identify what tool to use when. For example, email for external stakeholders, Slack for synchronous communication, and Google Meet for daily stand-ups. Decide on a communication cadence. And lastly, list the team’s work schedule via a shared calendar app to make collaboration a breeze.
+
+
+Avoid using metaphors and slang language if possible. A clear and straightforward message will get your message across faster. 
+
+
+When writing requirements such as Acceptance Criteria, supplement the text with images and/or screen recordings, to help your team visualize the expected behavior. This is especially useful when looking at a bug that you can’t reproduce, as pinging the tester to screen share might not be possible because the entire QA team is now fast asleep!
+
+
+
+4. Embrace cultures. You may be thousands of miles apart, but that’s not a reason to not get to know your offshore team on a deeper level. Diversity is one of the top goals of leadership teams and by getting to know your offshore teams better, you’re closer to attaining it than you think. I’ve always enjoyed seeing rangoli photos of my team’s Diwali festivities. Corporate parties in the Philippines are not complete without a talent showcase of dance or karaoke. If traveling to meet in person is not possible, you can still honor these traditions remotely. A simple greeting is great but asking your team about their celebrations and even asking how you can participate will bring you even closer.
+
+
+If you’re working with an offshore software development team and need some help, let us know! We at Solution Street would be happy to help achieve your goals whether through custom software made by us or with us.

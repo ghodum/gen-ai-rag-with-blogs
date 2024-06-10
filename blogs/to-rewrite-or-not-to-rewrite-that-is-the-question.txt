@@ -1,0 +1,70 @@
+To Rewrite or Not to Rewrite - That is the Question
+
+
+
+
+
+In 2000, Joel Spolsky wrote a popular article on why you should never rewrite your application. The use case of Netscape’s browser was a powerful example of what not to do. This certainly made a lot of sense then and still does now…well mostly. Recreating the Netscape browser from scratch was a complete redo. It was a product with competition and redoing the product from scratch was the wrong move. Many business applications today are very complex with multiple pieces of architecture and tons of technical debt. While redoing entire products from scratch in today’s environment will typically be a mistake, not replacing any aspect of the code may equally be a mistake. Some of the challenges businesses face today include trying to keep up with bad code, old technology, lack of testing, poor performance, and systems incapable of scaling. In today’s applications, maybe we don’t start from scratch with the entire application, but are there parts of the application where we should hit the reset the button? 
+
+ 
+
+
+In many business applications today, there are multiple components and issues to muddle over including: 
+
+
+ 
+
+Architecture - ORMs (Object-relational mapping software), external libraries, patterns (e.g., code-behind vs. MVC), dynamic SQL vs. stored procedures.
+User interface display and interaction - keeping up with mobile, responsive design.
+Access to qualified developers - how many developers are easily available to maintain your code (e.g., written in Delphi or some old software language known by 3 people on the east coast).
+Support - is there still support for the technology components? 
+Business - can your software keep up with your business?
+
+ 
+
+Today, we at Solution Street get contacted by many companies who are looking for us to take over a software application - one written in the last 10 years that needs to be supported with bug fixes and performance improvements and additional features need to be added…quickly, as in yesterday! Typically, the business is either going to scale up to many more users using their application or they are a consulting firm and they have sold the usage of the application to many other businesses. In short order, we need to take over the system, understand what it does (functionally and technically) and then move forward with improving the solution, so that the business can be successful. 
+
+
+ 
+
+
+
+How do we move forward?  Well, we can rewrite the whole thing.  Hmmm, we shouldn’t do that - that’s not what Joel Spolsky would do!  We can patch up the holes and see if we can make this pig fly.  We can analyze the pain-points and focus on those areas. Well, after taking on so many of these applications a pattern has emerged that seems best. Here are the steps:
+
+ 
+
+
+
+Talk with the customer to understand the pain-points from the business. Examples include:
+
+UI response time is way too slow.
+We are afraid when we roll this out to [n] number of [clients, users, etc].
+We are afraid to make any changes to the code because there are no tests.x
+We think the version of [x] is not supported anymore.
+We need to get this on mobile but no one has any idea on how to do that because the developers who worked on the original application are gone.
+Document the expectations from the client. Examples include: 
+
+We would like a maximum of a 3 second response time.
+We would like the code to be fully tested within a 1 day time period.
+We would like someone to call when there’s a problem.
+We would like to sleep at night knowing our software can be changed! 
+Analyze the system thoroughly
+
+Get the code (sometimes clients can’t find the original code because it’s not in a repository!).
+Determine and document the components of the application (software, hardware, versions).
+Match the business pain-points with what’s in the code/architecture.
+Make the determination on a redo of each component or a patch-up. This is where it gets tricky. Let me give a few examples on how to simplify the determination:
+
+The entire codebase has been written in the Delphi language and the business wants to expand the functionality excessively and part of their sales cycle is explaining how leading edge they are as a company. Clearly here we would want to see how many qualified Delphi programmers we can find (who still want to program in the language), but most likely, we would switch to a more current programing language (e.g., C#) and use the time to redo the programming aspect to document the system and fully test its components. Other parts of the system (e.g., database model) are left intact. At the conclusion, the client should be better positioned to successfully move forward.
+The codebase is written in PHP with no object-oriented constructs and database calls are made directly in the PHP code with no error handling. Variable names have no meaning (e.g., $aaa, $u, $pp). There is one developer working on this system and the codebase is not in a repository. The business would like to sell this product to thousands if not tens of thousands of clients. We may decide to clean up the code a bit, but more likely we would redo the system giving it a more traditional ORM with code and database structure. We might use a PHP framework such as Symfony or CakePHP and convert the code to be object-oriented. This also allows us to understand the codebase and have it fully tested and self-documented. We may reuse the user interface (html/css) since that component is acceptable to the business.
+The codebase is a .NET architecture (C#, Linq, SQL Server). The business is very concerned about performance.  Although we wouldn’t change the language (C#) or the user interface, we need to seriously look at the use of Linq vs. stored procedures or replacing Linq with the Entity Framework. Analyzing the issue here (performance) and pinpointing the problem component or library is critical to determine whether to optimize the existing software and components in terms of performance or replace the entire ORM.
+An enterprise application with a large Javascript-based front-end written with jQuery, but mostly large unwieldy files including “spaghetti-code”. While the server components are acceptable, the business would like frequent and many changes to the front-end functionality. Should we clean-up the Javascript/jQuery code or rather move to a framework like AngularJS (version 1 or version 2?) or React (or one of the other recently popular frameworks)? Here the answer may be an incremental move to a new framework or library; incremental in that we migrate pages as we touch them. This would especially be true if there are no unit tests or well documented existing code. Overall we want to minimize risk for the business, but still determine the best technology to make the business successful.   
+
+
+ 
+
+
+As a general rule, never start over from scratch, but with the complexities of software today,you may need to start over with certain aspects of the system to move the business forward. Identifying the technical culprits of what’s holding back the business is key to moving everyone forward.
+
+ 
+

@@ -1,0 +1,299 @@
+FlutterFlow Tutorial - Part 2
+
+
+
+
+Introduction
+
+
+This is Part 2 (of 2) of my FlutterFlow tutorial. FlutterFlow is a no-code/low-code browser-based builder for developing native mobile applications. In Part 1, I introduced FlutterFlow and created a mobile app with the basics of authentication using Sign Up/Sign In page templates with a database connection to a Supabase database. In this final part, I will create some mobile pages to display basic CRUD processing and then review the overall pros and cons of FlutterFlow.
+
+
+Tutorial (continued)
+
+
+To pick up where we left off, we have a blank home page which just has the title of “Page Title” and a logout icon button. Let’s swap to Supabase and create a new database table containing a list of pickleball players. Let’s assume the app we are creating will contain a list of these players with their skill rating (this is a number from 1.0 to 5.5). Although we won’t build out the full mobile application you can see how this player listing could be used to schedule games with calendaring functionality or just pair up players for tournaments. For now, let’s just create the players table with mobile UI screens that allows the user to view, edit, delete, and create the players. 
+
+
+Database Table Creation
+
+
+
+
+
+Within Supabase once you are within your DemoDB project, which we created in Part 1 of the tutorial, select the Table Editor menu icon on the left and create a “players” table that contains a first_name, last_name, and skill_rating. Add columns to the table at the bottom of the table creation screen. We will also add a user_id field to associate the players record to the user such that every user of the mobile app will have their own list of players. By default, Supabase adds an id field and a created_at timestamp. 
+
+
+
+
+
+Also uncheck the “Is Nullable” toggle via the settings icon for the fields you created.
+
+
+
+
+
+Once you have created the table, you should see the “players” table listed in the Table Editor section of Supabase. There you will click on the three dots and select “View Policies.” We need to establish a row level policy for access to this table. Here we will only allow the current user the ability to access their own data. Select the “Create New Policy” button and create a policy where we use the following statement as part of the check: 
+
+
+((auth.jwt() ->> 'sub'::text) = user_id)
+
+
+
+This statement is ensuring that the user that’s part of the auth token sent to Supabase is the same as the user_id field. Give this policy a name: “Allow access to players based on user_id,” select the “All” radio button (since we want this policy to apply to all actions), select the “Use check expression” (since we want this policy to apply to new rows), and add the above  statement twice in the policy. Save the policy and we are all set for now with Supabase (verify your work against this screenshot).
+
+
+
+Return to your FlutterFlow project and under Settings/Supabase, click the “Get Schema” button and you should see your “players” table fully populate in the IDE. At this point your mobile app has access to reference those fields. You can think of this as the UI database model.
+
+
+Reading players
+
+
+
+Let’s change the “Home Page” to display our player records. From the Column widget, add a Container widget child. Then set the height and width of the container to 100%.
+
+
+
+
+
+
+
+
+
+
+
+
+From the Container widget, add a ListView widget child. Here we are going to have FlutterFlow retrieve all of the player records associated with the logged in user. On the right side of the IDE (while in the context of the ListView) we are going to add a query.
+
+
+
+
+Add the initial fields selecting “Supabase Query” and “players” table.
+
+
+
+
+And continue to add the filter (Add Filter button) and set the appropriate values where the user_id of the table record must equal the User ID of the authenticated user.
+
+
+
+
+
+
+
+Also establish ordering by ordering the list via the created_at timestamp in descending order (i.e., last inserted at the top of the list).
+
+
+
+
+
+
+
+Confirm the query creation and you should see this.
+
+
+
+
+Now we need to add a ListTile widget as a child of the ListView to display our data. In the properties of the ListTile we will add the first_name and last_name as a combination text for the title of the ListTile and the skill_rating as the subtitle. First select the combination text.
+
+
+
+
+You will select the first_name and last_name from the “Players Row” and add a space between the two fields.
+
+
+
+For the Subtitle we will do something similar by displaying the skill_rating with the text of “Rating: “ just prior to the field.
+
+
+
+Now we can test out our page, but first we need some data. Let’s manually add some data to Supabase. Go back to Supabase and select the Authentication page. There you will see the user(s) you created previously when signing up for an account. Copy the UUID from the user you wish to test. Go to the Table Editor and select “players” and insert select rows of data by only entering the first_name, last_name, skill_rating, and user_id (where the UUID you copied is pasted here). Now that you have a few rows of data, test your app via Test Mode (selecting the lightning bolt). You should see something like this with your own data.
+
+
+
+Deleting players
+
+
+
+Now that we have the list of players, let’s clean up the Page Title and add create, update, and delete functionality. I’ll move faster through the rest of the instructions since, by now, you should have a handle on the IDE and what’s required. First, change the title of the Home Page to “Pickleball Players.” Let’s add the delete functionality first with a slidable widget. Select the ListTile widget and you will see a property called “Slidable.” Turn that on.
+
+
+
+
+By default you will have a Share action so change that (the SlidableActionWidget that was just created) to a Delete action (change the icon, text, color).
+
+
+
+
+
+
+
+With the Slidable Action Widget selected, open the Action Flow Editor and add these two actions. First we will add the call to Supabase to delete the row. Be sure to add a Filter (Matching Rows) where the id of the database row is equal to the id of the row in the UI.
+
+
+
+
+
+
+
+Then add a “Refresh Database Request” action on the ListView widget to ensure that the mobile page is refreshed with data. You can now test the delete functionality by sliding the row in test mode to delete the row.
+
+
+
+Creating players
+
+
+Now we can add the Create Player functionality. Let’s add a new page. We can do this in many ways including creating a blank page or copying the Home Page to start. I duplicated the Home Page, renamed the page to “CreatePlayer,” deleted the Container and added all of the necessary fields. Here is what my page looks like and also the widget structure. See if you can recreate what I did.
+
+
+
+Several notes to help you:
+
+
+
+Since I copied this page from the HomePage I already had the AppBar with one IconButton (exit/logout). I simply added a second IconButton with a home image and set the action to Navigate to the HomePage.
+
+
+The First Name and Last Name fields are simply TextFields. Besides changing the label there is nothing else to do with those fields. 
+
+
+For the DropDown, which represents the Skill Rating, be sure to select “Add Option Labels” and set the “Option Value Data Type” to Double. Since the skill_rating is a Float in Supabase we need this to be set to a numeric type otherwise FlutterFlow won’t allow us to use this Dropdown for the skill_rating column without some conversion code. Add dropdown values of 1.0 through 5.5 in 0.5 increments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lastly, I have the action flow as follows for the Create button. I first validate the form (you can add some validation to the form on your own). Then I create the insert call to Supabase. Be sure to set the three fields from the form and the user_id. This is done by selecting the Widget State of the data. Then I call “Show Snack Bar” with a message that the record was inserted (this is a popup banner in the footer of the mobile device). Finally I reset the form fields - in two parts since text fields and dropdowns are handled separately. 
+
+
+
+
+
+We then go back to the HomePage and add an IconButton to handle navigating to the new page. Here I simply created the IconButton with an add-style image and set the Action to navigate to CreatePlayer. Sometimes it’s hard to get the formatting/justification of the widgets working properly, but play around with the various properties. Now you can test creating new players. 
+
+
+
+Updating players
+
+
+Finally, let’s add the update portion. Simply duplicate the CreatePlayer page and call the new page UpdatePlayer. Let’s make the following adjustments:
+
+
+
+
+While selecting the page-level widget (UpdatePlayer) you will see the ability to add Page Parameters on the right. Create a new parameter called currentPlayer and set it to a Supabase row (players). This parameter will be set from the HomePage when selecting a player row.
+
+
+
+
+
+In the AppBar change the title text of the page to “Update Player.”
+
+
+Select the three fields individually and set the “Initial Value” of the respective fields to the associated field from page parameter. This is just loading up the field values from the current player record.
+
+
+Change the “Create” button text to “Update.”
+
+
+
+
+
+In the Action Flow for the Update, change the 2nd action Backend Call to be an Update rather than an Insert. Also, add a filter (Matching Rows) since within a database update we need a WHERE clause and setting the id to be equal to the id of the currentPlayer is all we need.
+
+
+
+
+
+Also, in the Action Flow Editor, remove the two “Reset Form Fields” actions (via the three dots). Since we are updating the record, we do not want to reset those fields back to what they were before the update. Also update the Show Snack Bar message to “Player Updated.”
+
+
+
+
+Now all we need to do is set the currentPlayer parameter. We do this back on the HomePage. Select the ListTile and go into the Action Flow Editor. Add a Navigate action (to the UpdatePlayer page) and pass the current Supabase player row as currentPlayer.
+
+
+
+
+
+
+
+We should now have fully implemented CRUD processing for the player record. Test away.
+
+
+
+Of course we skimped on validation. We certainly could have validated that the combination of first and last names wasn’t duplicated, or even added an email address or a phone number to ensure uniqueness. This simple application was a way to introduce FlutterFlow and display basic features to developers and non-developers. 
+
+
+Supplemental information
+
+
+Besides the full breadth of UI widget options and properties, there are many other features that are part of FlutterFlow including:
+
+
+
+API calls to interact with external services
+
+
+Ability to create custom widgets 
+
+
+Custom functions and actions
+
+
+AI usage to generate code (Copilot), themes, components, pages (from a prompt)
+
+
+Automated testing 
+
+
+
+There are several levels of pricing with FlutterFlow and the ability to download your code and do more traditional team collaboration/code repository development is in the higher pricing levels. Handing mobile deployments and sharing in-process work with clients is all integrated within FlutterFlow.
+
+
+Conclusion
+
+
+Overall, I enjoyed using FlutterFlow. As with all development tools, there are pros and cons. To summarize, I will list them here:
+
+
+Cons
+
+
+
+As a no-code/low-code tool in which code can be downloaded, the main complaint about FlutterFlow is a fairly standard one. LIke other tools of this type, the code that gets created is not the most optimal and often requires  changes, especially if the downloaded code has been updated.
+
+
+
+
+With all no-code/low-code tools, you are more closely married to the tool which is sometimes more uncomfortable for developers who are used to the flexibility of swapping out architectural components or want to diverge from what the tool offers.
+
+
+
+Pros
+
+
+
+I was amazed at the breadth of user interface options available and how easily it is to adjust any aspect of the design of the mobile page. 
+
+
+
+
+Many aspects of FlutterFlow were intuitive and seemed quite easy to use including templates, database integration, and functions.
+
+
+
+In summary, FlutterFlow is an excellent tool for either creating an MVP for a client or simply providing a mobile option for an enterprise system where cost and/or time to market are a priority. 
+
+
+At Solution Street we build mobile applications for MVP’s and enterprise systems. Contact us if you can use our help!

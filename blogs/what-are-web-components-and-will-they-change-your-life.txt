@@ -1,0 +1,87 @@
+What Are Web Components and Will They Change Your Life?
+
+
+ 
+
+On Wednesday, November 15th, I gave a talk at PHP World about Web Components and Polymer. The slides can be found here and the complete talk can be found here. For those of you without 40 minutes to watch my talk, here is summary of what it was all about.
+
+ 
+
+Automobile owners know that at some point you will need to replace your tires. Buying new tires is a fairly painless process. You can go to any shop that sells them and find ones with the right measurements (section width/tread, aspect ratio, wheel diameter and load). Most of us are familiar with tire sizes like 225 (tread), 50 (ratio), r (construction type), 17 (diameter). The idea that you can buy your tires from anyone leverages the idea of “componentization”. Tires are components of the car that can be added, removed, replaced and interchanged as long as they follow a “specification” of measurements.
+
+ 
+
+Just like automotive componentization, software components are packaged bits of logic that can be reused, swapped in or out of a system like parts of a machine. The idea of Software Componentization has been around for a really long time; in fact, the idea was introduced in 1968 at a NATO conference. Over the years I have used many standards that tried to bring about the mass use of software components. Standards like CORBA, .COM and EJBs were attempts to do this. 
+
+ 
+
+Web Components are attempts to bring this same idea to standard Web Browser interface technologies HTML, JavaScript and CSS.  The idea of Web Components was introduced in 2011 and now, seven years later, all major browsers support the four standards that make up Web Components. Developers have been able to write Web Components during this time using a technology called “polyfills”. Polyfills supply code to do the work when web browsers don't support the standards.
+
+ 
+
+“Web Components can be anything, from something as simple as a button or text field, to something as complex as a dialog that allows you to pick latitude and longitude from a map.”
+
+ 
+
+The four standards that make up Web Components are:
+
+ 
+
+
+
+
+
+Custom Elements
+The Custom Elements Specification lays the foundation for designing and using new types of DOM elements. <my-component> </my-component>
+
+
+Shadow DOM
+The Shadow DOM Specification defines how to use encapsulated style and markup in Web Components.
+
+
+ES Modules
+The ES Module Specification defines the inclusion and reuse of JS documents in a standards-based, modular, performant way. <script type="module" src="CustomerWelcome.js"></script>
+
+
+
+HTML Template
+The HTML Template Specification defines how to declare fragments of markup that go unused at page load, but can be instantiated later on at runtime. <template> </template>
+
+
+
+
+ 
+
+One of the ideas behind Web Components is that by being implemented via standards and natively by the Web Browsers, their performance can be better than anything built on top of the browser using a framework. 
+
+ 
+
+Web Components can be anything, from something as simple as a button or text field, to something as complex as a dialog that allows you to pick latitude and longitude from a map. Google recently released a new Web Component called Quick Draw. You can include it in your site by just using the tag:
+
+ 
+
+<quick-draw category="apple" key="API_KEY"></quick-draw>
+
+ 
+
+The source for Quick Draw can be found here.
+
+ 
+
+Web Components can easily be built and shared. The packaging mechanism that is used for Web Components is based on the Node Package Manager (NPM). A packaged component can then be published to webcomponents.org. Users of Web Components can search for components at webcomponents.org. and then easily add them to their app using the components tag and importing the NPM package.
+
+ 
+
+Another great thing about Web Components is that they can be used within ecosystems that are built using other frameworks. So I could build a Web Component that can be used by a system that uses React, Angular, Vue - you name it - and that same component can work within any of these systems. There is a site called Custom Elements Everywhere dedicated to ensuring frameworks work well with Web Components.
+
+  
+
+Many people use a library or framework to make building Web Components easier. Polymer is the most popular library for building Web Components. It started with version 1.0 in 2015, and since then has released versions 2.0 and 3.0. After releasing version 3.0, Google decided to change directions and it seems the next revision of Polymer is going to be based on two components: LitElement and LitHTML. These are the building blocks used to create Web Components in the post-3.0 world. Building Web Components with Polymer is very similar to building them without; you just make use of a different base class LitElement vs. HTMLElement and once you do that you can make use of the Polymer-added features. Google, the sponsor of Polymer, has bundled a Progressive Web App Starter Kit as part of Polymer in the latest release, so it seems that they consider that Web Components are critical building blocks to Progressive Web Apps. 
+
+ 
+
+In summary, Web Components are the latest attempt of software engineers to bring “componentization” to our world and make building plugable and interchangeable chunks of software easy and consistent.  What makes Web Components unique is that they are creating and following standards to make the building of these components the same across all web browsers. The hope from this is that we will be able to build and reuse components that are fast and consistent and work within various framework ecosystems. 
+
+ 
+
+So to answer the question, “Will Web Components change your life?”, the answer is maybe. If adoption continues to grow and the existing frameworks continue to work well with them, we could be building and using Web Components in all of our systems in the near future. If this happens, web browser interfaces should become easier and cheaper to build, and at the same time become more robust and faster.

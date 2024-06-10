@@ -1,0 +1,201 @@
+Secure Application Development 17 Years Later
+
+
+
+
+The year was 2004. I was on stage at the yearly Java One conference in the Moscone Center in San Francisco. My friends, Karthik and Selva, and I were terrified as we looked out at the full room of over 1,000 attendees there to watch our talk on “You are Hacked - Ten Secrets to Secure Your Enterprise Java Web Applications.” We didn’t realize there was an overflow room with another 500 folks watching. The good news is when our talk started, the spotlights were so bright we couldn't really see anything other than bright lights, so we were all able to relax and give a good talk. Application security was obviously a hot topic back then as it is today. 
+
+
+There are tons of articles, talks, and videos on security, most of them focus on “system” security, where the focus is on locking down networks, operating systems and SAS services.
+
+
+Very little is talked about the “art” of building secure applications and the process of how to do it. 
+
+
+Today I would like to revisit our Java One talk and review what we had discussed and see what has changed (if anything) since then.
+
+
+Our 2004 talk reviewed three key areas:
+
+
+The Internet threat modelThreats and the 10 secrets to mitigate themSecure software development process and policy
+
+
+In our talk, we asserted that three out of four businesses' websites were vulnerable to attacks and that 75% of the hacks occur at the application level. In 2003, there were around 100 million known cybercrimes.
+
+
+These days, it is even worse. Only 5% of companies' systems are properly protected (Varonis 2019 Global Data Risk Report) and every minute nearly three million dollars are lost to cybercrime and 90% of the hacks occur at the web application level (Verizon 2020 Data Breach Investigations Report). 
+
+
+In 2017, attackers exfiltrated hundreds of millions of records from Equifax with a total cost to them of over 1.4 billion dollars. Initial entry to the hack was caused by a vulnerability with the Apache Struts framework (an MVC-like framework; disclosed in March of 2017, hacked shortly after).
+
+
+So the problem is huge! How can we protect our systems from being hacked? Let’s review the 10 threats and their corresponding secrets from back in 2004 and discuss the prevalence of those threats and relevance of their secrets in today’s world. In 2004, we were focused on Java web applications, but all these threats and secrets apply to any type of modern web application including Ruby on Rails, Python Django, .NET, PHP/Symfony and more.
+
+
+Threat 1 - Profiling - Hackers look at HTTP protocol headers and comments in HTML code to figure out what types of systems you are running and what kinds of vulnerabilities you might be subject to. See below for an HTTP header that shows the Apache Web Server version and operating system version.
+
+
+
+
+
+Example showing too much information from HTTP protocol header
+
+
+Secret 1 - Remove unnecessary information from HTTP headers; don’t give out the version of your web server or any other information that could be used to hack you. Remove all comments from HTML code before deploying
+
+
+Threat 1 is still very real. Many of the script kiddies and other hacker tool kits out there search for known vulnerabilities by reviewing the HTTP headers and the comments in the HTML and then run attacks against those servers. Today, many applications are built in JavaScript so there is even more business logic available to the hackers to reverse engineer what is going on and plan the most effective attack. You can obfuscate your code, but this only slows them down. 
+
+
+Threat 2 - Exploiting Improper Error Handling - Hackers send requests to a server that isn't expected which causes the application to reveal a stack trace (which is normally useful for debugging), but in this case, the hacker uses the information to attack your server. We have probably all seen a screen that looks like the image below:
+
+
+
+
+
+Example failed error handling showing a stack trace
+
+
+Secret 2 - Fail Safely - Don’t show stack traces when in production mode (or even in public test systems). Show a generic “Call Customer Service” type screen when this happens instead.
+
+
+Threat 2 is still very real today. I am amazed at how many times I am using an application and I come across these screens. Some of the biggest software vendors are guilty of this!
+
+
+Threat 3 - Malicious Input Data - For this threat, hackers use parameters passed to URLs to try to get access to data they shouldn't. They also inject changes to hidden fields for this same purpose. In some cases, they are able to generate a buffer overflow to get access outside of the process that is running.
+
+
+
+
+
+
+
+
+Example parameter and hidden field tampering
+
+
+Secret 3 - Practice Input Validation - Identify all possible input data and ensure that it is validated on each request. Never trust your end user to supply secure and proper data, have the application double check it every time. Don’t rely on client side validation. Many modern frameworks have “declarative” validation; make use of this as a good way to ensure everything is being validated.
+
+
+
+
+
+Example Ruby on Rails validation
+
+
+Threat 3 is still very real today - I would speculate the biggest problem we have covered so far. Modern frameworks make it easier to ensure validation, but the work must be done by the developer to ensure you are fully covered!
+
+
+Threat 4 - Code Injection - Hackers pass code to the application as data in attempts to hijack the session, inject SQL, and send commands to the operating system.
+
+
+
+
+
+Example SQL injection
+
+
+Secret 4 - Practice Output Encoding - We need to escape metacharacters from HTML to make it safe. Many frameworks have built-in utilities for escaping HTML (Rails html_escape is an example). For SQL, use static or prepared SQL statements and bind variables so it is impossible to inject. Treat all system calls as “high risk” and make sure the calls themselves are not changeable by any inputs to the system.
+
+
+Threat 4 is still a big problem today. Again, the use of modern web frameworks helps a lot. It still, however, doesn't guarantee developers will do the right thing and ensure all output is encoded and all SQL statements are static.
+
+
+Threat 5 - Theft and Manipulation of Data (in transit and at rest) - Hackers exploit weakness in applications failure to encrypt or hash data. Sometimes through no encryption or weak/out-of-date algorithms. 
+
+
+Secret 5 - Encrypt your critical data in flight and at rest, use strong encryption algorithms and review them regularly. 
+
+
+Threat 5 today is a huge problem. I am sure you have all received an email from one of the applications you use telling you your password has been compromised. This is due to the fact that they either didn't hash their passwords or used poor or no encryption methods.
+
+
+Threat 6 - Exploiters of Broken Authentication - Hackers use different methods including dictionary attacks, brute force, replay and more to login to a system as you!
+
+
+Secret 6 - Use a proper authentication model - All modern web frameworks include an authentication model/framework - use one of them, don’t try to invent your own. Most of these frameworks have been hardened and battle-tested. Review how many people are using them and make sure there are test cases that show good coverage. NIST best practices should be followed for passwords. When possible use multi-factor authentication and ensure enrollment is secure. Testers should ensure every page in the system is protected by attempting to navigate to each page while not logged in.
+
+
+Threat 6 is huge today, even bigger than before due to the proliferation of phishing attacks. These attacks send mail to users pretending to be system owners and collect authentication information from users when they try to login to the “fake” systems.
+
+
+Example phishing email
+
+
+Threat 7 - Exploiters of Broken Authorization and Access Control - Hackers get access to data/processes they shouldn't be able to by tampering with the URL, or using back buttons, or guessing URLs and identifiers.
+
+
+Secret 7 - All frameworks, Rails, Django, .NET, Java/Spring, Symfony (PHP), have a built-in or pluggable authorization model/framework - USE THEM. Ensure the model/approach is consistently applied within your application, either declarative or programmatic or a combination of the two.
+
+
+Threat 7 is still a problem today. Again, frameworks help here, but following best practices and great testing are the keys to keeping your authorization in the application in good shape!
+
+
+Threat 8 - Exploit Poor Session Management - Hackers use reply attack, or cookie poisoning, to hijack your sessions. 
+
+
+Secret 8 - Practice Effective Session Management - Ensure sessions are created using HTTPS and the identifiers are random and unpredictable. Also, invalidate sessions on logout. Encrypt and store as little sensitive data in cookies as possible.
+
+
+Threat 8 is mostly mitigated today as all modern web frameworks follow best practices and make it hard to mess this up. Developers should still be aware of the potential issue, but it has been mostly solved by using good frameworks today.
+
+
+Threat 9 - Denial of Service Attacks - Hackers prevent legitimate use of a system by sending requests that use up all the resources available to the system. 
+
+
+Secret 9 - Limit resources allocated to a user - Ensure unauthenticated users don’t have access to resource-consuming actions. Cache when possible, prevent accidental denial of service by disabling buttons after clicking and queueing long-running requests. 
+
+
+With so much processing power out there in the cloud and on mobile devices and home computers, bad guys can take advantage of this to coordinate massive attacks that can take down the best systems. This threat is bigger today than ever!
+
+
+Threat 10 - Exploit the Weakest Link - Hackers exploit the gap between Dev, DevOps, Sys Admins and Network Admins to find the vulnerabilities in systems. 
+
+
+Secret 10 - Keep your systems up to date, and lock down your servers and Pen Test - Ensure only processes and ports needed are open and run a penetration test on each major release to ensure your application is secure. Also, create a technical roadmap to ensure you are updating all your operating systems, databases, libraries and frameworks.
+
+
+Make sure that all of your processes are running with users with the least privilege possible. Many folks use root to run their processes and connect to their databases, which can lead to big trouble when things go wrong.
+
+
+Lastly, make sure your logging is sufficient to detect anomalies and doesn’t expose any sensitive data (no passwords or credit card numbers or PII). 
+
+
+The problem I noted at the beginning of this article that cost Experien so much money was due to not patching a framework, so this problem is very much as big today if not bigger. How many out-of-date/unpatched systems are out there on the Internet today? Lots and lots!
+
+
+Now that we have reviewed the threats, let’s talk about process. In our 2004 talk we reviewed the Seven Steps of Doom:
+
+
+
+
+
+Unfortunately this is how many shops still build software 17 years later!
+
+
+We then talked about the Steps to Success:
+
+
+
+
+
+This is how we build software at Solution Street!
+
+
+As part of the Steps to Success, an “Application Security Review” is critical. Each review process is different, and there is no one right review process. We think a review should include the following at a minimum:
+
+
+
+
+
+So in summary for process, you and your development team should:
+
+
+Understand Application SecurityIncorporate Application Security into your processConduct an Application Security Review for each releaseAutomate as much as possible using in-house and 3rd party toolsUse (or create) application frameworks that force security standards
+
+
+All these items that were discussed in our 2004 talk are still true today!
+
+
+Looking back 17 years, much in the world has changed, but the problems, threats, secrets and good application security process are much the same. I hope this look back in time has helped you think more about application security. We all need to work harder to ensure healthy, secure and stable systems!

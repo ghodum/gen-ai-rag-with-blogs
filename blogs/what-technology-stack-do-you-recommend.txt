@@ -1,0 +1,61 @@
+What Technology Stack Do You Recommend?
+What Technology Stack Do You Recommend?
+
+
+
+By: Arthur Frankel 
+ 
+Often we are asked, “What technology stack do you recommend?”, “What language do you prefer?”, “What architecture, frameworks, and components do you suggest?”. Just today I was talking with a former colleague who works with educational training systems and she wanted to know the answer to these questions. We were talking about the challenges of her organization and given the new products they had acquired from other companies and their diverse set of technology stacks, one of the most important goals for the organization was to determine the right stack for these products and whether or not to rewrite the code in a single stack or try to get them to talk with each other. Although there’s a great discussion to be had on whether or not to rewrite code (classic article from Joel on Software on why you should never do so), I’d like to talk about how we recommend technology stacks.
+ 
+In our experience at Solution Street with building custom software, clients may prefer a technology stack for one or more of the following reasons:
+ 
+
+1. Existing stack
+Many companies are Microsoft shops or Java shops and their strong desire is to stick with their current stack because of experience. Given the state of technology, sometimes even with this constraint the door remains partially open. For example, a Java shop is really used to Java and the JVM. Languages such as Groovy or JRuby and frameworks such as Grails lend itself to those companies given their experience and may provide a quicker more efficient way to develop without giving up much of what the organization is used to.
+
+
+ 
+
+2. Developers on staff
+Often companies have been hiring people with certain technical proficiencies towards a given software language and architecture. They are concerned about teaching their staff new technologies and whether or not this will be more productive over the long haul.
+
+
+ 
+
+3. Existing small proof of concept
+Sometimes clients have started experimenting with a technology stack and are unsure of its true capabilities and scale, but do want to go further with it.
+
+
+ 
+
+4. New CTO/CIO
+Choosing a technology stack based on prior experience.
+
+
+ 
+
+5. Reactionary decisions
+e.g., One project failed with this stack so it’s blacklisted - whether fairly or unfairly.
+
+
+ 
+There probably are several others of these “environmental” type factors.
+ 
+
+
+Certainly when looking at technology stacks clients often (at least should) be asking these questions:
+
+It is multilingual?
+Is this transactional? (e.g., financial)
+Is this high scale? (millions of users vs. hundreds or thousands of users)
+What is the time to market? (how important is a quick build vs. robustness)
+What are the support devices? (how many browsers across devices do we need to support)
+Security? (is this a bank or a fun app with no money involved)
+What is the data size, transaction volume and data makeup? (type of data)
+Is the UI simple CRUD (create/read/update/delete) or single page app? (high real-time updates)
+
+
+ 
+When it comes to recommending a technology stack all of the above items feed into the decision, but overall we at Solution Street choose the right technology for the solution at hand. At this point in time, enterprise Java architectures are still valid for many business problems in the enterprise. We often build web applications using Ruby on Rails and potentially AngularJS (if the UI is more than a basic UI). There’s Python/Django stacks and .NET stacks and several others that have their place. There is no way to elaborate on specifics because each business problem has its own set of requirements and architectural complexity. One thing to note is that we DON’T chose technology stacks just because it’s the “latest cool thing”. We also DON’T chose technology components (especially open source) when there are so few users of the component.  This is easily discovered by a quick trip to stackoverflow.com. If a search on questions related to that component yields just a few responses (as opposed to almost a million for ‘Java’ or almost 100k for ‘AngularJS’) then you may want to reconsider or at least understand that you may become the main contributor to this component.
+ 
+Choosing a technology stack is THE most important aspect to building a successful application. Understand the factors that are feeding the decision to be sure the choices have been made for the right reasons.  Prove out complexity of the technology stack in smaller Proof of Concept subsets to ensure success. Get involved in the community (meetups, conferences) and tweak the components as you progress in the spirit of Agile.

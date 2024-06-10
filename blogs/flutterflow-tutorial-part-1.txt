@@ -1,0 +1,250 @@
+FlutterFlow Tutorial - Part 1
+
+
+
+
+I often tend to research and write about no-code/low-code tools; tools that help me create software faster and easier. I’ve written about these sorts of tools several times (Budibase part 1 and Budibase part 2 and LoopBack). I’m going to do it again and talk about FlutterFlow in this article. Why? As a developer I certainly love the minutiae of low-level painstaking details, but sometimes it’s helpful to have a quick and dirty tool to build an app for a client. As much as I enjoyed programming in assembly language on the mainframe or just writing plain old C code, I also now enjoy evaluating tools which make things so much easier to build software and can enable our clients a faster time-to-market. Like most no-code/low-code tools there’s a time and a purpose for its use. I plan on determining that time and purpose for FlutterFlow. 
+
+
+In Part 1 of this article I intend to discuss the basics of FlutterFlow, walk you through the main components of the tool, create a basic mobile application by first implementing email authentication using a back-end database. Later in Part 2, I will implement CRUD processing and review more complexities in FlutterFlow and discuss the overall pros and cons of the tool.
+
+
+Here I will stick with a simplified demo/tutorial that gives the reader just enough of the basics and therefore enough information to extrapolate on how FlutterFlow could be used for much larger projects. There are times at Solution Street where we need a tool like FlutterFlow to quickly show a portion of an overall enterprise system on a mobile device that is either used for demonstrative purposes or a simplified mobile UI for internal or small production use.
+
+
+Overview
+
+
+Firstly, FlutterFlow uses both Flutter and Dart. Flutter is an open-source UI software development kit created by Google to create cross-platform applications (e.g., web and natively-compiled mobile applications). Flutter runs with Dart, a programming language also developed by Google. Dart is a strongly-typed, object-oriented language. I won’t be focusing on Flutter or Dart since FlutterFlow offers primarily a no-code option, but within FlutterFlow you can see Dart code, create custom code/functions/widgets and you have the option to download runnable code for your FlutterFlow project.
+
+
+FlutterFlow allows users to deploy Android and iOS mobile applications straight to the Play Store and App Store from within the platform. A limited set of users or full access can be selected for using the mobile application. Push notifications can be integrated within the mobile application.
+
+
+
+FlutterFlow uses an online IDE. Sign up on the FlutterFlow website. You can start with the free version. You’ll notice that after creating an account, there is a Marketplace (link on left-hand side).
+
+
+
+
+
+
+Tutorial
+
+
+
+If you click on Marketplace you can see that you can start with or use various project templates that are either free or require payment. These can be as simple as widgets and animations or full-fledged application templates (e.g., Spotify-like clone). Feel free to explore these, but then, back on the main page click the “Create New” button to create a new project. Here we will create an empty project (“Create Blank”) with a project name defined (“SolutionStreetDemo”). Here, as well, you have the option to create projects from predefined templates.
+
+
+
+
+For the options, turn off “Enable Web” and “Setup Firebase.” These can be changed later if interested in exploring. We will be using the Supabase integration instead of Firebase. This is just to have a chance to test FlutterFlow with a relational database.
+
+
+
+Once you have created the project you are in the main IDE workspace. For developers this is a pretty typical layout. You will find the very left of the workspace has icons for the main navigation and tools. This will include the list of pages you have created, the widget layouts within the pages, data types, media, API calls, custom code, automated testing, and settings. Explore the workspace thoroughly. When selecting the “Widget Tree” you can see all of the available widgets. There is a wide range of widgets with associated properties (on the right side). You can drag and drop widgets and order your widgets in containers, rows, and columns.  
+
+
+Authentication
+
+
+
+Click on the “Widget Tree” icon on the left and you will see the pages in this project which currently include a blank page (HomePage). We are going to create a login/signup page by using one of FlutterFlow’s template pages. Do this by selecting the add page (green) button.
+
+
+
+
+Select the “Auth” button to limit the templates and select the “Auth1” template which creates a single page with a login and signup tabs. Select “My Theme” if asked (you can apply themes from templates and create your own set of themes to be used throughout your pages in your application).
+
+
+
+
+At this point you should be looking at your Auth1 page with the widget tree showing you all of the widgets on the page. Click on the “Sign In” and “Sign Up” text on the page and you can see how it swaps back and forth. Go ahead and remove the features we won’t be dealing with right now. Delete the “3rd-party auth” options (Google and Apple) and the “forgot password” option. Just click on the buttons or text you want to delete and remove them. You can always undo any operation (cmd-Z on Mac). Your two tabs within the single Auth1 page should look like this after your updates.
+
+
+
+Now let’s get the database set up:
+
+
+
+Create an account on Supabase
+
+
+Create a new project called DemoDB with a strong secure password and choose the closest region.
+
+
+If you go into the DemoDB project and select Authentication on the left, followed by Providers, you will see that Email is already selected by default, BUT expand the email auth provider and unselect both “Confirm email” and “Secure email change” and click “Save” (for now since we are trying to build something quickly). You can obviously add other providers on the main list.
+
+
+In Settings -> API, you will need to copy both the Project URL and the anon Project API key. Copy these two to your FlutterFlow project under Settings -> (Integrations) Supabase as shown below (with first enabling Supabase). This is obviously your URL and key to give access to your FlutterFlow project. 
+
+
+Lastly, flip the switch for Enable Authentication in FlutterFlow under Settings -> (App Settings) Authentication. Set “Auth1” as the Entry Page and “HomePage” as the “Logged In Page.” 
+
+
+
+
+
+
+The Get Schema button will be used in the future when we create tables in Supabase and have them used in FlutterFlow. At this point we don’t have any additional tables. We are just using the authentication mechanism from Supabase.
+
+
+Before we run a test to make sure our authentication is working, let’s quickly add a logout button since we’ll need to test and retest authentication. To do this it’s simply a few steps:
+
+
+
+First, on our HomePage we’ll add an iconButton widget to the AppBar of the page and change the look of the button to signify a logout.
+
+
+Right-click on the “Page Title” text and select WrapWidget, then select Row. This will allow us to add another widget in the same row.
+
+
+
+
+
+
+
+Now when the Row is selected, add a Widget by selecting the add widget icon, specifically an iconButton widget.
+
+
+
+
+
+
+
+While the IconButton is selected on the right side of the IDE under Icon Properties click the “Add” button. 
+
+
+
+
+This will allow you to choose a style for the icon and here we will search and select a logout appropriate button. Choose the first one. 
+
+
+
+
+By default the logout button will be in black font and immediately left of the “Page Title” text. Let’s change the font color to white and right align the button. We do this by continuing to change the properties of the iconButton. Set the Icon Color Primary Text to Primary Background (white). Expand and right align the widget via the properties as shown in the image.
+
+
+
+
+At the conclusion, the AppBar of the page should now look like this. Of course there are tons of properties for every widget that you can customize, but we're keeping things simple for now. 
+
+
+
+
+Now we need to add an action to the button to call the Supabase logout function. In the top right corner, Properties (design) is selected by default, but now select “Actions” and then “Open” the Action Flow Editor. As you will see later, there can be a lot more complexity to the action functionality within FlutterFlow (e.g., function chaining, conditionality), but for now we’ll keep it simple with a single function call.
+
+
+
+
+Just search for “Supabase” and select the Log Out function. Close the Action Flow Editor.
+
+
+
+What we have done so far is reused a sign-in/sign-up template which already has calls to the database for creating accounts and logging in. We simply added a single button to handle the logout function. 
+
+
+FlutterFlow Testing
+
+
+
+Now we are ready to test authentication by creating accounts, logging in, and logging out. In the top right of the IDE you will see the following:
+
+
+
+The lightning icon on the right is where you can run in “Test Mode.” You will click this and in a new window your app will be in test mode. Note that FlutterFlow takes a few minutes to create the testing environment which is connected to your database. Other icons you see above include a bug icon. You cannot run in “Test Mode” if you have any errors. By clicking on the bug icon when you have errors, FlutterFlow will link you specifically to any partially formed actions, unset properties, unset settings, or any other similar issue that requires fixing before testing. 
+
+
+Once your “Test Mode” app is ready, create a new account and login then logout. If you run into any issues you can debug your test model app simply by opening the developer console in your browser (F12 on Chrome) and see any error information displayed in the console. If you have successfully created an account you can see the user in Supabase under Authentication->Users.
+
+
+Field and Page Validations
+
+
+
+In order to understand a bit more with FlutterFlow let’s add some form validation and include topics such as Page State and Widget State. We can do this by simply adding validation to our create account tab to validate our email address, our passwords, and by ensuring our passwords match. While viewing the Auth1 page you should see this section of widgets on the bottom.
+
+
+We’ll be focusing on the “SignUpp” column widget. Right click on that widget and select “Wrap Widget,” then select a Form Validation widget. Then change the name of the form from “Form” to “SignupForm” via the pencil icon on the very top right side of the IDE.  Now you have a validation form wrapping your fields.
+
+
+
+
+Additionally let’s add a Text widget right before the “Create Account” button. We can do this by selecting the “SignUpp” column widget again and this time just select the add widget icon next to it and add a Text widget. The text widget will appear below the “Create Account” button to start, but simply drag the text above the button. You can rename the Text Widget to PasswordNotMatchedText and edit the text (also on the right side of the IDE) from “Hello World” to “Passwords do not match.” You can play with the text properties including changing the color of the text to red and adding some padding around the text. The end result of the page widgets will look like the following:
+
+
+
+
+And the page like this:
+
+
+
+
+For the three fields on the Sign Up tab we are going to validate the individual fields and then compare the password fields. FlutterFlow makes it very easy to do field level validations using the Validation Form we created earlier. To establish field level validations, just select the Validation Form (SignupForm) widget and on the very end of the properties you will see the fields within the form listed. Check the boxes next to the three fields (emailAddress_Create, password_Create, and passwordConfirm). You can then set the validations for each. As shown in the image on the left, for the email address set the Text Validator to Email and for each of the password fields set the minimum required characters to six. We will not be turning on the Automatically Validate toggle since we will manually call validation from our “Create Account” action. Although these fields are validated on the server (Supabase), this is going to show you how to perform the duplicate validation on the client.
+
+
+
+
+
+
+
+Now that you have the field validation established we will move to cross-field validation. To do this we will need to set up a Page State variable. This will be a boolean variable that is set when the passwords do not match. When they don’t, we will display the error text and not call the create account function on Supabase. When they match, we will hide the error text and call the function.
+
+
+
+
+
+
+
+First we need to set up the Page State variable. With the page Auth1 widget selected you can select the Page Management button on the right side and add a boolean variable called isDifferentPassword. This is how it should look:
+
+
+
+Now you can select the Text widget we named to PasswordNotMatchText and turn on the Conditional toggle and set it to the Page State variable we just created, isDifferentPasswords. Now the error text will appear when the variable is True, otherwise it won’t.
+
+
+Finally we can alter our Create Account action to perform the field validation, check the password matching, and then conditionally set the state variable and create an account if valid. We do this by selecting the Create Account button and then selecting the Action Flow Editor. Delete the Create Account function we had there. You can do this via the three dots.
+
+
+Now create the flow as visualized here:
+
+
+
+
+
+
+
+
+
+First the validate form call.
+
+
+
+
+
+
+
+Then using the plus(+) sign below that action, create a conditional action where you are checking the equality of the two Widget States (password_Create == passwordConfirm).
+
+
+
+
+Then on the True branch, create an update Page State action to update isDifferentPasswords to False. Do the same on the False branch but set the value to True.
+
+
+
+
+
+
+
+Back on the True branch, add one more action to a Supabase function to create the account and be sure to set all of the fields listed in the image.
+
+
+
+You can close the Action Flow Editor, and assuming you have no bugs shown in the top right, you can test your validation functionality. Test the field level validations (badly formatted email address, less than 6-character password) and the form-level validation (non-matching passwords). 
+
+
+Conclusion
+
+
+At this point we have created a very simplified mobile application with just authentication and some validation. In Part 2 of this article I will be implementing basic CRUD on the mobile app using scrolling lists and slidable actions. I will also discuss the pros and cons of FlutterFlow.

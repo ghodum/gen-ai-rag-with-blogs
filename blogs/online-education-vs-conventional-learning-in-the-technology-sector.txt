@@ -1,0 +1,102 @@
+Online Education vs. Conventional Learning in the Technology Sector
+
+
+Traditional colleges and universities remain steadfast in the belief that students must complete four years of college along with multiple internships before they are ready for the workforce. But does a student working towards a major in computer science require four years of education before he/she is ready to build quality software? Some online education providers are challenging these conventional ideas, offering certifications and specialty degrees at a significantly quicker pace. Are we at the point where online education is a feasible replacement for traditional schooling?
+
+Issues With Traditional Education
+
+Cost
+
+Excluding room and board, the average cost of college per year is $34,740 for private universities, $9,970 for in-state students at public universities, and $25,620 for out-of-state students attending public universities [1]. After four years, many graduates will find themselves in significant debt. As of 2017, the total value of United States student loan debt is $1.41 trillion spread among 44.2 million Americans. Upon graduation, 61% of students owe an average of $17,126 [2].
+
+Lesson Structure
+
+The "stand-and-deliver" lecture method is prevalent throughout traditional universities. The instructor delivers the material at one pace that may be too slow for some students, too fast for other students, and just right for the remaining students. If a student falls behind during a lecture, the rest of the material will be hard to follow. Especially in programming and other technology fields, many concepts build on other abstract concepts. If a student is unable to build a solid foundation, he/she cannot build the rest of the structure.
+
+Class Length
+
+College classes range from 1-3 hours. 3 hours!
+Researchers have conducted multiple studies on the attention span of students. Some studies argue that students cannot focus for more than 10-15 minutes at a time. Other studies report that temporary attention lapses occur throughout the length of a lecture, with shorter spans between lapses occurring as the class continues [3]. Lapses also occur more frequently during the traditional lecture, while more engaging techniques such as demonstrations and questions cause fewer attention lapses. While researchers argue over the average attention span of students, it's clear that long lectures are ineffective in engaging students [4].
+
+
+Focus
+
+On average, students will spend only 40% of their college education in classes relevant to their majors. In addition to the students' concentrations, most universities require that students complete general education courses and electives. Looking at Harvard's graduation requirements, students must complete 32 classes, of which only 12-14 relate to the students' concentrations. Twenty classes (roughly 60%) will not directly relate to students' majors [5]. If working towards four-year degrees, students will spend nearly two and a half years in irrelevant classes. Universities reason that this ratio (40% major, 60% general education and electives) helps build well-rounded citizens. As Stanford explains, they provide "an education that broadens the student's knowledge and awareness in each of the major areas of human knowledge, that significantly deepens understanding of one or two of these areas, and that prepares him or her for a lifetime of continual learning and application of knowledge to career and personal life [6].”
+“The internet is capable of delivering an effective, inexpensive, and accelerated education to anyone with access to it. By incorporating components from traditional universities, using studies to improve outdated teaching techniques, and utilizing the ubiquitous nature of the internet, many companies are in a position to bring credibility to online education.”
+How Online Education Can Address These Issues
+
+There are many different types of online courses, including Massive Open Online Courses (MOOCs), hybrid courses, web enhanced, and others. Rather than focusing on how each of these either solve the above issues or enhance traditional education methods, we’re going to look at how the internet provides a platform for addressing these issues.
+
+Cost
+
+Online institutions do not have the physical overhead that conventional universities have, therefore, the cost of operation is much less. Different online education providers have entirely different price points that reflect their approaches to education. MOOCs will cost less because instructors only need to film their videos once. The prices range from free to a few hundred dollars. Other systems may cost more because the instructors or mentors grade projects and provide support. But the cost is often significantly less than what a student would pay at a traditional university. For instance, one online institution, Udacity, charges $200 per month for access to a structured program and forums with mentors, feedback on projects, and a certificate upon graduation.
+While not directly comparable to traditional universities as these are either individual courses or one larger, focused course, taking ten paid extensive courses on a MOOC such as Udemy might cost $1,000, while one year of out-of-state tuition at a public university will cost around $25,000, excluding room and board.
+
+Lesson Structure
+
+Many studies have been conducted on teaching to improve knowledge retention and diminish attention lapses. As mentioned before, the "stand-and-deliver" method is ineffective. Interspersing quizzes between short lessons results in less mind-wandering, higher test scores, and lower anxiety during tests [7]. Most online education providers use these methods well to ensure the student grasps the concepts, keeping him/her engaged by using short exercises during or after many of the videos.
+
+
+Class Length
+
+Directly tied into the lesson structure is the class length. Many online courses are split into smaller sections, which are further split into multiple videos. Videos typically range from 1-10 minutes. After many videos, the student is given an interactive quiz to ensure he/she understands the content. The student can also slow down or speed up the videos, depending on his/her understanding of the content. Videos can also be skipped so a viewer does not waste time on topics that he/she understands well. A student can finish twelve lectures online in a few days or weeks, while at a traditional university, he/she would need four months to ingest the same content.
+
+Focus
+
+Online courses are entirely focused on one main topic. With MOOCs, students select only those that interest them. Programs that provide more complete packages still focus on one overarching topic. For instance, a web developer might take a course on JavaScript and HTML, Ruby on Rails, and MySQL. The student is not required to take philosophy or history classes to complete the course.
+Where Online Education Falls Short
+
+The internet is capable of delivering an effective, inexpensive, and accelerated education to anyone with access to it. By incorporating components from traditional universities, using studies to improve outdated teaching techniques, and utilizing the ubiquitous nature of the internet, many companies are in a position to bring credibility to online education. Unfortunately, all of these online educators fall short of providing complete solutions due to a few key problems. The following section discusses these issues and possible improvements.
+
+Focus
+
+Focus is both a strength and weakness of online education. Colleges certainly understand the need to build a well-rounded individual, but their ratios skew towards keeping students in their institutions longer. A student studying online for web development will probably not take a history or expository writing course. But, perhaps a few of these general education courses should be included in a student's curriculum, whether self-created through various MOOCs or through a complete program.
+This issue highlights the distinction between training and education. Currently, online platforms are geared towards training, which implies learning a very specific skill through practice. On the other hand, the term education suggests a much more encompassing breadth of knowledge that includes reasoning, judgment, and intellect [8]. If tech companies are to consider online education as a serious replacement for conventional methods, online platforms must pivot towards providing students with an education, rather than training, by requiring students to take general education courses. But, these online institutions must keep the ratio in favor of courses relating to the student’s major, rather than dedicating only 40% to the major as seen in traditional schools. Without proper studies, it is difficult to suggest the most effective ratio. It is clear, however, that the current model needs to change so students can graduate sooner and learn more in their fields of study.
+
+Standards
+
+Standards for graduation are different everywhere but are much more consistent in traditional universities. At Solution Street, we can usually determine the readiness and competency level of candidates who received their education from certain schools. On the other hand, two students who both completed the same courses through Udacity can be at completely different levels. One student may have searched for his/her answers on Stack Overflow without ever spending time to think about the actual problems, while the other student approached the same issues with a more self-solving mentality. Perhaps we need to develop competency standards that all computer science students need to meet. Students can earn accredited certifications that would prove their levels of software competence. Companies would now have a better method of gauging candidates and online educators would want their students to have the highest achievement rates, which in turn would motivate the course designers and instructors to create better content.
+
+Accountability
+
+Without enforced deadlines and motivation, students are less likely to finish classes. A study done in late 2013 on 17 Coursera classes resulted in 4% completion rates [9]. Imagine a college class with a 4% completion rate. That means that out of 100 students, only four would remain at the end of the term. While there could be many reasons for this, accountability is probably the biggest reason. Without enforced deadlines or penalties, the students are less motivated to finish the classes. Low cost could also be a factor. If a student is spending $30,000 a year, he/she will feel more compelled to complete assignments. But if he/she signed up for a free course, there is no money-based incentive to finish.
+
+Course Length
+
+While individual class length and structure are huge strengths of online lectures, the length of the entire course can be viewed as a detriment. Studies show that long-term knowledge retention and true understanding of complex concepts comes from repetition and experience. Spaced repetition is one useful technique, where students are exposed to topics a lot in the beginning but less frequently as time progresses [10]. Universities offer this type of learning indirectly, where over the term of an education, different teachers will repeatedly expose students to the same concepts through lectures, homework, and quizzes. Online platforms provide much shorter windows for students to be exposed to these same topics. Perhaps online educators can leverage the idea of spaced repetition to help their students master material within these shorter periods. The instructors can spend more time reviewing older topics, rather than going through the material linearly.
+
+Community
+
+In traditional colleges, students build relationships that help them succeed and shape their futures. They help each other through struggles. They form study groups. They join clubs. They make connections through instructors.
+Online institutions have web forums.
+Udacity initiated a program where students can attend in-person sessions in San Francisco, Los Angeles, and New York. Students spend two hours working on projects together. While great for students in these three cities, this is not a complete solution.
+Community also builds interpersonal skills. In software consulting, soft skills are just as important as technical proficiency. At Solution Street, we maintain relationships with clients through transparency, honesty, respect, and dependability. We often have to help clients make informed decisions about their products, perhaps which tech stack to use or how many developers are required to build a minimum viable product within three months. These are not skills that can be learned alone in front of a computer screen, which is why online platforms need to focus heavily on bringing students together, whether in person through monthly meetups and study groups or virtually through forums, chatrooms, and video conferences. While these ideas do not replace the typical college experience, they certainly help build relationships among the students.
+
+Partnerships
+
+One company promises job placement upon completion of one of their programs. They display the logos of seven companies as their hiring partners, including Microsoft, Google, AT&T, and others. But looking through their alumni board, many students are still struggling to find jobs. This company is attempting to be at the forefront of the shift from traditional to online education. Doing so requires removing the stigma that online learning is inferior to traditional methods. The first step is convincing companies to hire their graduates. Once companies realize that these students are more than capable of filling their positions, more companies will begin to see online education as an effective learning platform.
+
+Content
+
+The content for many classes isn't as complete as courses found in traditional schools. In the case of Udacity, videos are often pulled from multiple sources so there is little consistency between the lessons. Sometimes the professor mentions a topic that had been covered in a non-existent video.
+When considering Udemy or Coursera, students would need to sift through hundreds of different courses to find classes that would compete with traditional colleges. A conventional college might have a web development class, whereas through Udemy, one would need to take three individual courses on React, Ruby on Rails, and MySQL to ingest similar content. There are no clearly defined paths either, so if a student wants to learn web development, he/she needs to know which technology stacks to study.
+Harvard and Stanford offer videos of certain courses online for free, with other brick and mortar institutions following suit. This is certainly a step in the right direction. Using the data about effective teaching methods, the content creators could begin splitting up these videos into 10-15 minute segments, providing short quizzes in between.
+What Next?
+
+Online education is the future. Imagine signing up for a course on web development and taking an initial quiz with twenty questions. An algorithm then determines which lessons to integrate into your class. Maybe you performed poorly on advanced data structures but did well in the basics? Your dashboard will include a class on data structures but not a course on computer science fundamentals. After one year of tailored classes, through a community of helpful mentors and students, you find a job almost immediately upon graduation. And you're well prepared for it.
+
+The internet offers an accelerated learning platform with better knowledge retention rates at a low cost. People will be able to start their careers earlier. People switching careers will find the process easier than going back to college. But there are still many interesting problems to solve.
+
+The technology sector is at the forefront of shifting away from the stigma that online education is inferior to traditional methods of schooling, but this negative connotation is still prevalent in all industries. Is a student who took less than two years of computer science classes from a traditional university more prepared than someone who spent one year taking focused, online courses? Why can't a history or philosophy major take all his/her courses online? Online learning platforms must work towards removing this stigma by building more comprehensive courses, creating communities, and partnering with companies who will take on graduates of these programs. Only then will we begin to see online education become a truly viable competitor, or even a successor in some fields, to conventional learning.
+
+References:
+[1] Ma, Jennifer, Sandy Baum, Matea Pender, and Meredith Welch (2017). Trends in College Pricing 2017. The College Board. Retrieved from https://trends.collegeboard.org/sites/default/files/2017-trends-in-college-pricing_1.pdf
+[2] Cloud, Drew (2017). Student Loan Debt Per Graduate by School by State 2017. The Student Loan Report. Retrieved from https://studentloans.net/debt-per-graduate-statistics-2017/
+[3] Diane M. Bunce, Elizabeth A. Flens, and Kelly Y. Neiles (2010). How Long Can Students Pay Attention in Class? A Study of Student Attention Decline Using Clickers. Journal of Chemical Education, 87(12), 1438–1443, doi: 10.1021/ed100409p. Retrieved from http://pubs.acs.org/doi/abs/10.1021/ed100409p
+[4] Briggs, Saga (2014). The Science of Attention: How To Capture And Hold The Attention of Easily Distracted Students. InformED. Retrieved from http://www.opencolleges.edu.au/informed/features/30-tricks-for-capturing-students-attention
+[5] Harvard University Graduation Requirements. Retrieved December 2017, from https://college.harvard.edu/academics/planning-your-degree/graduation-requirements
+[6] Stanford University Undergraduate Degrees and Programs. Stanford Bulletin ExploreDegrees. (2017-18). Retrieved December 2017, from http://exploredegrees.stanford.edu/undergraduatedegreesandprograms
+[7] Wihbey, John (2013). Memory tests reduce mind wandering and improve learning of online lectures. Journalist's Resource. Retrieved from http://journalistsresource.org/studies/society/education/memory-tests-reduce-mind-wandering-improve-learning-online-lectures
+[8] Surbhi, S. (2015). Difference Between Training and Education. Key Differences. Retrieved from https://keydifferences.com/difference-between-training-and-education.html
+[9] Perna, L., Alan Ruby, Robert Boruch, Nicole Wang, Janie Scull, Chad Evans, and Seher Ahmad (2013, December). The Life Cycle of a Million MOOC Users. Presentation at MOOC Research Initiative Conference. Retrieved from http://www.gse.upenn.edu/pdf/ahead/perna_ruby_boruch_moocs_dec2013.pdf
+[10] Kang, Sean H. K. (2016). Spaced Repetition Promotes Efficient and Effective Learning: Policy Implications for Instruction. Policy Insights from the Behavioral and Brain Sciences, 3(1), 12-19. Retrieved from https://www.dartmouth.edu/~cogedlab/pubs/Kang(2016,PIBBS).pdf

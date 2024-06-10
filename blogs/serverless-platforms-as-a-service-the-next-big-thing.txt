@@ -1,0 +1,142 @@
+Serverless Platforms as a Service: The Next Big Thing?
+
+
+ 
+
+This year, Gartner has added “Serverless PaaS” to the 2017 Hype Cycle for Emerging Technologies*. This addition is shown as a light blue circle midway in the Innovation Trigger column/phase in the figure below. As I have heard this buzzword come up several times recently, I thought it would be a worthy newsletter topic.
+
+ 
+
+Figure 1.
+
+
+ 
+
+*The hype cycle is a branded graphical presentation developed and used by the American research, advisory, and information technology firm, Gartner, for representing the maturity, adoption, and social application of specific technologies. The hype cycle provides a graphical and conceptual presentation of the maturity of emerging technologies through five phases.
+
+ 
+
+When I first heard about serverless architectures (Function as a Service [FaaS] and Platform as a Service [PaaS]), I thought back to 1996 when I first read a fun book called The Essential Distributed Objects Survival Guide by Orfali, Harkey, and Edwards. Most of us called it the "Martian book" because there are a couple of Martians on the cover. The book had the viewpoint that Distributed Objects and Components were going to be the next big technology that would allow us to build distributed systems made up of small semi-autonomous services called components that could be strung together to create complex applications. A statement from the book’s preface illustrates this notion, “Distributed Objects will change the way we architect, develop, package, distribute, license and maintain our software. The component is a unit of packaging, distribution, and maintenance.” 
+
+ 
+
+Although the book and concept were interesting, distributed objects never quite made it. In this article, I will review our industry’s latest attempt to architect and construct simple building blocks that can be used to construct complex services.
+
+ 
+
+What is “Serverless PaaS”? In simple terms it is another attempt at distributed components. The idea of serverless architectures is that you can build a Function as a Service (FaaS) that is stateless, event-triggered, and ephemeral (short-lived). Platform as a Service (PaaS) is a computing model where someone else provides the hardware, operating system, database, web server, and other critical infrastructure items; the user just needs to worry about deploying their application to the platform. I have used a lot of jargon to explain other jargon, so let’s break this down with some concrete examples of what is and what isn't serverless.
+
+ 
+
+Before we get into serverless, let's talk about PaaS first since serverless is a kind of PaaS. Most people are familiar with PaaS through the Heroku platform, as it is probably the first and biggest PaaS. The idea of PaaS is that you only need to worry about building your application. You don't need to worry about patching the operating system, or the SSH daemon, or the database server. You just know you need some place to run your application and some place to store its data. A PaaS will provide a level of abstraction to the developers of an application so they can focus solely on the application and let the PaaS handle the rest. We, at Solution Street, like to host small to medium, simple, Ruby on Rails applications on Heroku because we don't have to worry about the platform. It is nice being able to focus on just the applications and, over time, the maintenance of those applications.
+
+ 
+
+For serverless, the most popular platform is Amazon Web Services (AWS) Lambda. AWS Lambda allows you to deploy virtually any type of application or backend service. Their marketing literature gives the example of providing a weather service API where any client can make calls to get weather conditions in their region. There may be times when this service is not used at all (e.g., middle of the night), or other times when this service could have major traffic (e.g., before a snowstorm). The benefits of Lambda beyond a typical PaaS is that you can scale easily and you don't need to pay for idle time.
+
+ 
+
+So what makes serverless (e.g., AWS Lambda) different than regular PaaS (e.g., Heroku)? Three key things:
+
+ 
+
+
+Serverless is a Function as a Service (FaaS) - Some people use FaaS as a synonym for  serverless architectures. I, however, think that they are one key attribute of serverless architectures. FaaS is the idea that you can expose an individual function.
+
+ 
+
+	Serverless functions should spin up quickly to do their work, and scale.
+
+ 
+
+	Serverless functions should be short-lived; they should not consume resources when not servicing a request.
+
+
+ 
+
+To further explain the difference between serverless and PaaS, in a typical PaaS we would put on Heroku, we would usually host an entire application and pay for it to run all the time. While in the case above with serverless (weather service API), we would deploy distinct functions and they would run on demand.
+
+ 
+
+“For good reason, I think the demand for serverless has come from the trend toward microservices architectures and the need for some way to host and scale them.”
+
+
+ 
+
+Now that you know a little bit about serverless, let’s talk about when/why/how you might use them. First, a brief step back. In 2015, the Gartner Hype Cycle had microservices at the peak of the curve. The idea of microservices was to not build monolithic (large) applications, but instead construct the application from many smaller services that work well in conjunction as an application. Sounds a little bit like serverless, right? For good reason, I think the demand for serverless has come from the trend toward microservices architectures and the need for some way to host and scale them. Now to the when/why/how of using serverless:
+
+ 
+
+When?
+
+You should consider serverless when you don’t require caching or state, you can break your application (or pieces of your application) into independent components, and you have the need for on-demand, scalable services.
+
+
+ 
+
+Why?
+
+You should use serverless if you have a problem with scaling, cost, management, or maintenance that you think serverless will solve.
+
+
+ 
+
+How?
+
+Each provider has their own set of libraries and deployment methods, so you have to pick a provider such as Amazon or Microsoft and read up on their documentation to familiarize yourself with their use.
+
+
+ 
+
+
+
+ 
+
+As important as the “why”, we should look at the “why not” for using serverless architectures.
+
+ 
+
+Why Not? 
+
+Serverless architectures generally require vendor lock in. There is no standard right now for creating and deploying serverless functions without doing it for a specific vendor (although there is a framework called Serverless that can be used to provide a level of abstraction from several providers along with several other benefits).
+
+ 
+
+	No caching or state across services can be used which could lead to performance issues.
+
+ 
+	Small services sound great, but building a system made up of 20 services creates some complex issues including:
+     Dealing with failures of sub-services
+     Dealing with security across services
+     Dealing with transactions across services (e.g., I take money from one function and deposit into another function)
+     Packaging, deploying, and versioning a cohesive product.
+
+
+ 
+
+Some areas in which you may want to start using a serverless architecture might include:
+
+ 
+
+
+Static websites - You don’t need to use a server, just put your static content in a cloud bucket like S3, and upload static files.
+
+ 
+	DevOps/Cloud Management - Create functions that allow you to:
+     Check quality of deployments against standards
+     Triggered responses to an event (if a server does not meet standards, shut it down).
+
+ 
+	Querying large amounts of data (Amazon offers Athena which is a serverless service which allows you to send sql queries to a service where your data is on S3) at a very high scale for a very low cost.
+
+
+ 
+
+Like all hyped technologies, serverless has some revolutionary concepts to it. Under the right circumstances, it can really help you and save you money. Under the wrong ones, you could be wasting time and money.
+
+ 
+
+Related Reading:
+Great article on Serverless by Martin Fowler
+MicroServices and Gartner's Hype Cycle for Emerging Technologies
+Gartner's Hype Cycle for Emerging Technologies 2017

@@ -1,0 +1,85 @@
+Writing Software Is Like Making Pizza!
+
+
+
+
+Well...it’s a bit of a stretch comparing software development to pizza making, but let me take a crack at this. First, some background. I have been writing code for 38 years and I have been making pizza for 29. I consider myself a pizzaiolo (pizza maker) who is still learning to perfect my craft, even after 29 years. When I talk about making pizza, I mean real pizza, traditional Neapolitan pizza. Simple ingredients and good for you! Not Domino’s style or anything with pineapple on it. 
+
+
+To a Neapolitan, pineapple is just something you would never have. It’s just wrong, the combination of flavours. For us pizza is sacred, so it is weird to think you would put it on pizza… - Serena Sarnataro, owner of the famous L’Antica Pizzeria da Michele
+
+
+ Although my focus and passion for pizza making has centered around traditional Neapolitan pizza, I do recognize that there are other great types of pizza found in different parts of the U.S., however, much of what people eat today should not be called pizza. There are many pizza joints selling subpar pizza: soggy crust; processed cheese; and toppings that just don’t belong on pizza, to name a few. Similarly, there is lots of subpar code out there that can’t really be called software.
+
+
+With years of experience as a software developer and pizza maker, I’ve come to the conclusion that the process of building great software or making a great pizza is not very different; both involve diligently building a foundation, using and correctly implementing the right tools, not overcomplicating things, and revisiting your work to see where there may be areas for improvement. To show you what I mean, I’ll first talk about the process and parts of writing great code..and then find the similarities with pizza making.
+
+
+Before starting to create a great software application you must identify the “ingredients” beginning with those needed for the appropriate base - which includes a software language and a good simple architecture. Don’t overcomplicate the architecture and make sure you pick the best of breed libraries. At Solution Street we often look for libraries and frameworks that are well supported and have an active community. There are many frameworks in the open source space that have a very active community and defects are addressed quickly. In software development, the foundation is the most important building block and key to building a successful product; this holds for pizza, too where your “base” is the dough.
+
+
+
+ With every pizza I eat, I evaluate it initially and mostly based on the dough. Categorically, the best pizzas have the best dough/foundation. This is the same way I evaluate good code - how is the base? Were the appropriate software language and frameworks used? Is the codebase built on solid layers where you can easily see the clear separation of the layers of the system - front-end, middle-tier, back-end? Without a solid core, the codebase falls apart.
+
+
+
+After your code base has been established, the next step is to use the right tools. As any great developer knows, you must be familiar with all of your tools. This helps with the obvious speed and efficiency of coding, plus removes obstacles that might otherwise prevent solid thinking.
+
+
+Once you start writing code you will want to avoid CodeThinking. This occurs when you have a great solution and begin coding, but you realize after some quick testing that your original thought isn’t perfect and you start messing with the code to the point where your original clean and elegant solution is nowhere to be found in the final product. This is like adding pineapple to pizza after you can’t find the basil! :)
+
+
+“...[W]ith software development, oftentimes, the simplest approach is the best.”
+
+
+Now that you’ve written a bunch of code, don’t rest on your laurels. You should always be looking to improve and learn from others. Too often we overrate our skills and fall behind.
+
+
+Now let’s focus on what it takes to make a great pizza. First, you need your ingredients. Over the years I have learned that the best tasting pizza starts with high quality, simple ingredients.  As with software development, you start with the all-important base. For pizza, you need chemical-free flour for the dough (much of the pizza people eat in the United States contains a chemical which is banned in many other countries). Similar to my advice above about choosing a software language and architecture, you don’t want to overcomplicate things here. Keep lots of extra ingredients out of it. This will ensure the crispiest, tastiest crust/foundation, for the rest of your basic ingredients -  pure fresh mozzarella and delicious tomatoes.
+
+
+Next you’ll need the right tools and you’ll need to know how to use them for optimal results. For instance, you need an oven, a mixer, two thermometers (one for ingredients and one for measuring the internal oven temperature), and a scale for weighing your ingredients. Always weigh your ingredients! You must also heat the oven to the right temperature. If you are using a wood burning oven, like I do, the temperature should be at least 800 degrees up to over 1,000! But before the pizza goes in the oven, the water used for the dough must be at the precise temperature, the dough ingredients must be mixed to the right consistency, and the dough must be weighed and cut into individual portions for each pizza crust. 
+
+
+
+When making pizza, it’s important to understand the variations of all these moving parts (water temperature, humidity, mixer settings and length of time in mixer, oven temperature, etc.) and how that impacts your dough and final product. Again, like coding, using your tools (whether the tools to write code or the languages and frameworks) properly and understanding how variances impact the final product (i.e., understanding performance, user base/usage, etc.) will produce the best results.
+
+
+
+As an overall approach to making great pizza, simplicity is key. Keep it simple, stupid, the well-known philosophy used when writing code also applies to pizza. Pizza dough (the foundation) is four ingredients: flour; water; yeast; and salt. In pizza Margherita you only need to add three other ingredients for your final product: sauce; cheese; and basil. It’s about as simple as it gets, which is one reason why pizza is up there as one of my favorite foods. Similarly, with software development, oftentimes, the simplest approach is the best. Without lots of extras and additives, the quality of your ingredients/elements will show through into the overall quality of your product, be it pizza or code.
+
+
+On a final note, keep working at it. As I mentioned, I have been making pizza for 29 years. During that time I have tweaked my master recipe many, many times. I’ve consistently followed the basic process I’ve outlined in this article, but as I strive to make the perfect pizza, I have made minor adjustments as I attempt to continually improve. As with coding, I follow the mantra of continuous learning and improvement.
+
+
+To summarize, these are the important elements: strong foundation, using the right tools correctly, simplicity, and revisiting to see if there are areas for improvement. If you apply these concepts, you’re bound to develop excellent software and delicious pizza.
+
+
+
+
+
+
+
+
+My Top 5 Pizza Toppings:
+
+
+1.  Plain/Margherita - Keeping it simple to evaluate the base
+
+
+2.  Sopressata - Typically spicy for that extra punch
+
+
+3.  Anchovies - I know what you are thinking - I never had them until a few          years ago and now I can’t get enough
+
+
+4.  White - Any number of beautiful Italian cheeses including buffalo mozzarella and parmigiano-reggiano
+
+
+5.  Olives - Black, Kalamata, or Castelvetrano
+
+
+What are yours?
+
+
+

@@ -1,0 +1,79 @@
+What Would You Do If ChatGPT Was Stealing Money From Your Wallet?
+
+
+
+
+Let me first start this article by saying that I am super excited about all the good artificial intelligence (AI) can do, and also super terrified about all the harm it will cause. I also want to add the disclaimer that I am not a lawyer and my knowledge of copyright laws is limited, but I feel that there is not enough conversation about the topic of royalties related to AI-drawn content.
+
+
+My company, Solution Street, creates content on a regular basis. We try to publish a new article every month based on things we have learned in our careers. These articles are showcased in our monthly newsletter. The result of this is over 70 articles published on our blog, DZone and Medium. We also have over 70 videos posted to YouTube where we share technical learning. We do this to generate interest in our company both from a hiring perspective and from a business development perspective. Sometimes, like in the case of Medium, we even make a few bucks on our articles.
+
+
+You have probably heard of ChatGPT (Chat Generative Pre-trained Transformer) already - it is an AI powered large language model (LLM) developed by OpenAI, capable of generating human-like text based on context and past conversations. So why do I think it is stealing/taking money from us? Because in order to create artificial intelligence, you need actual HUMAN intelligence. How does ChatGPT get its intelligence? Well, 60% of the data comes from a web crawl. Crawling data and feeding it into its model is what makes ChatGPT artificially intelligent. 
+
+
+So back to our articles, when we publish them on our blog, we include our copyright notice (see below).
+
+
+
+
+
+According to the U.S. Copyright Office, a copyright is a type of intellectual property that protects original works of authorship as soon as an author fixes the work in a tangible form of expression.  
+
+
+What this means is that people can’t just steal my work and claim it as their own. They are free to reference the work and build upon it. They just can't take it and make money off of it as if it was their own. In my opinion as it relates to content drawn by LLMs, original works of authorship should be protected and authors compensated in some way if their work is used.
+
+
+Back in April of 2020 I wrote one of my most successful articles on DevOps tools. I spent a ton of time coming up with the content for this article, drawing on my many, many years of experience with this subject as well as interviewing others about the topic. This article was published on our blog, DZone and Medium. One of the things I did in this article that I hadn’t seen done before was really try to categorize the various tools into something that was sensible. Below is a screenshot of the categories from my article:
+
+
+
+
+
+I wanted to see if ChatGPT would have this “intelligence” in the tool, so I opened up a console and asked:
+
+
+
+
+
+Is it an exact copy of my categories? No, but it uses a lot of information contained in my article and other articles my colleagues in the industry have written. The issue at hand here is that when someone asks this question in a search engine, it points back to my article, I get eyeballs, and therefore brand recognition. 
+
+
+
+
+
+If users type the question in ChatGPT, OpenAI (the company that owns ChatGPT) makes money, but I get nothing, no recognition, no link, nothing!
+
+
+There are a bunch of articles out there that get into the legality of what OpenAI is doing. The short answer is, it’s complicated! The longer answer gets into the question of is ChatGPT output a derivative work? If so, maybe OpenAI could be in trouble. Also, what about Fair Use (note this is how I can reference other articles and quotes like I have done in this article)? 
+
+
+Another area of concern is when using chatGPT the information I share with it can be used to improve their model. So if I am a developer and share some code I am working on and ask ChatGPT to improve it, it is possible that code could end up being shared with others.
+
+
+There are active lawsuits right now where authors are suing OpenAI and other LLMs so this is yet to be settled in the courts. One very high profile example of this is the Hollywood writers’ strike where they are demanding that AI cannot be used to generate scripts. The coming months will be very interesting to see if the courts agree with me and settle on the authors’ side or not.
+
+
+So what would you do if you were an author of content and were losing money due to ChatGPT and other LLMs?
+
+
+I see the future ending up in one of two ways:
+
+
+
+The courts settle on the side of authors and come up with some sort of royalty system where authors get micro payments based on being a part of LLM and how/when they are used and their general importance. Well-known authors may be able to opt out and negotiate their own royalties.
+
+
+
+
+The courts settle on the side of the LLMs and authors begin to put all their content behind walled gardens and figure out other ways to opt out.
+
+
+
+Either way I think LLMs will become less intelligent over time due to worries about paying out royalties or because large volumes of content are being explicitly excluded from the LLM. They will still work great on public domain type content including text processing, but when it comes to more advanced topics I think they will regress.
+
+
+Stay tuned for my next article on Machine Learning and AI to learn about all the business problems we can solve with these amazing new tools.
+
+
+We at Solution Street build custom software for our customers. We also have experience in artificial intelligence and machine learning! If you have the need to build something to solve your business problems, drop us a line.

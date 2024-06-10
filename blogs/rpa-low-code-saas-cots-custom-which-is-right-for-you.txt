@@ -1,0 +1,51 @@
+RPA, Low-Code, SaaS/COTS, Custom - Which Is Right for You?
+
+
+
+
+The year was 1994. I was working full time as a software engineer and going to graduate school part time to get my master's degree. One of my professors told us that within the next five years, we will not be writing software with code anymore. Fourth Generation Languages (4GL) will make it so anyone can build software and visual drag-and-drop tools will let us build anything. Fast forward 26 years, and we are still writing code. Even in 2020 recent articles predict the end of custom software development. Coming soon, robots will be writing code for us using GPT-3.
+
+
+The current state of software options to solve your business problems is quite complex, and it can often become overwhelming. You read articles about robotic process automation (RPA) saving the world, or low-code/no-code solutions saving 80% of your costs, or software as a service (SaaS) solutions like Salesforce, ServiceNow and others being the answer to all your problems. What if none of these work for you? When is it time to build your own software?
+
+
+In my 25+ year career in software construction, I have seen lots and lots of crazy things. I have seen a business run a 100+ million dollar investing service using Excel spreadsheets. I have seen a Domain Name Server (DNS) used as a relational database. It seems that everyone has their own ideas of how to solve business problems with technology.
+
+
+The reality with all these options is that there is no silver bullet, but each can and should be used in the right circumstance.
+
+
+“[T]he type of tool/platform approach that best solves your business problem depends on your situation.”
+
+
+Below is my “Joel” summary of each of these types of tools and when I think you should consider using them.
+
+
+Robotic Process Automation (RPA) - is a form of business process automation, based on the use of “software robots.” RPA typically uses record/playback types of screen scraping to automate repetitive tasks for users. I look at RPA as a stopgap measure that should be used only to “temporarily fix” broken or poorly integrated software. Screen scraping is not a good long-term solution and can be brittle as the underlying software changes. Sadly, for some companies and governments with overwhelming integration issues, RPA may be a way of life. For the rest of them, we should look to replace RPA processes with properly integrated software. According to Gartner 2020, UiPath and Automation Anywhere are the two most well-positioned players.
+
+
+No-Code/Low-Code - software platforms rely on Graphical User Interfaces (GUI) to construct applications that solve business problems. The idea here is to save money, reduce time to market, and increase quality by not “reinventing the wheel” for each project. Typically you can use less technical resources to construct these systems, a highly-priced software engineer can be replaced by a business analyst. 
+
+
+For many of these platforms when something can’t be achieved by GUI, they can drop into a scripting or programming language that can be used. We at Solution Street have used Salesforce’s platform to build an entire Recruiting Management System (RMS), along with asset management, and human resource management. 
+
+
+The downside to low-code/no-code platforms is they lock you into that vendor’s proprietary approach and language. If Salesforce decided to raise their license costs by 10x, we would have to reimplement everything we have built on another platform. This would be very costly and time consuming for us. They also allow you to easily and quickly make changes directly to your production system. This is dangerous and can cause significant problems and system breakdowns. We are seeing more and more customers build elaborate low-code applications which often break in production because an “engineering process” is not followed. We at Solution Street follow an engineering process always even when using a low-code platform, we document the requirements, implement them in a test “sandbox” and then promote them to production only when a regression test is complete. 
+
+
+The other downside to low-code platforms is you need to pay an additional cost to use the platform on top of the development costs to build it. Low-code platforms should be used when the user base is fairly small and the cost savings of implementing them outweighs the cost of the platform licenses. Salesforce and OutSystems are the two most well positioned vendors according to Gartner in 2020.
+
+
+Software as a Service, Commercial Off-The-Shelf Solutions (SaaS/COTS) - are applications and/or platforms that are commercially produced and solve business problems. Some of them allow customizations through a low-code solution (e.g., Salesforce), but others only allow small customizations through configuration of the software. Some SaaS/COTS solutions can be free or open source, while others can cost millions of dollars. SaaS/COTS options are almost always the best/lowest cost for companies trying to solve business problems when their business needs fit within the solutions offered. The largest SaaS solutions are in the customer relationship management (CRM) and Enterprise Resource Planning (ERP) areas, but as they say, if you are looking for something, there is most likely an “app” for that.
+
+
+Custom Software Development - is the designing of software applications to solve specific business problems in a specific way for a specific set of users. Custom software development has historically been very costly, but in recent years cheaper cloud computing along with open source frameworks and tools have drastically reduced the cost of creating your “own” software. An application that would have cost millions of dollars to build and host 20 years ago can now be done in weeks and hosted for a few bucks a month. We have several of our customers running complex applications on the $9/month plan on Heroku. Solution Street’s main service is building custom software for our customers. Modern frameworks do so much of the work for you that there is a very fine line between low code and the use of these frameworks. In fact, most of the time we are not coding from scratch, but rather we are starting with something that gets us more than halfway there and the coding is just adding in the specific differentiator for the business. Even though custom software development is our core business, our main goal is to help our customers solve business problems the best way possible, so we often ask early on, is there a SaaS/COTS option that will solve this problem? Is low code a good option here? If not, then in addition to building the software for them, we also advise our customers on best practices. One of the key questions/answers from our customers is “How can I differentiate my product or service with custom software? If it’s something that can be done with a spreadsheet or with a low-code option in a few hours, why would my customers use my offering?” The challenge of custom software is that it requires significant costs to keep up to date and maintain. While there are maintenance costs with the other options, keeping custom software secure and up to date can be more costly than the alternatives. For me, custom software should be used when you are trying to solve a business problem not currently solved by an existing manual or automated solution and you are trying to differentiate your product or service from the competition. 
+
+
+In summary, the type of tool/platform approach that best solves your business problem depends on your situation. My company, Solution Street, is one of the few companies that will help you evaluate your situation for free and make the best recommendation even if it means not building something! Each option can be great, or a bad fit, depending on the use case. Below is a table that summarizes each option, and when to use each with its specific pros and cons.
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+GitHub Copilot Will Change the Way You Code - or Will It Get You Into Hot Water?
+
+
+
+
+We were recently conducting a technical interview for a React.js role with one of our candidates. We have a special question for folks interviewing for this role that starts with a template project and gives them some tasks to complete the work. While we were watching this candidate work, we were really surprised when their IDE suggested a complete line of code to loop through properties and render them. This was not your simple autocomplete; this was reading the developer’s mind, looking at the context, and suggesting the perfect line of code to add there. 
+
+
+Our jaws dropped. We had seen some examples of GitHub’s Copilot from one of our team members who did a presentation when it was in beta about six months ago, but this was the first time it crept up in an interview. We were so stunned we didn’t even say anything and just kept going with the interview. 
+
+
+A couple weeks later one of my most senior developers asked me if they could expense the cost of Copilot because it was helping him be so much more productive. My first reaction was sure, but as I was looking into corporate pricing options I found some interesting articles about privacy and licensing that concerned me a bit. 
+
+
+Before we get into that, if you are not familiar with Copilot, it is a developer productivity tool brought to you by the good folks at GitHub and OpenAI and it plugs into most of the popular editor/IDEs and programming languages. Copilot is powered by Codex, an artificial intelligence model based on the Generative Pre-trained Transformer 3 (GPT-3), that is able to predict lines of code that you may want to write as you are coding. Currently it costs $10/month or $100/year.
+
+
+To give you some examples of what Copilot can do, I took some screenshots of it in action below. I was creating a couple of models to demonstrate optimistic concurrency control to our team in a presentation using Ruby on Rails. To do this, I used an account model and a transaction model. Each deposit/withdrawal on the account is modeled as a transaction. Rails helped me generate the base code, but I needed to make a few changes. First I needed to get a local variable to hold the account that is related to the transaction so I could adjust its balance. The Copilot autocomplete is in light gray and italicized. As you can see, once I started the assignment it guessed that I wanted to grab the relationship (see figure 1).
+
+
+
+
+
+Figure #1
+
+
+Okay, that is kind of cool, but most IDEs offer IntelliSense which gives you come suggestions of API, so this is only a little bit better than that. After that, I needed to adjust the balance of the account. Guess what? Copilot guessed I was going to do this and added the code…wow! (see figure 2).
+
+
+
+
+
+Figure #2
+
+
+To save the data to the database in Rails you need to call the save method. And guess what? After I accepted the first suggestion, that popped up next (see figure 3).
+
+
+
+
+
+Figure #3
+
+
+Next, I wanted to be able to set the related account when creating a new transaction. To do this, I needed to check for a parameter passed and then set the value in my controller. I started typing and, wow, Copilot guessed what I was going to do again (see figure 4).
+
+
+
+
+
+Figure #4
+
+
+To “pretty up” my generated view code, I wanted to show which account the transaction was for if there was an associated transaction. As you can see, Copilot guessed what I was about to do and did it pretty well again. This is kind of scary; the computer is reading my mind and doing a heck of a good job at it (see figure 5).
+
+
+
+
+
+Figure #5
+
+
+This type of assistance can help improve developer productivity significantly especially when it comes to somewhat basic tasks that we need to do. Folks, this is going to be a game changer! The one thing we have to be careful about here is more junior developers accepting suggestions and not truly understanding the code that is being inserted. Similar to today when people search on google or stack overflow, it's important to understand snippets of code that you find and not blindly copy/paste them into your codebase.
+
+
+Back to how Copilot works, in order for them to get the AI to work, GitHub needed code to train the AI, and it used many open source projects out there to do this training. Per the GitHub terms of service, all code hosted on GitHub can be used to “improve their products and features,” so if your code is hosted on GitHub, it can be used to generate suggestions in Copilot. Given this, if you accidentally put private information into your source code, is it theoretically possible that could slip into Copilot suggestions? It’s not likely this could happen, but it’s worth consideration. Generally, best practice is not to put things like passwords and keys into checked-in code.
+
+
+There are some articles out there that dig into the legal and privacy issues around this whole process that are worth a good read. In addition to legal and privacy concerns there are also license concerns. Because Copilot is trained on open source software, there is risk of “code laundering” some of the open source software and putting it into your code under another license that may or may not be allowed.
+
+
+Lastly you need to be careful with security concerns that may be introduced by the suggestions Copilot suggests. In my code I tried to set a variable named “password” (see Figure 6) and Copilot suggested using an encrypted string which is good, but suggested I use “my password” as the string which would not be good. To generate the coding hints, Copilot has been trained on open source code. Not all open source code is 100% secure and follows best practices, so some of the suggested code it provides may not be following security best practices. The analogy I would use here is self-driving cars. The car can do a pretty good job driving you, but you, the human, need to always be in charge and keep the car and everyone nearby safe. The same is true for coding for Copilot. It shouldn’t be an excuse for writing sloppily insecure code. You, the human, are always in charge and need to make sure you are accepting code that is solid!
+
+
+
+
+
+Figure #6
+
+
+Now that I have summarized the coolness and the concerns of Copilot, I want to revisit the topic of coding interviews. Do you think it is fair for candidates to use Copilot during an interview? For me, I need to see more Copilot in action before I decide for sure, but I think right now I would prefer to see the interviewee code without this help, even if they would be using this tool in their day job. Maybe this is not fair, but it’s just my thinking for now. 
+
+
+Thanks for reading. If you are looking for a new job in Software Construction, please drop me a line. We are always looking for great folks to join our team here at Solution Street!

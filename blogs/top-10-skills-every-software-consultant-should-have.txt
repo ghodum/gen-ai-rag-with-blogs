@@ -1,0 +1,78 @@
+Top 10 skills every software consultant should have
+
+
+
+
+
+ 
+
+Top 10 skills every software consultant should have:
+ 
+ 
+
+1. Listening
+2. Writing tests
+3. Refactoring code
+4. Understanding transactions
+5. Understanding performance tuning
+6. Understanding scaling
+7. Knowing when NOT to be on the bleeding edge
+8. Transparency with clients
+9. Accepting of feedback on your code
+10. Being polite
+
+ 
+ 
+After more than two decades of professional software consulting experience, I have worked with many software engineers. The caliber of these professionals varies greatly. The best software engineers, who also exhibit excellence in consulting, have similar capabilities. These are my top ten skills every software consultant should have:
+
+ 
+
+
+ 
+ 
+
+1. Listening - this is certainly the most important. The greatest software engineers I have worked with typically listen more than speak. They tend to listen carefully to details from clients on business rules or feature descriptions, or listen to other software engineers and formulate in their heads additional questions or potential solutions. I believe that many software engineers care more about getting their point across than listening and carefully dissecting the information. Listening is a skill. Mastering that skill will certainly make you a better software consultant.
+
+ 
+ 
+2. Writing tests - all software engineers must learn how to write tests (and implement them). Many developers have a good understanding of determining different scenarios to try and break their own code and often test their code manually with those scenarios. The problem with just having a manual test is two-fold. First, generally these testing scenarios are not documented and often are determined on-the-fly. When it’s just in your head you will always forget something. Next time you look at the same code, you may come up with different scenarios. Secondly, having written tests that are automated ensures that your thought process lives on for future developers who might touch your code. Many developers I have met tend to have the same response when I mention writing automated unit tests. “There’s no time in the schedule for that.” I do understand that response, as often clients are pushing hard on the schedule and unit tests are the first thing to be eliminated. Being a good consultant means explaining the importance of unit testing for producing a quality product. I believe that most software consultants don’t push hard enough on this because they just don’t like writing unit tests. Write tests!
+
+ 
+ 
+3. Refactoring code - as software engineers, we tend to code our initial thoughts and see if we can get that initial try working. Often we need to modify this code to get the software working as needed. Frequently, this initial working phase of software development can yield unclean code, such as bloated methods or non-optimal coding structures that are either not performant or not DRY (Do not Repeat Yourself - copy/paste code), or simply code that is difficult to understand and which requires comments. Refactoring your code ensures better code, better reuse, and easier-to-understand code. Without doing this you may have successfully completed your feature or solved your defect, but now your non-optimal spaghetti code becomes someone else’s problem and is potentially more prone to defects. Refactor often.
+
+ 
+ 
+4. Understanding transactions - it seems nowadays many software engineers don’t understand the concept or think in terms of transactions. For so many decades transactional processing has been key to software engineering and today is no different. It’s true that lots of web development includes interactions with users that don’t require any form of a transaction, but many applications still do. Understanding a solid foundation in transactions is critical in thinking about how to solve business problems. Learn transaction processing and think!
+
+ 
+ 
+5. Understanding performance tuning - often developers write code with some semblance of understanding performance implications, but in the end they sacrifice performance for getting the code working. Refactoring and addressing performance close to development is key to a successful application with a happy user community. In my experience, most performance issues are related to database calls. Either the database is missing an index or a database call is being performed over and over again (e.g., N+1 problem).  A good utility or test harness is good for identifying performance issues whether they are related to business logic and the back-end or to front-end issues (e.g., not minifying JavaScript and CSS files).
+
+ 
+ 
+6. Understanding scaling - great software consultants will ask questions such as the following before they write their first line of code for an application. “How many users will be using the system?” and “How many concurrent users will be using the system?” These questions and several others must be asked before starting a project in order to help determine the best architecture, stack, frameworks, networking topology, etc., to be used. Here’s a good article discussing various aspects (not all) of scaling.
+
+ 
+ 
+7. Knowing when NOT to be on the bleeding edge - new software languages and frameworks are released constantly and it’s addictive to want to be on the bleeding edge; to use the latest software language or use the latest framework. I recently attended a JavaScript/NodeJS conference in Tysons, Virginia and I heard the names of approximately 50 new JavaScript frameworks, many of which had been developed in the last six months. The issue with using a recently built framework is that you are on the front lines. You will most likely find defects that others haven’t found and you are dealing with a very new user community. So how to resolve this issue? You certainly don’t want to be with the old frameworks that no one is using anymore. The resolution comes down to balance. You, of course, want the best solution (framework, language) for your business problem, but you need to weigh the following items before choosing a bleeding edge component: When was the framework created?; How many prior versions of the framework have there been?; What is the size of the user community? (usually for this one I’ll do a search on a framework name in StackOverflow to see the number of results compared to an alternative framework); Who/what company is backing the development of this framework?; Would you risk your own money on the use of this framework? Spend more time on these decisions because they impact the future of the application a great deal. Also, read a prior article of mine where I address other issues that impact the long-term success of the software more than a chosen architecture.  
+
+ 
+ 
+8. Transparency with clients - this is another extremely important aspect to being a great software consultant. Generally, software engineers are introverts and do not like sharing. They would rather stay up all night trying to get a piece of functionality done rather than tell the client the real timeline. This is a dead-end. You must keep the client informed of both the good and bad aspects to your development project. Sometimes the client will ask you to implement a feature in two weeks. You, understanding what it truly takes, should explain the real timeline (let’s say four weeks) and be able to provide the details of why your estimate is most likely correct. Now with this, you need to put on your consultant hat and work with them. Maybe they can remove some functionality. Maybe they can prioritize the sub-features and you can build them in that order. Maybe you can provide them weekly (or daily) updates so that they have a better understanding of your progress. Maybe you can add another resource to help you. All of these are part of being a better consultant and being transparent with your clients.
+
+ 
+ 
+9. Accepting of feedback on your code - I have learned so much from other developers whether they have 30 years of experience or one year of experience. Having someone review your code is a great way to get another perspective and increases the potential for refactoring. Some software engineers are not comfortable with others reviewing their code. I believe they are worried that they will be called out for “bad” code. Of course any developer sharing their code or reviewing code should be professional and be giving or accepting of polite suggestions. I have learned a great deal from others reviewing my code, whether it was better ways to implement the code, finding flaws in my code, ways to refactor, or performance improvements. The bottom line is that you can’t become a better software engineer in a vacuum. Continual learning from others is always necessary.
+
+ 
+ 
+10. Being polite - this should go without saying, but being polite with others - whether that’s other developers or clients - is a must. People react better to those who are polite and not cocky. I have worked with several developers who, although being great at coding, were impolite and weren’t interested in listening to other developers or the client. This interaction causes friction and more importantly doesn’t lead to the best code or the best application. Bottom line: treat others with respect, you may learn something.
+
+ 
+ 
+These are my top ten, but clearly some of these items are subjective and there are certainly more items on my list. At Solution Street these ten items have proven to define great software engineering consultants working here at the company. I tend to think of these important skills regularly when interviewing potential employees and in my personal growth. I hope you find them useful, too.
+
+ 
+ 
+

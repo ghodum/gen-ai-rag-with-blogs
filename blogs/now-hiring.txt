@@ -1,0 +1,15 @@
+Now Hiring!
+Are you looking for a change?
+
+Are you interested in going to a company where they care about you and your skills?
+
+Are you interested in working in a company where you can learn from other technologists?
+
+Give us a call - (703) 657-0511 or contact us from the website.  You may also send your resume to jobs@solutionstreet.com
+
+We have the following positions open TODAY!
+
+.NET Developers - We have an opportunity for .NET developers with 3-5 years experience. C#, ASP.NET, SQL Server, html, css
+Javascript Front-End Developers - 3+ years experience - javascript, html, css
+Ruby on Rails - We are always looking for experienced Ruby on Rails developers - RoR, javascript, solid OO foundation, html, css, mvc, relational database understanding
+Java Developers - We are always looking for experienced Java Developers (Spring Framework, Hibernate, REST, MySQL experience preferred).

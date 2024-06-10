@@ -1,0 +1,97 @@
+Hop On Board the JavaScript Train!
+
+
+
+
+
+ 
+
+The year was 2007, I had just quit my high-paying job at a big tech firm and was beginning to construct the software for my first startup to build a social reminder site, one that would help you remember all the stuff you needed to do in your personal life. It wasn't good enough for me to build a new product to do the required features. This product needed to be snazzy. It needed to be interactive, more than just a bunch of web pages. I wanted to build a dashboard where users could do pretty much all of their reminder management on one page. This type of app is called a Single Page Application (SPA). A SPA is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. 
+
+ 
+
+Traditional Server Side Development
+
+ 
+
+Before we dive into my SPA, let's take a step back and discuss how things were going for the previous 10 years. We made the jump from building desktop Graphical User Interfaces (GUI), to building Applets which were web based applications that worked kind of like desktop GUI’s, but ran in a browser. Then, we moved to Web Based User Interfaces (WUI) which were web based applications that were built in HTML and ran in the web browser. These applications primarily used some sort of server side HTML rendering template system like jsp, asp, erb etc. They generated HTML code that then ran in the browser. Most of the applications we built were vanilla HTML, with just a little bit of JavaScript sprinkled in to make them slightly more user friendly.  For many years, JavaScript was the ugly stepchild of the web - it didn't work consistently across browsers, it was slow and often caused memory leaks, so it was not used as often as it could have been. 
+
+ 
+
+
+Single Page Applications
+
+ 
+
+Then one day that all changed. The Web 2.0 movement took hold and smart developers figured out ways to make dynamic websites that were interactive and fluid and user friendly, and JavaScript was one of the tools that was being used the most. However, at the time there were many other options, ActiveX controls, Flash, Flex and Silverlight to name a few. One huge thing happened that made HTML/JavaScript the dominant tool of the trade to build interactive fluid web applications. This was the iPhone. Apple basically made HTML + JavaScript the only option that would work on the initial iPhone’s and iPads, and this was a huge & growing market that product owners did not want to miss out on and this therefore made HTML + JavaScript the only ubiquitous choice. 
+
+ 
+
+Back to my Startup with my first SPA, I was using a framework called Ruby on Rails which follows the “Traditional Server Side Rendering of HTML” with a server side Model View Controller (MVC) architecture. Rails came bundled with some early JavaScript frameworks called Prototype and Scriptaculous. These frameworks made it much easier to build JavaScript that worked and build SPA’s. Rails also came with RJS (Ruby JavaScript) which was a templating system that allowed you to generate JavaScript on the server side from Ruby code. This made it even easier to build complex web applications. My reminder application was a pretty complex SPA, with multiple sections of the page that paginated individually, searched individually, multiple dialogs.
+
+You could click on one section and it would open a dialog that when filled out would open another. Even with all these great technologies, it was only a matter of time before my code became spaghetti and very complex for anyone else other than me to understand and difficult for me to maintain. In fact, it took me almost 6 months to complete the application and work out the bugs.
+
+ 
+
+Starting around 2009/2010, many developers thought we had a better way to build SPA’s using client side Model View Controler (MVC) JavaScript framework. In this architecture, our server serves up data using REST and json, and all the templating and view work is done on the client side using JavaScript.
+
+ 
+
+
+JavaScript Primer
+
+ 
+
+Before we discuss JavaScript MVC frameworks, it is important to understand a bit more about JavaScript. JavaScript language is really called ECMAScript, this is the proper name of it, but most people still refer to it as JavaScript.  Since 2011, nearly all browsers have supported version 5.1 of ECMAScript. This stayed in place until June 2015 version 6 was released and many browser began to adopt the latest version. This site shows you how well your current browser supports this version. This new version included many nice Object Oriented features as well as other features that help in build SPA’s. To learn about new features, this is a great site to help.
+
+ 
+
+At the same time, JavaScript was coming out with a new version, two new languages that compile to JavaScript were gaining popularity, mainly due to their use in popular frameworks. JSX is one of these, JSX allows you to write Object Oriented JavaScript with embedded HTML/XML in it that generates into fast JavaScript. The other popular new language is Typescript. Typescript allows you to write Object Oriented JavaScript that compiles into JavaScript also. Recently, Typescript also allows you to write JSX.
+
+ 
+
+Finally, version 7 of EMCAScript is in the works, rumor has it that  some of the features in Typescript and JSX may be coming to version 7 of ECMAScript.
+
+ 
+
+Frameworks (too many, who will win)
+
+ 
+
+So it seems like most folks agreed if you have a SPA to build, then a JavaScript MVC framework should be used to build it. But what framework should I use? In 2012, an article was written “The top 10 JavaScript MVC Frameworks Reviewed”. MVC frameworks mostly provided the following common features:
+
+ 
+
+
+UI Bindings - Typically 2 way binding of models to views, so if you update your model, the view gets updated, if you update your view the model gets updated.
+Composed Views - Modular reusable view components and templates
+Web Presentation Layer - This includes Layout managers, widgets etc.
+
+
+ 
+
+At the time, Backbone.js and Ember.js seemed to be the leading options. However, AngularJS was the new kid on the block and quickly gaining popularity. In fact, the author adjusted the article to include Angular because of its growing momentum. For a couple years, AngularJS seemed the obvious choice as Google was behind it and it was the darling of the community. However, after lots of people were using the AngularJS framework, it became apparent that it was flawed and it needed to be overhauled. It didn't follow w3c components standard, and ES6 was coming out enabling many improvements to the framework. When the team announced AngularJS version 2 would not be backwards compatible and was at least a year out, it opened up a void for another framework to jump in. That framework was React.js. React.js is not really an MVC framework, but it is mostly a “V” framework that allows developers to make use of a “virtual DOM”. This “virtual DOM” technology is the framework’s secret sauce. Virtual dom is 1 way binding, if anything changes on the dom, you will get notified, and typically replace that component. Typically, folks are using React with Flux, Reflux or Redux to get most of what they had with an MVC type framework. If this all seems way to confusing to you, you can learn a lot by a fairly low cost course on React with Redux at Udemy.
+
+ 
+
+At this point, the world of JavaScript frameworks is growing and changing at a frenetic pace and what is the best option today may not be tomorrow. It is a dangerous time to be starting a new application. At the same time, the capability to build large scale fluid and responsive SPA’s is possible, and much easier using a framework then building it by yourself.
+
+ 
+
+Comparing Traditional vs SPA’s
+
+ 
+
+
+
+ 
+
+One big problem with many Software developers and Architects is they are constantly chasing new technologies. We call them “Shiny Objects”. When chasing shiny objects, you can often choose the wrong technology for the job, leading to technology backlash. In my opinion, there is a time and a place for single page apps and there is a time and a place for traditional apps. Let’s get back to my startup. The main goal of the product was to send reminders to folks when they needed to do something. These reminders were sent via email, sms, voice, and even paper. While the social aspect of figuring out what reminders to create could fit nicely into a SPA style, it probably was overkill for the product. I could have gotten to my minimum viable product much sooner building a traditional way to pick reminders. This was a case where a bad choice was made by a technologist chasing shiny objects. On the other hand, take an app like Facebook, probably one of the reasons for its great success is that it is a SPA that is very easy to use and consume real time information for its users. Imagine if every time you wanted to do something on Facebook (read a post, like one, add a comment, send a message, or a request) that you had to wait for a full page to repaint, and imagine you could only see pieces of information on each screen. It would not be nearly as fun, and users would spend less time on Facebook. In my estimation, SPA’s take 5-10 times as long to build today even with the use of frameworks, than traditional applications. Also, all the JavaScript MVC code is downloaded to the browser, making your intellectual property easily available to anyone to view, borrow and steal.
+
+ 
+
+Summary
+
+ 
+
+In this article, I gave a brief history of how web applications are being built now and then for the last 10 years. I also gave a primer on JavaScript technologies and compared Traditional vs Single Page Applications (SPA’s). Given the complexity in this area, we are often asked for help and advice in choosing a framework or language. This depends on many factors including existing knowledge of staff, type of application (whether or not it requires a SPA), and overall architecture.......if you need some help give us a call.

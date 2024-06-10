@@ -1,0 +1,51 @@
+Team Communication Contract
+
+
+
+
+Does your team have a communication contract?
+
+
+Recently I was having drinks with a former manager of mine and he was relaying a story I had completely forgotten. He used to send me at least a half dozen emails a day with various thoughts, ideas and actions for me to address. He said that one day I told him he was driving me nuts with all the emails. When he asked why, I said because I needed to stop what I was doing, read each email, and reply to it. This was causing interruptions in my thoughts and actions during the day and was slowing my productivity. At the time in response to this he asked, “Well what do you suggest?” I replied, “Open an email and save it as a draft, jot all your thoughts down for the day, and at the end of the day if you feel all those items are worthy of reaching out to me, send one email.” After that exchange and not receiving an email from him, I asked him what happened. He said that after he thought about it by the end of the day most of the items were a waste of time and he could discard most of them. This was an example of me working out a communication contract with my boss.
+
+
+In today's world we have so many mediums of communicating with each other; some are passive, others are very active: 
+
+
+Email - passiveText - somewhat passiveChat - somewhat passive, but active in some organizationsPhone call - activeTap on the shoulder - very active
+
+
+In some organizations, you are expected to answer to email, text and chat maybe a few times a day, but not always in real time. In others, a more immediate response is expected. In nearly all organizations, a phone call or a tap on the shoulder requires an immediate response.
+
+
+“In software construction and many other professions, the amount of focused and uninterrupted thought time we get is the key to productivity.”
+
+
+Today in the software construction industry, most of us follow an agile/scrum methodology which suggests some communication standards, namely: daily stand-up meetings where status and issues are communicated to the team; sprint planning meetings where items for the upcoming sprint are discussed; sprint review meetings where the team goes over what was done in the sprint with a demo; and sprint retrospectives where the team discusses what could have gone better during the sprint. We also use ticketing systems to manage passive email like conversations around a “bug” or “feature.”
+
+
+This gives a basic communication framework for teams. If you attend the meetings and keep your tickets updated, you are usually in pretty good shape right? No, not really. You still have issues like urgent production support problems, angry customers, testers that are stuck, junior developers that need help, project managers (PMs) that want an update NOW. So how do we manage these communications? Well, really it depends on the team. Some people love to talk face-to-face, others can’t stand it. Some love to use Skype or Slack, again others hate it. So creating a communication contract where everyone on the team buys in and follows is a good solution. What should be in the contract?
+
+
+Sample Team Communication Contract:
+
+
+All bug or feature-related communication should be in the ticket.All non-urgent communication to the team should be in email.All communication where you need some help soon, but not sure who has time should be in the team chat.All urgent communication when we are together should be impromptu shoulder tap and meeting if needed.All urgent communication when we are not together should be text; if no response in 15 minutes, a phone call.
+
+
+
+
+
+In software construction and many other professions, the amount of focused and uninterrupted thought time we get is the key to productivity. One of my favorite articles from Joel on Software titled Human Task Switches Considered Harmful talks about how context switching kills productivity. One task switch is someone asking a “quick question,” or someone stopping by your cube/office for a “chat,” or your phone vibrating from a text message. These are all active/interrupt communication options. On the other side of the coin, if you are waiting on an answer to a technical question, or a clarification of requirement, or a junior developer is stuck on a bug, not interrupting someone can cause productivity losses for the other person. This is why a team communication contract has to have some balance where folks can focus, but also have an option to interrupt when it’s needed.
+
+
+In addition to productivity, happiness is also a consideration. In a recent one-to-one session, a developer on one of our teams told me, “My PM is driving me nuts. He taps me on the shoulder about five times a day. Can I move my desk so he can’t find me?” This is when I asked, “What is your team communication contract? Also, what is your contract/agreement with your PM? Does he know this drives you nuts?” 
+
+
+In the case of team communication, when a team is in a meeting, lack of focus of one or more participants (maybe they are checking email or responding to a chat message) can waste the other participants’ time. Sometimes this is okay. If a customer texts you with a million dollar opportunity, this is worth breaking the flow of the meeting. However, most of the time this is not the case. Some teams have a “no device open/on” policy for meetings. This can be another component of your communication contract.
+
+
+My examples and dialog above are software construction focused, but you could really apply them to any team focusing on the mode of communication they use. By identifying communication issues and agreeing to protocols for productive team communication, any team can increase their productivity and improve their interactions.
+
+
+Does your team have a communication contract? If not, maybe it’s time to document and follow one.

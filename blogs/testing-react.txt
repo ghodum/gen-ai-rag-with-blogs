@@ -1,0 +1,169 @@
+Testing React
+
+
+React is still a fairly new and hot JavaScript framework, having only been open sourced in 2015.  With its component-based architecture and emphasis on immutability and the virtual DOM, React might be fairly different from anything you’ve worked with in the past.  This means there will be some growing pains in learning how to code in React, but there may also be a comparable difficulty in figuring out how to test it.  In this article, we will discuss how testing in React is different from testing regular JavaScript, how to use the debugger to find errors in your work, how to use React’s official test library with your favorite test suite (with an emphasis on unique features, like shallow rendering), and, finally, we will discuss Facebook’s official test suite for React, known as “Jest.”
+
+ 
+
+If you would like to get started with React, you can find an excellent tutorial and instructions on how to install it from the  official site.
+
+ 
+
+To help in understanding some of the concepts that we might be discussing, let’s take a moment to define some terms.
+
+ 
+
+Immutability is the concept of an unchanging value. 
+React implements immutability by creating a new element every time a relevant value is changed, giving the perception of change.
+The Virtual DOM is an abstraction of the DOM, which React uses to render its components.
+	Shallow Rendering will be discussed in greater detail further down, but as a brief overview, the basic purpose of shallow rendering is to see what a given React component renders, including other React components.
+	You can find more information here.  “Mocking” in the context of software testing is the idea of imitating things that a component might interact with so that the component may be tested in isolation. 
+  For example, maybe a component needs a value derived from some complex function somewhere else in the application.  Instead of actually running through the application, we can just feed our component the expected result.
+       This helps to test the component before the full application is ready.
+       It also, and perhaps more importantly, helps to ensure that any errors in testing the component were in fact the result of a failure within the component itself.
+
+	
+ 
+
+How is testing in React different?
+
+ 
+
+As mentioned before, React is still a fairly new framework, and as such, the currently existing technology has to take some time to catch up.  For this reason, something as simple as using the native browser debugger can cause a whole slew of unexpected issues.  React also has some differences from vanilla JavaScript in that it emphasizes things like immutability, and a component life cycle based heavily around the component’s current state.
+
+ 
+
+While not strictly a part of testing, debugging is worth mentioning, especially considering the fact that React is rendered differently under the hood from plain old HTML.  No modern browser was written with React in mind, so you won’t easily find any native support to make your debugging experience easier.  Similarly, the testing scene is still growing and developing quickly.  New tools to help write React tests are being developed or refined, while new plugins are doing the same to make debugging in the browser easier.
+
+ 
+
+Inspecting the DOM
+
+ 
+
+One of the major hurdles in debugging is the way the DOM is rendered.  In regular HTML, you may inspect elements from time to time, but with React and its customizable components, there is a need for something a little more comprehensive.
+
+ 
+
+Let’s take an example (depicted below) where I have two React components that both render an input with different behaviors.  If I see an input on screen, we know with some level of certainty that one of these two components is being rendered, however even a DOM inspection wouldn’t reveal which type of component we’re seeing.
+
+ 
+
+Unfortunately as was mentioned before, no modern browser was created with React debugging in mind, but many of them allow for plugins.  In Firefox, there’s a popular plugin called “React-devtools” which I use to inspect elements for my personal projects at home.  Undoubtedly, there are multiple plugins which all do the same thing, as well as equivalents for the browser of your choosing.  What this particular plugin does is it adds a new tab to the debugger which shows the DOM as it is rendered with your own custom React component names. 
+
+ 
+
+Let’s take the example of a simple banking application.  If we were to create a React component called “BankApp” which renders a button and some inputs, in the DOM you might only see something that looks like this:
+
+ 
+
+
+
+ 
+
+Not quite familiar to any HTML that you as the developer wrote, but in the React tab of the debugger, you’ll see that it is in fact a BankApp being rendered with a Login component and the familiar inputs and button inside of it.
+
+ 
+
+
+
+ 
+
+It’s clear how viewing our tags in this manner can be very helpful, by comparison to examining the React components directly.  By viewing the components through the dev tools, we can see a much more familiar layout which is easier to debug.
+
+ 
+
+Testing with React Test Utils and Shallow Rendering
+
+ 
+
+So how about testing? React’s documentation has its own test utilities.  This includes a very useful feature known as “shallow rendering.”  Shallow rendering allows us to look for React components while debugging.  We can now use React’s test utilities and shallow rendering to write the following test for our previous banking example:
+
+ 
+
+
+const renderer = ReactTestUtils.createRenderer();
+renderer.render();
+const result = renderer.getRenderOutput();
+
+expect(result.type).toBe('div');
+expect(result.props.children).toEqual([
+	Username:,
+        ,
+        Password:,
+        ,
+        Log In
+]);
+
+
+
+ 
+
+Then use your favorite test suite’s assertion logic (the above example was done in Jasmine, which is my personal favorite suite for JavaScript) to check the type, the properties, or even the children of result.
+
+ 
+
+Why is this useful?  With shallow rendering, we can look for components with names like “BankApp” or “Login.”  Without shallow rendering, we actually need to look at what BankApp and Login render, and if BankApp renders a Login, then what does that final output of that look like?  And what if Login renders its own React components?  Then what does a BankApp render in the end?  Without shallow rendering, we have to follow the chain of rendering all the way down to base HTML components.  With shallow rendering, we only need to see that BankApp renders a Login.
+
+ 
+
+This has the following advantages:
+ 
+
+It’s much easier to do which means faster test writing and a quicker and more efficient test suite. As an extension of this, maybe your test writer will even have the time to throw in a few extra tests that he or she otherwise wouldn’t have!
+Minimizing error on the part of the test writer.
+	If the functionality of a Login component changes, tests do not have to be rewritten.  Maybe a change has to be made to your Login component’s render function, and now all of a sudden not only have all your Login tests broken, but also all your BankApp tests because BankApp rendered a Login.
+	
+
+ 
+
+As mentioned before, React is still a fairly new technology available to the public, and as such tools like these test utilities are still rapidly growing.  Early into 2016, shallow rendering was only in beta and was much more difficult to find.  Already, later this same year, shallow rendering has become a key part of the testing process.  Keeping this in mind, there’s no telling what testing in React might look like towards the end of 2017.
+
+ 
+
+Jest
+
+ 
+
+While React’s test utilities allow for easy testing in virtually any framework, Jest is what Facebook created specifically for testing React.  The name “Jest” comes from its “mock everything” approach at testing, where components could be tested in greater isolation. 
+
+ 
+
+Jest, too, is a rapidly growing and developing testing suite, still receiving updates of major functionalities.  One such functionality is the “snapshot” which was only officially added in July of 2016.  By rendering a React component and calling toMatchSnapshot() on the rendering, it allows the running of either an “npm test” or just “jest” to create a .snap file.  This file contains a representation of what exactly was rendered when the npm test or jest command was run.  From this point on, running the test cases normally will compare the current rendering to the original snapshot to ensure nothing has changed, helping to make very easy and efficient regression and integration testing.
+
+ 
+
+As an example, let’s see how we might test our banking app using Jest.  First we write the test, making sure to include a snapshot:
+
+ 
+
+
+test('Accounts screen is rendered upon login', () => {
+	const component = renderer.create(
+		
+	);
+	let tree = component.toJSON();
+	expect(tree).toMatchSnapshot();
+});
+
+
+
+ 
+
+Next, we navigate to this directory and run “jest” which automatically produces a .snap file.  From now on, when our Jest test is run, the output is compared to the results of this file to check for any unexpected changes.
+
+ 
+
+If a snapshot does not match the current render and the change was expected, the user can easily overwrite the current snapshot with a jest -u.  It’s also worth mentioning that multiple toMatchSnapshot calls can be made within a single test.  The snap file simply contains a list of exports sorted by test name, and then a number representing which call this snapshot is meant to represent.  For more information and examples, Jest has some very clean and nicely written documentation to look into.
+
+ 
+
+Conclusion
+
+ 
+
+There are many ways to test React.  It can’t be emphasized enough that as a relatively new technology on the market, the ways it’s implemented and tested could shift dramatically over time until things begin to settle.  These were just some of the noteworthy aspects of React testing and debugging which will hopefully get the fledgling React developer on their merry way creating some great stuff.  Feel free to look into the latest trends and tech to test your React code in whatever way makes you feel the most comfortable.
+
+ 
+
+Happy coding!

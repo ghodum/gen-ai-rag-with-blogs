@@ -1,0 +1,33 @@
+Illusory Superiority
+
+
+
+
+
+Most developers are self-described as better than average.
+
+ 
+
+I have always loved the study that showed almost 80% of drivers felt that they were better than most. How can that be? Obviously, the reality of that statement can’t be true. What I’m fascinated with is how most people aren’t realistic and overestimate their own capabilities. This phenomenon is not just with driving, but in a whole host of other cases including stock market trading (where most traders think they are better than almost all others), individual health (where people believe they are healthier than they really are), IQ (where a study showed that 94% of professors rated themselves above average relative to their peers), and many other examples. When it comes to software development, the claims are no different. 
+
+ 
+
+
+
+
+ 
+
+How many times have you heard, “our developers are the best in the business” or “our developers are in the top 10% of all developers”?  Does it really matter that a developer thinks he/she is great and is overconfident? You bet it does!
+
+ 
+
+The problem with overconfident software engineers is that they think their code is great and they get lazy and sloppy. I’ve heard some self-described great developers say that unit testing wasn’t important and code reviews were a waste of time. Once you believe you are better than most, you then fall off of your game. You assume much of the code you write is fail-proof and any defects found are not your fault. You cease to look at other ideas or code written by others with any objective perspective. If you think about the example of health with illusory superiority, I’m sure you have met some people who believe they are quite healthy or can at any point, exercise for a few days to get back in shape when you know this is an illusion and they are not being totally honest with themselves. Health issues are inevitable if one doesn’t really take care of oneself. This is the same with the code produced by an overconfident developer. The code eventually shows its cracks. With overconfident developers, you also wind up with another phenomenon called the “coding cowboy” - someone who takes it upon themselves to rewrite everyone else’s code in a weekend because their coding is much better.
+
+ 
+
+The secret (if you can call it that) to quality software is when all developers on a team are working together using code reviews to evaluate each other’s code for the best solution and unit testing their code to find those cracks in the code that they would otherwise assume weren’t there. At Solution Street, we are in a never-ending quest to improve on quality and review code done by anyone - whether you have been coding for a year or for 34 years like myself. One of our core values is “Respect” which means having respect for all developers since you never know who you will learn from.
+
+ 
+
+In the past, I would have told you that I am a much better developer than most - maybe even self-righteously saying in the top 10%, but now I look at things differently. I think this is a good thing. It will keep me on my game and motivate me to strive to be better. The reality is that it doesn’t matter how I compare with others. It only matters that I can continue to learn and strive to improve my craft and be the best developer I can be!
+

@@ -1,0 +1,51 @@
+A Contrast in Corporate Culture: How Corporate Culture Shapes an Organization
+
+
+
+I recently watched the popular Netflix documentary Fyre, about the failed 2017 luxury music festival.  (Warning: The documentary is rated TV-MA and contains profanity and one very graphic anecdote). The festival was essentially an elaborate scam perpetrated by the recently incarcerated scam artist Billy McFarland and rapper Ja Rule.  Like most who have seen it, I was both intrigued and horrified by the lies that helped build excitement for the festival - as well as sell tickets - and for the shoddy execution that resulted in broken promises, severe disappointment and financial hardship for almost all involved.
+
+The documentary is entirely made up of behind-the-scenes videos and interviews with key individuals.  It paints a clear picture of just how much McFarland conned almost everyone involved. Charisma coupled with lies about financial results, island ownership and a virtual shell game bordering on a Ponzi scheme were his tools to build up a festival that could never live up to its billing, let alone logistically support the number of attendees.  But while it’s easy to entirely blame McFarland’s schemes for the failure of Fyre, I was struck by another deficiency in McFarland’s organization that contributed to the calamity - corporate culture.
+
+A company’s values, most usually defined and exhibited by its leaders in its early days, play a huge part in shaping its success and reputation.  Codifying these values is an important step, and requires thinking through just what it means to act on behalf of the company. Hiring employees that buy into this culture, and continuously espousing and encouraging behavior that conforms to the company’s values are the final steps in establishing this corporate culture.
+
+I’ve worked at Solution Street for just over 16 years and have watched the company grow from just a few of us to over 70 engineers.  Our corporate values have remained steady throughout and are displayed on our website and each conference room in our offices for all to see - clients and employees alike:  
+
+Honesty
+Respect
+Transparency
+Dependability
+Fun
+
+How do these values apply at a software engineering firm?  And how does the Fyre company’s culture hold up to these? Let’s dive in…
+
+Honesty - The subtext at Solution Street reads “With our employees, with our Clients, with our Vendors, no exceptions” and we mean it.  Being honest and truthful in our dealings is imperative to building trust - and trust is crucial before and during a software development project.  When providing estimates for our clients we give an honest assessment of the work involved, and explain in detail just how we came up with the numbers.  Our employees are given continual feedback on their performance and each knows they can go to their manager or even the managing partners of the company with any request or criticism and be heard.
+
+At Fyre, honesty was lacking - and it started from the top.  Billy McFarland lied about so many aspects of the Fyre Festival that it’s hard to know where to begin. His “purchase” of the private island was a lie. He fabricated the financials of the Fyre platform. He exaggerated his holdings in Facebook common stock. He continued, to the first day of the festival, to mislead attendees into thinking everything was on-schedule and proceeding as planned with accommodations and travel arrangements.  This dishonesty trickled down to those working with McFarland. Even when faced with the reality that the festival had no chance of succeeding, the leadership of Fyre continued to delude themselves into thinking everything would work out. 
+
+And those that did attempt to tell the truth - the logistics expert who knew there was not enough space and facilities for the number of attendees, the festival consultant who desperately wanted to cancel it before it began, the 23 year old who was suddenly put in charge of booking performers -  were either let go, or their warnings summarily dismissed. 
+
+“Being honest and truthful in our dealings is imperative to building trust - and trust is crucial before and during a software development project.”
+
+Respect - At Solution Street, “Everyone should be heard regardless of their position, everyone has great ideas.” We work with great people and we employ great people. All are relied upon to build software. As a company, we strive to ensure that all of our people have a voice and their opinions heard and respected. To do less would risk doing a disservice to our clients.
+
+The Fyre documentary illustrated many examples of disrespect on the part of Fyre leadership. As mentioned above, employee ideas and warnings were dismissed. Other employees were hastily put into roles for which they were ill-suited. Construction workers were asked to put in long hours with the promise of pay that was never delivered. Customers’ time was disrespected when the festival organizers allowed them to travel to the Bahamas with no way to feed or house them.  
+
+And in a shocking display of disrespect to one’s own employee (and mentor!) McFarland insisted that a senior executive debase himself in exchange for the release of needed supplies from Bahamian Customs.  Needless to say, I was astonished that this team member did not resign on the spot.
+
+Transparency - “We have nothing to hide, the more the client sees how we work, the happier they will be.” In many of Solution Street’s development projects we work side-by-side with our clients. They see our efforts daily and work with us closely to produce a quality product. In other cases, we act as the engineering group for a client that needs our technical expertise. No matter the scenario, we encourage our clients to review our work. We strive to clearly explain, and show, our work products at every step of the development process. Seeing is believing, and when you do a quality job, you are proud to share the process.
+
+As things devolved with the Fyre festival, they were anything but transparent with their customers. Questions on Instagram were redirected to a support staff that was unresponsive. Negative comments were deleted outright. There were no updates, no pictures from the festival grounds, no travel information easily obtained. If anything, there was a communication embargo, and the leadership at Fyre did everything they could to keep the media, their performers and their customers in the dark for as long as possible. It was a critical mistake.
+
+Dependability - “We always deliver on our promises of time and quality. If we can’t do it, we don’t take the project.” Quality software development is tough. There are always setbacks and unforeseen issues. However at Solution Street we strive every day to be a dependable, reliable asset to our clients. If we set a date, we do everything in our power to make that date. When quality standards are established, we ensure that our code meets those standards. 
+
+The organizers of the Fyre Festival preyed on people’s assumptions about music festivals in general.  That is, they gave the impression, through an introductory video, social media blitzes and “influencer” posts, that their festival was to be the super-luxury equivalent of Coachella, or Burning Man, or the like. This raised expectations to a standard that this group of people simply could not meet. 
+
+Ironically, the festival organizers were particularly good at solving problems. One interviewee even commented that it was possible that ability - to solve all the little problems that kept popping up - enabled the festival preparations to limp along until finally coming to a head on the first day.  The ability to solve problems is a positive cultural value! My hope is that those members of the Fyre Media and Fyre Festival teams were able to find some solace in that fact and moved on to organizations with greater integrity.
+
+Fun - At Solution Street, “Work should be fun, we take our jobs seriously, but there is no reason you shouldn’t have fun while you work.” I like to think that our employees enjoy themselves while contributing, learning and sharing on the job.  In our break room, we have foosball and ping pong tables, and recently added our own corporate-branded cornhole set. We frequently have Tech Topics - midday presentations on current technologies, languages and frameworks with lunch provided - which is great fun for a group of software developers. :)
+
+The Fyre Festival sure started out fun. The introductory video featured a non-stop party in a tropical location with food, drinks, music and fantastic accommodations. Unfortunately, as the festival imploded, things turned decidedly un-fun. Overwhelming stress, criticism, financial ruin and social media embarrassment is definitely not fun.
+
+In conclusion, the Fyre Festival was a complete breakdown in logistics and production. It cost millions of dollars and left unpaid workers, unreimbursed investors and irate attendees in its wake. The leaders of the festival, Billy McFarland and Ja Rule, did a poor job of establishing a positive culture in their organization. Social media and garish videos can only get you so far when lies and deceit are pervasive and unrelenting.
+
+As a software engineering firm, Solution Street established clear, unimpeachable corporate values and lives them every day, with every project. A company’s leadership sets the example and enforces these values through scheduled reviews and hiring practices. By establishing a positive corporate culture and integrity, respect in the industry and success follow.

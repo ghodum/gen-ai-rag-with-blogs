@@ -1,0 +1,141 @@
+Cognitive Load
+
+
+
+
+As software developers, we have to consider many factors when building a system. Identifying limitations at an early stage is crucial to ensure the success of our product: Native or web application? Accessible on small-screen devices? Deployed locally or on the cloud?
+
+
+Answers to those questions help make vital decisions about system architecture and technology stack. But, do we ever consider the most important limiting factor?
+
+
+Our Brain
+
+
+Imagine you’re working on your computer, finishing a slide deck for your presentation. As you work on those slides, your brain isn't just focused on processing information. It's also constantly detecting sounds and peripheral visuals in your surroundings, determining which ones require your attention and which ones can be disregarded. Random ideas pop into your head, memories of recent events, remembering that you need to buy milk. Email and instant message notifications pop up on your screen.
+
+
+😩 Staying focused is an effort in itself.
+
+
+Humans possess a limited amount of mental resources to allocate to any task. Once these resources are exceeded we typically become overwhelmed or give up. This concept is called cognitive load: the mental effort needed to comprehend, make decisions, and complete a task.
+
+
+Unfortunately, brains cannot be upgraded (yet). As developers, we must cater to the cognitive boundaries of our users.
+
+
+Types of Cognitive Load
+
+
+To better understand and manage cognitive load it is essential to comprehend the two types that have a greater impact: Intrinsic and Extraneous.
+
+
+Intrinsic Load
+
+
+Any mental resources allocated to stuff that helps users achieve their goals. For example, the effort to comprehend different slide layouts for your presentation, deciding what to put on a bullet list, and showing the presentation to an audience.
+
+
+Extraneous Load
+
+
+Any mental resources allocated to stuff non-conducive to help users achieve their goals. For example, searching the presentation file in a complicated folder structure, looking for a specific tool in a cluttered toolbar, and keeping track of different browser windows used for research and image lookup.
+
+
+As developers, we should strive to minimize both intrinsic and extraneous loads. What can we do?
+
+
+Keep it Simple
+
+
+There are several strategies we can follow to provide users with a better experience:
+
+
+Avoid Visual Clutter
+
+
+If it distracts the eye, it is going to distract the brain. Simplify interfaces by reducing visual clutter and unnecessary elements that can slow down a user trying to complete a task.
+
+
+
+Use clean layouts
+
+
+Use clear readable typography
+
+
+Provide Intuitive navigation elements
+
+
+Lastly, present just the right amount of information
+
+
+
+Don’t Reinvent the Wheel
+
+
+It is helpful to utilize the users' existing knowledge. Jakob's Law states that users spend most of their time on other sites. They prefer sites that work the same way as all the other sites. Following established conventions and patterns makes it easier for users to learn and interact. If the conventional way works, it is recommended to continue using it.
+
+
+Checklist Design is a great resource to discover best design practices for a myriad of scenarios.
+
+
+Offload Tasks
+
+
+Computer systems are powerful devices; leveraging their resources is a great way to help our users. If there is a way to automate a task, do it. Some great examples of this strategy are:
+
+
+
+Auto-completion and suggestions – predicting what the user will type and providing suggestions is a great way to save users’ time.
+
+
+Auto-saving – some use-case scenarios may benefit from automatic saves. Users don’t have to remember to click “Save” to get their changes saved.
+
+
+
+Information for Humans
+
+
+Your end user is a human being, not a robot. Craft messages and present information in a concise, sensible way. Take for example the following date representations:
+
+
+“6/11/2023”“June 11, 2023”
+
+
+They are both the same date, but the amount of mental resources required to understand the first one is greater than the second one. Some users will need to count months inside their heads to realize that 6 corresponds to June. Lastly, cultural differences can lead to misinterpretation of numeric dates. In places like Latin America, the common date format is "day/month/year."
+
+
+Chunking and Hierarchy
+
+
+Organize information into meaningful chunks and establish a clear hierarchical structure. Breaking down complex tasks and information structures into smaller groups helps users allocate cognitive resources efficiently, reducing intrinsic cognitive load. For instance, consider the following phone number representations:
+
+
+“1238675309”“(123) 867-5309”
+
+
+Splitting phone numbers into smaller recognizable chunks makes it easier for users to understand and recall.
+
+
+Progressive Disclosure
+
+
+Not everything needs to be visible at the same time. Present information gradually, revealing details progressively. This approach prevents overwhelming users with excessive details upfront. Some great examples of progressive disclosure are:
+
+
+
+Tooltips – they hide additional information about elements without overcrowding the user interface.
+
+
+Interactive guides and wizards – lead users to input data and make decisions in little incremental steps to prevent feelings of overwhelm. It combines chunking and progressive disclosure concepts into one elegant pattern.
+
+
+
+Final Thoughts
+
+
+“With great power comes great responsibility.” We may not be able to crawl walls or shoot webs, but we’re developers. We have the power to create tools that will help others accomplish their goals. We must respect and be mindful of our users.
+
+
+Understanding how cognitive load affects usability can help us make better design decisions that can lead to positive and enjoyable user experiences.

@@ -1,0 +1,53 @@
+Using SBOM to KISS!
+
+
+
+
+Everyone's favorite TV show included one of my recent favorite acronyms - KISS - Keep It Simple, Smarty pants — Ted Lasso. In software construction we use this acronym often. Mainly because it is very easy to overcomplicate our systems due to the plethora of libraries, tools, utilities, and services available. Many of these are free, or at least appear to be free at first glance. 
+
+
+I am a member of the awesome DC CTO Roundtable and at a recent event we had a couple of speakers talk to us about the Software Bill of Materials (SBOM); what it is and why you would want to use it. An SBOM is an inventory of the libraries, tools, utilities and services that your application is using. If you are not a software engineer or have not been around software construction, you may not realize that 99% of the time when we build stuff, we do not build everything from scratch. We make use of (or reuse) whatever we can to save time, money and leverage best-of-breed tools and services. Think about building a house - your builder doesn’t hand-build everything that is part of the house, rather they source the materials and have as much of it “prebuilt” by others in the most cost effective way. So house builders are really “assemblers” that put everything together and make a house. Today’s software engineers work the same way. We do some custom stuff, but much of what we are building is done leveraging the work of others.
+
+
+In the SBOM world there are mainly two competing standards, one from the Open Worldwide Application Security Project® (OWASP) foundation called CycloneDX and the other from the Linux Foundation. The U.S. government cares about this (I assume mainly for security reasons) and is trying to keep the two standards compatible.
+
+
+Both options include tools to help you generate and manage your SBOM, and then feed it into other tools that include security analysis for vulnerabilities as well as risk analysis and license exposure. Historically, SBOM has been mostly focused on on-prem solutions, but it is starting to adapt to be more comprehensive in the cloud environments. 
+
+
+So now that you know what an SBOM is, let’s get back to the KISS principle and how we can leverage SBOMs to KISS for our software applications. 
+
+
+At Solution Street, we have an internal application that we built to process our timesheets and run our internal corporate intranet. It is built using Ruby on Rails. I wanted to get a sense of how many libraries (called gems in Ruby) we were using for our application. Rails makes it easy to see this; there are two files, one called Gemfile and the other called Gemfile.lock (for you node developers out there, this is analogous to package.json and package-lock.json). The Gemfile is the list of direct libraries you are using, including the versions. Looking at our Gemfile we use only about 30 libraries directly for our app and an additional handful for development and testing only. The Gemfile.lock is the derived file that shows the ones we use and all the libraries that each library uses. For example, when referencing the “Rails” gem and its version, it references about a dozen libraries it is made up of, and each of those reference other libraries. When you look at this full file, over 300 hundred libraries are referenced here. Each of these libraries could have security vulnerabilities, or hidden license requirements that we are unaware of..WOW this is getting complicated in a hurry!
+
+
+There are two things we can do to KISS and help reduce our complexity and exposure here:
+
+
+
+Reduction - First we should look at each library we use and figure out if it is really needed. Are we even using it? (some frameworks come with a utility to discover recent usage, “gem stale” can be used in the ruby world) Could we write a dozen lines of code to solve the same problem? How much value is the library providing? How many libraries does it use, if it is very promiscuous, are we already using these libraries elsewhere in our system, or is this the only reason we need it? If the library is open source, maybe we can suggest to the team that maintains it ways to reduce complexities and dependencies and even contribute to their source? Otherwise, maybe we can remove the library?
+
+
+Management - This is where SBOM can help us. For our timesheet app, I created its SBOM using CycloneDX in about 1 minute; it was very easy. Looking at the bom.xml file it generated (see Figure 1 below), immediately I was able to see all the license types that each library required. There are some licenses that require payment to use commercially or even require you to release your source code if you improve on their library. License management is a topic for another day, but you can read some about it here. In addition to license management, the SBOM can be fed into many different security tools that can report on vulnerabilities in your applications libraries.
+
+
+
+
+
+
+Figure 1: The top of our bom.xml file showing a couple of the components used
+
+
+So back to our timesheet application, we need to dig deep and look into options to reduce the number of libraries being used to help with Reduction. I also fed our bom.xml file into a scanner tool called “osv-scanner” (open source scanner from google) to see if we had any vulnerabilities that needed to be addressed (see Figure 2). Fortunately my team has done a good job at keeping up with patches and we are in good shape there! Note if I had issues, osv-scanner would include the url of the CVE along with the ecosystem and package/version it found it in.
+
+
+
+
+
+Figure 2: Results from OSV Scanner run
+
+
+Building software while making use of open source and 3rd party libraries can save time and money, but can also increase complexity and security exposure. In this short article we have shared how SBOM, related tools, and reduction in complexity can be used to KISS. 
+
+
+If you need help on your next Software construction project, or are concerned about whether or not anyone is thinking about security vulnerabilities in your Java, .NET, Rails, or Django applications, please drop us a line!

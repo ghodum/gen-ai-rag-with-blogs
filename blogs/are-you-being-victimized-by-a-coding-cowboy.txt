@@ -1,0 +1,55 @@
+Are You Being Victimized By a Coding Cowboy?
+
+
+ 
+Wikipedia defines a coding cowboy as software development where a programmer has autonomy over the development process. This includes control of the project's schedule, languages, algorithms, tools, frameworks and coding style. Not all coding cowboys are bad, some are quite good at getting things done, but many of them can create a “cliff” situation where you have some working software that only 1 person can support, and that same software can’t be extended easily by even the cowboy. This article discusses questions to ask your developer to make sure you are not being victimized.
+ 
+
+
+Are they using Version Control?
+Version Control is software that manages the versions of each change that is made and keeps history. This is very important in case a change gets lost, or overwritten. It is also important for developers maintaining code to see why changes were made, and how future changes can be made to keep things from breaking. These days version control is free or very cheap, there is no reason not to use it even on the smallest projects. Typically Git, SVN, or TFS (for Microsoft) are popular version control systems. We recommend hosting your version control in the cloud and picking a provider that has offsite backups. We use Unfuddle for many of our projects, they provide hosted GIT and SVN for a very low cost. Sometimes developers will say they are using version control, but they are not really using it. How can you tell? One simple thing is to view the commit log and see the changes being made, if you don’t see the changes they are not using it. Also developers not using version control will often name files with extensions like .1 or .2 or .OLD or .BROKEN, this is another sign they are not using version control.
+ 
+	Are they using an open source or commercial framework for web applications?
+Today there are mature web frameworks for nearly every language, Python has Django, Ruby has Rails, Java has SpringMVC, PHP has Yii, C# has .NET. There is rarely a good reason to exclude the use of a framework. Frameworks generally encourage best practices, are more secure, easier to maintain, and speed up development.
+ 
+	For HTML, are the styles inline?
+Most applications use HTML as their User Interface language for web and mobile. In order for these pages to be styled, the proper way is to use .css files and within the HTML make use of classes and id’s. If you do a view source on your html pages and see lots of inline styles then you have a problem. Inline styles are easily spotted by the declaration of style= inside the beginning bracket of an html element. Inline styles are often a fast way for a developer to get something to look right, but they are going to cause long term problems with making your User Interface work on as many devices as possible.
+ 
+	For HTML, is there coding inside the views?
+A well written application should isolate views to providing only view logic. If your views contain lots of code logic then they will be difficult to maintain and also difficult to make work across many devices.
+ 
+	Are the code variables self documenting?
+If you look through the source code and you see lots of variables named temp, c,q, or r, or ww, or foo, then your code will be hard to read by other developers. Variables should be named after what they represent, for example customer variable should be “customer” and not “c”. There are exceptions to this, it is generally considered ok to use “i” for for loop variables.
+ 
+	Is there commented out code?If you see lots of commented out code all over the place with no notes as to why it is commented out, this leads to confusion when maintaining the source. Typically version control (item #1) would be used to track how the code “used to work”, and there is no reason to leave behind old relics of changes past within the source code.
+ 
+	Are there comments in the code?
+If there is complex code and no comments, this can make it hard for others to look at the code and understand how it works. If the variables are well written and the source is self documenting code comments can be minimized, but typically it is good to include comments in the code documenting anything tricky that is happening.
+ 
+	Does the project have a logical folder structure?
+Typically projects are organized in some set of folders that makes it easy to understand what goes where. Frameworks like Rails enforce it, so it is very easy to find the models, in the “model” folder and the views in the “views” folder.  If the code project has no folder structure, or folders that don’t make sense it will make it difficult for others to understand the code and help maintain it.
+ 
+
+
+
+
+
+ 
+	Are application security best practices being followed?
+Are the passwords hashed using a secure algorithm? Is important data encrypted in flight and at risk? Is data protected by allowing only authorized users to see it? Is the app vulnerable to sql injection or cross site scripting?
+ 
+	Is the database schema consistent and documented?
+If using a database with a schema, are naming conventions followed? A common convention is to use plural names for tables, and either underscores or dashes to note compound tables, for example “customers_users” shows a join table between customers and users tables. Are consistent unique identifiers named and used?
+ 
+	Are constants and configuration files used?
+When you look through the code, do you see hard coded id’s for objects, or hard coded names for database users and passwords. These things should be extracted into config files, or at least constants.
+
+ 
+There is no “one” best way to build software. Coding cowboys will argue against many of the best practices we have outlined above.
+
+
+
+
+Typically their response will be that it costs time and makes the software more expensive. If you ask any professional, they will agree with most, if not all of the points outlined above.
+ 
+Are you being victimized by a coding cowboy? If so, give us a call, we promise to follow all of the items outlined above. We have confidence that if you ask any of our clients the questions above, they will say yes to all the items we have outlined.

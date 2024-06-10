@@ -1,0 +1,166 @@
+Story of a Rails Upgrade
+
+How to Upgrade Rails
+
+ 
+
+	Recently, my team upgraded our Rails gem from version 4.1.16 to 4.2.10 on a project that is five years old. For reference, the most up-to-date release of the Rails gem in the wild is 5.2.2.rc1. Although the project had been upgraded since its inception, the last update occurred  before I joined. Following a release with a lot of new functionality to additional beta users, we were able to address some of the technical debt we had accrued on the project. Our main reason to get the upgrade done was to stay on track with supported versions of Rails to make sure we didn’t run into any security issues.
+
+ 
+	
+This being my first major framework upgrade, I researched the process at the start and throughout the upgrade and found a wealth of articles and resources on upgrading Rails. While Stack Overflow and other programmer Q&A sites provide endless answers to specific issues faced at all levels during Rails upgrades, I searched for information about specific problems faced by developers. I wanted to be walked through the story of their upgrade, and not just from a project management standpoint, but also from a technical one. I discovered many great resources like the invaluable railsdiff.org, and the great Ruby on Rails Podcast Episode #249 with Eileen Uchitelle from GitHub describing their upgrade from Rails 3.2 to 5.2 in which she discusses their one and a half year upgrade. While they did do a lot of code cleanup during that process, that is still a very long upgrade!
+
+ 
+
+In this article I’ll take you through our team’s experience with the process including: highlighting how we got started and how we were able to find the time; discussing a few technical details so you can learn what types of problems you may face and how to go about solving them; as well as what we plan to do in the future to try to stay ahead of the curve and avoid technical debt before it becomes a show stopper.
+
+ 
+
+How to Start
+
+ 
+
+When I joined the project in October of 2017, we were starting to discuss technical debt and when we might be able to address some issues, including a Rails upgrade. Early on, I foolishly thought I could create a branch and, with enough tinkering, get the Rails upgrade done on my own, save everyone else the headache, and as a new developer learn a lot of things in the process. I was so very wrong.
+
+ 
+	
+Our lead developer, Steve, took a stab at the upgrade on his own as well, and ran into a lot of gem dependency issues. We didn’t actually get the brunt of the work started until October of 2018, but Steve’s work on removing unused gems, and updating the few we could with ease, was really the start of our progress for getting Rails upgraded.
+
+ 
+	
+Every project is different, and in our case, we had to find a sprint where our client would be okay with us doing some work on our technical debt. It took a long time, but we continued to communicate the importance of doing so, and the IT folks on their side were supportive. When the first window came around where we released several new features to be beta tested, we were able to work on the Rails upgrade while they compiled feedback on the new features.
+
+ 
+	
+We are a smaller team with two or three developers on the project at any given time. This sometimes makes it hard to work on things together if many tickets or features need attention. But this was challenging enough that Steve and I determined it would be more efficient, and less morally draining, for us to tackle it together. Turns out this is exactly what we needed. By locking ourselves away and focusing on only the Rails upgrade, we were able to get almost everything done in two and a half days. Whether or not your team consists of two or two hundred developers, I recommend a dedicated group, time, and space which will allow you to make more progress in far less time than one sad lonely developer yelling at a circular dependency.
+
+ 
+	
+Once we had a dedicated time, we cut a Rails upgrade branch to start. Please don’t do this on your master branch! Create a branch and do a pull request (PR). “But we don’t use PRs on our project,” you say. Well, you better. Upgrading frameworks can get hairy quickly, and you want to be able to scrap everything and start over easily. One thing to note before starting is that without good unit test coverage, you are really going to struggle to uncover issues and will have to find them by testing in the application itself. If they are problems that keep the app from running it becomes much harder to hunt down those problems. You don’t need to have tests written for every little part of your application; our code coverage was at 41% when we started and it was enough to help us uncover a huge amount of issues and deprecations with helpful messages when running Rspec.
+
+ 
+	
+So, we were locked away with everything we needed; my machine hooked up to the meeting room TV, plenty of snacks and drinks, and messages sent to loved ones letting them know not to expect us home for dinner. What now?
+
+ 
+	
+Change the version on your Rails gem, run bundle install, and pray for mercy to whatever god you believe in.
+
+ 
+
+Problems That Took Us Off the Rails
+
+ 
+
+Really sorry about that pun. We decided to go all the way to 4.2.10 as that was the last 4.2 release before 5.0 in order to make the subsequent upgrade easier. We changed the version of our Rails gem and ran bundle install knowing that we would run into dependency issues just like we had in the past. We started the process by trying to resolve dependencies one at a time but after about an hour and a half struggling with circular dependencies I had the idea to comment out every gem except the Rails gem, run bundle install, and then uncomment one or two gems at a time running bundle install each time and dealing with individual dependency issues. I honestly didn’t think it would work, and I don’t know if it is something that others should try, but for us it really simplified the process and allowed us to go step by step, as well as provided us an opportunity to review individual gems and have discussions about whether or not they should be removed, updated, or left alone.
+
+ 
+	
+If you are on a project with a lot of gems, getting bundle install to run is going to be one of your biggest challenges. Hopefully the one or two gems at a time method works for anyone reading this article because it was a huge time saver for us. Gem dependencies were what stopped both Steve and me from making progress on our own doing the Rails upgrade. 
+
+ 
+
+“Regression in staging will absolutely find things not covered by your test suite or smoke tests.”
+
+ 
+
+Many of the issues we ran into were either gem dependencies or deprecation warnings. We decided to take care of all deprecation warnings, immediate or otherwise, to smooth out our next Rails upgrade. Here are some of the issues we ran into and took notes on (in no particular order):
+
+ 
+
+
+Factory_girl gem needed to be upgraded with Rails. There was a name change in this gem, so to go to the version we wanted, we had to change the name in our gemfile to factory_bot_rails, as well as do a code replacement anywhere that had FactoryGirl to FactoryBot.
+factory_bot/factory_girl changed the keyword ‘ignore’ to ‘transient’ was a deprecation warning and quick code replacement.
+Railsdiff.org shows you the difference between a new rails project on any selected version to another. This is very handy to point out all files that may have changed so you can review them and see if they have any affect on your project.
+There are some errors that you will get when running bundle install or when trying to run your test suite that will be very straightforward and helpful, like this one:
+Failure/Error: <%= javascript_include_tag "secret_question" %>
+ActionView::Template::Error:
+    Asset was not declared to be precompiled in production.
+    Add `Rails.application.config.assets.precompile += %w( secret_question.js )` to 
+     `config/initializers/assets.rb` and restart your server
+There were a few places in the project where we had monetized attr_accessors and never had an issue. Due to dependency issues we had to upgrade our money and money_rails gems which caused the issue. It took a long time to find out that this was what was breaking some of our Rspecs, but once we did, Steve pointed out that we could just write our own getter and setter methods for these. Our only other option was to modify a lot of lines of code that all involve purchasing, not something that we want to do in conjunction with a major upgrade.
+For model validations, validate changed to validates for single attributes.
+One frustrating thing was ‘serve_static_assets’ changed to ‘serve_static_files’. Had to go back and forth from the error several times and do some searching until we realized the simple name change. Discovered from review of railsdiff.org
+One of the few minor code changes we had to make again related to the money gem. Before the upgrade we had an array that looked something like this: [money object, float/number].min and because of a change with money object handling, .min no longer functioned properly on this array. It was a small workaround, but it took a good amount of time to hone in on this issue.
+We had an error related to SQL Server 2000, but we talked to our client and it was no longer supported so we removed the related code by deleting the unneeded file.
+serialized_attributes scheduled to be deprecated in Rails 5.0 so we chose to move our paper_trail gem from 3.0.5 to 4.2.0 to address the issue.
+FullSanitizer method was deprecated. In order to fix these we needed to install the rails-html-sanitizer gem. Installing new gems is not ideal but this was the accepted fix in our research. I believe this also fixed a deprecation of timestamps in our migrations.
+It was recommended in order to address many of the deprecation warnings in Rspecs, to install and run the rubocop gem. RuboCop is a Ruby static code analyzer and code formatter that helped us from having to dig through every Rspec to make changes.
+Below are a few specific deprecation warnings:
+
+
+ DEPRECATION WARNING: Passing a nested array to Active Record finder methods is deprecated and 
+ will be removed. Flatten your array before using it for 'IN' conditions. 
+ (called from file_name at /file_path/file_name.rb:502)
+
+ DEPRECATION WARNING: You attempted to assign a value which is not explicitly `true` or `false` 
+ (#) to a boolean column. Currently this value casts to 
+ `false`. This will change to match Rubys semantics, and will cast to `true` in Rails 5. If you 
+ would like to maintain the current behavior, you should explicitly handle the values you would 
+ like cast to `false`. (called from block (3 levels) in  at 
+ /file_path/file_name_spec.rb:461)
+
+ DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `exists?`. Please pass 
+ the id of the object by calling `.id`. (called from block (2 levels) in  at 
+ /file_path/file_name_spec.rb:26)
+
+
+
+
+ 
+
+In total, we had 14 gems added, removed or upgraded. After making all of these changes, smoke testing our app, and running Rspecs locally, we pushed our branch to staging to see if it passed our continuous integration automated tests. This cropped up a few more minor issues which we were able to quickly fix. After, we made a pull request to our master branch. In total we had 335 file changes, 2,500+ lines of code added, and 2,365 lines of code removed. Woah.
+
+ 
+
+We waited until just after a cut to our release branch to merge the branch into master so there was enough time for our QA team to do a full regression test in our staging environment.
+
+  
+
+Everything Works, What Now?
+
+ 
+
+Sorry, but no, everything does NOT work. Regression in staging will absolutely find things not covered by your test suite or smoke tests. Right now I’m working on a ticket that cropped up because, if you remember from above, it was necessary to upgrade to the paper_trail gem in order to avoid an upcoming deprecation in Rails 5. In short, the yaml engine was no longer able to parse some JSON objects which it used to do. Looking up fixes, the answer was simple, change the yamler from ‘psych’ to ‘syck’. Awesome, problem solved! But wait, it didn’t solve the problem…and syck has not been supported since before Ruby 2.0, and we’re on version 2.2.3. There is a partial solution for that problem but more time needs to be spent to find a full solution.
+
+ 
+
+All this goes to say that even after you think it’s perfect, other problems will bubble up. After regression testing in staging, full regression testing should be done in a production mirror like a release or user acceptance testing environment. While you still have to be on the lookout after all of that, you’re finally safe to put everything into production!
+
+ 
+
+Okay, Now Everything Works
+
+ 
+
+So let’s say you’re error free and everything is running great, what do you do? Wash your hands and hope you never have to do an upgrade like this again? That’s crazy! Perhaps that’s how you got here in the first place. You and your team need to already have planned your next upgrade and communicate this priority to project leaders. Getting ahead of things like this is what allows you to work on features confidently. Not only that, often these upgrades bring new functionality that allow you to get more work done faster. One simple feature I enjoy is when you want to run a single Rspec test and not the whole file, just change the ‘it’ to ‘fit’ and it will focus and run only that test - so simple, but such a time saver when you are rerunning tests repeatedly.
+
+ 
+
+How to Make Upgrades Easier
+
+ 
+
+I’ll end with a list of simple things that can make your next upgrade better.
+
+ 
+
+
+Remember all of those deprecation warnings? Well, if you put in the work to clear them out, then your next upgrade will have less issues you have to hunt down, or at least, less immediate deprecation warnings.
+Having a set time where your team can focus solely on the upgrade is invaluable.
+Don’t take this on by yourself! It’s best to get as many people as you can to work on problems.
+Have one person run the upgrade on their machine displayed on a shared screen with others assisting by looking up solutions. This of course depends on the size of the team and project. When GitHub upgraded Rails from 3.2 to 5.2, it wouldn’t really be realistic for that whole team to work off of one machine.
+Snacks. Hanger is a real thing.
+If you get stuck in a cyclical gem dependency loop, approach it a different way. Uncommenting every gem that isn’t the Rails gem may not work for everyone, but don’t just adjust versions again and again. If you have a small grouping of gems that are causing an issue, determine which is most important and get it to the version you want it at, adding the other gems back in at the appropriate version levels.
+Have your team set up quarterly gem reviews, or maybe make team members stewards of certain gems. Gem locking is important, but upgrading gems one at a time as you go can save a lot of headaches during a Rails upgrade.
+Put in place a gem addition request. Some are harmless, but there were some in our project that had been added a long time ago by developers that were no longer part the project that were used to solve one problem. With a discussion or review with the team, they could have been shown a way to do the same thing without adding another gem to the project.
+Research the features that the upgrade will give you. This is really just motivational and can make your mindset more positive looking forward to the new toys you’ll have once you finish.
+
+
+ 
+
+If you’re doing your first upgrade, what’s great is that once you’re done, you have a ton of new experience. Upgrading a project’s framework is a great technical proficiency to check off. While I don’t think future upgrades will be easier just because you’ve done it before, you certainly have an idea of what to expect. For me, I was dreading this upgrade before, and now I’m looking forward to the next time when we go from Rails 4.2.10 to 5.0.
+
+ 
+	
+Thanks for reading and I hope this helped you to gather an idea of how your upgrade might go and remember, when doing a big upgrade, nothing is more valuable than a good attitude!

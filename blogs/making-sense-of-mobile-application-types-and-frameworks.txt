@@ -1,0 +1,313 @@
+Making Sense of Mobile Application Types and Frameworks
+
+
+
+ 
+
+Introduction
+
+ 
+
+The options for building mobile applications have never been more misunderstood than today! I keep hearing things like, “Ionic is cool,” or “React Native is the way to go,” “How about Cordova or Titanium?” and then I ask, “What is that? Is it a framework? A platform? Is it native? Why would I use it other than to be cool?...” and the person’s eyes usually glaze over with confusion. 
+
+ 
+
+So let’s start with with some large classification buckets of mobile application types.
+
+ 
+
+Mobile Application Types
+
+ 
+
+Native - These are compiled native apps that are built in a platform-specific language, for Apple devices typically Objective C or Swift. For Android devices, Java is typically used. These applications are usually available in an ‘app store’ of some sort, but there are also corporate deployment options for most platforms.  
+
+ 
+
+Cross Platform Native (Almost Native) - These are apps that are built using non-native programming languages but make use of native UI constructs and are typically compiled into native code, therefore, they perform more like native apps. Examples of cross platform native frameworks are React Native and Xamarin.
+
+ 
+
+Hybrid - Hybrid apps are apps that get compiled into native apps but are typically written in some other programming language, usually a combination of HTML, CSS, and JavaScript. These apps have a thin container that translates these other programming languages into native instructions. The degree of this translation is a critical point we will cover in this article. Typically these apps use emulated interface components instead of native components so they are slower than native and almost native apps.
+
+ 
+
+HTML5 - These are standard HTML5 apps that are written in such a way as to look good on some or all mobile platforms. There are popular frameworks that make this easier such as Bootstrap. These apps run in a web browser on the device. 
+
+ 
+
+Understanding the reasons for choosing one of these apps is very well summarized in Figure 1 (credit: Salesforce.com).
+
+ 
+
+Figure 1
+
+ 
+
+
+
+ 
+
+As you can see, native apps are fastest and fully capable with a native look and feel, but are targeted at a single platform so usually the most expensive if your target is all platforms. Hybrid apps give up some amount of capability and performance with the goal of supporting more platforms. HTML5 apps give up even more capability but are more compatible and often easier and cheaper to construct.
+
+ 
+
+With both hybrid and HTML5 apps there are frameworks that can be used not just to make the app look nice, but to give it a ‘native’ look and feel.
+
+ 
+
+We here at Solution Street typically build software that our customers want to run on as many platforms as possible for the lowest total cost of ownership, so that is the lens we use to evaluate mobile options.
+
+ 
+
+Software Platform Architecture Background
+
+ 
+
+Before we dig into mobile architectures, let’s review the typical software platform architectures used by most software that wants to run on multiple platforms. Below in Figure 2 we can visualize Type A and Type B architectures that are often used.
+
+ 
+
+Figure 2
+
+ 
+
+
+
+ 
+
+In Type A architecture (green), we see a typical server-side MVC architecture where the HTML/CSS/JS view is rendered on the server. Typically, a 'responsive' CSS framework like Bootstrap is used so only one view is needed and the CSS framework takes care of proper rendering across multiple devices. In Type B architecture (blue), the server still makes use of a server-side MVC framework but instead of rendering HTML/CSS/JS it renders JSON and makes use of a client-side JavaScript framework to render the HTML/CSS/JS, typically these client-side frameworks still make use of a CSS framework like Bootstrap.js to handle the responsiveness across devices. See my previous article for a deeper dive on these types of architectures.
+
+ 
+
+Mobile Architectures by Type
+
+ 
+
+With consideration for the basic web architectures just discussed and the mobile application types listed previously, let’s put them together to see the interesting combinations that are good options.
+
+ 
+
+HTML5
+
+  
+
+Starting with the easiest first, we can take our responsive Type A and Type B architectures and use them on most mobile browsers without doing any extra work. If you want to have nice icons on the home screens for your applications and configure some basics, both iOS Safari and Android Chrome have some basic meta tags you can add to your HTML to make these items look nice. Here are guides from Apple and Google for your reference.
+
+ 
+
+Figure 3 has an example of a home screen icon we created for one of our clients called Sharp Details. As you notice, it looks like any other app, but in this case it launches Safari and goes to the URL of our HTML5 application.
+
+ 
+
+Figure 3
+
+ 
+
+
+
+ 
+
+In addition to your application looking okay and being launchable, sometimes it is useful to make your application look like a native app. In this case there are frameworks that can help with this, but generally those frameworks are used for hybrid-type apps, so we will discuss the frameworks in that section.
+
+ 
+
+One misconception developers often have when it comes to HTML5 mobile apps is that they are very limited in what they can do and they make the assumption that they need to immediately go build a hybrid or native app. HTML5 apps can make use of many things from the device including Geolocation, Camera (pictures and roll), Audio and Video, and even save data using local storage.
+
+ 
+
+Hybrid
+
+ 
+
+Some hybrid frameworks can be used by both Type A and Type B architectures. Usually there is a preference, so we will categorize frameworks into the architecture in which they are typically used. Before we dive into the frameworks let’s discuss a little more about hybrid apps. The first thing to remember is hybrid apps can be packaged up and given away or sold on the native device app stores. This is one advantage they have over HTML5 apps. Hybrid apps also have access to some native functions that HTML5 apps may not have access to; the functions and how easy they are to use are typically defined by the framework. Some examples of these functions are access to Bluetooth, USB inputs, FM radio, device contacts and calendar (note HTML5 is improving all the time, so some of these items may already be in the works). One of the problems with hybrid apps is that sometimes they are clunky and slow when trying to emulate the native operating system.
+
+ 
+
+
+Cordova/PhoneGap
+
+
+ 
+
+Cordova is an open source platform for building mobile applications using HTML/CSS/JavaScript and PhoneGap is an HTML5 app platform that allows you to author native applications with web technologies and get access to APIs and app stores. Typically, PhoneGap is the platform most frameworks use to provide a thin native container. PhoneGap works well with either Type A or B architectures.
+
+ 
+
+
+Sencha Touch/Ext JS 6 Modern Toolkit
+
+
+ 
+
+Sencha Touch was one of the early commercial platforms that provides HTML/JS frameworks that allowed you to do native functions as well as emulate native look and feel. Sencha Touch was the mobile/tablet framework while Ext JS was used for traditional browser-based apps. Recently Sencha has released 'Ext JS 6 Modern Toolkit' which allows you to build for web, mobile, and tablet with one framework. We used Sencha Touch a few years ago and it worked well, was easy to use, and the app looked great, but we did have performance issues with cheaper android-based devices that did not have fast processors and/or GPU hardware acceleration support. Modern devices tend to work just fine, but there are still tons of older devices out in the wild. Sencha frameworks can run as HTML5 browser apps, or can be deployed natively using Cordova. Sencha is a Type B architecture model.
+
+
+ 
+
+
+jQuery Mobile
+
+
+ 
+
+jQuery Mobile is the old kid on the block, has tons of software in production and a vast suite of Mobile UI look and feel widgets that are supported on many mobile browsers. It continues to have a wide following and a large base of support. jQuery Mobile can be deployed using HTML5 or as a hybrid using Cordova. jQuery Mobile is a Type A architecture model.
+
+ 
+
+
+Ionic
+
+
+ 
+
+Ionic is a newer framework that is based on AngularJS, but is focused on providing emulated native look and feel for cross platform solutions. Developers that are used to Angular feel at home on Ionic and it is one of the newest 'cool kids' on the block. Ionic is deployed as a hybrid app using Cordova. One of the big criticisms of hybrid apps is performance; Ionic has been performance focused from the start, so the perception so far is that Ionic apps generally perform better than most hybrid apps. One downside of Ionic is that even though it is AngularJS based, if you have an AngularJS app for your web app, you need to build a separate app for your Ionic hybrid app which can lead to additional costs and code duplication. Ionic uses a Type B architectural model with Ionic being an additional client. 
+
+ 
+
+
+Onsen UI
+
+
+ 
+
+Onsen UI came about around the same time as Ionic. Its claim to fame is that it works well with all the popular JS UI frameworks like Angular, Angular2, React, and Meteor. It also works on its own without any framework. It claims to have high performance like Ionic along with native emulation. Onsen UI is also deployed as hybrid using Cordova. Like Ionic, Onsen UI requires a separate app for your hybrid app vs. your traditional browser web app. We don’t have much experience with Onsen UI, so we can’t speak to the implementation realities. Onsen UI uses a Type B architectural model with Onsen UI being an additional client.
+
+ 
+
+Hybrid Summary
+
+ 
+
+There are dozens of other hybrid frameworks and platforms in the market. We picked what we think are the top few we have seen in use recently and ones that have promise. For a more complete list of top frameworks you can review here.
+
+ 
+
+One metric some folks use to measure popularity is how many questions tagged with that framework are on stack overflow. This is flawed for many reasons; one in particular is it skews older frameworks. But for completeness here are the counts for these frameworks:
+
+ 
+
+ 
+
+
+
+Technology
+Count
+
+
+Cordova
+51,153
+
+
+jQuery Mobile
+22,721
+
+
+Sencha Touch (Touch2)
+8,590
+
+
+Ionic
+4,538
+
+
+Onsen UI (UI2)
+1,118
+
+
+
+
+ 
+
+Cross Platform Native (Almost Native)
+
+ 
+
+There is debate on this category on if it actually exists or not and whether these are just hybrid apps, but at least React Native, Xamarin, and Appcelerator claim not to be ‘hybrid’ frameworks/platforms but to be ‘native apps’. The upside of these app types is they perform closer to native performance, but you can write one app instead of two.
+
+ 
+
+
+React Native
+
+
+ 
+
+React Native is the hot ‘cool kid’ on the block mainly due to the popularity of React.js and the popularity of its backer, Facebook. React Native is also nice in that it shares the paradigm of React.js, so if you know React.js then you pretty much know how to code in React Native. This is similar to the relationship between Ionic and Angular. It also has a similar downside in that you need to build a separate native app, even if you already have a Type B React.js client app for desktop browsers. The advantage of React Native over Ionic is that it claims not to do emulation, but to actually use fundamental building blocks of the native apps. The downside for the early adopters of React Native have been some performance issues with threading and a lack of control of how the React Native app gets translated to native code. Also looming over React.js and React Native is Facebook’s license which has given lawyers heartache for some time now. React Native works with Type B architectures.
+
+ 
+
+
+Xamarin
+
+
+ 
+
+Xamarin is a framework/platform that allows you to write your code in C# and deploy natively to both platforms. It is established and has been used for about five years now and has a usage base of over one million developers. It is a commercial platform which is now owned by Microsoft. One of the key differentiators between Xamarin and React Native is that it gives you somewhat better exposure to the native code with a little more control over how things work. Here is an article that describes one developer's year-long experience using Xamarin.
+
+ 
+
+
+Appcelerator Titanium/Hyperloop
+
+
+ 
+
+Appcelerator frameworks claim to be in the 'cross platform native' category because they render actual native UI elements. So while your development is done in JavaScript, your code is compiled into native code and claims to run at native look and feel and speed. Titanium has the advantage of being the more mature framework compared to newcomers like React Native, so it has a wider, more robust set of native APIs. Appcelerator is a commercial framework, so using it comes with a cost. Here is an article that outlines Appcelerator’s claims to be in the 'almost native' category.
+
+ 
+
+Almost Native Summary
+
+ 
+
+For this category the stack overflow popularity counts are:
+
+ 
+
+
+
+
+Technology
+Count
+
+
+Xamarin
+20,924
+
+
+React Native
+12,079
+
+
+Appcelerator (Titanium)
+9,220
+
+
+
+
+ 
+
+Summary
+
+ 
+
+We have reviewed the four primary mobile application types and outlined the pros and cons of each. We have also discussed typical application architectures and which work best with each type and framework. Lastly, we have reviewed popular frameworks of each type and discussed some pros and cons of each. Key questions to ask yourself are:
+
+ 
+
+
+Do I need a native app at all?
+Can an HTML5 responsive app work for me (this will almost always be the most cost- effective option)?
+	Do I need to be in the ‘app store’?
+	How important is native look and feel and performance?
+	Can the project afford two versions of the app, or even three?
+	What type of architecture is my app, and how does the framework work with it?
+	What type of skills do my developers possess today?
+
+
+ 
+
+Once you answer these questions, you should be able to pick the right option for you! Happy Mobile Coding.
+
+

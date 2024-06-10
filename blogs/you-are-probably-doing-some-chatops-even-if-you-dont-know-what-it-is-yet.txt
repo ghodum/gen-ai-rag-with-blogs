@@ -1,0 +1,60 @@
+You Are Probably Doing Some ChatOps Even If You Don't Know What It Is Yet!
+
+
+
+
+In my last newsletter article I talked about team communication and how having a team communication contract can increase productivity and happiness across the team. One of the communication options for teams that is experiencing significant growth is “chat.” You have probably heard software teams raving about HipChat (now part of Slack) or Slack and said to yourself, “What is the big deal? How is this better than Skype?” The significant growth area seems to be in and around the area of “ChatOps” and how folks are leveraging these tools and others to accomplish ChatOps.
+
+
+So what is ChatOps? According to Atlassian (the maker of Slack):
+
+
+ChatOps is a collaboration model that connects people, tools,                  process, and automation into a transparent workflow.
+
+
+To me, ChatOps is leveraging “bots” to do repetitive tasks while at the same time sharing with a  group or team. 
+
+
+Taking a step back, most of us have been using an integrated source control, ticket management, sprint management and wiki type service for managing software construction for many years. The most popular tool is Jira, but we also use Unfuddle and Team Foundation Server (TFS) for our projects. The beauty of these tools is that you can manage, link and integrate all the work products that are part of software construction together easily and effectively. For example, Katie can create a ticket for a change to our timesheet system, she can describe the change she wants, attach files (Figure A), and then converse with and provide feedback to the developer, Olga (Figure C). Olga can associate her code changes to this ticket (Figure B).
+
+
+See Figures A, B, and C below.
+
+
+
+
+
+In addition, while looking at any code in the system, I can figure out why the code is there and who created or modified it. So if I was looking at the timesheets_helper.rb file and wanted to know why this date code was here, I can see that Olga made the change on June 11th. I can click on the change and it will take me back to the ticket that Katie requested and know the business owner who wanted the change (see Figure D below).
+
+
+Figure D.
+
+
+
+
+
+
+
+
+Many of these tools have shortcuts that allow these associations. Unfuddle uses “powerful commits” where I can relate a ticket to a commit by using the “#” sign and the ticket number and a description. I can also change the ticket status by using a keyword. When I do a commit to Git this way, it automatically associates the change with the ticket and updates the status. So if Olga puts “#111 RESOLVED change end date to be current period,” this change would be associated with ticket 111 and the ticket marked resolved. 
+
+
+“...[C]hatOps can be used as the next level of automation for software construction.”
+
+
+Now what does this have to do with ChatOps? First, ChatOps can be used as the next level of automation for software construction. I could use ChatOps to automatically notify the other developers on my team (via a chat group and some automation) of important events. In the example above, if I was on the QA team with Olga, it would be nice to see when Olga resolves a ticket. To do this, we could automate a message to our group chat on resolve of tickets. In this case, for instance, we would get a chat message stating, “Olga resolved ticket 111.” 
+
+
+Second, ChatOps is useful for an issue we often have with managing tickets whereby side conversations that happen over other mediums like email and chat are not chronicled into the ticket summary or comments. ChatOps can solve this problem by automatically adding comments to tickets when tagging is used. So I could be in a chat and say, “Hey Olga, I noticed you changed the default end date for ticket #111. Do you think this could be a problem on the last day of the month?” She could respond saying, “I already thought of that corner case.” With ChatOps we could have this conversation automatically added to ticket 111. 
+
+
+The scenarios I described above are just scratching the surface of how ChatOps can be used to automate things in a team setting. Other popular things we have seen folks do are notifications related to the CI/CD process; for example, “Joel, your commit ZYZ broke unit tests 1,2,3 and the build has failed, please fix as soon as possible.”
+
+
+Atlassian has written an article on the levels of ChatOps teams can use. A brief survey of teams at Solution Street had most teams using some level of ChatOps, with most at level 1, but some teams as high as levels 3 and 4.
+
+
+I hope this gives you a sound understanding of what ChatOps is all about and how it can be used to improve the communication and flow of your team tasks!
+
+
+

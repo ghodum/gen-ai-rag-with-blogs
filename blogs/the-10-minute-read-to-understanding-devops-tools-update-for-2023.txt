@@ -1,0 +1,191 @@
+The 10-Minute Read to Understanding DevOps Tools - Update for 2023
+
+
+
+
+Update for 2023
+
+
+Hey everyone, this is by far my most read article, and given the changing landscape of DevOps tools, I thought nearly three years later and heading into 2023 it was worth a refresh! For those of you who read the original article, I have updated it with a few small changes to my categorization of tools list since last time and added new key players to most of those categories (along with a few I missed the first time). There are so many test tools across all the various tech stacks and DevOps stacks, that I can't possibly put them all in here, but this time I tried to add some tools used in different worlds (JavaScript, Kubernetes, Java, front end, etc). Before getting to the updated article, here is a summary of some key trends we have seen across our 30+ projects and from our friends at Rhythmic Technologies in the industry.
+
+
+
+We have seen an explosion of tools around microservices, particularly in the Kubernetes space. Tools like Envoy provide layer 7 proxy, and Istio and Linkerd provide layer 7 service mesh. At this point I consider these tools more purely operational tools, so I have excluded them from my list, but this may change on the next update! 
+
+
+For well-run shops we have seen a lot of “less is more” lately. A lot of simpler pipelines, smaller test suites, less stages, less environments. A lot more Docker. Not necessarily a unified approach to Docker, but more of it!
+
+
+For mismanaged shops we have seen a significant growth of complexity, mostly around microservices; instead of DevOps being used to reduce and manage cloud spend, it seems to have the opposite effect in these shops.
+
+
+Simplified CI/CD approaches are on the rise, more GitHub actions and Bitbucket pipelines.
+
+
+Moving DevOps/IAC code into the repositories they support (yay!)
+
+
+Code coverage for infrastructure as code has gone up dramatically in the last 2 years. Low-level infrastructure (VPCs, related networking, security config, IAM) coverage remains low but it has improved a bunch.
+
+
+
+—------------------------------------------------------------------------------------------
+
+
+Last week a few of my very senior colleagues and myself were remarking about how many new DevOps tools are emerging and how it’s getting harder and harder every day to keep track of them and where they fit into the world. I asked several of them where these tools, Ansible, Terraform, Salt, Chef, Bamboo, CloudFormation, fit in. Why would I use one vs. the other? Are they even the same thing? Am I missing a major player? I got back the same blank stares/questions that I had. So, I thought I would do some research, read, and try to make sense of it for all of us so we could classify products into categories or uses to which we are all familiar.
+
+
+Before we start to talk about DevOps tools and categories, let’s take a step back and discuss a few basic (but often overloaded) terms and what they mean.
+
+
+Computer/Server - A physical device featuring a Central Processing Unit (CPU) and has memory (RAM), local storage (disk) and runs an operating system.
+
+
+Virtual Machine - An emulation of a computer system running on a host computer; typically can be isolated from other operating systems in terms of CPU, memory and disk usage. 
+
+
+
+
+
+Containers - A packaging of software and all its dependencies so that it can run uniformly and consistently on any infrastructure. Docker containers are the most popular. They allow you to package up a bunch of stuff (your software, configurations and other software) for easy deployment and shipping. You can think of containers as the next evolution of virtualization (after Virtual Machines).
+
+
+
+
+
+Network Device - A piece of hardware that routes network traffic between devices. Examples include routers, load balancers, and firewalls.
+
+
+Software - Code that is written and runs on an operating system.
+
+
+DevOps - Traditionally there was “development” (you build it), and there was “operations” (we will run it), and everything in between the two was subject to how a shop worked. Starting around 2010 and achieving near ubiquity around 2018, the DevOps idea is “a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.” 
+
+
+When you think about what goes into building and running a non-trivial system, there is actually a lot that goes into it. Here is a list of the traditional items to consider:
+
+
+
+Obtaining the computer/server hardware 
+
+
+Configuring the computer/server hardware (operating systems, network wiring, etc.)
+
+
+Monitoring the computer/server hardware
+
+
+Obtaining the network devices (load balancers, firewalls, routers, etc.)
+
+
+Configuring the network devices
+
+
+Monitoring the network devices
+
+
+Constructing the software
+
+
+Building the software
+
+
+Testing the software
+
+
+Packaging the software
+
+
+Deploying/releasing the software
+
+
+Monitoring the software
+
+
+
+Before DevOps, we used to have four distinct teams doing this work:
+
+
+
+Developer - they would perform #7, #8 and sometimes #10
+
+
+QA - they would perform #9 and sometimes #11
+
+
+System Administrator - they would do #1, #2, #3, #12
+
+
+Network Administrator - they would do #4, #5, #6
+
+
+
+For the configuring of the hardware, network devices and software, each team likely would use their own set of scripts and tools and, in many cases, would do things manually to make a “software release” happen.
+
+
+With the advent of DevOps, for me the key idea was breaking down these walls and making everyone part of “one” team, bringing consistency to the way all things are configured, deployed and managed.
+
+
+Cloud - Defining the most overloaded term in the history of information technology is tough, but I like the t-shirt that says, “There is no cloud, it's just someone else's computer”. Initially, when the cloud services started they really were just someone else’s computer (or a VM running on their computer), or storage. Over time, they have evolved into this and many, many value added services. The hardware has been mostly abstracted away; you can’t buy a hardware device in most cloud services these days, but you can buy a service provided by the hardware devices. 
+
+
+Infrastructure as Code (IAC) - A new ability or concept that allows us to define a complete setup of all the items in our data center including VMs, containers, and network devices through definition or configuration files. The idea is I can create some configurations and some scripts and run them using one of the tools we are about to discuss and they will automatically provision all of our services in the data center. CI/CD was a precursor to IAC, for years we have been working on automating our build/test/integration/deploy cycle, doing this with our cloud infrastructure was a natural extension to this. This brought about cost reduction, faster time to market, and less risk (of human error).
+
+
+With the advent of IAC many of the traditional development tools could now be used for managing infrastructure. Categories of tools (listed below) like software repositories, build tools, CI/CD, code analyzer, and testing tools that were traditionally used by software developers could now be used by DevOps engineers to build and maintain infrastructure.
+
+
+So now that we have some basic vocabulary defined, let me get back to the task of attempting to categorize DevOps tools in a way that makes it easier for us to determine what can be used for what. 
+
+
+
+Monitoring tools - these tools allow the monitoring of hardware and software. Typically they include watchers that watch processes and log files to ensure the health of systems. Lots of activity around Grafana/Prometheus as a replacement for Nagios. Also, SaaS monitoring platforms have proliferated, even though many are based on Prometheus/ELK under the hood.
+
+
+Containerization and orchestration tools - these tools configure, coordinate and manage computer systems and software. They frequently include “automation” and “workflow” as part of their services. Kubernetes is a very popular orchestration tool that is focused on containers. Terraform is a very popular orchestration tool that is more broadly focused including cloud orchestration. Also, each cloud provider offers tools which include CloudFormation, GCP Deployment Manager, and ARM.
+
+
+Configuration management - configuration management tools and databases typically store all the information about your hardware and software items as well as provide a scripting and/or templating system for automation of common tasks. There seems to be many players in this space. Traditional players were Chef, Puppet and Salt.
+
+
+Deployment tools - these tools help with the deployment of software. Many CI tools are also CD (continuous deployment) tools which assist the deployment of software. Traditionally, in Ruby, the Capistrano tool has been used widely; in Java, Maven is used by many. All of the orchestration tools also support some sort of deployment.
+
+
+Continuous Integration tools - configured so each time you check code into a repository, it builds, deploys and tests the software. This usually improves quality and time to market. The most popular tools in this market are GitHub Actions, CircleCI, or Bitbucket Pipelines, Jenkins, Travis and TeamCity.
+
+
+Testing tools - testing tools are used to manage tests, as well as test automation, including things like performance and load testing. Also, test tools specifically around JavaScript and Kubernetes have exploded into the market.
+
+
+Code analyzer/review tools - these tools look for errors in code, code formatting and quality, and test coverage. These vary from language to language. SonarQube is a popular tool in this space, as well as other “linting” tools.
+
+
+Build tools - some software requires compiling before it can be packaged or used, traditional build tools include Make, Ant, Maven, and MSBuild.
+
+
+Version Control Systems - tools to manage versions of software - Git is the most widely used tool today. There are many cloud hosted options for Git: GitHub, GitLab and Bitbucket and Azure DevOps dominate the market today.
+
+
+
+Of course, like any other set of products, the categories are not necessarily clean. Many tools cross categories and provide features from two or more categories. Below is my attempt to show most of the very popular tools and visualize where they fit in terms of these categories.
+
+
+
+
+
+As you can see, there are several players like Ansible, Terraform and the cloud tools (AWS, GCP and Azure) that are trying to span the deployment, configuration management and orchestration categories with their offerings. The older toolset, Puppet, Chef and SaltStack, are focused on configuration management and automation but have expanded into orchestration and deployment. There are also tools like GitLab, Github, Bitbucket and AzureDevOps that are trying to span nearly every category of DevOps.
+
+
+I hope this overview helps you understand the basics of DevOps, the categories of tools available, and how the various products on the market today help in one or more of these categories. At Solution Street we have used many of these tools over the years, for us there is no single “go to” tool we use in all cases. What is used is based on the technologies being used, where it is being hosted (and where in the future it may) as well as the talents and makeup of the team.
+
+
+Further Reading:
+
+
+https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c
+
+
+https://blog.newrelic.com/engineering/best-cloud-infrastructure-automation-tools/
+
+
+https://aws.amazon.com/devops/what-is-devops/

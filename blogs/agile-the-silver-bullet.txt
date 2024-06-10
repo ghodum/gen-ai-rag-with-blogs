@@ -1,0 +1,67 @@
+Agile - The Silver Bullet
+
+
+
+
+
+“No Silver Bullet” is a widely discussed paper on software engineering written by Turing Award winner Fred Brooks in 1986. This paper argued that there is no single development tool or management technique which can improve efficiency by an order of magnitude. If this is true, since the Agile Manifesto in 2001, why have we had  this mass explosion of new fields, roles, concepts around Agile Software Development? We have Agile Coaches, Agile books, Agile Methodologies, Agile tools, Agile is everywhere. In fact, just a few weeks ago a client hired a new “Scrum Master” (a title which came with Agile), and he promptly told me we were not following the “Agile” methodology. Let’s call this “Commercialized Agile” for the sake of this article. Are we chasing another Silver Bullet with Agile? 
+
+
+ 
+
+
+Let’s take a step back and first define what is “Agile”. As defined by the Agile Manifesto in 2001, Agile is: 
+
+
+ 
+
+Individuals and Interactions  over Processes and Tools 
+Working Software  over Comprehensive Documentation 
+Customer Collaboration  over Contract Negotiation 
+Responding to Change  over Following a Plan 
+
+ 
+
+It is not defined as having war rooms, using sticky notes, having a backlog, doing test driven development, pair programming, using Scrum methodology, having a scrum master, or even using user stories. No, these are all tools which when used at the right time on the right project can make you more productive, but they are not “Agile”.
+
+Last year, one of the authors of the Agile Manifesto, Dave Thomas, wrote an article called Agile Is Dead (Long Live Agility) in which he discusses the difference between being “Agile” and developing software with “Agility”. In Dave’s back to basics section, he says: 
+
+ 
+
+What to do:
+
+
+Find out where you are
+Take a small step towards your goal
+Adjust your understanding based on what you learned
+Repeat
+How to do it:
+
+
+When faced with two or more alternatives that deliver roughly the same value, take the path that makes future change easier.
+
+ 
+
+This is exactly how we build software at Solution Street. Sometimes we end up with a process that looks very close to “Commercialized Agile”, sometimes not so much. What Dave calls Agility,  we call it Agile with a lowercase “A”, or Agile without the religion. 
+
+ 
+
+So now that we have introduced “Commercial Agile” and “Agility”, it is time to get back to our “Silver Bullet” discussion. So, does “Commercial Agile” improve efficiency by an order of magnitude? This is tough to tell as with software it is impossible to conduct a side-by-side experiment to measure. Every software engineer is different, and if they build something once, the 2nd time they will do it better, so you can never exactly compare 2 processes. We can say "no, it is not a silver bullet," but in most cases we have found incremental improvement, or at least incremental satisfaction improvements (which is important) in our 13 years using “Agility”. We have found cases where “Commercialized Agile” can be a disruption and a net negative on some projects. If you follow “Commercialized Agile,” they would never suggest you use any other methodology. 
+
+
+
+ 
+
+What about if all the requirements are defined and documented? In this case, is a thorough design and a more waterfall approach a better option?
+
+ 
+
+One thing we have noticed is some teams use the “Commercialized Agile” approach as a reason not to gather requirements, or not construct a good design. When we use “Agility,” we push to define as much as possible before coding. 
+
+ 
+
+For example, we have a new client that doesn't want to do requirements up front, they just want to get going on coding. They produced a word doc with a bunch of bullet points in it. From this, we thought we could use a “Commercialized Agile” approach and we could build this system in about 10 weeks. This would include a good amount of rework because they didn't really know what they wanted; however, they would get an idea once they saw it.  We felt it would be easier if we could work through wireframes with the customer to hash out their vision. So, we built an entire systems user interfaces in balsamiq in about 2.5 hours. This included 14 major screens and 4 different roles operating on the system. From this, we received lots of good feedback and in another iteration of 30 minutes, we produced wireframes that were very close to the final solution they wanted. This doesn't mean they will not change their mind, nor receive feedback from customers and vendors that will introduce new features and complexities. It just means we fleshed out the basic requirements before we started coding. Now I think we can build the Minimum Viable Product (MVP) of the system in 8 weeks since I know the initial rework will be minimal. In the end, we saved 2 weeks worth of development with a 3 hour investment in requirements. I think the “Commercialized Agile” folks would say I broke process and did too many requirements up front. The “Agility” process says this makes sense, it saves time and money, so let’s do it!
+
+ 
+
+So don't be Agile, but construct software with Agility!

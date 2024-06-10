@@ -1,0 +1,81 @@
+Dipping Your Toe Into Machine Learning
+
+
+Recently I had the pleasure of having a friend’s thirteen-year-old son come to the office at Solution Street to get a better idea of what we do everyday for a class project. He had already learned how to program at some summer camps and in some lessons at school. I started off with my usual explanation of how we build software for other businesses and how typically most applications have a user interface (web or mobile), some server with business logic, and a database. I did stop and pause for a minute because this is my typical explanation, but it seems that more recently there are additional components that many companies are incorporating into their systems. This includes anything from search engines to analytics to the very popular topic of machine learning. 
+
+ 
+
+Nowadays many of our clients are at least asking about machine learning and whether or not it can help solve any of their business complexities. Machine learning has been around for a while, but you usually needed either a more advanced understanding or a more advanced developer to actually implement something worthwhile. As machine learning becomes more widely known and considered, a few questions come to mind. Is machine learning important to mention to a smart thirteen year old because maybe it will become much more ubiquitous when he completes college?  Is it just another overused buzzword now like ‘cloud’ and ‘agile’? Is it real and can it be used today in an easy fashion? To see how it might work with traditional business problems we deal with at Solution Street, I’ve taken a look at Amazon Machine Learning. There are other machine learning services to check out such as Microsoft Azure, but Amazon is the first one I tried.
+
+ 
+
+Machine Learning Primer
+
+ 
+
+First, a brief primer on Amazon Machine Learning.  Machine learning helps with making predictions based on probability - i.e., what is likely to happen.  You use data to help make those predictions.  Machine learning is very different from reporting and other forms of analytics.  Typically, business applications use reporting and analytics with known information. Usually this refers to things that happened in the past. For example, “Which product sold the most last year?”  Machine learning, on the other hand, is related to probability and what is likely to occur based on a history of occurrences, or observations. “How likely is this customer going to buy this product?” You might ask the machine learning engine (or model) for a ‘Yes’ or ‘No’ answer, but it’s based on probability and the “line” you set to determine the answer.
+
+ 
+
+The process of machine learning at Amazon includes:
+
+
+Assembling a Dataset
+Creating a Model Using Training Data
+	Performing Predictions Based on the Model
+
+ 
+
+Assembling a Dataset
+
+ 
+
+To begin, you assemble a dataset containing training data and testing data.  Training data feeds into the formations of an algorithm and testing data is used to measure the level of success of the algorithm. Within the dataset, you identify attributes of the data that you believe will contribute to a better algorithm for the model produced.  In the case of marketing a product to new potential customers, you may look at existing customers and attributes such as gender, zip code, date of purchase, etc. - anything you believe could be associated with the likelihood of customers buying that product. Included in the dataset is what’s referred to as a label (or target as referenced by Amazon Machine Learning).  This is the “answer”.  For this row of the dataset, what was the result? For this customer, did they buy the product? ‘Yes’ or ‘No’.  Now machine learning can use this binary result, or a multi-class result (three or more results such as ‘fish’, ‘steak’, or ‘chicken’), or a numeric value result (as in temperature or price).
+
+ 
+
+Creating a Model Using Training Data
+
+ 
+
+Once you specify the dataset with attributes and a label/target, a model can be created using the training data. Amazon Machine Learning provides histograms including mean, median, and range of data aspects in order to modify and improve on the model. By looking at the graphs you may remove or add more attributes to the model to form a better algorithm. The user is also fundamentally responsible for determining the “line” at which something becomes a ‘Yes’ rather than a ‘No’. For instance, for spam controls, a typical use case for machine learning, there are false negatives (an email that is spam, but is still fed to your inbox) and false positives (an email that is not spam, but is diverted to your spam box).  In these use cases, the former may be acceptable to a point, but the latter is strongly not accepted. Controlling this “line” is very important and tools such as Amazon Machine Learning allow you to control these aspects. Once the model has been created, testing data is used to test it. 
+
+ 
+
+Performing Predictions Based on the Model
+
+ 
+
+After you are comfortable with the model, you can start using the model to make predictions. This can usually be done via batch (file upload) requests or API calls. Both return the label/target (result - i.e., ‘Yes’ or ‘No’) and a score. A score is a number (e.g., 0.71) relative to the score threshold (e.g., 1.0). You can look at the score as a way to determine how sure the model was of a ‘Yes’ or a ‘No’.  The cycle doesn’t end here since you can adjust the model as more data is used. This gives you the ability to refine (and improve) the model.
+
+ 
+
+Business Uses
+
+ 
+
+Now that you have a quick overview of machine learning, how can we use this in our traditional business applications? There are many use cases for machine learning, including document classifications, targeted marketing, risk level prediction, and fraud prediction.  Almost all of the applications we build at Solution Street could easily have a machine learning component. If we take a step back and view the usefulness of most of the current reporting we do in business applications, it’s really one-sided static learning. The user is learning the answer to a predefined question for which the answer doesn’t typically play a role in improvement of the business. Whereas machine learning is a two-way dynamic learning feature. The system is feeding information to the machine learning engine which is dynamically providing predictions which helps the business. 
+
+ 
+
+You can think of many examples in any application that currently uses the user to set values in the application for each customer or account. This may be a system where the user is evaluating a score (High, Medium, or Low or an actual value). Typically these systems provide some level of information that helps the user perform the evaluation.  This clearly can be done using machine learning.  You may have an application where the user performs some aspect of classification on data or the user is asked to associate records in the system. These tasks can also be done with the aid of machine learning. A more concrete example may be a shoe company trying to provide target marketing of their products. This may be on the website or via email. By using existing customer purchase data, product details, and customer locations, the system can determine best customers or potential customers to market products.  We can take this further and look at products that have done poorly vs. products with successful sales. From this information, the company can determine if a new potential product is worth the risk. There are many examples within product-based companies, but examples can be found in consulting companies, government agencies, and many others.
+
+ 
+
+Supplemental Information on Amazon Machine Learning
+
+ 
+
+If you want to get started with machine learning and are looking for example datasets for use in any platform, here is a great website containing a wide range of example datasets.  Here is a link to the Amazon Machine Learning documentation. In following my primer above, Amazon performs these operations by having the user upload a dataset to S3 (data storage at Amazon). This can be done via code or just uploading a simple CSV. You can also use data in Amazon Redshift (data warehouse). From there you can set attributes and a target; using the dataset for both training and testing. Then, a model is created, graphs are displayed, and the user can adjust many of the settings I mentioned earlier. 
+
+ 
+
+There is a low barrier of entry to use Amazon Machine Learning services and it could easily be integrated in your next project.
+
+ 
+
+Summary
+
+ 
+
+Coming back to the young student who came to shadow me, I do certainly think machine learning is and will become more of a significant component in business systems. It seems to be more than a buzzword with some concrete use cases. Being able to make the tools easy for developers and productive for the business is key and Amazon seems to have a good jump on the industry.

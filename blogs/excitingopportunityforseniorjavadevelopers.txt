@@ -1,0 +1,45 @@
+Exciting Opportunity for Senior Java Developers!
+Are you looking for a great opportunity where you can showcase your skills and talents? We are seeking talented Senior Java Developers with 10+ years of experience! We offer consulting services throughout the Northern Virginia and DC area and our Solution Street office is located in Herndon, Virginia. Subcontractors are highly encouraged to apply! This individual should demonstrate the following skills & requirements:
+
+Core Java
+MySQL
+Spring MVC
+Hibernate
+
+Minimum Requirements
+
+10+ years of related working experience
+Strong Java 8 concepts and programming (use of design patterns, etc.)
+Strong knowledge of Hibernate/JPA 2/SQL/data modeling and writing the data access layer
+Design complex data situations and business rules
+Ability to understand how to build a system that processes a lot of transactions and has batch processing and horizontal scaling
+Willing and able to write automated tests
+Strong database skills
+Hands on experience in designing and developing applications using Java EE platforms
+Computer Science or related 4-year degree, may be substituted for 12+ years’ experience
+Successful experiences that involve collaborating well with others in a cross functional, remote team
+High energy, confident, and ambitious individual
+Must consistently perform at the highest levels in a dynamic and fast paced team
+
+Responsibilities
+
+Design, implement and maintain Java application phases.
+Contribute in all phases of the development life cycle.
+Write well designed testable, efficient code.
+Ensure designs are in compliance with specifications.
+Recommend changes to improve established Java application processes.
+Prepare and produce releases of software components.
+Develop application code for Java programs.
+Develop and execute unit test plans.
+Support formal testing and resolve test defects.
+Provide technical support and consultation for Java application and infrastructure questions.
+
+Nice to Have
+
+Ability to do front end development (a more minor part of the application) is desirable but not a requisite
+
+About Solution Street
+Great Engineers + Great Communication = Successful Projects. We enjoy working with cutting edge technologies and providing solutions to complex business problems. Solution Street, based in Northern Virginia’s high-tech corridor, is an information technology consultancy that helps private, government, and non-profit organizations achieve their business goals through the design and rapid deployment of web applications. Solution Street is run by software engineers and our employees are experts in building large, highly scalable and well performing web applications using J2EE, .NET, PHP and Ruby on Rails technologies. Solution Street is a sponsor of NovaJug (Northern Virginia Java Users Group). Please visit http://solutionstreet.com/ for more information about Solution Street.
+What’s In It for You?
+We offer a relaxed, fun, flexible, working environment with competitive salary + bonus + 100% paid health/dental to employee + life insurance + 15 days PTO per year + long-term disability + 401(k). Solution Street automatically contributes to employees’ 401(k) plans. We have a kitchen stocked with plenty of snacks and drinks for the employees to enjoy. In addition, our office is within walking distance to several restaurants and we are located near the W&OD Trail, perfect for biking or running! Check out our Facebook page https://www.facebook.com/solutionstreet for more information regarding our company culture, the charities we support and the fun events we do together!
+If you are a talented software engineer looking for a challenge, please apply now @ http://jobsco.re/1jC4Aeu!

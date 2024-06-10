@@ -1,0 +1,30 @@
+Team Building in Changing Environments
+
+
+
+
+I have spoken with many clients of Solution Street and fellow colleagues at various companies who all have the same question, “How do you maintain your corporate culture when everyone is remote during COVID?” Many in the IT space already had this question prior to COVID as more and more companies were allowing their employees to work remotely, but certainly, COVID solidified remote work as the new normal or at least more typical. 
+
+
+At Solution Street, we addressed this question prior to COVID as more and more clients were accepting of a remote development team. Solution Street has gone through many phases over its 18 years in business. In the beginning, in the early 2000s, most clients preferred (I would say even demanded) that our resources were onsite at the clients’ offices working hand in hand with the clients’ staff. When you have all your resources working at different locations, maintaining some level of constant interaction and providing a consistent semblance of office culture is difficult which proved true for us at Solution Street at the time. A decade later, in the early 2010s, Solution Street had several projects where we were performing the full life-cycle of software design and development, and clients located across the country were very comfortable with our staff working from our office headquarters in Herndon, Virginia; this was ideal to maintain a corporate culture with many of our staff members working from a single location. In more recent years, even before COVID, our staff and projects grew, and we, once again, had the complexity of staff working remotely.
+
+
+I can say that after some experience, we have developed some nice ways of maintaining communication and culture at Solution Street, even with an ever-changing number of employees working remotely. What did we do?
+
+
+“In light of the necessary change to online-only interactions, we thought of new, innovative, and fun ideas to virtually get together.”
+
+
+Overall, we instituted several practices across project-level communication, cross-team communication, and corporate-level communication. Although several of these were going on prior to any remote work, each of these items solidified a close-working company with the backbone of our core values: Honesty, Respect, Transparency, Dependability, and Fun. All of these items were to ensure that every team member felt part of the company even if they were fully remote with little to no in-person interaction with other team members. I will describe these practices below. 
+
+
+For project-level communication, we maintained our ongoing strategy of using one-on-one meetings between employees and managers. The overall purpose of these meetings is to keep an open and regular dialog between the project manager and the employee. The suggested frequency of these virtual or in-person meetings is weekly or bi-weekly. During these discussions, topics may include any issues or problems on current projects, general happiness with the current assignment, and other suggestions related to management/company leadership and maximizing the benefit of the one-on-one meetings. This, of course, allows managers to listen to the concerns of employees at the project and corporate level and employees to voice any issues or suggestions. Besides the one-on-one meetings, quarterly reviews provide another opportunity for interaction, feedback, and career development. 
+
+
+For cross-team communication, we instituted the use of Google Chat/Meet as our mechanism for communication across teams. This has become wildly popular to share technology questions across teams, project successes, and just general goings-on including birthdays and other informal discussions. It is a way to bring a level of informality into our conversations and provides an open way for many groups of employees with similar interests to communicate. For example, using our Tech Talk chat is a great way to share technology questions and advice across projects. We also have a Swap Meet channel to sell or exchange items. Additionally, we have a Women of Solution Street chat which was started by the women in the company and is used to discuss relevant topical issues, in addition to general communication between these employees; this was a great forum for communication when preparing for a recent Meetup conceptualized, planned, and presented by a group of Solution Street women software engineers. 
+
+
+On a corporate level, we knew that the traditional office happy hours or team lunches had to be put on hold during COVID, but we didn’t want to put our company value of “fun” on hold as well simply because we couldn’t interact in person. In light of the necessary change to online-only interactions, we thought of new, innovative, and fun ideas to virtually get together. As a technology company, we used technology to our advantage. We used Google Meet for a variety of virtual events: company-wide trivia, monthly happy hours, scavenger hunt, and one of my favorites - a chocolate tasting where we mailed chocolates to employees to have during a Google Meet session in which a guide discussed the flavor notes of each piece of chocolate. 
+
+
+Team building and communication are key aspects of a healthy, successful company. With changing environments and opportunities for remote work, maintaining team cohesiveness and camaraderie is vital. Although often there is no substitute for getting together, we have been able to maintain a virtual closeness that ensures that every member of the company is connected, has an outlet to express themselves and their goals, while participating in Solution Street’s culture.

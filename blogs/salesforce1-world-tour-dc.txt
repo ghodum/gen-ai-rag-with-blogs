@@ -1,0 +1,78 @@
+Salesforce1 World Tour in DC
+On May 29, 2014, the Salesforce Team visited Washington, D.C. at the Walter E. Washington Convention Center for the Salesforce1 World Tour. The theme was “The Internet of Customers”. Salesforce1 is the Mobile Development Platform of salesforce.com.
+
+ 
+
+A keynote speech by salesforce.com Co-Founder, Parker Harris, along with other speakers explained how mobile applications transform the way companies of all sizes, big or small, connect to customers. There were breakout sessions and live demos of how to create and use mobile apps via  point-and-click.
+
+ 
+
+Inspiring success stories told tales on how Salesforce connects businesses, suppliers, partners, and customers. One of which is the local government of Philadelphia. The Philly 311 Mobile App, powered by Salesforce1, is a real-time civic engagement platform that allows Philadelphians to be community heroes by reporting neighborhood issues straight to the City Government from their smart phones. Another story is that of Stanley Black and Decker, the world's largest tool manufacturer, building a new generation of connected tools to connect their company, their customers, and their products. It's the Internet of Things (IoT) – objects interacting with other objects; the ability to acquire data from almost anything.
+
+ 
+
+And then there's the Cloud Expo that featured 50+ Cloud Partners showcasing their Salesforce-integrated products. Gotta love the freebies!
+
+ 
+
+ 
+
+FREE developer books from the DevZone 
+
+ 
+
+Although it wasn't a developer's workshop, it was nice to know how the applications that we, developers, put hard-work into, impact the lives of the most important aspect of our businesses – the customers. Overall, it was a fun-filled and full of learning experience. Looking forward to more Salesforce events!
+
+ 
+
+Next Salesforce events to watch out for:
+
+Summer '14 Release Developer Preview (Live Webinar – June 12, 2014)
+Dreamforce 2014 (October 13-16, 2014 San Francisco, CA)
+
+ 
+
+ 
+
+Solution Street (www.solutionstreet.com) is a Salesforce Cloud Alliance partner. For over 5 years, Solution Street has helped businesses increase productivity by utilizing Salesforce.  Contact us if you are interested in using Salesforce for your next project.
+ 
+
+Cheers,
+
+ 
+
+Dianne Bungay
+
+ 
+
+ 
+
+ salesforce.com's mascot, SaaSy (Software-as-a-Service) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Salesforce Cloud Expo
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Break Out Sessions

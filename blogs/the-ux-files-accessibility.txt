@@ -1,0 +1,183 @@
+The UX Files: Accessibility
+
+
+
+
+Our topic focuses on a very important principle that helps break critical usability barriers, making software more sensible and inclusive. Yet often it gets overlooked. Sit back as we open the file and unravel the mysteries on: Accessibility.
+
+
+#include <all_users>
+
+
+An accessible user interface provides usability for people who interact with software differently, be it by preference or impairment. There are users that prefer to use keyboard-based navigation because they find it optimal. On the other hand, there are users that, due to certain conditions, find it hard to properly control a pointing device.
+
+
+A key thing to understand is that the term disability does not equate to health conditions, it is the direct result of a mismatched human interaction, or exclusion. A person becomes excluded when they find it difficult to access a point of interaction. Take for instance a stairway without an alternate access ramp or elevator. It excludes (or disables) the portion of the population that cannot effectively walk upstairs.
+
+
+Exclusions can be permanent, temporary, or situational. A person who lost a leg, a person with a leg cast, and a person wearing roller skates are all excluded from using stairways; the only difference is the duration and situation surrounding them. Regardless of their exclusion term, they should still be able to have proper access.
+
+
+
+
+
+It is our responsibility as software developers to know how our user interface designs affect human interaction, and how it excludes them. Here are some relevant accessibility aspects we need to consider when designing inclusive user experiences:
+
+
+Color Usage
+
+
+Color usage in user interfaces enhances the visual appeal and augments context in certain situations. However, we must be cognizant of certain scenarios where relying on colors may backfire, resulting in poor accessibility.
+
+
+Color Vision Deficiency
+
+
+Color usage for conveying context is widely used in computer systems. The most common example is status messaging; where red is used for errors, orange for warnings, and green for success. Unfortunately, not everybody identifies colors in the same way.
+
+
+Color vision deficiency (CVD), mostly known as color blindness, occurs when someone cannot distinguish between certain colors. It affects approximately 1 in 12 men (8%) and 1 in 200 (0.5%) women in the world.
+
+
+Color perception comparison by people with different types of color vision deficiency.
+
+
+To make our UI accessible for people with color vision deficiency:
+
+
+Use descriptive messages and labels. Their context should be understood without the need of color.Use imagery to decorate messages. The use of context recognizable icons will give the end user an immediate idea of what the message is about.Use patterns and textures in conjunction with color, on elements where text is not suitable to convey context. Data points on color graphs, such as pie charts, is a good example.
+
+
+Descriptive content and appropriate imagery enhance the context of the message without relying on color alone.
+
+
+Color blindness simulators allow developers to understand how their UI looks through the eyes of end users with CVD.
+
+
+Contrast Ratio
+
+
+If you’ve ever struggled to read something because the text was too light or the background color was too dark, then you may already have an idea of why contrast is an important aspect of accessibility.
+
+
+Failing to pick the right combination of background and foreground (text) color can make content hard to read even for someone with no vision impairments. How do we know what is a good contrast ratio?
+
+
+The gold standard for testing color contrast is the Web Content Accessibility Guidelines (WCAG) 2.1. Based on WCAG, contrast is a measure of the difference in perceived brightness between two colors. This brightness difference is expressed as a ratio ranging from 1:1 (for white on white, or the least contrast) to 21:1 (for black on white, or the most contrast.) There are 2 relevant success levels:
+
+
+AA - contrast ratio of 4.5:1 for normal text and 3:1 for large text, graphics, and user interface components (such as form input borders).AAA - contrast ratio of 7:1 for normal text and 4.5:1 for large text.
+
+
+Low contrast makes it difficult to read comfortably. The high contrast examples comply with AA and AAA levels.
+
+
+Curious about your contrast ratios? Use the WebAIM Contrast Checker Tool to check your UI theme choices.
+
+
+Screen Readers
+
+
+It is estimated that 20% of people 85 and older suffer from permanent vision loss, and 13% of all persons who are blind are under the age of 40.
+
+
+Blindness, by definition, is substantial, uncorrectable loss of vision in both eyes. This does not always insinuate total darkness, but the vision impairment is significant enough that one cannot function without personal or technological assistance.
+
+
+Blind users can still interact with computer systems with the assistance of screen readers (also known as text-to-speech software.) Screen readers analyze the structure of a page and translate it into plain text. Content is read aloud by a voice synthesizer in a linear fashion, one element at a time.
+
+
+Good HTML structure and hygiene can enhance the screen reader experience. The following recommendations will point you in the right direction:
+
+
+Use an appropriate page title (<title>) to describe the topic or purpose of the page.Use a skip navigation link to allow screen reader users an easy way to skip header navigation links and reach the main content area.Use heading elements (<h1> - <h6>) to organize content. Users can navigate or skim through the document by using heading hotkeys.Use alternate (alt) text on images. Screen readers will read an image’s “alt” content, otherwise they are ignored. Include alternate text only on images that are significant to the content, decorative images can be ignored.Use semantic markup whenever possible. Semantic markup provides meaning to the browser and screen-readers about what your content is about.Use Assistive Rich Internet Applications (ARIA) attributes to supplement HTML elements that are used in a non-standard way, or have no semantic value on their own, and yet provide some level of interactivity.
+
+
+Nothing beats good testing and a well-established quality assurance (QA) workflow; but if you want to experience how a blind person perceives your product: disconnect your pointing device, put on a blindfold, and use your UI with the sole assistance of a screen reader and your keyboard.
+
+
+Navigation
+
+
+No matter how great an application or website concept is, a poorly structured navigation might deprive the world of its greatness. Navigation is the most important aspect of your system as it empowers users to interact with your product.
+
+
+The term “navigation” usually refers to the availability of a header (or sidebar), and strategically placed context menus. This is an incomplete notion; an accessible navigation encompasses more than just links. It must provide users with a sense of direction, transcend preconceived paradigms, and be consistent.
+
+
+Sense of Direction
+
+
+It is customary for applications to contain a persistent main navigation area where users can identify what is available and actionable. At the same time, users should be able to understand how navigation elements relate to each other in a hierarchical sense; all the while keeping track of where they are, how they got there, and how they can go back to where they were.
+
+
+There are several ways of accomplishing this:
+
+
+Use a unique visual style for each navigation level. Font styles, sizes, weights, and/or colors, should all establish the different navigation levels.Use breadcrumbs to orient people. Users don’t always perform a full navigation from the homepage to reach their destination, sometimes they arrive by references or bookmarks. Breadcrumbs serve as an effective visual aid, indicating the location of the user within the website’s hierarchy.Use location indicators. Similar to breadcrumbs, location indicators are slight style changes on navigation elements related to the navigation path.Use the browser’s History API to your advantage. Using the browser’s Back and Forward buttons is natural for most users. If your application updates the UI using JavaScript in a way that feels like a page jump, users will assume that the browser built-in navigation buttons will take them where they expect.
+
+
+Transcendent
+
+
+As we already know, point-and-click is not the only way end users navigate UIs. Navigation should be equally functional and accessible to all types of users and devices (screen readers included).
+
+
+Keyboard-based (or sequential) navigation is performed by using the [Tab] and [Shift+Tab] key combinations to navigate interactive elements with the keyboard. This is not exclusive to impaired users. There are many scenarios where the use of a keyboard is preferred to a pointing device. Data entry personnel use sequential navigation to traverse and fill out forms rapidly, using a pointing device to select form fields is not optimal for them.
+
+
+To provide an intuitive sequential navigation, we need to:
+
+
+Avoid overriding the tab index sequence. Overriding an element’s “tabindex” opens the door for out of sequence, and non-intuitive sequential navigation.Avoid overriding language specific directionality. Languages such as Arabic and Hebrew will automatically be displayed in a Right to Left (RTL) direction. Sequential navigation adapts automatically to the language’s directionality.Handle CSS display order and positioning with care. Sequential navigation is not based on the order in which elements are displayed, but rather on how they are ordered in the (HTML) source. Custom visual element ordering, and positioning can result in an unexpected navigation flow.Use a noticeable focus indicator (often called focus ring). Sequential navigation is tracked by outlining the currently focused element. When the default browser outline style is not suitable for the UI theme, replace it with an equally contrasting visual style (i.e.: make sure it complies with WCAG contrast levels).
+
+
+Subtle style changes on focused elements can easily get lost in a complex UI while performing sequential navigation.
+
+
+Mobile devices like tablets and smartphones are ubiquitous in modern society. It is more than likely that, at some point, our application will be accessed and used through one of these devices. Even when responsiveness is already a part of our design framework, the following tips will greatly enhance navigation on small screens:
+
+
+Use a hamburger button. The hamburger button started out as a mobile friendly feature on responsive user interfaces and has made its way to desktop applications. It is an excellent and recognizable alternative to show or hide extensive navigation structures on limited screen real estate.Avoid relying solely on hover state for revealing navigation and interactive UI elements. Hover state is unintuitive and difficult to trigger on touch screen devices and screen readers. Combine hover state behavior with focus and active states for a richer experience.Use adequately sized and spaced-out touch targets. Make sure that interactive elements are large enough, and have enough space around them, to make them easy to activate without accidentally overlapping other elements.
+
+
+Consistent
+
+
+Consistency guidelines aim to limit the number of ways UI elements and operations are represented, ensuring that users do not have to deal with multiple representations within the same UI or suite of products. With time, consistency cements assumptions about the product, creating a sense of control, familiarity, and reliability. On the other hand, user interfaces that fail to meet consistency guidelines often yield confused and frustrated users.
+
+
+There are several aspects to be considered when designing a consistent user experience:
+
+
+Use consistent language, terminology, and styles. When things mean the same or perform the same operation, they should be represented in the same way throughout the product.Use platform specific standards and guidelines. For instance, avoid forcing an iOS application to look and behave like an Android one, and vice versa.Use well established design patterns. Popular patterns become conventions and most users are already familiar with them. Avoid reinventing the wheel!
+
+
+Consistent terminology, styles, and imagery help represent the same action in different scenarios more effectively.
+
+
+Legal Ramifications
+
+
+Accessibility is not a trivial matter; many countries are doing their due diligence.
+
+
+On July 26, 1990, the US government established the Americans with Disabilities Act (ADA), an equal opportunity law for people with disabilities. ADA covers state and local government website accessibility under its Title II and commercial facilities under its Title III. Even though there’s no explicit mention of websites in ADA’s Title III, on September 25, 2018, the Department of Justice confirmed that websites are indeed covered. It’s no coincidence that commercial website accessibility complaints and lawsuits have been on the rise since 2018.
+
+
+On August 7, 1998, the Rehabilitation Act of 1973 was amended, strengthening section 508 guidelines and requiring accessible federal government electronic and information systems.
+
+
+Europe has also introduced its own measures, including the European Accessibility Act (EAA) on April 17, 2019, and the European standard for digital accessibility (EN 301 549).
+
+
+Conclusion
+
+
+Accessibility cannot be an afterthought, nor should it be considered an extra feature. Next time you are working on a piece of software, ask yourself: Is it accessible to all users? Are we inadvertently excluding a portion of our target audience?
+
+
+Bring it up with your peers, stakeholders, executives, and customers. Make it part of your team’s workflow; a core guiding principle.
+
+
+This article only scratches the surface, now it’s your turn to do your part. Be an accessibility advocate, it’s the right thing to do.

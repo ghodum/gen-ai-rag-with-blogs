@@ -1,0 +1,140 @@
+Introduction to Modern AI 2024 Edition - Part 2
+
+
+
+
+Introduction
+
+
+In Part one of this article we brought you up to speed on the latest terminology and tools around artificial intelligence and machine learning. We also talked about business problems that can be solved using these tools. Finally, we covered several of the popular tools today in this space. In Part two of this article, we will walk through a real-life business problem and make use of ChatGPT with Advanced Data Analysis to help us solve it.
+
+
+A real-life example
+
+
+This is really fun stuff to experiment with. We will walk through a quick demo of using ChatGPT to write code for you and utilize ML. It is an interesting form of ML where you just tell ChatGPT what you want to do and it generates the Python code for you and executes it to create the models.
+
+
+Let's walk through a real-world example: We have a customer that specializes in the catering business and they currently cater many Solution Street events. They also cater a lot of weddings and that's really their bread and butter. I discussed with them some possible uses of machine learning for gaining insights into their data. They wanted to look at historical bid wins and losses to see if they could start to predict which bids they were going to win and possibly focus more on the ones they were more likely to win.
+
+
+Solution Street has created a process around around machine learning projects that that we applied while working on the catering project:
+
+
+
+
+
+Step one is to understand the business problems of the target domain, which in this case is the catering industry, and review their data to identify potential use cases that affect their business that can potentially leverage ML. We picked catering bid wins and losses as the business case with high potential. The next step is to interview the customer and find out all about their data and see if there's any hidden data that the customer thinks is important. 
+
+
+After that we can begin building a model, and then looking at the results, we can feed the results into the customers’ systems. We can sometimes run through this process every hour, sometimes once a day, other times just on demand.
+
+
+While our process may be  similar to others out there, a key differentiator is that we put more emphasis on analyzing the business problem and the customer's data. Some people like to jump right into modeling (self-admission: I did this my first time), and then quickly learn that things can go horribly wrong because you end up modeling on the wrong thing based on the wrong data.
+
+
+I performed the first two steps, talked to the customer, cleaned up the data and put it into a CSV file (which is similar to an Excel spreadsheet). My file now had about 700 records all about wedding bids. I then asked ChatGPT to load this wedding data set: 
+
+
+
+
+
+
+
+
+As you can see here, ChatGPT is very chatty and tells you, "Oh hey look, I found that you have all these columns and this file seems to capture information about wedding events." It figured out what I had here without me even telling it. That is pretty cool, right? 
+
+
+Another cool thing about ChatGPT is there is a little icon you can click on that shows you the code it generates.
+
+
+
+
+
+
+
+
+In this case, this is just Python code that loads the file and shows the first few records.
+
+
+Then I said, “Okay, hey can you please build me a model to predict if future bids are won or lost?” Below is the generated code!
+
+
+
+
+
+
+
+
+I didn't even tell it what kind of model to use, what type of algorithm to use or anything else about the data. Note, you can see it uses scikit-learn which is the first framework or utility that I noted earlier, and the only one used by ChatGPT today.  So, they're just basically writing all the code that I would normally have to write. Also note they are using a Random Forest classifier as the model. It spit out the results of the model:
+
+
+
+
+
+I can now predict with almost 80% accuracy which bids will be won…hmm, that’s actually not so great, right? We will come back to that, but first let’s see which variables were most important in predicting the results:
+
+
+
+
+
+Note that all the cost fields are in the top 5 along with the guest count, which makes a lot of sense!
+
+
+We can also have ChatGPT use the model to predict results of data we come up with:
+
+
+
+
+
+
+
+
+
+
+
+One Interesting thing to note here, ChatGPT fixed my misspelling and also made the prediction.
+
+
+So in my example, it predicts we will not win that bid, so maybe it’s not a bid we should spend a ton of time working on!
+
+
+In addition to modeling, we can also ask ChatGPT all sorts of questions about the data and have it build graphs for you. My customer wanted to know if his win percentage was improving each year, so I asked ChatGPT to graph the win percentage at the top five venues.
+
+
+
+
+
+So it spit this graph out which is nice, but even nicer, I can check the code behind it to make sure it's correct. Many times in my experimenting, ChatGPT has [confidently] given me the wrong answer!
+
+
+Back to our model, I talked to the customer about the confidence level not being the greatest and was wondering if there was additional data we could gather to improve the model. The customer mentioned that lots of the data is not being collected in the database. We found out that much of the data was being collected in a Google sheet! Things like:
+
+
+
+Who was the designated salesperson? (instead of spreadsheet)
+
+
+Keep accurate track of brand used (some records may have been the wrong brand?)
+
+
+Did they meet in person with the customer? (track dates)
+
+
+Did they have a tasting? (track dates)
+
+
+Is venue a “preferred venue”
+
+
+
+So we agreed to enhance the customer's system to make it easier to collect this additional information and to feed the data from the Google sheet into the system. Once this is done, we plan to feed the new data back into the model to see if it can better predict results. Following that, we can enable the model usage from their bid system and show which bids we think will be winners!
+
+
+Summary
+
+
+In Part one of this article, we summarized all the latest terminology around artificial intelligence, machine learning and many examples of them. We also showed typical business problems that can be solved with the latest tools. In Part two, we walked through a real-life example and demonstrated AutoML and how you can generate a model without doing any coding. We also showed how sometimes models can’t predict results with great accuracy. Lastly, we showed how ChatGPT can do other cool things with our data like data analysis and graphing.
+
+
+I hope you enjoyed this article. If you are looking for help in understanding how AI and ML can help your business, drop me a line!

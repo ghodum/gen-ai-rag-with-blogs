@@ -1,0 +1,20 @@
+The Low Cost Provider - Software's hidden landmines
+
+
+
+
+
+ 
+
+Last summer I took a two week vacation to Europe, it was a great time, but when I came home I found my lawn to be completely brown and burnt out from the Virginia Mid-Summer heat. This was not dormant grass, it was completely burnt. So I decided I would get a sprinkler system, so I could keep my lawn in good shape even when I was away or didn't have time to water. Like any good bargain shopper I went out and got 3 quotes from sprinkler providers. There was a huge range in price quotes, the cheapest provider was 5k less than the most expensive provider. In trying to understand what I was getting I asked all the providers what type of equipment they used, how they dug their trenches, types of warranties etc. In the end, I decided to go with the low cost provider because they were just so much of a better deal (or so I thought).
+
+ 
+
+The first signs of trouble were during the install. The ground around my house is very rocky, so as the sprinkler company trenched they found many rocks. Instead of disposing of the rocks, they piled hundreds of them at the back of my lot in the common area (I ended up paying someone to haul them away). Within the first season we saw 2 pipe breaks and several malfunctions. After one of the repair visits I received a bill for the work. I called the office and told them it was under warranty...their reply was the warranty only covered labor, so I had to pay for the parts… they ended up charging me a couple hundred bucks for some pvc tubing that I am pretty sure cost $5. When the sprinkler company installed my system I informed them I had a french drain and they needed to be careful not to cut any of my existing PVC pipes that were in the drain or fed the drain. I even spray painted the areas for them to watch for. This summer I pulled a rock out of the ground and beneath it I saw some broken pvc pipe. So I dug out the ground around it and I found this (see picture). In this picture you see they cut my drain pipe in half while laying a sprinkler pipe. Instead of fixing it, they just buried it. So I am lucky I found this before we had a major rainy season and my downspout pipe backed up and I had a major problem. This time I decided just to fix it myself because the idea of dealing with the sprinkler company again was just too much for me to handle.
+
+ 
+
+On software development projects from time to time we come across competitive situations where we hear of outrageously cheap bids. We believe Solution Street is a very well run Software Development company with low overhead and fair rates and we think we can build any system with high quality at a price competitive with anyone in the world. However, we can't compete on price with companies that take shortcuts, write bad code, don't test their code, and don't follow best practices. Often you the customer can't see the problem until it is too late. Many software issues are like my broken pipe, buried under the ground where you can't see it. So before you go with the low cost provider for your software construction project give us a call!
+
+ 
+

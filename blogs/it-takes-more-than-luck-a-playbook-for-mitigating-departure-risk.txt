@@ -1,0 +1,157 @@
+It Takes More Than Luck - A playbook for mitigating departure risk
+
+
+
+
+Arguably the biggest news of the NFL offseason was the retirement of star quarterback, Andrew Luck, of the Indianapolis Colts.  Luck was a great player but suffered numerous injuries in his career, and decided he no longer wanted to suffer the cycle of injury, pain, rehabilitation and performance that came with a career in professional football.  The Colts organization heard about Luck’s decision just two weeks before the start of the 2019 NFL season.  They needed to adjust.
+
+
+All organizations, at some time or another, need to deal with the departure of a key resource.  Software development projects are no exception.  Of course it is preferable to cultivate an environment where developers want to remain forever, but the reality is that there will be turnover - especially on large and/or long-running projects.  So how can we prepare for the inevitable?  Perhaps an organization that deals with turnover on a regular basis can provide some guidance.  
+
+
+NFL teams need to deal with a multitude of disruptions to their organizational makeup prior to and throughout the season.  Injuries, retirements, trades and contract disputes all require that teams be prepared for unexpected change.  Taking our cue from professional sports, let’s itemize the ways in which a software development team can prepare for resource upheaval.
+
+
+Continually aim for maximum retention 
+
+
+It goes without saying that the best approach is to provide a project environment in which developers want to continue working. Everyone wins when you have a stable, productive and successful project team.  Foster a relationship with developers where they are empowered to be creative.  Learning opportunities are also important as most developers want to continue improving and increasing their skillsets.  In addition, clearly defined roles, processes and procedures help to remove the obstructions in developers’ daily lives.  All of these together should work to minimize the amount of voluntary turnover on projects.
+
+
+However, here at Solution Street, we recognize that even the most successful and smoothest-running projects have turnover.  Developers may leave the project for a number of reasons, including retirement, a change in geography, a perceived better opportunity, or simply more money.  As a consulting firm we also recognize that our consultants often wish to simply branch out to a different one of our projects for a “change of scenery.”  We recommend taking the following steps to mitigate this risk.
+
+
+Identify subject matter experts and backups
+
+
+
+
+
+NFL teams have a “depth chart,” listing all the positions on the team with the players that occupy the first, second, third, etc., slots for that position.  For example, prior to Luck’s announcement, here was the Quarterback depth chart of the Indianapolis Colts:
+
+
+
+PositionFirstSecondThirdCoachQBAndrew LuckJacoby Brissett---------Marcus Brady
+
+
+Pretty clear, right?  The depth chart can even list the position coach, to provide more detail.  And after Luck retired?  Here’s what the QB depth chart looks like today:
+
+
+PositionFirstSecondThirdCoachQBJacoby BrissettBrian Hoyer---------Marcus Brady
+
+
+The Colts moved Jacoby Brissett up to be their starter.  There was no Third string Quarterback on the roster, so they signed Brian Hoyer to be Brissett’s backup.  
+
+
+Similarly, a development project should take the time to document its “depth chart.”  Managers, functional leaders and subject matter experts should get together and brainstorm the major functional parts of the application/project.  List them out, and then determine which developer(s) are knowledgeable in each area - assign a primary and a secondary resource where applicable to establish ownership.  It’s okay to have more than one name for an area; in fact, that’s preferable!  In addition, much like adding the coach to the depth chart, it’s also a good idea to list the functional expert in each area.  This can be very valuable when turnover occurs.
+
+
+Next, look for the holes in the list.  Which areas only have a primary resource and no secondary resource?  Do any areas have no development resources listed?  Uh oh.  Another brainstorming session should fill in the gaps and identify developers with the skills and potential to take on a primary or secondary role in the areas needing a resource.  Work with those developers to get them up to speed on both the functional and technical parts of these areas.
+
+
+And just like coaches may leave a team for various reasons, don’t forget to go through this same exercise for manager, functional leaders, scrum masters, QA team members, etc.  In our experience this is done even less than for developers, yet can be just as disruptive to your project.
+
+
+The end goal is a fully documented and communicated “depth chart.”  If a resource leaves the project it is now clear which developer will take over their responsibilities and "move up" on the list.  Assign a manager on the team to keep your depth chart up to date and your project is well positioned to deal with some resource turnover. 
+
+
+Document processes, procedures and key system components
+
+
+Every NFL team has a playbook, which lists the various offensive and defensive plays that they use in a game.  The team’s rules and regulations are also listed in a document available to each player.
+
+
+Similarly, every software development project should have its processes, procedures and key system components well documented.  This should include, at least:
+
+
+Environment Setup GuideBest Practices (coding) GuideCode Review ProcessCode Review ChecklistStyle Guide (multiple, to cover various system components)Unit/Integration Testing GuideCode Documentation
+
+
+In addition, developers should have a place to ask questions and find the answers to common project development questions.  Often a collaboration tool like Slack fills this need but some teams may find an online Wiki better suits their purpose.
+
+
+The key is to ensure that a new resource to the team can get up to speed quickly and easily and know where to go for answers.  This also helps a developer who is asked to take on a new area either proactively or as a part of another resource leaving the project.  One final tip:  new resources (to the project or to an area) should also be responsible for updating the documentation they use as they review it.  This works especially well for environment setup guides, and ensures the guides are up to date.  As the Boy Scouts would say, “Leave things better than you found them.”
+
+
+Prioritize testing infrastructure and test coverage
+
+
+
+
+
+When a developer first joins a team, or takes over responsibility for a new area of the application, they are often afraid to make any tangible changes to the code, for fear of breaking something.  The best antidote to this line of thinking is a testing suite with good code coverage.  When a developer knows they can make a change, run a set of tests, and have confidence that they did not break anything with their change, they will be much more willing to take on new areas of responsibility.
+
+
+NFL teams practice often, sometimes twice a day when preparing for the season.  In practice they go over everyone’s assignments and, eventually, each player knows exactly where they should be and what they should be doing for each play.  They are the constants when a new player comes aboard.  The new player has confidence that his teammates are where they are supposed to be on each play, and so can quickly come up to speed on his responsibilities.
+
+
+If a resource leaves the project, the new developer assigned to his/her area should have the expectation that their new area of responsibility is well tested.  The code may be immature - it is impossible to predict when in the code construction process a resource may leave - but tests should still exist for what functionality exists.  With tests in place, the new resource will have a much easier time learning the new area and applying bug fixes and new features.
+
+
+Pair programming and code reviews
+
+
+Very often, NFL teams have "position meetings" where every player on the team that plays the same (or similar) position meets with their position coach.  This is a group meeting and together they review game and practice film, go over what is going well and what needs to be improved, and discuss the plans for the upcoming practices and games.  These meetings are meant to get everyone on the same page, and ensure that each player knows the responsibilities of their group.
+
+
+The analog for a software development project is pair programming and the code review process.  Although different teams approach these in different ways (official time-boxed reviews, online/offline pull requests, impromptu) the important thing is that all code that makes it into the system is reviewed by another developer.  Ensuring that the right developers are reviewing each other's code (hint:  see the depth chart) ensures that there is no part of the system with a single point of failure.
+
+
+As with most of the other items on this list, conducting code reviews is a best practice when developing software.  In this case, we provide an avenue for multiple developers to get on the same page with an area of the system and take ownership.
+
+
+Encourage Good 2-Way Communication
+
+
+
+
+
+The above position meetings in the NFL serve another purpose.  They encourage good 2-way communication between the players and their coach(es).  This is crucial to ensure that differences of opinion, performance issues, injuries and even personal difficulties are discussed and addressed.
+
+
+For developers, good communication with leadership is crucial.  Establishing an “open door policy” is a good start.  But a more formal/scheduled set of meetings is probably a good idea.  Here’s a short list:- One-to-One Meetings.  Usually weekly or biweekly, these sessions allow the developer to meet individually with their manager.  Although a formal structure can be established (discuss current work assignments, any impediments encountered) it’s often good to also set aside some time to simply let the employee bring up anything in their life.  There’s a tendency to try and “solve” any issues brought up, and that can be helpful, but it’s just as important to be a good listener.
+
+
+- Career Coaching.  Meeting with a professional career coach can give an employee an impartial observer to help guide them through their various assignments.  A coach can also give the employee the confidence needed to discuss issues or ideas for improvement (both individual and project wide) with their manager.
+
+
+- Regular Performance Review Sessions.  At Solution Street we have quarterly Goals meetings, where each employee meets with their manager to discuss their performance, career trajectory and progress towards their annual goals (technical and consulting).  These meetings also allow the employee to give direct feedback about their project, the company, etc., and  discuss their satisfaction (or lack thereof) with their current assignment.
+
+
+All of the above sessions can often bring to the surface issues that can either be addressed or, at the very least, give a developer’s manager a heads-up that someone may want a change in scenery or may leave the project soon.
+
+
+“For developers, good communication with leadership is crucial.”
+
+
+Carry out knowledge transfer sessions
+
+
+In the NFL, some quarterbacks take on the responsibility of mentoring younger quarterbacks (Alex Smith) while some do not believe that is part of their job responsibilities (Brett Favre, Joe Flacco).  Still others may even go that “extra mile” and lobby to ownership to have their competition traded (*ahem*, Tom Brady).  The quarterback position may be an outlier, as I believe that in most positions in the NFL, players are quick to assist younger players up to speed.
+
+
+On a software development project this kind of mentorship occurs in two ways.
+
+
+First, as the project is ongoing, resources should be encouraged to “train their replacement.”  Especially as software consultants, it is important for a developer to ensure that they are not the only one with knowledge about areas of a client’s system.  Spreading this knowledge around both satisfies the consultant’s primary mission - to bring the client value for the money they’re spending - and allows for the consultant to (eventually) move on to other areas of the system, or even to a different project.
+
+
+Second, when a resource is leaving the project, knowledge transfer sessions are a good way to ensure that a clear delineation of responsibilities is established.  The exiting resource and their manager should get together and brainstorm the areas of the system in which the resource has some proprietary knowledge (hopefully minimal, these are usually more detailed parts of the system than are defined in the depth chart).  Next, the appropriate backup resource for each of these areas is identified and meetings are set up.  The meetings act as the official "handover" of responsibilities from the exiting resource to the new one.
+
+
+Maintain good relationships
+
+
+
+
+
+File this under “Don’t burn bridges.”  When a developer chooses to leave a project it’s always a good idea to keep the relationship cordial and professional.  In some cases the resource may be needed to answer an ad hoc question or may even express an interest in returning to the project. Developers often have extensive business networks and it is worthwhile to maintain a solid, professional reputation.
+
+
+
+
+
+Software development projects of any significant size or time horizon are routinely at risk of losing key resources.  We at Solution Street have seen many projects where a (seemingly) invaluable team member - often a part of the client’s development group - has decided to leave the project for another company.  At first, the news is usually met by a fair amount of hand-wringing.  “Oh no, Jane is leaving!  What are we going to do about _____?”  However, if your team follows the steps I’ve outlined above you should be able to mitigate such risk and be well prepared in these cases.
+
+
+For the Indianapolis Colts, Jacoby Brissett took over as their starting quarterback for the beginning of the 2019 season.  The Colts, even without Luck, look to be a strong contender in their division, the AFC South.   Although early in the season, at 3-2 they are tied for first place in their division and are still in the playoff picture.  It will be interesting to see how the rest of the season plays out, and just how well the Colts manage this unforeseen development.

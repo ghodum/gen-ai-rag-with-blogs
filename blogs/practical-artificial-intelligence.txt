@@ -1,0 +1,184 @@
+Practical Artificial Intelligence
+
+
+ 
+
+Introduction
+
+ 
+
+I just finished reading Dan Brown’s new book, Origin. In this book, the hero, Robert Langdon, works with an Artificial Intelligence program named Winston. Winston appears to be remarkably human in that Robert interacts with him via voice in a seamless way. At first blush, Winston is everything we hope Artificial Intelligence to be - easy to work with, highly capable and even has a sense of humor. You will have to read the book yourself to see all the exciting adventures Robert and Winston experience. The purpose of this article is to show where we are going in the domain of Artificial Intelligence and how far we have to go to get there.
+
+ 
+
+Before we dive into Artificial Intelligence (AI), we should take a step back and define AI along with some other buzzwords you hear about today. AI is human intelligence exhibited by machines. Examples of AI include: answering questions, getting suggestions, playing games and driving cars.
+
+ 
+
+Within the AI umbrella, there are a couple of other terms that come up quite often, one being Machine Learning. Machine Learning (ML) is a subset of AI where we use algorithms to parse data, learn from it and then decide to do something. Typically we see ML being used to do things like detect spam and credit card fraud, understand speech and detect faces.
+
+ 
+
+Within the ML field is a subfield called Deep Learning. Deep Learning can be looked at as a technique for implementing ML. Deep Learning is software programs trying to mimic the human brain, the way it learns, inspired by neural science.
+
+ 
+
+
+
+ 
+
+Practical AI Example
+
+ 
+
+Now that we have a good introduction to AI, ML and Deep Learning, the focus of this article will be to dive into a practical use of AI and, while we are at it, explore the state of various tools out there.
+
+ 
+
+For many years, one of the primary uses of AI in business systems has been attempts to semantically understand text. This allows business systems to digest very large amounts of text and try to derive meaning from it, classify it and, in the end, make it indexable from various points of view. For example, perhaps I am a lawyer and I want to find all the court cases in the last five years related to lung cancer caused by asbestos. Traditional systems may have used a tool like regular expressions (searching for keywords in text) to find them. Today we can use AI to understand the key issues, concepts and terms in a document and then classify it. For instance, the document may not contain the term lung cancer, but it may contain other terms like carcinoid and we can connect the dots using AI.
+
+ 
+
+Other areas in which business systems are using AI involve converting speech to text, text to speech and handwriting to text. People now take for granted that they can ask Siri, Alexa or Google things like what is the weather, or to play some music, or even to find their favorite restaurant. On the flip side, people experience severe frustration when they don’t work. For me, asking Siri to call some of my favorite restaurants always fails, leading me to want to throw my phone out the window.
+
+
+
+ 
+
+One of our clients, Jazzercise, has fitness classes in buildings all over the world. Most of the time these buildings have wifi or cellular coverage, so we have been able to provide online systems that allow them to do business. In other cases, some classes are in the basement of the local YMCA that has no coverage of any sort. In these cases, good old “paper” sign in may be the best option for the instructor. In order to get the sign in information back into the system, instructors would need to take a paper sign in form and enter it in manually after the class is over and they have good connectivity again.
+
+ 
+
+Sign in/sign up lists have been around forever, so I thought this would be a great opportunity to test the ability of today's AI by taking a simple task of turning a list, interpreting it and importing it into a system.
+
+ 
+
+Wouldn't it be great if our instructors could snap a quick picture of their sign up list and click an Import button and have all the data entered into the system magically?
+
+ 
+
+To do this, we need to look into a branch of AI called optical character recognition (OCR) and, specifically, a branch of OCR called handwriting recognition. OCR is the process of taking an image and extracting text from it. Many of you may have tried using OCR when scanning a document; some software may ask you if you want to use OCR. Traditionally, the results from doing OCR for your own documents have been very bad; you often end up doing so much editing of the scanned document, you would have wondered if it was faster to type the document in. However, in professional environments where OCR can be controlled, scan quality can be adjusted, documents can be cleaned, and engines can be trained, OCR quality results can be vastly improved.
+
+ 
+
+Handwriting recognition is even harder than traditional OCR of typed text because the computer needs to identify various strokes as letters versus just finding a “typed” character.
+
+ 
+
+For our test, I had several colleagues print some random fake names on a sheet of paper. I then took a picture of this sheet on my phone and tried to process it using some current tools and services.
+
+ 
+
+
+
+ 
+
+In looking for some tools that I could use to do OCR and handwriting recognition, it seems that the most popular open source technology is called Tesseract Open Source OCR Engine. Tesseract was originally developed in 1985 by HP, has since been released open source, and has been developed and supported by several contributors including Google.
+
+ 
+
+The problem I found using Tesseract is that it works best with typed text and doesn't do as well with handwriting recognition. There are ways to train Tesseract to do better handwriting recognition, but it seems that this is not their focus today and it doesn't work well out of the box. The Tesseract FAQ suggests that it will not work very well and to try another tool called the Lipi Toolkit. Unfortunately, that tool is no longer supported; the lab that built it was shut down.
+
+ 
+
+To get a baseline, even though it wasn't recommended, I figured I would try to run my example through Tesseract. Here are the results:
+
+ 
+
+(command: tesseract simple.png -psm 4 outtxt)
+
+1.. AM: (harm;
+
+l. ’E (J 22 a 00k
+
+2‘ wau \\) [HQ
+
+4. KIM TAYLOE
+5. LN] Davis
+
+6‘ Mzﬂé! Ha K
+
+ 
+
+As you can see, the results were not so great for the open source option.
+
+ 
+
+The good news is that there are a couple of low cost options on the commercial front that I found that seem to have better results. The first option I found was Microsoft’s Computer Vision API.
+
+ 
+
+Here are the results using the Microsoft API:
+
+ 
+
+
+
+ 
+
+As you can see, it did pretty well - not perfect, but pretty close. Later we will talk about how to take these results and improve them.
+
+ 
+
+I also found that Google provides a cloud service to do handwriting recognition. Google’s API is called the Cloud Vision API. The results of the Google API calls were:
+
+ 
+
+Img2.jpg -
+1. Amy Thomas
+2. Chelsea Cook
+3. Joel NylunA
+4. KEM TAYLOR
+5. Lori Pais
+16. Wendy flech
+
+ 
+
+Pretty good also, but there were still some problems getting it exactly right.
+
+ 
+
+“AI has come a long way, though we still have a ways to go before our computers can be nearly human; but with the investment today, the future is near.”
+
+ 
+
+Both Google and Microsoft API offer calls that can be done via many different programming languages and they have great documentation on quick starts for each to get going. The cloud APIs can be used for pennies or less per call, so they are very low cost.
+
+ 
+
+Even though these two cloud APIs did a pretty good job, they still had some mistakes. It is very difficult to get an exact result with handwriting recognition even with today’s state-of-the-art tools, but if we have a defined domain of names, we can use a follow-up check to see the closest matched name.
+
+ 
+
+Most programming languages have a Levenshtein distance algorithm built into them. This algorithm can be used to compare how close two strings are to each other. Continuing with our example, Ruby has a built-in method in RubyGems for this. So if I take my results and feed them through a known database of names, I can find out if there is a close match. In this example I feed the “Joel Nylund” result which was “Joel NylunA” through the algorithm:
+
+ 
+
+ld = Class.new.extend(Gem::Text).method(:levenshtein_distance)
+
+my_database = ["Joel Nylund", "Chelsea Cook", "Kim Taylor", "Lori Davis", "Wendy Clark", "Betty Sue", "Barbara Cross"]
+
+my_database.each{|name|
+2.4.0 :019 > puts("comparing #{name} and Joel NylunA result is : " + ld.call(name,"Joel NylunA").to_s)
+2.4.0 :020?> }
+comparing Joel Nylund and Joel NylunA result is : 1
+comparing Chelsea Cook and Joel NylunA result is : 10
+comparing Kim Taylor and Joel NylunA result is : 9
+comparing Lori Davis and Joel NylunA result is : 9
+comparing Wendy Clark and Joel NylunA result is : 10
+comparing Betty Sue and Joel NylunA result is : 9
+comparing Barbara Cross and Joel NylunA result is : 13
+
+ 
+
+As you can see, there was only one name that was even close, so we could be pretty sure that this was the right name that signed in. During the upload of names, we could figure out a good way to flag names we weren't sure of and have the end user do some fixes for those names and import the others directly. Here is a wireframe of one possible way we can show potential matches but let the user make the ultimate decision. We could show the image, along with the scanned name and the name we found that was the closest match. The user could then decide to sign that person in, or choose an alternative name.
+
+ 
+
+
+
+ 
+Summary
+ 
+
+In this article we learned about Artificial Intelligence, Machine Learning and Deep Learning and how they can be used to simulate human intelligence with a computer. We also dug into a practical example of how we could use AI in a real system today and what options are out there for libraries and services to help us accomplish our tasks. AI has come a long way, though we still have a ways to go before our computers can be nearly human; but with the investment today, the future is near. In the meantime, there are still many great things we can do with AI to solve real world problems today.

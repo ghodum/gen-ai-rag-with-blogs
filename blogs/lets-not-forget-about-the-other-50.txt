@@ -1,0 +1,39 @@
+Let's Not Forget About the Other 50%
+
+
+
+
+Software engineers and engineers-in-test tend to focus our efforts on developing the depth and breadth of our technical skills related to our area of expertise. We often get excited about learning a new framework, language, or technology. We focus on getting certifications for various programming languages and services (who doesn't have an AWS certification of some sort at this point?) to prove how great we are at them.
+
+
+On the flip side, we often say that 50% of our job is about how well we work with other people, how well we understand the business problems we are trying to solve, and how well we communicate and negotiate with our stakeholders. 
+
+
+
+
+
+Given this, how much time and effort do we focus on these skills - Analysis, Communications (listening specifically), and Negotiations?
+
+
+The idea for writing about this topic came to me last week. We were hosting our local meetup of the Northern Virginia Software Architecture Round Table (NOVA SART), and our presenter, Steve Albers, was about to give a presentation titled Building Progressive Web Apps. People were rolling in a bit late, so before the main presentation began, Steve asked if he could give a mini presentation on Teddy Roosevelt and the coal strike of 1902. I said, “Of course.” You will have to see Steve present to learn the details of his discussion, but the focus was about how President Roosevelt got folks to talk, brought both sides to the table, pleaded with them to negotiate, and made sure each side had a voice. Steve’s point was that, as software engineers, a big part of what we do is communicate and negotiate.
+
+
+“[W]e often say that 50% of our job is about how well we work with other people, how well we understand the business problems we are trying to solve, and how well we communicate and negotiate with our stakeholders. ”
+
+
+So back to my story. How can we improve on our non-technical skills that are so important to our jobs? 
+
+
+I will break this down into three key areas: Analysis, Communications, and Negotiations. All of these are related, but each has something specific that can help you improve your abilities as a software engineer.
+
+
+Analysis - How often as developers or testers do we get half-baked requirements? How often do we need to figure out what the customer really wants? For me it’s most of the time for most of my career. To be effective at this, the first thing we need to do is understand the business we are in. Although each business domain is unique, there are usually books, online classes, and articles you can read to learn more about a specific industry or domain. When I was first out of school, I worked in the telecommunications industry. I remember in the first few weeks my mind was overwhelmed with all the acronyms (RBOC, CO, ILEC, etc.), so what I did each day was write down any term that I didn't know, and then went home and researched those terms. Back then there was no Google, so it was harder to figure it out, but spending 30 minutes each evening helped me learn the business. The second important thing here is to embrace the analysis part of our job. I have heard often from developers - this requirement is unclear, so I am not going to work on it. However, a better approach to an unclear requirement is to ask probing questions, document discussions, and suggest options. The third and final point here is to document your findings. Our rule at Solution Street is you “have to write it down.” It doesn't matter if you use user stories, wireframes, or crayons, but you have to write it down. Email and chat don't count. It needs to be in the ticketing system!
+
+
+Communications - I have recently written a couple of articles on team communications; first on making sure you have a Team Communication Contract and second on using ChatOps to harness the power of chat. Beyond these areas, I always need to work on listening more and talking less. Lots of times during a conversation we are thinking about what we are going to say next while others are talking, instead of listening to what people are saying, internalizing it, and then taking a pause to compose our thoughts to share them with the team. There are tons of good books on communication. One of my favorites is The Definitive Book of Body Language. There are also great Udemy courses on communication. 
+
+
+Negotiations - How often have you been asked to get more done in a shorter period of time? Your basic options are to just work extra and get it done, or to just say, “No”, it can’t be done.” At Solution Street, we always try to coach our teams to negotiate time, scope, and quality as the three axes of software. Negotiations go beyond the scope of the customer; they also include the team you work on and other teams you work with. When I was just a few years out of school I took a course on principled negotiations and it was a life-changing event for me. Before taking that course, I was usually trying to get what I wanted out of every negotiation. But after that course, I thought of things like win/win, doing unto others, focusing on being principled, and filtering out the “noise.” One of the things our teacher asked us to remember was this formula: P.I.E. = KT/DUO. If you know what it means, send me a message - the first five with the correct answer get a Solution Street t-shirt or water bottle. One of my favorite books on negotiations is Getting to Yes. Udemy also has many negotiations skills classes.
+
+
+I hope this article gives you some ideas of things you can work on. Remember, if 50% of our job is Analysis, Communications, and Negotiations, then we should spend 50% of our time improving these in addition to improving our technical skills!

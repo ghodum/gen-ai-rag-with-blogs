@@ -1,0 +1,87 @@
+The Path Up the Pyramid: Unlocking the Product Manager/Tech Lead Relationship
+
+
+
+
+Introduction:
+
+
+When it comes to software construction projects there are several key roles, and relationships between these roles, that can greatly affect the outcome of the project. In this article, we focus on the relationship between the product manager and the technical lead and the impact it has on quality and timely delivery.
+
+
+The product manager identifies the customer’s needs and the larger business objectives that a product or feature will handle, describes what success looks like for a product, and rallies a team to turn that vision into a reality (according to Atlassian).
+
+
+The technical lead is the software engineer responsible for developing, maintaining, and promoting a project’s or product's technical vision.
+
+
+Some projects use different terminology for these two roles or incorporate them into other roles, but these roles are always part of every project. Let’s explore some combinations of leadership for these two roles.
+
+
+The Four Scenarios:
+
+
+
+
+
+Scenario #1. Strong product manager and passive technical lead - In this scenario, the product manager is very competent in their role and really knows what they want and how they want to get it done. When you pair this product manager with a passive tech lead, the tech lead ends up falling in line with what the product manager wants and just follows their lead. On the surface this can work quite well, there is harmony and stuff is getting done quickly and efficiently. Unfortunately, this can lead to a product that looks really good on the outside but may have some hidden issues below the surface waiting to be exposed (as shown in this image of a building missing some key internals).
+
+
+source: Wikipedia
+
+
+Scenario #2. Passive product manager and strong technical lead - In this scenario, the tech lead is very competent and maybe has some background in product management and feels like they know how to manage both the technical direction as well as the product direction. Pairing them with a passive product manager can lead to an overdeveloped, super secure, super scalable project, that is void of any features the end user actually wants or needs. For example, think of a bank where you need to go through an airlock, metal detector and strip search before you can enter! 
+
+
+Scenario #3. Passive product manager and passive technical lead - When this happens you typically see someone else in the organization step in and become the de facto leader; sometimes from customer service, operations, sales, or even the CFO. None of these are good for the functional or technical health of the platform because this de facto leader likely focuses on the needs of their particular group, to the detriment of others (for example, the Customer Service leader wants all the effort focused on customer service tools for their team and for addressing issues that would lead to support calls). 
+
+
+Scenario #4. Strong product manager and strong technical lead - In this case, you have two strong leaders who both have great ideas, and they also respect each other and know how to collaborate. The best tool we have found in keeping balance and honest collaboration is the technical and product roadmap. See my previous article on how to manage roadmaps. Having roadmaps is a great starting point, but it is also important to have mutual respect. When this is there, the two leaders can push and challenge each other, without the typical negative repercussions such as getting defensive, pointing fingers, and ignoring each other. When the collaboration is strong, you often see very good products that are what the customer wants and are easy to sell, along with strong technical health of the platform that is positioned to grow with the incoming addition of new customers and new feature sets.
+
+
+This table summarizes these scenarios and shows examples of what they look like.
+
+
+Introspection:
+
+
+So you may be saying to yourself at this point, this is great Joel, but how do I get #4? Of course, everyone wants #4, but it just isn't that easy. As a product manager/tech lead, if you find yourself in one of the first three scenarios, the initial piece of advice is to figure out where you are. I suggest starting with the following questions:
+
+
+Do you feel like your (product manager/tech lead) is competent in their job?Do you think they make good decisions?Do you trust them?Do you think they would answer these four questions the same way as you?
+
+
+Thinking about your relationship in terms of a pyramid, where do you think you are based on the answers to the questions above?
+
+
+
+
+
+Understanding: What do you really know about the Tech Lead or Product Manager that you are about to build something with?  Do you know what’s important to them? Do you know how to best communicate with them?  How do they handle stress? Take the time up front to get to know each other.  Spending some time discussing these questions will help establish a solid foundation. 
+
+
+Alignment: Take stock to see if you are heading in the same direction. What are the goals you are trying to reach? Is the product management division under a different organizational structure than the technical/engineering division? Does their placement in the organization create different or conflicting priorities? Good for you to know that now. Even if your organizations aren’t aligned, the individuals can be. Have a conversation about how you want to work together when there are big challenges BEFORE you are in the middle of a dumpster fire. 
+
+
+Trust: Now we’re getting somewhere. If you are in a high-stress job or high-stress moment, trust makes all the difference. Today’s problem may look more like “a product problem” or “an engineering problem” but you are a team, so it really doesn’t matter. What steps can you take to lower the temperature? How can you support your peer through this? How can your teams collaborate to help find a good outcome?  It’s trust that allows you to move past the heat of the stress toward finding solutions. Actually working through a hard problem together typically builds trust.  
+
+
+Partnership: The challenges that tech and product leads face are exciting, hard and rewarding. If you’ve found the path to partnership you may be able to anticipate how the other person thinks or what they may need help with. You’ll start to see what’s important to them or what’s hard about their job. Having built the relationship and done the work, new opportunities to solve harder, more strategic problems will likely show up at your door. And starting from the top of this pyramid, you can both see the road ahead.
+
+
+The truth is you can’t really change the nature of the product manager or tech lead on a project. However, striving to create a better relationship can go a long way toward improving the work life of all those involved on the project. So how do you work your way up the pyramid?
+
+
+Here are a couple of suggestions that can help:
+
+
+If you don’t have a product and technical roadmap, create one! This will help in both understanding and alignment.Do some team-building exercises with the two leads. Get them together out of the heat of the project to get to know each other (two of the product managers that I have had the best working relationships with over my career happen to be two really good friends of mine). This will help start “trust” and over time build a partnership.
+
+
+Conclusion:
+
+
+I hope this investigation of the relationship between the roles of product manager and tech lead has been insightful for you. Figure 1 summarizes the four scenarios we discussed and Figure 2 summarizes the leadership relationship pyramid. We also discussed how you can examine your relationship and take steps to improve it. At Solution Street, we provide consultants for both of these roles, so if you find yourself needing resources or an outside company to evaluate the strengths of your tech lead and product manager, please drop me a note!
+
+
+* This month's article is co-authored with Mimi Jacobs, VP of Product Management at Expel. Joel and Mimi worked together in these roles many years ago while working at Verisign.

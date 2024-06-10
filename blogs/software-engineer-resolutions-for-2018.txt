@@ -1,0 +1,215 @@
+Software Engineer Resolutions for 2018
+
+
+ 
+
+Every new year brings many great articles on technology trends and predictions.  I assume many predictions will be correct and just as many will be incorrect. With so much technology to keep up with, it’s virtually impossible to be all knowledgeable as a software engineer in everything. Nonetheless, as developers we want to know the latest and greatest and the bleeding edge because it’s fun to talk about it. After the smoke clears, however, it’s important to have a strong, solid foothold in commonly-used technology and to have a good understanding of the perceived value of concepts gaining ground.
+
+ 
+
+Here we will take a look at a few articles and take a pragmatic approach to selecting what we choose to do and learn in 2018. The suggestions are mostly based on business application development - Solution Street’s primary focus.
+
+ 
+
+For most software engineers building business applications, as we do at Solution Street, we can divide up architecture into a simplistic, loosely-formed level of component areas:
+
+ 
+
+User Interface
+
+
+Business Logic/Application Server
+
+
+Database
+
+
+Reporting and Analytics
+
+
+Interfaces
+
+
+Testing and Deployment
+
+
+ 
+
+Before we look at each component individually, it’s important to mention that software languages cut across all of these components. So as we begin our discussion on what to learn and where to focus attention, we will begin with languages. Throughout this article I will highlight in bold the concepts/advice/suggestions I feel are most valuable for software engineers to know.  
+
+ 
+
+Languages
+
+ 
+
+First, let’s take a look at the result of a few articles listing top languages in 2017 and 2018. Here are a few you can skim:
+
+ 
+
+Article 1
+Article 2
+Article 3
+Article 4
+
+ 
+
+To summarize across the articles, the top 10 are (arguably in this order):
+
+ 
+
+JavaScript
+SQL
+Java
+C#
+Python
+PHP
+C++
+C
+TypeScript
+Ruby
+
+
+ 
+
+From my perspective and our experience at Solution Street with our clients, this is a sound list.  Sure there are lots of languages not mentioned here that could be argued as “cooler” or just plain “better”, but with our clients these languages account for just about 100% of our current software development work.  Certainly, some of these are moving down the chain like C and C++ (although still used in a variety of legacy business applications and other types of applications) and some are moving up the chain like Python (given its frequent usage in machine learning applications). Overall, a software engineer today should be proficient in at least two of the ten languages listed above (not including SQL which every developer should be proficient in despite the increased usage in NoSQL databases). Also, every software engineer should have a solid understanding of Object Oriented concepts and patterns. I myself have worked in all of the ten languages listed above, but as the years pass I can say, currently, I’m most proficient in JavaScript and Ruby (and of course SQL), but can easily slip into a project with Java, PHP, and TypeScript. If, like me, you are very proficient in at least two and have worked with most/all of the others then you could make a good claim to start reaching into the next set of upcoming languages including Scala and Clojure (which have the benefit of running in the JVM). 
+
+ 
+
+“As software engineers, we should constantly be learning, but we need to be efficient and effective in what we learn.”
+
+ 
+
+Components
+
+ 
+
+We, at Solution Street, emphasize the importance of being able to work in the full stack. Let’s take a look at architectural components individually to see if there are trends, some predictions, and maybe places where you can set your own New Year’s resolution to learn.
+
+ 
+
+User Interface
+ 
+
+We can break down user interface into mobile and web. Of course, there is an expanded view of this with IoT, but let’s simplify for now.  In the UI Web space, JavaScript as a language is king. Certainly, knowledge of traditional server-side rendering frameworks like JSP, ASP, ERB, and the like are important to know and, depending upon the application, may be the only implementation needed on the front end.  If we simplify the discussion across the plethora of JavaScript frameworks for the front end using this article, we can see that, at least today, we are talking mostly about these four:
+
+ 
+
+1.	React - see our prior blog articles: part 1 and part 2; and video
+2.	Angular 1 (legacy) and Angular 2 
+3.	No framework (which I would take as plain JavaScript with or without jQuery) 
+4.	Vue.js 
+ 
+
+In this space there is lots of discussion on the future and what’s to come in the next year, but in a pragmatic sense every software engineer should: be proficient in at least the strong concepts of a front-end framework like React (e.g., shadow DOM, componentization); have an excellent grasp of jQuery (because of its prolific usage in the industry); and have an excellent grasp of traditional server-side MVC implementations (e.g., SprintMVC, DjangoMVC, RailsMVC, .NETMVC). In addition, an excellent knowledge of CSS, Bootstrap, and an understanding of UI concepts such as responsiveness are required. 
+
+ 
+
+In the UI mobile space, there are:
+
+ 
+
+1.	Native apps
+2.	React Native
+3.	Electron 
+4.	PhoneGap/Cordova
+
+ 
+
+There is lots of discussion in this area as well.  I suggest reading some of our previous blog posts on React Native and mobile application types. Personally, I’m a fan of React Native. Every software engineer should understand the differences between building a responsive browser-based application or a downloadable mobile app (e.g., state management, deployment, authentication) if he or she is not building mobile apps on an everyday basis. 
+
+ 
+
+	Business Logic
+ 
+
+At the core of most business systems is business logic. Supporting containers for business logic vary in terms of software language and framework, but understanding separation of concerns is important for every developer. Besides traditional servers for business logic, nowadays we are hearing more about serverless components. Serverless is an important concept to understand, but I will focus on the traditional servers since they currently are used most often.
+
+ 
+
+Without an article to reference on the most-used server technology, I can say that all of our clients are using one of the following for their server logic (in no particular order):
+
+ 
+
+1.	Java/JEE
+2.	C#/.NET or VB/.NET
+3.	Ruby on Rails
+4.	Python/Django - intro video
+5.	JavaScript/Express/Node
+
+ 
+
+Every software engineer should be firmly comfortable in at least two of these server frameworks/stacks and be familiar with all of them in order to choose an architecture appropriately. 
+
+ 
+
+There are reasons to choose each one including performance, scaling, staffing, available tools, experience, available open source or community, etc. 
+
+
+ 
+	Database
+ 
+
+With databases today, the field is wide open with traditional relational databases/SQL, NoSQL databases (e.g., MongoDB - video), graph databases (see here for an intro to graph databases), and technology such as Redis (in-memory databases which can be used as a message broker) and Elasticsearch (or Solr). 
+
+ 
+
+Certainly, a good foothold in database structure and modeling in the relational world remains extremely important and a vast majority of our applications use relational databases because they are still the right choice for many large, complex business applications. Nonetheless, knowledge of NoSQL databases is becoming increasingly important and, included with that, are tools like Redis and Elasticsearch. For a majority of software engineers, an exceptional knowledge of SQL and relational database concepts is still extremely important. Furthermore, knowledge and experience in performance, tuning, and scaling are paramount in business applications using a relational database with large amounts of data. Being able to compare relational databases to NoSQL databases is also a must, and some basic knowledge is required of in-memory databases and Lucene search engines like Elasticsearch as they are very often part of overall architecture today. Here is a good article on database trends.
+
+ 
+	Reporting and Analytics
+ 
+
+As with all other components I have mentioned, there is a plethora to learn here. Having at least a general understanding of tools, such as Tableau - intro video or Pentaho, or other BI (business intelligence) tools, is useful in understanding the overall big picture of business applications. With the increased usage of Elasticsearch, Kibana is becoming more and more frequent in the overall architecture equation. Again, tools come and go, but understanding some usage of these and how these play a role in solving the overall business problem is key.
+
+ 
+
+	Interfaces
+ 
+
+1.	RESTful
+2.	Publish-subscribe
+
+ 
+
+Nowadays most business applications use a RESTful API interface.  Every developer should understand RESTful concepts and implementations inside and out. Publish-subscribe/messaging has been around for many, many years and although implementations may change, the concepts remain and should be learned.
+
+ 
+
+	Testing and Deployment
+ 
+
+Testing is everything.  Understanding testing from all levels including unit, system, and integration is something in which every developer should be knowledgeable. Whether you believe and follow TDD or just follow a disciplined testing approach, the success of the project relies heavily on you and other developers being comfortable and disciplined with testing.
+
+ 
+
+Deployment today is often the job of a software engineer, and with cloud deployments, software engineers should be quite familiar with deploying to the cloud with AWS or Azure.  Understanding technologies such as Docker and Kubernetes is a must now.  In the general software lifecycle process, knowing different methodologies (e.g., Agile vs. Waterfall) and process (e.g., continuous integration, feature requests) is also a must.
+
+
+
+
+ 
+
+Other Topics and Concepts
+
+ 
+
+Of course, after you have a solid foothold based on the paragraphs above, you may want to break out into what everyone is talking about and, most importantly, contrast and compare them to what you already know. Some commonly discussed items today are  cryptocurrency and blockchain. 
+
+ 
+
+For more trends, see here and here. 
+
+ 
+
+Summary
+
+ 
+
+To summarize, you must be pragmatic in what you choose to learn given the vast number of technology choices. At Solution Street, we are pragmatic with our clients in choosing the right technology to solve the business problem. As software engineers, we should constantly be learning, but we need to be efficient and effective in what we learn. I hope you use this article in order to set your 2018 technology learning resolutions.
+
+
+
+
+
+

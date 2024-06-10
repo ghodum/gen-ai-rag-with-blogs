@@ -1,0 +1,36 @@
+Top 10 Articles of All Time
+
+
+
+
+In reflecting on 2021, we decided that our last article of the year should look back at some of our most-read blog articles from the last few years. Some were written a number of years ago, but they remain relevant and many are getting new reads on a regular basis. See below for links to and quick summaries of our most popular articles!
+
+
+#10 - Error, Error … I’m Stuck! - Why do all of our home devices have a female voice? Google Home, Google Nest, Apple’s Siri, iRobot’s Roomba, etc. Sure it’s the default setting and anyone can change it; then again, who does? Turns out, this is not the first time anyone ever asked why devices have a female voice. As a matter of fact, it’s on purpose.
+
+
+#9 - You Really Should Be Using GraphQL - Back in 2012, Facebook was dealing with an issue that many of us software developers who build products with multiple front-ends (web and mobile) must address. How can we build a server component Application Programming Interface (API) that works seamlessly with both mobile and web applications? How can we have the same API calls with the same data response easily handled by web and mobile and be performant? The result of Facebook having difficulty with these questions was the creation of GraphQL by Facebook with a specification, open source code, and a community. GraphQL not only provides a solution for the different requirements of web and mobile, but also the ever increasing need to have a somewhat generic API access to systems.
+
+
+#8 - It’s Getting Better All The Time – Making the Complex Simple Using Async/Await in JavaScript - The famous line from a Beatles song also pertains to the JavaScript language. The JavaScript of years gone past in the late 90s has certainly come a long way from its early adoption. No one could have foreseen its rise to power and usage.
+
+
+#7 - Finding an Old Friend - Recently, while rummaging through storage crates in my basement, I came across a very old cassette tape. The label on the tape intrigued me and I decided to take a closer look and try to resurrect what was on it. I was taken aback at first, seeing my code that I had written on a TRS-80 so many years ago. It brought me back to that time; the time when I began writing programs and the start of my lifelong fascination with software development. I could only describe this discovery as a feeling of finding and reconnecting with a long-lost friend.
+
+
+#6 - MySQL to PostgreSQL Migration - In this oldie but goodie, we are taken through the experience of moving a customer from MySQL to PostgreSQL.
+
+
+#5 - Following Directions - In software development, and in particular, software consulting, following directions is a critical skill that can mean the difference between an extremely happy and satisfied customer and an extremely angry and unhappy customer. 
+
+
+#4 - Secure Application Development 17 Years Later - There are tons of articles, talks, and videos on security, most of them focus on “system” security, where the focus is on locking down networks, operating systems and SAS services. Very little is talked about the “art” of building secure applications and the process of how to do it. Here, I would like to revisit our Java One talk from 2004 and review what we had discussed and see what has changed (if anything) since then.
+
+
+#3 - 5 Key Capabilities the Best Problem Solvers Have - Throughout my career, I have heard people say things like “He has a knack for fixing difficult bugs,” or “She has a knack for getting Ruby to work with OpenSSH.” The definition of “knack” according to the Oxford English Dictionary is “an acquired or natural skill at performing a task.” What we are really talking about here is the skill of “problem solving.” I tend to believe that in our industry it’s almost always an “acquired” skill. If you agree with this, then how and when was it acquired? Why are some of us exponentially better than others at problem solving? How can we become better problem solvers?
+
+
+#2 - Do’s and Don’ts for Software Engineer Job Interview - In my estimation, I have given over 2,500 interviews in my career, the bulk of them for Software Engineer positions. I have been interviewing Software Engineers for over 25 years and in my current role as CEO of Solution Street, I conduct, on average, two interviews a week. Solution Street has been evolving its interview process for over 18 years, and we feel like we offer a pretty robust and fair process. In this article, I will give you the tips you need to put your best foot forward and succeed in your next technical interview. 
+
+
+#1 - The 10-Minute Read to Understanding DevOps Tools - Last week a few of my very senior colleagues and I were remarking about how many new DevOps tools are emerging and how it’s getting harder and harder every day to keep track of them and where they fit into the world. I asked several of them where these tools, Ansible, Terraform, Salt, Chef, Bamboo, CloudFormation, fit in. Why would I use one vs. the other? Are they even the same thing? Am I missing a major player? I got back the same blank stares/questions that I had. So, I thought I would do some research, read, and try to make sense of it for all of us so we could classify products into categories or uses to which we are all familiar.

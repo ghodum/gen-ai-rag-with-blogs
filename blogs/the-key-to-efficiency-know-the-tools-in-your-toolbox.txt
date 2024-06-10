@@ -1,0 +1,74 @@
+The Key to Efficiency: Know the Tools in Your Toolbox
+
+Learn from a Plumber
+
+A few years back all of the toilets in my house were getting old and needed replacing. I had found a brand of very efficient (less water used) and low maintenance toilets that a friend had told me about. So I did what any good tech worker would do; I ordered three of them on Amazon.com. They were delivered and sat in my garage for a couple of months while I worked up the nerve to do the work. I had previously replaced one toilet at another house; the job took me about eight hours total with several major mess-ups, so I knew this was going to be a big job. While talking about my strategy with my buddy, Bill (who is a master plumber), at a soccer game, he offered to come over and “help” me. Knowing how unhandy I am, I jumped at this offer.
+
+Bill showed up in his plumber jumper with his tools organized in a bucket and his hands covered in two layers of latex gloves. He had a wet vac to suck the water out of the back of the toilet (something that normally takes me an hour using a cup to scoop out and then dry with rags). He proceeded to change out three toilets in about three hours while I watched in awe. Every action was precisely done with the right tool. Before he walked into my house he had put the exact number of tools into his bucket that he knew he would need for the job. He even had a special, unique, custom-made tool that was given to him by the master plumber that trained him. This tool lets him be more efficient at his job. The latex gloves protect his hands, and they are double layered so when/if one gets torn or too dirty, he peels it off and keeps going. Bill is an amazingly efficient plumber and watching him work is a thing of beauty to me. There is never any wasted action, everything he does is well thought out and done precisely the best way.
+
+When developers interview with us, first with a phone screen and later with a full technical face-to-face interview, one of the things we ask them to do is solve a simple technical problem by writing some code in front of us. We let them bring their own equipment and favorite tools. One thing we notice right away is whether they are highly efficient like Bill, or if they are floundering around with their selected tools.
+
+As software engineers, our set of tools is our computer, keyboard, mouse, monitor, editor or IDE, compiler, and debugger. Making sure these tools are the right tools for the job and are set up and configured in the best possible way can lead to tremendous productivity gains.
+
+Hardware
+
+When it comes to hardware, everyone is different. Some people like dual monitors, some like one big monitor, and others strongly prefer just using their laptop monitor. The same is true when it comes to keyboards. Some like clicky or curved, others traditional. For mice, some like trackballs or Apple mice, while some like traditional two-button Microsoft mice. The important thing is that you find a setup that works for you and you optimize your productivity to work with this setup.
+
+
+Editor/Integrated Development Environment (IDE)
+
+When it comes to building software, most engineers use either an advanced editor or an Integrated Development Environment (IDE). IDEs include advanced editors. One skill that great developers usually learn early in their career is the ability to use the keyboard to select and manipulate text and navigate. This allows the quick organization of code without taking the time to move your hands off the keyboard and onto the mouse (an action that takes costly seconds).
+
+One of the first things I learned when I became a professional software developer was how to navigate, and select and move text without a mouse. There are hot keys to move to the beginning of a file or line or word, and to select a file or line or word. Most editors follow a standard set of hot keys. They vary slightly by operating system (OSX favors the command button while Windows favors the control key). Here are some of my favorite shortcuts:
+
+Press the home button to go to the beginning of a line
+Hold down the Shift key and use the right arrow to highlight text
+Use the Shift + Alt keys with the arrow to highlight words
+Use the Shift + Control keys and an arrow to highlight the entire line
+
+Using these shortcuts allows me to reorganize my code and do refactoring much faster than if I had to use my mouse.
+
+One advanced feature we use is called block editing. In my favorite editor, TextMate, the option key toggles block editing mode on and off. So if I am manipulating a CSV file and want to remove a column I can use this technique to select a block of text (example in Figure 1).
+
+Figure 1.
+
+
+Another keyboard shortcut that I use every day is the undo/redo edit command. If I accidentally mess something up I can use Command + Z to undo my last action, and I can keep pressing this key sequence to trigger multiple undos. Shift + Command + Z lets me redo something I have undone (if I undo too far).
+
+Another advanced editing feature available in editors like Sublime and Atom is multi-select or multi-cursor feature. With this shortcut you can place your cursor in multiple places in a document and edit them all at the same time. Here is a video showing how this works in Atom and Sublime.
+
+Each editor/IDE has their own unique keyboard shortcuts, some even let you set up your own set of keyboard shortcuts. For example, I do lots of Ruby on Rails programming in TextMate. One of the things I do dozens of times a day is check my Ruby code syntax. I do this by using Control + Shift + V key shortcut.
+
+Most programming languages have a compile, run, check results cycle. For interpreted languages like Ruby, the compile step can be skipped, but a syntax check or linting process can be substituted instead. Since this cycle is executed many times a day, a developer should have keyboard shortcuts for each of these steps to ensure the fastest speed possible.
+
+
+Debugging
+
+When it comes to debugging code, each language platform has different options. Some IDEs include very nice interactive debuggers that allow you to set breakpoints, hover over variables to check their values, and step over or into the code functions. Doing this requires either keyboard shortcuts or mouse clicks. Other environments use command line debuggers, where you have to use keyboard shortcuts to step over and through the code (since the mouse doesn't work on the command line). Lastly, some folks don't have an option for a debugger and/or prefer to put print statements in their code to figure out what has gone wrong. There is a lot of debate from very good engineers about which of these options is the most efficient. One very famous engineer doesn't really like debuggers; Linus Torvalds  outlines his argument here. Other good debates from various developers can be found on this Stackoverflow topic. I think there are some good points from both perspectives; some people use debuggers as an excuse to write sloppy, poorly thought out code, other times debuggers are a great way to walk through and learn how code is working (or not working).
+
+One thing we can say for sure is all developers should have any easy way to compile and execute code. Many languages call this a scratchpad, or a console. On many occasions we have conducted interviews where developers say they know a language, but they have no idea how to create and run a simple program in their favorite language.
+
+Best Practice Tools
+
+There are many tools out there that help us with best practices. Some obvious ones that everyone should use are:
+
+Coding Standards - A tool or library to ensure consistent code across a project
+Linting - A tool or library to ensure proper syntax is being followed on non-compiled languages like HTML and JavaScript
+Test Coverage - A tool to check the percentage of your code covered by your unit and integration tests
+Bug Finding Libraries
+
+Other technology or situation-specific tools may include:
+
+Memory leak checkers
+Performance testers
+Load testers
+
+Knowing when and how to use the best practice tools can make a big difference in the productivity of developers on a project.
+
+Command Line & Regular Expressions
+
+Most systems generate log files and having/knowing the right tools to use to sift through lots of log data can save tons of time. Every Unix system comes with tools like head, tail, find, and grep. You can even get these same or similar tools on most Windows systems. I never forgot one of my excellent senior developers telling me they were amazed they didn't know how to watch a log file in real time using “tail -f logfilename”. I have been doing this for 25+ years and I learn something new all the time. Don't be afraid to try new things or ask “dumb” questions if you feel like you are working slowly. Along with command line tools, regular expressions can be used both at the command line or even in many editors/IDEs to sift through complex bits of data. There are great sites like regex101.com that can help you learn and test out your regular expressions.
+
+Summary
+
+There are many great tools that can make software engineers more productive. Finding which tool works for you and when to use it will make you better. Figure out when you are doing repetitive tasks (sometimes it helps to have someone watch you develop for an hour or two) and see if you are doing them optimally. If you are not, see if there is a tool that can help you improve. While there is no substitute for thinking things through up front, knowing the right tools to use is a key part in efficiently and effectively doing your work!

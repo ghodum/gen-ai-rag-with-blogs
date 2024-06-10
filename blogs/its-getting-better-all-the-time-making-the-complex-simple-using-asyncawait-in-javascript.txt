@@ -1,0 +1,397 @@
+It's Getting Better All The Time - Making the Complex Simple Using Async/Await in JavaScript
+
+
+ 
+
+The famous line from a Beatles song also pertains to the JavaScript language. The JavaScript of years gone past in the late 90s has certainly come a long way from its early adoption. No one could have foreseen its rise to power and usage.  
+
+ 
+
+JavaScript seems to be everywhere nowadays including on the server with Node.js. I’m fascinated with the potential of using one software language on both the client and the server. Clearly, JavaScript has won in every sense of the word on the client in that every popular front-end framework seems to be written in JavaScript. However, asynchronous coding on the client is still often difficult. On the server, here at Solution Street, we haven’t seen as much interest in using Node.js as a server-side enterprise solution compared to the equivalent solutions found in Java, C#, Python, or Ruby. With callback hell and the lack of simplistic sequential processing flow for our “for” loops and “if” statements when making asynchronous calls, JavaScript may be a language not initially considered for complex server implementations or even ones with large quantities of business logic. However, with the support of async/await, I believe that developers are now positioned and better equipped to use JavaScript on the server in larger numbers (and have an easier time on the client as well) that could lead to a spike in server-side JavaScript usage.
+
+ 
+
+In this article, we will walk through examples showing how asynchronous calls can be simplified with the inclusion of async/await. These examples are front-end examples, but the same basic structure would apply on the server. First, before you go any further you must have a basic understanding of callbacks, Promises, and the event loop.  Here is an excellent explanation of callbacks (and more) and Promises, and here is an outstanding video on the event loop.  Once you’re up to speed, let’s move on.
+
+ 
+
+
+
+ 
+
+In general, with asynchronous calls we are typically dealing with file IO, database calls, or APIs. I may read a file and wait for the results. I may select data from the database and wait for the rows to be returned. I may call an external API and wait for the JSON to be returned. With respect to any of these possibilities, whether on the client or on the server, all of these are relatively the same when it comes to asynchronous interaction.  
+
+ 
+
+With async/await, we can return to our more simplistic control flow structures in our code. Now we have the tools to simplify the complex and write less code. 
+
+ 
+
+I’d like to focus on what developers deal with the most in terms of what might be referred to as patterns or just general/typical business logic and flow. Here is a list of six:
+
+ 
+
+
+Performing some basic asynchronous call (again this could be retrieving a list of data from the database or executing some RESTful API call).
+Performing the above (#1) several times in some chained/sequential fashion - for example, first I get a customer record, then I get the list of accounts for that customer, and then I get a list of transactions for each account. Of course in database speak we would use a join on the server, but you can certainly envision cases where these are API calls where you have no control over the underlying details and you must make these three independent calls sequentially.
+Performing the above (#1) several times in some parallel fashion - for example, I can get financial transactions for different sets of accounts at the same time.
+For loops (and if conditions).
+Error handling (validation errors).
+Exception handling (something didn’t go as planned with the call or connection).
+
+
+ 
+
+Before we start with the examples, let’s discuss a few important points about async/await:
+
+ 
+
+
+They look and feel like synchronous calls.
+
+
+They are supported in ES7 (ECMAScript 2017).
+
+
+They are supported in the latest versions of most browsers with the major exception of IE (workaround).
+
+
+They are supported in Node.js.
+
+
+Functions declared as async return a Promise (so you still need to understand Promises, which is a good thing). Await only works with Promises.
+
+
+Await can only be used inside of functions declared as async.
+
+
+They use simplified exception handling with try/catch blocks.
+
+
+ 
+
+Setup
+
+ 
+
+In order to show understandable examples, I created a node server on Heroku that contains some basic tables and RESTful APIs (github project). I did this quickly using loopback.io. You can read my article on LoopBack or see my video on how to do this yourself. I have established a basic parent->child->grandchild database table relationship using Customers, Accounts, and Transactions, respectively. 
+
+ 
+
+Here are the list of Customers; the list of Accounts; and the list of Transactions.
+
+ 
+
+Again, these are running on a node server on Heroku. The purpose of doing this is to have  typical endpoints where we are performing a database operation or similar which is consistent with a typical business application. By using three different endpoints we can display the complexity (and simplicity) of executing them in series and, if needed, in parallel. These examples are from a front-end perspective, but we could have easily showed the server logic performing similar calls or calls to a database.
+
+“With the support of async/await, I believe that developers are now positioned and better equipped to use JavaScript on the server in larger numbers (and have an easier time on the client as well) that could lead to a spike in server-side JavaScript usage.”
+Example 1 - Single Call
+
+ 
+
+First, let’s review a basic Promise example of making an HTTP request to our server (jsfiddle version). I am using a basic and commonly used Promise/await capable library called axios. Here we are calling to our node server to request the Customer with the ID of “1”. The complexity here isn’t bad especially with basic Promise logic of using a “then” clause after the call.
+
+ 
+
+const axios = require("axios");
+const apiURL = 'https://floating-meadow-81947.herokuapp.com/api'
+
+// Get customer record
+function getCustomer(custId) {
+ return axios.get(apiURL + '/Customers/' + custId)
+ .then(response => {
+   console.log(response.data);
+ })
+ .catch(error => {
+   console.log(error);
+ })
+}
+
+getCustomerAsync(1);
+
+
+ 
+
+Now let’s take a look at the async/await example (jsfiddle version). Here we can see the code layout is different with a few obvious variations including: the use of the “async” keyword in the function declaration; the use of the “await” keyword in the asynchronous call to axios; the use of a plain old try/catch block; and then the somewhat obvious code pattern of a typical synchronous call flow (i.e., after the axios call, the flow of control goes to the next line which is a console.log statement).
+
+ 
+
+const axios = require("axios");
+const apiURL = 'https://floating-meadow-81947.herokuapp.com/api'
+
+// Get customer record
+async function getCustomerAsync(custId) {
+ try {
+   const response = await axios.get(apiURL + '/Customers/' + custId);
+   console.log(response.data);
+ } catch (error) {
+   console.error(error);
+ }
+}
+
+getCustomerAsync(1);
+
+ 
+
+Example 2 - Multiple Calls / Sequentially
+
+ 
+
+Now that we have seen an example using the basic structure of an “await” call, let’s proceed into something more complex. Imagine that there are three calls in succession that need to be made. First, retrieve the customer record using an ID, then retrieve that customer’s accounts, then retrieve the financial transactions for one of the accounts. Of course, if the API or database is under your control you would probably make a single call (e.g., join) but for the purposes of this example (e.g., black-box APIs) we will assume these are three separate calls.
+
+ 
+
+First, let’s provide the basic code for our example.  This is a class that contains the methods to retrieve the Customer, Accounts, and Transactions, plus some helper functions [NOTE: Here we are using the Promise-like calls for axios, but as shown above, these calls could be made using the “await” call structure.]:
+
+ 
+
+const axios = require("axios");
+const apiURL = 'https://floating-meadow-81947.herokuapp.com/api'
+
+// Simulation of a fictitious bank
+// Assuming that all of the processing occurs via a database or API
+class SolutionStreetBank {
+
+ // Get customer record
+ getCustomer(custId) {
+   return axios.get(apiURL + '/Customers/' + custId)
+   .then(response => {
+     return response.data;
+   })
+   .catch(error => {
+     console.log(error);
+   })
+ }
+
+ // Get Accounts based on Customer ID
+ getAccounts(custId) {
+   var self = this;
+   return axios.get(apiURL + '/Accounts')
+   .then(response => {
+     // filter array results based on Customer ID
+     return self.filterResults(
+       custId, 'custId', response.data);
+   })
+   .catch(error => {
+     console.log(error);
+   });
+ }
+
+ // Get Transactions based on Account ID
+ getTransactions(accountId) {
+   var self = this;
+   return axios.get(apiURL + '/Transactions')
+   .then(response => {
+     // filter array results based on Account ID
+     return self.filterResults(
+       accountId, 'accountId', response.data);
+   })
+   .catch(error => {
+     console.log(error);
+   });
+ }
+
+ // Helper function to delay to request for demo purposes
+ // if you want to delay a call 2 seconds for example use this
+ // statement prior to a call:
+ //
+ // return this.delay(2000).then(function() {
+ // 
+ delay(time, value) {
+   return new Promise(function(resolve) {
+       setTimeout(resolve.bind(null, value), time)
+   });
+ }
+
+ // Helper function to return subset of array that matches id
+ filterResults(id, idName, array) {
+   let returnArray = []
+   for( var i=0; i
+
+ 
+
+If we were to make use of this class by retrieving a Customer by ID, then their Accounts, then the Transactions for one of the accounts, we might use a function like this using standard callback structures (jsfiddle version):
+
+ 
+
+function getAllDataCallbackStyle() {
+ // Promises but using callback functions
+ let cust, accounts, transactions
+ const bank = new SolutionStreetBank()
+ console.log("getting customer...");
+ bank.getCustomer(1).then(function(response) {
+   cust = response;
+   console.log("getting accounts...");
+   bank.getAccounts(cust.id).then(function(response) {
+     accounts = response
+     console.log("getting transactions...");
+     // to simplify we'll just get transactions based on the first account
+     bank.getTransactions(accounts[0].id).then(function(response) {
+       transactions = response
+       console.log('getAllDataCallbackStyle\n',
+         { cust, accounts, transactions })   
+     })
+   })
+ })
+}
+
+getAllDataCallbackStyle();
+
+
+ 
+
+Overall, on the plus side we have an event flow that we can follow using indented function calls, but on the negative side this gets out of hand quickly (e.g., callback hell). Here is an animated image of the event flow:
+
+ 
+
+
+
+ 
+
+If we were to perform the same set of functions but with standard Promises with chaining we might use a function like this (jsfiddle version):
+
+ 
+function getAllDataChainingPromises() {
+ // Chaining Promises
+ const bank = new SolutionStreetBank()
+ let cust, accounts, transactions
+ console.log("getting customer...");
+ bank.getCustomer(1)
+   .then((response) => {
+     cust = response
+     console.log("getting accounts...");
+     return bank.getAccounts(cust.id)
+   })
+   .then((response) => {
+     accounts = response
+     console.log("getting transactions...");
+     // to simplify we'll just get transactions based on the first account
+     return bank.getTransactions(accounts[0].id)
+   })
+   .then((response) => {
+     transactions = response
+     console.log('getAllDataCallbackStyle\n',
+       { cust, accounts, transactions })   
+   })
+}
+
+getAllDataChainingPromises();
+
+
+ 
+
+Overall, on the positive side we have a more structured set of code, but the event flow is somewhat difficult to follow. Here is an animated image of the event flow:
+
+ 
+
+
+
+ 
+
+If we were to perform the same set of functions using async/await, we might have a function like this (jsfiddle version):
+
+ 
+
+async function getAllDataAsync() {
+ const bank = new SolutionStreetBank()
+ console.log("getting customer...");
+ const cust = await bank.getCustomer(1)
+ console.log("getting accounts...");
+ const accounts = await bank.getAccounts(cust.id)
+ console.log("getting transactions...");
+ // to simplify we'll just get transactions based on the first account
+ const transactions = await bank.getTransactions(accounts[0].id)
+ console.log('getAllDataAsync\n',
+   { cust, accounts, transactions })
+ return; // normally returns a Promise
+}
+
+getAllDataAsync();
+
+
+ 
+
+Now we have a very structured set of code and the event flow is easy to follow. Here is an animated image of the event flow [NOTE: After the first “await” call it jumps to the end to signify the function returning a Promise.]:
+
+ 
+
+
+
+ 
+
+Example 3 - Multiple Calls / Parallel
+
+ 
+
+Let’s say instead of needing the results of a prior API call, we just want to execute several calls in parallel. We know from Promises we can do this with the Promise.all command and this is no different except we now have the ability to use the “await” command to simplify things a bit (jsfiddle version):
+
+ 
+
+async function getTransactionsFromDifferentAccountsInParallel() {
+ const bank = new SolutionStreetBank()
+ console.log("getting customer...");
+ const cust = await bank.getCustomer(1)
+ console.log("getting accounts...");
+ const accounts = await bank.getAccounts(cust.id)
+ const transactionsToBeProcessed =
+   accounts.map(account => bank.getTransactions(account.id))
+ console.log("getting transactions...");
+ const transactions = await Promise.all(transactionsToBeProcessed)
+ console.log('getTransactionsFromDifferentAccountsInParallel\n',
+   JSON.stringify(transactions, null, 2)) // pretty format
+ return; // normally returns a Promise
+}
+
+getTransactionsFromDifferentAccountsInParallel();
+
+ 
+
+Example 4 - For Loops
+
+ 
+
+For me, looping around asynchronous requests was the part that I struggled with the most when using basic callbacks and Promises. I would get lost in my code once I needed to execute a loop or iterator since the control of execution was tougher to follow. With the simplicity of async/await, which has a more traditional synchronous-looking control of execution, a looping mechanism is much easier to implement and requires no additional thought. 
+
+  
+
+Similar to our last example where we used a map, here I’m just using a standard “for loop” to get all of the financial transactions through multiple API calls (jsfiddle version):
+
+ 
+
+async function getTransactionsInALoop() {
+ const bank = new SolutionStreetBank()
+ console.log("getting customer...");
+ const cust = await bank.getCustomer(1)
+ console.log("getting accounts...");
+ const accounts = await bank.getAccounts(cust.id)
+ console.log("getting transactions...");
+ let transactions = [];
+ for(let i=0; i
+
+ 
+
+Of course, besides “for loops” and other iterators, “if” conditions are routine as well.
+
+ 
+
+Example 5 - Error Handling
+
+ 
+
+Again, because we are operating in a typical synchronous-looking pattern, error handling (as in user validation errors) is handled as it would normally be handled in any code.
+
+ 
+
+Example 6 - Exception Handling
+
+ 
+
+Since async/await uses the good old try/catch blocks, many of you who are familiar with typed languages would be familiar with this type of exception handling. In general, any errors in the catch block are unexpected (as compared to basic validation/error handling) and should be handled in the appropriate way based on the await calls being made. Never should the catch block just console.log the error or do nothing. All exceptions should be raised and handled.  Here is a good article on the subject for further reading.
+
+ 
+
+Summary
+
+ 
+
+JavaScript and some of its syntax and implementation are often a bit hard to understand especially around asynchronous calling, but I believe with async/await the JavaScript language IS getting better. With these improvements, the adoption level of using JavaScript on the server should increase in the next few years and its use on the client will continue to be strong.

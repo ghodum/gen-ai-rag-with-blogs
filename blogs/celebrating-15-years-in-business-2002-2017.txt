@@ -1,0 +1,46 @@
+Celebrating 15 Years in Business 2002 - 2017
+
+
+ 
+
+ The More Things Change, The More They Stay The Same
+
+ 
+
+On June 21st, 2017, we at Solution Street celebrated our 15th year in business with a party at our office in Herndon.  It was a humbling event for all of us; seeing how this company which began with only a few employees has grown into something bigger than just developers writing software code. It has become a tight-knit group of people sharing their diverse backgrounds, talents, skills, and personalities, making Solution Street something special and something we are all proud of. 
+
+ 
+
+Reflecting on 15 years begs the question of what exactly has changed during that time in terms of environment, people, business, and the internet.  And what have we at Solution Street done to stay ahead of the curve, or at least, how have we maintained our ability to solve business problems and have a 100% project success rate?
+
+ 
+
+Thinking back to my first job as a systems engineer at a company called AMS (American Management Systems) in the late 80s, I remember one of the senior software engineers who became a mentor of mine always saying, “Bits are bits.”  He was referring to the fact that no matter what problem he was working on or whatever software he was building, in his mind it’s all the same - keep it simple, just solve the problem with known technology solutions.  At that time we were coding COBOL (and some assembly language) on the big IBM mainframes working on large billing systems for telephone companies including lots of data processing, lots of data storage, and lots of user interaction. Of course we were coding in a procedural language and we were fortunate enough to be part of a good software development process that included code reviews and quality assurance teams. 'I cut my teeth' on those large projects back then and really got to understand database modeling in IMS (hierarchical), IDMS (network), and DB2 (relational) databases. Even back then we were using a framework - custom built by AMS - to simplify the development and allow developers to focus on the business logic. We had a strong and large testing team and everything was well documented.  As part of the architecture team I was able to work on some complex problems including performance on the mainframe ('above the line' and 'below the line') and scaling batch processes - modifying a 40-hour batch process to run every night.  I believe we got that down to six hours. All of this was a great learning experience and taught me the fundamentals of what’s important in software development.
+
+ 
+
+
+
+ 
+
+Solution Street started in 2002, in full swing of the dawn of the internet, with Java as the pervasive language along with web technologies such as PHP.  Software was moving more into open source and lots of new frameworks and technologies were appearing every year.  Even in 2002, the complexity of software development seemed to increase dramatically; updating your software with new jars, new releases ever so quickly, and new philosophies on software development (Agile Manifesto came out a year prior), although not at the rate we see now in 2017!  Jump to today and the complexity of software development has multiplied factorially due to the vast number of options, cloud deployments, distributed micro services, etc. There are many choices that businesses, together with developers, must make when it comes to selecting the 'best' technology to implement a system. This can be complicated with all that’s currently available, but as I have learned through experience, the determination of which technology to use should be driven primarily from the specific business problem that needs to be solved and not be based on the latest and greatest software/technology.
+
+ 
+
+Although the relatively recent history of software development and computerized systems pales in comparison to other revolutionary societal/workplace changes, we can glean from history one important tenet: learn from the past and stick with what works. Going back to my project in the 80s, the billing system which I believe is still running for a telecommunications company in Ohio, I had learned what worked from that company called AMS and, in reality, not much is different today. When I talk about what we do here at Solution Street I often mention something that sounds familiar to anyone building applications for business - we are first and foremost trying to solve a business problem. We may use technology to solve it, but you have to look at the business first. How we solve the business problem almost always involves some way to store data, logical processing of data, and some interaction with a user.  In 2017 we are still solving business problems using the same methodologies, just with different technologies.
+
+ 
+
+
+
+ 
+
+Best practices are what make a successful project - following a methodology, consistency, elegant simplicity in code and architecture, code reviews, testing, and not overthinking the problem! If you take your eye off the ball and try to be cutting edge with technology, or attempt to solve a business problem as a technology exercise to benefit your curiosity, you will end up with a proof of concept with little more. Technology and the internet are just tools and may change over time, but tried and true, sound methodologies are the backbone for solving business problems. Sure, we at Solution Street are up on the latest software languages and frameworks (my personal favorite framework/repository name was from a few years ago - 'Sinatra with Mustache') and use them as needed, when it makes sense, but we always remember that it’s the business problem that drives the technology choices and not the other way around.
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+Where To Host?
+
+ 
+When our clients ask me where they should host, I often think of the old IBM marketing term, no one gets fired for buying IBM. I think this is the approach many people use when choosing a hosting provider, but we have found big companies are not always the best option. To implement a great Ecommerce Strategy, it is essential to start at the very basic level where the host and the developers have the significant role to play. Our opinion is that today, there is no “right” answer to hosting, but there are several good options that all have trade offs, and at least one you just shouldn't do anymore!
+
+First, let’s bucket today’s hosting options into 5 major categories:
+
+
+
+
+Big Compute Cloud Providers - These are big companies like Amazon, Google, Microsoft and Rackspace that provide cloud computing platforms usually billed by the hour of usage for the type of resource being used (O/S, database, networking, disk etc). These are sometimes called IaaS providers or Infrastructure as a Service providers. With this type of provider you are buying low level compute resources.
+
+
+
+
+
+
+Application Hosting Providers - These are typically provided by big companies, like Heroku (owned by Salesforce), Azure (owned by Microsoft), AKEA, and Google App Engine (owned by Google), and they host your application without all the complexity of knowing the underlying infrastructure. They typically sell higher level compute units, Heroku calls theirs dynos. These are sometimes called PaaS providers or Platform as a Service providers.
+
+
+
+
+Small/Medium Local Hosting Providers - These companies typically provide an array of hosting services including dedicated hardware, virtual machines, and even cloud type services. They also typically provide white glove type consulting services to help set up, configure and operate your applications.
+
+
+
+
+Colocation/Hosting Providers - These companies typically provide power, networking, and a cage to put your gear in. These used to be the only option for most of us. Most of these providers have pivoted to focus on providing the infrastructure for IaaS and PaaS providers or providing their own.
+
+
+
+
+On premise hosting closet - Many companies have their own server room equipped with a Fujitsu cooling system and sometimes even redundant power. These servers are often used to host mail servers, but even sometimes web servers and other applications.
+
+
+
+Now that we have introduced each category of provider lets jump into each and discuss the pros and cons, and when to use each one.
+Big Compute cloud providers (Iaas) are great at providing on demand resources. On demand resources thrive when you have an application that may need to scale up or down quickly, sometimes even up and down in the same month. Using this type of provider can save costs in this situation. They can also be great low cost options for simple applications, but sometimes setting them up can be a bit tricky, not knowing what to choose with the wide array of a la carte options they provide. Also when an outage happens, you can often be left in the dark trying to get through multiple layers of support to figure out when your services will be restored. Another downside is they can end up being very costly if unexpected load happens since you are billed by usage. Solution Street has deployed and run many applications on these types of providers with success.
+
+Application Hosting providers (PaaS) are great at providing a simple place to run your applications. You don't need to worry about things like patching your operating system, or even what operating system or database to run, this is all decided with you. PaaS providers usually even provide scripts that make it easy to deploy your application to their servers. The downside of PaaS is that they don't provide as much flexibility. For example, Heroku prefers PostgreSql and if you prefer MySQL as your database, you are out of luck! Also, the units are not as granular, so depending on the type of application you have, you may end up spending more money. Solution Street has deployed and run many applications on these types of providers with success.
+
+Small/Medium Local hosting providers are a great option if you don't have the in house staff or experts to run and support a production system. Since Solution Street is a consulting company focused mostly on software construction, if we are going to be providing production support, we typically recommend our partner Rhythmic Technologies. They are a great local provider located about a mile away from our offices. One of the things I find most comforting about them is that I have the President’s cell phone and I can call him if there is a big problem and I don't think I am getting the support I need from his team. This hasn't happened, but it feels good knowing that I could. Another thing that this type of provider can offer is specialty services. For example, we had a client that had a nightly window where lots of social media api’s needed to be called each night. We were able to get a very high end machine with tons of cpu, memory and very fast disk to shrink our times to 1/10th of their original time! One downside to these type of providers are they are smaller and may cost a little more than the big providers. Also, if you are not near them, it may be difficult to get the level of trust you get with a bigger provider. Solution Street has deployed and run many applications on these types of providers with success.
+Colocation/Hosting Providers are typically not a good option today. It is usually not cost efficient for a company to buy and operate their own gear! The only exception to this would be if you were providing your own IaaS or PaaS then it would make sense for you to use a colo provider. Solution Street does not have any applications in Colo today.
+On premise hosting closet is typically not a good idea these days for serious applications. Oftentimes, on premise closets are the most unreliable and insecure options. Moving your servers to one of the top 3 options is usually a more secure and cost effective. There are exceptions, one is if you have a very chatty legacy application that was designed to work only over a LAN, having it in a local closet will run way better than if you put it into a cloud option. Another exception is a low cost PBX/Voip system, running these locally can sometimes be more cost effective and performant. When we moved into our current space over a year ago, we were excited to see that our space had a nice server room with cooling. Too bad there is not much in it other than our PBX and a couple of old test servers.
+One thing to remember is that all hosting providers have outages. You need to design your architectures to have the right level of redundancies to reduce the impact of these outages to your customers. Sometimes, outages even happen just due to bad luck. For example, we had 2 customers running at a large IaaS provider in the same data center. One of the customers had 3 outages of over an hour in the same year, and the other had none. They were nearly identical, the one just had bad luck.
+In summary, there are lots of great hosting options and each has their own advantages and disadvantages both in terms of direct costs (the cost of the service) and indirect costs (the cost of setting up and using the service). We hope this guide will help you in your selection, but as always, feel free to give us a call and we can help!
+
+

@@ -1,0 +1,51 @@
+Top 5 Things That Make Clients Happy
+
+
+ 
+
+I’m often asked during an interview with a candidate to discuss the future of our company and what we are trying to achieve.  My response tends to be the same - If our clients are happy and our employees are happy, then we are happy.  Making employees happy is often the same as making clients happy in terms of overall principles.  The reasoning may be different, but I believe that people (clients, employees, etc.) desire the same things. We have had terrific clients at Solution Street and we have together achieved our goals, but not without some stumbling blocks and lessons learned. Here are the top five things that make our clients happy.
+
+ 
+
+Be honest: 
+
+ 
+
+There have been many times at Solution Street where we are asked to estimate the duration (including the number of resources, cost, etc.) for a custom software development project. On occasion we are competing for the work against other firms based on these estimates.  We will always give our honest estimate based on what we know by drilling into as many details as we can (functionality, architecture, etc.).  However, we have run across others who provide (let’s say) “creative” estimates in order to initially get the work and then deal with the ramifications later. We are known for our honesty in this industry, and at one point we were competing against several firms and we had produced the highest estimate for this particular project. Since our client appreciated our prior work and trusted us, they called us to ask about our estimate.  We went through the details and explained how others may not be thinking the problem all the way through or just skipping over some complexities. We convinced the client about the accuracy of our estimate based on the work we would do for them and we were awarded the work. 
+
+ 
+
+Be dependable: 
+
+ 
+
+When it comes to software development, one would typically view dependability solely on getting work done on time.  While this is true, for us it means a great deal more.  Being dependable means communication to the client when perhaps none was expected; as in the case where a software consultant determines that there is missing business logic. Being dependable means that when a client has an urgent demo to show their Board of Directors or their clients, we are willing and able to do what needs to be done. At Solution Street, our interpretation of dependability is providing overall timely and quality help to our clients to meet a variety of their business and software development needs. We pride ourselves on being problem solvers, not just coders. 
+
+  
+
+Show respect for all: 
+
+ 
+
+Sometimes developers who are experts in their field can be condescending when it comes to explaining technical matters. I don’t think this is most, but it does happen. Clients understand that they may not be as familiar with the technical subject matter, but they want to be partners in the solutions and learn from us. We at Solution Street feel that it is very important to have that partnership with our clients and that we can learn from each other, and that great ideas should be shared from both sides. We place a high level of importance on our developers learning about and understanding the client’s business practices. By doing that, our developers have critical knowledge to build, implement, and/or modify new or existing systems for our clients. This provides much more give and take; clients learn about technical aspects of the systems from developers, and developers learn about business aspects from clients. Each provides important knowledge to each other with information being exchanged on both sides resulting in a successful outcome. 
+
+ 
+
+Be transparent: 
+
+ 
+
+When it comes to software development I believe that estimates longer than a week tend to become less and less accurate due to changes in assumptions, the client seeing something working in a different light, and business priorities. As such, and because of the nature of projects, completion dates tend to run either ahead of or behind schedule. Being transparent at every step is important to clients. Most consulting companies tend to withhold information regarding adverse impacts to a schedule in the hopes that they can catch up. In our experience, clients have understood that sometimes estimates are off due to new or changed feature requests or other circumstances and would rather know the information and help to be part of the solution. We have found that our clients appreciate our openness, or transparency, about a project’s status and changes that may affect an end date, and as a result, we have had strong, successful, and long-lasting partnerships with our clients.
+
+ 
+
+Enjoy working together / fun: 
+
+
+ 
+
+Clients want us to be happy and enjoy working with them and building their systems. Being part of a cohesive team and dare I say “having fun” is actually an important part of successful projects and a client's happiness with the work. We feel that when the work environment is positive we can all do our best work. Having fun during our day while doing serious work provides a nice, healthy balance. We will always be productive, but working in an atmosphere that promotes camaraderie makes our work days and client relationships that much better.
+
+ 
+
+Each of these five principles above forms an outstanding relationship between a vendor and a client. The relationship is better and therefore the end product, the software, is better. We believe in these five tenets so much at Solution Street that we’ve made them our core values; honesty, dependability, respect, transparency, fun! 

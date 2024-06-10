@@ -1,0 +1,86 @@
+Security in Software Construction
+
+
+Thirteen years ago, two good friends and co-workers of mine, Karthik Shyamsunder and Selva Neethiraj, and I presented ‘Ten Secrets to Securing your Java Web Applications’ to hundreds of developers at the 2004 JavaOne conference. You can see the original slides from our JavaOne presentation here.
+
+Fast forward to 2017 and application security is still a big problem for everyone. In fact one of the largest tech companies, Yahoo, had its core application hacked and information from over one billion users was disclosed.
+
+For this article I am going to focus not on our original ten secrets, but on software construction functions and how/when each of us needs to contribute toward the overall security of the applications we build every day. With attention to these efforts, we can try to reduce the likelihood of incidents like the Yahoo hack happening again.
+
+A few weeks ago, my client and friend, Andrew Blocksidge, wrote a great article about how companies should build a culture of cybersecurity within their organization. The gist of his article is that cybersecurity should be everyone's responsibility. I wholeheartedly agree with this concept. In fact we have this same approach here at Solution Street. We believe secure software construction is everyone's responsibility. The thing is that not every company can hire an expert in cybersecurity.
+
+There are several key functions to software construction such as: requirements development, design, system architecture, software architecture, development, testing, and deployment. Each of these functions has security-related concerns that should be considered. Below, I’ve listed several questions under each function as well as some ideas that Solution Street follows that should be part of the planning process for any software build.
+
+Requirements Development:
+
+Are user, role, and password management defined?
+Are passwords secure? How are they distributed and reset (see interesting new NIST guidelines)?
+How much power should the admins and super-users have?
+Are there trade-offs between security and convenience for the users (e.g., if the password is too complex, users will forget it or write it down, should you require a second factor for authentication)?
+
+When working with requirements, we try to make sure that all the roles, privileges, and security policies are clearly defined from the get go, and that our customers are mindful of compromises up front. My favorite analogy for this relates to banks. Banks could be incredibly more secure, however, because they want to be inviting to customers as well as being secure, they make tradeoffs. For example, adding air locks and metal detectors would make banks more secure, but it would also discourage customers from coming there. The same is true for software security including things like two-factor authentication, and complex password and reset requirements.
+
+UI Design:
+
+Are the screens being built where users can recover their usernames and passwords securely?
+Can the admins and super-users see too much information?
+How is personal data collected and shown?
+Is payment information collected and displayed in a secure way?
+
+Most folks have moved to an Agile/iterative approach to building software and one of the things that seems to be forgotten often is keeping security in the discussion when building new screens or modifying existing ones. We try to keep this front and center as we go.
+
+System Architecture:
+
+Are there multiple layers of protection (we like the term ‘crunchy to the core’ for architectures - this means multiple layers of security so that if the bad guys get through one layer, they can't get/change everything we care about)?
+Is a mature platform that is well hardened being chosen?
+Are all devices that are part of the system secure to the same standards (this includes cloud architectures)?
+Is there a plan for patching all operating systems, firmware and third-party open-source or commercial applications?
+Is a Web Application Firewall (WAF) being used?
+Is there an Intrusion Detection System (IDS) watching the application?
+Are the database and file system secured?
+
+Most large shops have in-house system architects and they will dictate how systems are deployed into their ecosystem. This is usually good, but these questions can trigger reminders for everyone on the team. Smaller shops tend to be more ad hoc and these questions can be invaluable. The biggest problem we see today is folks not planning for patching and maintenance of their system architecture.
+
+Software Architecture:
+
+Is a framework that encourages best practices being used?
+Does the architecture/framework prevent typical vulnerabilities (i.e., XSS, SQL injection, information leaking)?
+Is there a framework/cross-cutting concern to ensure authorization/authentication?
+Is there a plan for updating libraries and checking for security concerns?
+Is session management being done securely?
+Is a Secure Sockets Layer (SSL) being used?
+Is there a fail-safe layer on the application server to protect sensitive information from being shared in case of failure?
+
+(Related: Learn how to manage company's data more at RadiusBridge.com)
+
+Solution Street likes to use proven web frameworks like Rails (for Ruby), Django (for Python), .NET (for C# & VB), and Spring MVC (for Java) because they have built-in best practices that make it very hard for developers to create ‘software architecture’ security leaks. Building a secure architecture from scratch requires a much greater amount of work than making use of and following a framework that handles this for you. Having said that, it is still important to ask these questions and make sure ‘best practices’ are being followed.
+
+Software Development:
+
+Are there automated tests to ensure all entry points into the system are locked down appropriately?
+Have potential vulnerabilities been identified and documented?
+Are code reviews being performed?
+Are shell commands being called from code? Are they locked down?
+Is sensitive information being logged?
+Is error handling being done appropriately?
+
+For development, Solution Street relies upon good process to make sure we ask these questions regularly and provide feedback to make changes.
+
+Software Testing:
+
+Are testers trying to find holes in the authentication layer?
+Are testers trying to find holes in the authorization layer?
+Are testers trying to inject bad data into the system?
+Are testers trying to exploit power users' abilities (including shell calls)?
+
+When we interview software testers, one of the questions we often ask is what type of security testing have you done? It is surprising how many folks we interview who have done none or very little. The items on this checklist are very important to our testers!
+
+Deployment:
+
+Is the deployment process automated and secure?
+Are any passwords passed in plain text during a deployment?
+Is the system more vulnerable during a deployment? If so, can it be locked down?
+
+We at Solution Street are big fans of making our deployment process automated and secure. Here is a good article that covers many of the principles we follow.
+
+By making security questions like these part of the discussions required for each function involved in construction, we can ensure that our final product has the 'right' level of security built into it from the ground up. We should not assign the overall security of the application to just a single person; we need to make it everyone's priority! It is time to talk to your software construction team about security. Hopefully, the topics I have provided here give you some ideas to start the conversation!

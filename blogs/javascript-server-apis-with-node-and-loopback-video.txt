@@ -1,0 +1,79 @@
+JavaScript Server APIs with Node and Loopback (VIDEO)
+
+
+
+
+
+I tend to migrate towards languages, frameworks, and architectures that have a large community, follow web standards, and live by the following two principles:
+
+
+Convention over configuration
+Less code is better
+
+ 
+ 
+There’s no question that Ruby on Rails exemplifies these two principles, but the world appears to be moving to a JavaScript dominated isomorphic future. Maybe Rails will have a larger following in years to come or maybe it will fizzle out. I don’t know and of course no one knows. What I do know is that the community of JavaScript developers is growing along with some great software. This includes both the server and the client. Who knew that the infamous quote of “Java everywhere” from the early 2000s would actually come true for JavaScript instead? JavaScript everywhere!!! It certainly seems like that. 
+
+
+ 
+
+Now I’m still quite skeptical of JavaScript applications (especially on the server) taking over the mainstays of Java/JEE, C#/.NET and other enterprise language/architectures, but there is clearly a movement to get JavaScript on the server. There is no doubt that  Node has some enthusiastic followers and given the event-driven, non-blocking I/O architecture of Chrome’s V8 engine it certainly seems like JavaScript on the server has a future. Of course then there is  callback hell…but let’s worry about that later.
+
+ 
+ 
+
+I set out many months ago to try and find a full-stack JavaScript framework that met my two basic principles and well…something that I liked using. I looked at Meteor, a dozen other full-stack frameworks, came back to Meteor (I certainly like it but it seemed a little overpowering for me), and stumbled upon  LoopBack.  In short, StrongLoop built LoopBack. IBM bought StrongLoop.  LoopBack is open source and free to use/deploy and there is a commercial version with full support (including process management, deployment, profiling, metrics, etc.).
+
+
+ 
+
+Now LoopBack is not a full-stack solution. It’s an API server - a significant component in the full-stack architecture. You can write some server-side html rendering (MVC) since it’s built on  Express and uses EJS, but it’s mostly targeted towards Single Page Applications (SPAs) like  Angular and native mobile applications. In this article/video I will focus on the server aspect and maybe in a future article I will tackle the client component.
+
+
+ 
+
+I was initially impressed with LoopBack because it worked, and it worked quickly. With its CLI I was reminded of the coolness and quickness of Rails. When I brought up the code I was amazed at the limited number of lines of code and that much of the “generated” code was basic JSON files. Of course there was lots of code brought in with npm under node_modules directory, but that’s so common these days with any JavaScript framework.
+
+
+ 
+
+Instead of writing a 30-page article walking you through each step of setting up a typical LoopBack application, I decided to record a video of my findings.  I determined what I thought were the important aspects of evaluating a framework like this. These items are part of the 80% use case; at Solution Street we want software engineers to breeze through the 80% of standard software development and focus on the 20%.
+
+
+
+ 
+
+Here are the items I researched and describe or provide examples of in the video:
+
+
+Easily create a skeleton app that works from the start
+Create basic model with attributes that has CRUD processing out of the box
+Create relationships and show different relationships
+Connect to datasources - mySQL, PostgreSQL, MongoDB, etc.
+Migration of data models
+Persistence of data
+Querying data with filtering
+Hide APIs - making them private
+Custom methods
+Operational hooks (e.g., before filters)
+Override existing (default) CRUD methods
+Validations - standard and custom
+Access control lists (ACL)
+Access tokens/CORS
+ES6 support
+Logging/Debugging
+Console playground (like Rails console)
+
+
+
+Here is a "video walkthrough". 
+
+
+ 
+ 
+Overall I’m quite impressed with LoopBack. I find that the simplicity of the codebase and the extensibility fit nicely into convention over configuration. Writing server-side JavaScript code requires some skill and although I review both callbacks and promises in my video, both are difficult adjustments to make for many software engineers including myself. I don’t know if LoopBack will survive the JavaScripts wars, but I certainly hope it does.
+
+
+ 
+
+

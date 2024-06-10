@@ -1,0 +1,110 @@
+Five Minutes with htmx - A New Spin on an Old Reliable Architecture
+
+
+
+
+Single Page Application (SPA) architectures have been the rage for a while now. React, Angular, Vue.js, and other JavaScript front-end frameworks are being used widely to build front-ends for the latest enterprise applications. At Solution Street we always pick the correct architectures and tools to best solve the business problem. Over the years we have built a variety of solutions that include SPA architectures as well as the more traditional Multi Page Application (MPA) architectures. There are certainly pros and cons of each architecture and strong feelings by developers on which one to use. With the entrance of htmx the lines have been blurred for the better; for those of you who love the user experience of SPAs but crave the simplicity of MPAs this may be a useful new spin on your old reliable architecture.
+
+
+First a quick review of pros and cons of SPAs vs. MPAs:
+
+
+SPAs
+
+
+Pros:
+
+
+Better performance and user experience since full pages aren’t constantly being loaded. Assets are loaded once and only JSON data is sent between the client and server.Separation of concerns since the same backend code can be used for web and native mobile.
+
+
+Cons:
+
+
+SEO Optimization is trickyInitially slow to download due to lots of assets including JavaScript libraries.Arguably more complicated development with typically more state being managed on the client. More JavaScript creates a larger issue of packaging, dependencies and deployments.
+
+
+MPAs
+
+
+Pros:
+
+
+Easier SEO OptimizationArguably easier development (although heavy use of AJAX and injection of JavaScript 
+
+
+fragments often convolute the development process and code).
+
+
+Cons:
+
+
+No separation of concerns. Front- and back-end are tightly coupled together.User experience suffers because full pages tend to be loaded and overall front-end UI is slower.
+
+
+Let’s now discuss htmx. For a description from the website - “htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext.”  
+
+
+Htmx is really a JavaScript library that’s used to help you avoid using JavaScript in your code. 
+
+
+Here’s a basic example:
+
+
+<html>
+<head>
+    <script src="https://unpkg.com/htmx.org@1.8.2"></script>
+</head>
+
+<body>
+    <div><h1>Simple htmx demo</h1></div>
+
+    <button hx-post="https://htmxdemo.herokuapp.com/demo/?curr_num=0" hx-swap="outerHTML">Click Me</button>
+
+</body>
+</html>
+
+
+
+
+
+
+Quite simply when the user clicks the button, we are using html (declarative) attributes from htmx including hx-post to post the URL and then hx-swap to replace the returned html snippet from the server with the current button html. 
+
+
+
+Simple htmx demo
+Click Me
+
+
+Clicking the button above shows you the live version where the button is being replaced by the server without replacing the full page. Implementation is an html page making a post request against a Flask server hosted on Heroku (GitHub source).
+
+
+Obviously not very exciting since you’ve already seen AJAX working many years ago and you were wowed then because you weren’t used to seeing such dynamic requests from the webpage. This is really no different but now we are using just html for the front-end; simple and clean. 
+
+
+I was going to put together a bunch of examples, but the htmx website has terrific simple examples that are clear to understand. Let me point out a few:
+
+
+Row deletionActive searchInfinite scrollModal dialog
+
+
+So wait! You can probably see the simplicity of using htmx to minimize or even remove all of your JavaScript and be able to have little to no JavaScript on your front-end. This solves the issue with MPAs and lots of runaway jQuery/AJAX or equivalent scripts. The htmx website calls this Locality of Behavior where using htmx provides the clean and simple view of code where things are understandable with just a small view of the code. 
+
+
+With SPAs you have the issue of full JavaScript on the front-end and, often wanting to keep a single enterprise software language, developers sometimes go with JavaScript on the server to maintain the consistency - whereas using htmx you can use simple html and focus on the best server-side language framework. Using htmx allows the developer to use standard server-side templating frameworks (e.g., Ruby has ERBs, Python has Django Template Language or Jinja).
+
+
+What about separation of concerns? What about having a single back-end that supports multiple front-ends? As always you need to pick the right tool for the problem. Htmx with templating may be the right answer because it provides a simplistic, elegant, and arguably easier development process. It may not be the right answer if the architecture requires multiple front-ends or the application requires a heavy JavaScript interaction-style user interface. 
+
+
+Here is a listing of great htmx resources:
+
+
+htmx websiteHtmx with server-side examples (e.g., Rails, .NET, Java/Spring)
+
+
+Htmx and Django instruction videosPort of React to htmx - “They reduced the code base size by 67%”Sizable list of resources related to using htmx with several popular tech stacksHtmx alternatives: Hotwire/Turbo and Unpoly
+
+
+What do you think about htmx? Have you tried using it in any applications? How did it work out?

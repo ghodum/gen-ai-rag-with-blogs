@@ -1,0 +1,95 @@
+See the Forest for the Trees - Achieving the Best in Software Development
+
+
+
+
+
+ 
+
+When I think of building software, I think of solving a business problem. I know…that’s different. Most developers think of technology. They think of coding. They think of a specific software language like JavaScript or the latest framework to use. In our industry today, we do everything possible to make software engineering become a commodity. We now have 8-week code schools. Companies try and offshore development work. We even just call what we do “coding”. We want to simplify the process down to some assembly-line system where developers can look at tickets, write their code, and then move-on to the next ticket. Of course, this has major benefits in getting things done, but in the process of doing this, we have created a generation of software engineers who don’t seem to see the forest for the trees. The beauty of software development IS the problem solving. It’s looking at the big picture, taking a step back and making sure your one small view makes sense in a larger world. It’s not just about the coding. It IS all about problem solving in the broader perspective.
+
+ 
+
+Michelangelo once said, “Every block of stone has a statue inside it and it is the task of the sculptor to discover it.” Without the discovery phase of software development, you just address every problem as a mechanical exercise. You would take out your chisel and start coding. This yields completion without regard for the overall completed work. For example, this may be completing the hand of the statue without regard for its proportion to the body or even whether or not the hand should be part of the statue itself. By taking a step back, you may find yourself looking at the bigger picture and identifying the elegant and more importantly, correct solutions, beyond your small part of the statue, or in the case of programming, the application.
+
+ 
+
+When it comes to tasking software engineers today, it typically involves a ticket. A ticket describes a feature, use case, or defect and hopefully includes several sentences of documentation and perhaps a screen mockup or image of the intended feature or just the steps to recreate a defect. A set of tickets is assigned to developers. The ticket tends to address a small view of a portion of the overall system. We do this because we don’t want to worry a developer about the bigger picture; just focus on the small piece of the puzzle for speed of delivery. While this seems to make sense at first blush, it causes the developer to focus on completing their small piece of the pie with speed and possibly even quality without often thinking outside the box. This process conjures up thoughts of building cars on an assembly line and how to get most throughput from a developer. This certainly would work if we were building the same car over and over again (or house as used in the typical metaphor associated with building software). The reality of software development is that developers are always building something different each day including working on a different project or product. The building a house or assembling a car analogy just doesn’t work. In fact, I would say that it is the cause of many poorly developed projects and products. Without focus on the bigger picture, implementations of small parts of code cobbled together do not yield the best system and best software development.
+
+ 
+
+Let’s take a look at some examples of tickets and assume this is a stock-trading platform in development:
+
+ 
+
+Example #1) While on the customer details page, we would like to give the user the ability to type in a zip code and it will automatically fill in their city and state. Here is what the address info looks like:
+
+
+
+There’s certainly some technical considerations here depending upon the technology platform. At some level, we need to deal with JavaScript to trigger a function to search for the city and state based on the user’s entry of a zip code. With respect to the bigger picture, the following are some questions the developer should be asking (some obvious, some maybe not; some within the context of this ticket and some outside):
+
+ 
+
+The Zip Code field is located after City and State, such that a typical user would type in City and State before they even get to Zip Code. Should the Zip Code field be moved prior to the City and State fields?
+A Country field is listed here. We assume that when the country dropdown is changed, the zip code will either go away or change to a country specific postal field. In the case where there is a country specific field (e.g., Canadian Postal Code), should we perform a similar lookup and pre-population?
+Address is used in several parts of the application (e.g., account creation). Can we assume the feature should work in that location too? It’s possible that the code is shared, but will the tester know to test the other parts of the application?
+
+ 
+
+Here’s another example.
+
+ 
+
+Example #2) Add a feature that lets the user set an alert on a stock/ETF or mutual fund such that they get notified by email when the value crosses a certain price point.
+
+
+
+Again, some questions to ask (some within the context of the ticket and some requiring broader thought):
+
+ 
+
+Should we display the current price of the stock/ETF/Mutual fund?
+Is the alert going to occur when the price is higher or lower than the current price? Do we give an option on the alert?
+How do we update the alert? Submit twice?
+Do we have an alerting system already? Should this be part of a broader alert system? Where can I see all of my alerts?
+Do we want to alert via email immediately or bundle the emails for the day?
+Is the alert only when the price initially crosses the threshold of the value or every time it does?
+
+ 
+
+Can you identify more questions?
+
+ 
+
+You can see the hazard of just implementing what’s in the ticket with even limited focus on the functionality mentioned in the ticket. Tickets tend to be terse again for speed of the development process. Ideally, a great product manager is part of the team where the requirements are very detailed and well thought out, but this is typically the exception and not the norm. The responsibility tends to fall to the software engineer to think more broadly about their changes.
+
+ 
+
+The suggested strategy that developers should use is the multi-level thought process.
+
+ 
+
+First, we address the functionality:
+
+ 
+
+Is this the right thing to implement in this system?
+Should we (functionally) have a central location or application area for this functionality that can address several areas?
+If I was the user, does this make sense? If not, what would make sense?
+What are all of the possible test cases for this feature and any related pieces of functionality?
+Have I thought of its usage in different browsers? different languages?
+
+ 
+
+…then we address the technology.
+
+ 
+
+Of course, this perspective of problem solving shows the value of Agile with its short iterations and working closely with stakeholders. However, we must be careful with going overboard and seeing ‘the world for the forest’ (so to speak). Software engineers should be mindful of producing the best product without tipping the scale of over-thinking or over-engineering. In my experience, most software engineers do not question enough.
+
+ 
+
+Great software engineers are not those who use their chisel to complete their tickets in the fastest time. They are those who can take a step back from their heads-down perspective and see the broader view of their sculptured applications.
+
+ 
+
