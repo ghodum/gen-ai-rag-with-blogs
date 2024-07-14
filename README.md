@@ -10,3 +10,4 @@ This demo requires Python be installed as well the following two libraries:
 ## Usage
 To run the demo:
 - Open the `blog-embeddings.ipynb` notebook to run the embeddings demo.
+- Open the `blog-rag-demo.ipynb` notebook to run the RAG demo.
